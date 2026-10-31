@@ -1,0 +1,14 @@
+{
+  "name": "cert-exam-trainer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Application mobile hors ligne d'entraînement aux certifications (QCM, explications, examens blancs).",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs && node content-pipeline/validate.mjs app/packs/togaf",
+    "build:togaf": "node content-pipeline/togaf/build.mjs",
+    "validate": "node content-pipeline/validate.mjs app/packs/togaf",
+    "serve": "python3 -m http.server 8080 --directory app"
+  }
+}

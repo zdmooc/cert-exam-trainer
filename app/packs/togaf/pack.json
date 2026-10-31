@@ -1,0 +1,50 @@
+{
+  "id": "togaf",
+  "name": "TOGAF Enterprise Architecture",
+  "edition": "TOGAF Standard, 10th Edition — syllabus X2202",
+  "language": "fr",
+  "source": "https://github.com/zdmooc/togaf-ogea-103-combined-certification-prep",
+  "disclaimer": "Questions originales d'autoformation. Ni questions officielles, ni brain dumps. TOGAF est une marque déposée de The Open Group.",
+  "exams": [
+    {
+      "id": "f101",
+      "name": "Foundation (OGEA-F101)",
+      "scoring": "points",
+      "questionCount": 40,
+      "durationMinutes": 60,
+      "maxPoints": 40,
+      "passMark": 24,
+      "goMark": 32,
+      "openBook": false,
+      "domains": [
+        { "id": "concepts", "label": "Concepts", "count": 8 },
+        { "id": "adm", "label": "Introduction à l'ADM", "count": 14 },
+        { "id": "techniques", "label": "Techniques de l'ADM", "count": 6 },
+        { "id": "applying", "label": "Appliquer l'ADM", "count": 4 },
+        { "id": "governance", "label": "Gouvernance d'architecture", "count": 3 },
+        { "id": "content", "label": "Contenu d'architecture", "count": 5 }
+      ]
+    },
+    {
+      "id": "f102",
+      "name": "Practitioner (OGEA-F102)",
+      "scoring": "points",
+      "questionCount": 8,
+      "durationMinutes": 90,
+      "maxPoints": 40,
+      "passMark": 24,
+      "goMark": 28,
+      "openBook": true,
+      "domains": [
+        { "id": "context", "label": "Contexte de l'EA", "count": 1 },
+        { "id": "stakeholders", "label": "Gestion des parties prenantes", "count": 1 },
+        { "id": "phase-a", "label": "Phase A", "count": 1 },
+        { "id": "bcd", "label": "Phases B, C, D", "count": 1 },
+        { "id": "efg", "label": "Phases E, F, G", "count": 1 },
+        { "id": "phase-h", "label": "Phase H", "count": 1 },
+        { "id": "requirements", "label": "Requirements Management", "count": 1 },
+        { "id": "supporting", "label": "Support du travail ADM", "count": 1 }
+      ]
+    }
+  ]
+}

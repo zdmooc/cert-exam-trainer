@@ -1,0 +1,58 @@
+name: CI et publication
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * *' # reprend chaque nuit les nouveautés du dépôt de cours
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Récupérer le dépôt de cours TOGAF
+        run: git clone --depth 1 https://github.com/zdmooc/togaf-ogea-103-combined-certification-prep.git ../togaf-src
+
+      - name: Régénérer le pack TOGAF
+        run: npm run build:togaf -- ../togaf-src
+
+      - name: Tests du moteur et validation des packs
+        run: npm test
+
+      - name: Préparer le site
+        run: |
+          mkdir -p _site
+          cp -r app/. _site/
+          sed -i "s/__BUILD__/${GITHUB_SHA::8}/" _site/sw.js
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

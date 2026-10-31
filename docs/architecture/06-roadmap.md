@@ -1,0 +1,21 @@
+# Phases E et F — Opportunités, solutions et planification de la migration
+
+## Options étudiées (Phase E)
+
+| Option | Avantages | Inconvénients | Décision |
+| --- | --- | --- | --- |
+| **PWA statique** | Gratuite, hors ligne, une seule base de code, publiée en quelques secondes | Stockage limité au navigateur, pas de notifications fiables sur iOS | **Retenue** (ADR-001) |
+| Appli native (React Native / Expo) | Expérience native, notifications | Stores, comptes développeur, build mobile à maintenir | Écartée pour v1 ; réexaminée si besoin de notifications |
+| Page artifact Claude | Création immédiate | Pas de service worker, pas de CI, pas de dépôt partageable | Écartée |
+| Backend + base de données | Synchronisation multi-appareils | Coût, exploitation, données personnelles | Reportée à v4 |
+
+## Feuille de route (Phase F)
+
+| Version | Contenu | Valeur | Statut |
+| --- | --- | --- | --- |
+| v1 | Moteur générique, pack TOGAF F101 + F102 (648 questions), entraînement, examens blancs, révision Leitner, hors ligne | Préparer les deux examens TOGAF | **Livrée** |
+| v2 | Export / import de la progression (fichier), mode sombre manuel, recherche d'une question | Ne pas perdre sa progression en changeant de téléphone | À faire |
+| v3 | Deuxième pack (ArchiMate 3.2) sans modifier `js/core` | Prouver la généricité du moteur | À faire |
+| v4 | Synchronisation optionnelle (adaptateur distant) | Multi-appareils | À évaluer |
+
+Critère de passage d'une version à la suivante : tests verts, validation des packs, et aucune régression sur les indicateurs de la Vision.
