@@ -6,11 +6,22 @@ import { statOf, difficulty, isDue, needsReview } from './progress.js';
 
 export const STRATEGIES = ['sequential', 'random', 'adaptive', 'review'];
 
-// Filtre la banque selon l'examen, les domaines et l'ensemble demandés.
-export function filterPool(questions, { exam, domains = null, set = 'bank' } = {}) {
+// Filtre la banque selon l'examen, les domaines, les séries et l'ensemble demandés.
+export function filterPool(questions, { exam, domains = null, series = null, set = 'bank' } = {}) {
   return questions.filter(
-    (q) => (!exam || q.exam === exam) && (!set || q.set === set) && (!domains?.length || domains.includes(q.domain)),
+    (q) => (!exam || q.exam === exam)
+      && (!set || q.set === set)
+      && (!domains?.length || domains.includes(q.domain))
+      && (!series?.length || series.includes(q.series)),
   );
+}
+
+// Séries présentes dans la banque d'un examen (dans l'ordre déclaré par le pack).
+export function listSeries(questions, examId, declared = []) {
+  const present = new Set(questions.filter((q) => q.exam === examId && q.set === 'bank').map((q) => q.series ?? 'bank'));
+  const ordered = declared.filter((s) => present.has(s.id));
+  for (const id of present) if (!ordered.some((s) => s.id === id)) ordered.push({ id, label: id });
+  return ordered;
 }
 
 // Poids du mode adaptatif : questions jamais vues, difficiles pour toi,

@@ -32,10 +32,12 @@
   "stem": "En Phase B, une équipe affirme…",
   "options": [
     { "key": "A", "text": "Définir Payment Validation comme business capability…", "points": 5 },
-    { "key": "B", "text": "…", "points": 3 },
+    { "key": "B", "text": "…", "points": 3, "rationale": "Pourquoi cette option vaut 3 points" },
     { "key": "C", "text": "…", "points": 1 },
     { "key": "D", "text": "…", "points": 0 }
   ],
+  "series": "bank",
+  "lo": "L2.4.2",
   "explanation": "…",
   "topic": "Architecture Development — Phase B vs Phase C",
   "source": "10-practitioner-scenarios/04-bcd-s022-s030.md"
@@ -45,6 +47,9 @@
 - `set` vaut `bank` (banque d'entraînement) ou l'identifiant d'un examen blanc figé (`mock-01`…).
 - Le barème est porté par les **points de chaque option** : 1/0 pour un QCM simple, 5/3/1/0 pour un scénario gradué. Le moteur n'a pas d'autre notion de barème.
 - `key` est la lettre d'origine, utilisée seulement pour relier l'explication aux options.
+- `series` regroupe les questions par série d'exercices (déclarées dans `pack.json` → `series`) ; filtrable en entraînement.
+- `lo` (facultatif) est l'objectif d'apprentissage du syllabus (ex. X2202 `L2.1.7`).
+- `rationale` (facultatif, par option) justifie le score de l'option ; l'appli l'affiche sous chaque réponse dans la correction.
 
 ## Progression (stockage local, clé `cet:<pack>:progress`)
 

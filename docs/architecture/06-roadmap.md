@@ -14,6 +14,7 @@
 | Version | Contenu | Valeur | Statut |
 | --- | --- | --- | --- |
 | v1 | Moteur générique, pack TOGAF F101 + F102 (648 questions), entraînement, examens blancs, révision Leitner, hors ligne | Préparer les deux examens TOGAF | **Livrée** |
+| v1.1 | Pack TOGAF enrichi (734 questions, objectifs X2202), justification de chaque réponse, filtre par série, conversion multi-formats | Corrections plus pédagogiques, exercices ciblés | **Livrée** |
 | v2 | Export / import de la progression (fichier), mode sombre manuel, recherche d'une question | Ne pas perdre sa progression en changeant de téléphone | À faire |
 | v3 | Deuxième pack (ArchiMate 3.2) sans modifier `js/core` | Prouver la généricité du moteur | À faire |
 | v4 | Synchronisation optionnelle (adaptateur distant) | Multi-appareils | À évaluer |

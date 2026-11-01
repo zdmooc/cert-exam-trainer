@@ -17,12 +17,36 @@
       "goMark": 32,
       "openBook": false,
       "domains": [
-        { "id": "concepts", "label": "Concepts", "count": 8 },
-        { "id": "adm", "label": "Introduction à l'ADM", "count": 14 },
-        { "id": "techniques", "label": "Techniques de l'ADM", "count": 6 },
-        { "id": "applying", "label": "Appliquer l'ADM", "count": 4 },
-        { "id": "governance", "label": "Gouvernance d'architecture", "count": 3 },
-        { "id": "content", "label": "Contenu d'architecture", "count": 5 }
+        {
+          "id": "concepts",
+          "label": "Concepts",
+          "count": 8
+        },
+        {
+          "id": "adm",
+          "label": "Introduction à l'ADM",
+          "count": 14
+        },
+        {
+          "id": "techniques",
+          "label": "Techniques de l'ADM",
+          "count": 6
+        },
+        {
+          "id": "applying",
+          "label": "Appliquer l'ADM",
+          "count": 4
+        },
+        {
+          "id": "governance",
+          "label": "Gouvernance d'architecture",
+          "count": 3
+        },
+        {
+          "id": "content",
+          "label": "Contenu d'architecture",
+          "count": 5
+        }
       ]
     },
     {
@@ -36,15 +60,77 @@
       "goMark": 28,
       "openBook": true,
       "domains": [
-        { "id": "context", "label": "Contexte de l'EA", "count": 1 },
-        { "id": "stakeholders", "label": "Gestion des parties prenantes", "count": 1 },
-        { "id": "phase-a", "label": "Phase A", "count": 1 },
-        { "id": "bcd", "label": "Phases B, C, D", "count": 1 },
-        { "id": "efg", "label": "Phases E, F, G", "count": 1 },
-        { "id": "phase-h", "label": "Phase H", "count": 1 },
-        { "id": "requirements", "label": "Requirements Management", "count": 1 },
-        { "id": "supporting", "label": "Support du travail ADM", "count": 1 }
+        {
+          "id": "context",
+          "label": "Contexte de l'EA",
+          "count": 1
+        },
+        {
+          "id": "stakeholders",
+          "label": "Gestion des parties prenantes",
+          "count": 1
+        },
+        {
+          "id": "phase-a",
+          "label": "Phase A",
+          "count": 1
+        },
+        {
+          "id": "bcd",
+          "label": "Phases B, C, D",
+          "count": 1
+        },
+        {
+          "id": "efg",
+          "label": "Phases E, F, G",
+          "count": 1
+        },
+        {
+          "id": "phase-h",
+          "label": "Phase H",
+          "count": 1
+        },
+        {
+          "id": "requirements",
+          "label": "Requirements Management",
+          "count": 1
+        },
+        {
+          "id": "supporting",
+          "label": "Support du travail ADM",
+          "count": 1
+        }
       ]
+    }
+  ],
+  "series": [
+    {
+      "id": "bank",
+      "label": "Banque principale"
+    },
+    {
+      "id": "advanced",
+      "label": "Exercices discriminants"
+    },
+    {
+      "id": "deliverables",
+      "label": "Les 16 livrables"
+    },
+    {
+      "id": "x2202-targeted",
+      "label": "Ciblés X2202"
+    },
+    {
+      "id": "multi-constraint",
+      "label": "Ateliers multi-contraintes"
+    },
+    {
+      "id": "x2202-coverage",
+      "label": "Couverture X2202"
+    },
+    {
+      "id": "conformance",
+      "label": "Conformité et migration"
     }
   ]
 }

@@ -135,3 +135,10 @@ test('pack TOGAF : examens figés et générés conformes au format officiel', (
     assert.equal(maxSum, def.maxPoints);
   }
 });
+
+test('filtre par série et liste des séries présentes', async () => {
+  const { listSeries } = await import('../app/js/core/selection.js');
+  const mixed = [{ ...bank[0], series: 'bank' }, { ...bank[1], series: 'advanced' }, { ...bank[3], series: 'advanced' }];
+  assert.deepEqual(filterPool(mixed, { exam: 'demo', series: ['advanced'] }).map((x) => x.id), ['x2', 'y1']);
+  assert.deepEqual(listSeries(mixed, 'demo', [{ id: 'advanced', label: 'Avancé' }]).map((s) => s.id), ['advanced', 'bank']);
+});

@@ -2,7 +2,7 @@
 
 Application mobile d'entraînement aux certifications : questions avec explications, révision des erreurs et examens blancs chronométrés. Elle fonctionne hors ligne et s'installe sur l'écran d'accueil du téléphone.
 
-Premier pack : **TOGAF Enterprise Architecture** (Foundation OGEA-F101 et Practitioner OGEA-F102), 648 questions originales en français issues de [togaf-ogea-103-combined-certification-prep](https://github.com/zdmooc/togaf-ogea-103-combined-certification-prep).
+Premier pack : **TOGAF Enterprise Architecture** (Foundation OGEA-F101 et Practitioner OGEA-F102), 734 questions originales en français, rattachées aux objectifs X2202, issues de [togaf-ogea-103-combined-certification-prep](https://github.com/zdmooc/togaf-ogea-103-combined-certification-prep).
 
 **Utiliser l'appli :** <https://zdmooc.github.io/cert-exam-trainer/> → sur Android (Chrome) menu ⋮ › *Ajouter à l'écran d'accueil* ; sur iPhone (Safari) Partager › *Sur l'écran d'accueil*.
 
@@ -10,12 +10,12 @@ Premier pack : **TOGAF Enterprise Architecture** (Foundation OGEA-F101 et Practi
 
 | Mode | Ce qu'il fait |
 | --- | --- |
-| Entraînement | Correction et explication après chaque question. Sélection adaptative, aléatoire, séquentielle ou « mes erreurs », filtrable par domaine. |
+| Entraînement | Correction après chaque question, avec la justification de chaque réponse (5/3/1/0 pour les scénarios). Sélection adaptative, aléatoire, séquentielle ou « mes erreurs », filtrable par domaine et par série (banque, exercices discriminants, livrables, ateliers multi-contraintes, couverture X2202…). |
 | Examen blanc | Format officiel (F101 : 40 QCM en 60 min ; F102 : 8 scénarios en 90 min, barème 5/3/1/0). Correction à la fin uniquement. Examen généré selon la répartition officielle, ciblé sur tes faiblesses, ou l'un des 6 examens blancs du dépôt. |
 | Revoir mes erreurs | Boîtes de Leitner : une question ratée revient jusqu'à être réussie plusieurs fois. |
 | Progression | Maîtrise par domaine, taux de réussite, historique des examens. |
 
-Les options sont **mélangées à chaque affichage** : la position d'origine de la bonne réponse (souvent A dans les sources) ne donne plus d'indice. Après réponse, la correction rappelle les options avec leur lettre d'origine, à laquelle les explications font référence.
+Les options sont **mélangées à chaque affichage** : on ne peut pas mémoriser la position de la bonne réponse. Après réponse, la correction rappelle les options avec leur lettre d'origine, à laquelle les explications font référence.
 
 La progression est enregistrée **sur l'appareil** (stockage du navigateur) : elle ne suit pas d'un téléphone à l'autre.
 

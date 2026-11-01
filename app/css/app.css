@@ -95,6 +95,11 @@ p { margin: 0 0 10px; }
 .explain ol { padding-left: 0; list-style: none; margin: 8px 0; font-size: 14px; }
 .explain li { margin-bottom: 4px; }
 .explain .k { font-weight: 700; display: inline-block; width: 1.4em; }
+.explain li { padding: 6px 0; border-top: 1px solid var(--line); }
+.explain li.is-best .k { color: var(--ok); }
+.explain li.is-mine .k { color: var(--ko); }
+.explain .why { color: var(--muted); font-size: 13px; margin: 3px 0 0 1.4em; }
+.explain .badge { font-size: 11px; padding: 1px 6px; }
 .navbar {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 2;
   display: flex; gap: 8px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom));

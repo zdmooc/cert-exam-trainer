@@ -6,7 +6,7 @@ import { scoreQuestion, scoreSession } from './core/scoring.js';
 import {
   createSession, answer, finish, toggleFlag, goTo, canReveal, isExpired, remainingMs, answeredCount,
 } from './core/session.js';
-import { filterPool, selectQuestions, generateExam, fixedSet, listFixedSets } from './core/selection.js';
+import { filterPool, selectQuestions, generateExam, fixedSet, listFixedSets, listSeries } from './core/selection.js';
 import { emptyProgress, recordAnswer, recordSession, statOf, needsReview } from './core/progress.js';
 import { createLocalStorage } from './adapters/storage.js';
 
@@ -18,7 +18,7 @@ const $homeBtn = document.getElementById('home-btn');
 const S = {
   pack: null, questions: [], byId: new Map(), store: null,
   examId: null, progress: emptyProgress(), session: null,
-  setup: { strategy: 'adaptive', count: 20, domains: [] },
+  setup: { strategy: 'adaptive', count: 20, domains: [], series: [] },
   confirm: null, showGrid: false,
 };
 let timerHandle = null;
@@ -26,6 +26,7 @@ let timerHandle = null;
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const exam = () => S.pack.exams.find((e) => e.id === S.examId);
 const domainLabel = (id) => exam()?.domains.find((d) => d.id === id)?.label ?? id;
+const seriesLabel = (id) => (id && id !== 'bank' && id !== 'mock' ? S.pack.series?.find((x) => x.id === id)?.label ?? id : '');
 const isGraded = (q) => Math.max(...q.options.map((o) => o.points)) > 1;
 const rng = () => createRng(Date.now() ^ Math.floor(Math.random() * 1e9));
 
@@ -108,8 +109,10 @@ const STRATEGY_INFO = {
 
 function viewTrain() {
   $title.textContent = `Entraînement · ${exam().name}`;
-  const pool = filterPool(S.questions, { exam: S.examId, domains: S.setup.domains });
+  const pool = filterPool(S.questions, { exam: S.examId, domains: S.setup.domains, series: S.setup.series });
   const counts = [10, 20, 40, 0];
+  const series = listSeries(S.questions, S.examId, S.pack.series);
+  const countOf = (id) => filterPool(S.questions, { exam: S.examId, series: [id] }).length;
   return `
     <h3>Mode de sélection</h3>
     ${Object.entries(STRATEGY_INFO).map(([k, [name, sub]]) => `
@@ -119,6 +122,8 @@ function viewTrain() {
     <div class="chips">${counts.map((c) => `<button class="chip" data-action="set-count" data-count="${c}" aria-pressed="${S.setup.count === c}">${c || 'Toutes'}</button>`).join('')}</div>
     <h3>Domaines <span class="muted small">(aucun = tous)</span></h3>
     <div class="chips">${exam().domains.map((d) => `<button class="chip" data-action="toggle-domain" data-domain="${d.id}" aria-pressed="${S.setup.domains.includes(d.id)}">${esc(d.label)}</button>`).join('')}</div>
+    ${series.length > 1 ? `<h3>Séries <span class="muted small">(aucune = toutes)</span></h3>
+    <div class="chips">${series.map((x) => `<button class="chip" data-action="toggle-series" data-series="${x.id}" aria-pressed="${S.setup.series.includes(x.id)}">${esc(x.label)} · ${countOf(x.id)}</button>`).join('')}</div>` : ''}
     <p class="muted small">${pool.length} question(s) dans la sélection.</p>
     <button class="btn primary" data-action="start-training">Commencer</button>`;
 }
@@ -158,13 +163,21 @@ function explanationHtml(q, item) {
   const r = scoreQuestion(q, item.answer);
   const verdict = !r.answered ? 'Non répondue' : r.correct ? 'Bonne réponse' : isGraded(q) ? `Pas la meilleure réponse · ${r.points}/${r.max} points` : 'Mauvaise réponse';
   const src = S.pack.source && q.source ? `${S.pack.source}/blob/main/${q.source}` : null;
+  const graded = isGraded(q);
+  const hasRationale = q.options.some((o) => o.rationale);
+  const best = q.options.find((o) => o.key === r.bestKey);
+  const showExpl = q.explanation && q.explanation !== best.rationale;
+  // Barème gradué : on présente les options de la meilleure à la moins bonne ; sinon ordre d'origine.
+  const ordered = graded ? [...q.options].sort((a, b) => b.points - a.points) : q.options;
   return `
     <div class="explain ${r.correct ? 'ok' : 'ko'}">
       <p><b>${verdict}</b></p>
-      <p>${esc(q.explanation)}</p>
-      <p class="muted small">L’explication désigne les options par leur lettre d’origine :</p>
-      <ol>${q.options.map((o) => `<li><span class="k">${o.key}</span>${esc(o.text)}${isGraded(q) ? ` <span class="muted small">(${o.points})</span>` : ''}${o.key === r.bestKey ? ' ✓' : ''}${o.key === item.answer && !r.correct ? ' ✗ ton choix' : ''}</li>`).join('')}</ol>
-      ${q.topic ? `<p class="muted small">${esc(q.topic)}</p>` : ''}
+      ${showExpl ? `<p>${esc(q.explanation)}</p>` : ''}
+      <p class="muted small">${hasRationale ? 'Pourquoi chaque réponse (lettres d’origine, citées dans les explications) :' : 'L’explication désigne les options par leur lettre d’origine :'}</p>
+      <ol>${ordered.map((o) => `<li class="${o.key === r.bestKey ? 'is-best' : o.key === item.answer ? 'is-mine' : ''}">
+        <span class="k">${o.key}</span>${esc(o.text)}${graded ? ` <span class="badge">${o.points} pt${o.points > 1 ? 's' : ''}</span>` : ''}${o.key === r.bestKey ? ' ✓' : ''}${o.key === item.answer && !r.correct ? ' <b>← ton choix</b>' : ''}
+        ${o.rationale ? `<div class="why">${esc(o.rationale)}</div>` : ''}</li>`).join('')}</ol>
+      ${q.topic || q.lo ? `<p class="muted small">${esc([q.lo ? `Objectif X2202 ${q.lo}` : '', q.topic].filter(Boolean).join(' · '))}</p>` : ''}
       ${src ? `<p class="small"><a href="${esc(src)}" target="_blank" rel="noopener">Voir dans le cours</a></p>` : ''}
     </div>`;
 }
@@ -215,7 +228,7 @@ function viewSession() {
     <div class="qhead"><span>Question ${i + 1}/${s.items.length} · ${esc(domainLabel(q.domain))}</span>
       ${graded ? '<span class="badge">5 · 3 · 1 · 0</span>' : ''}</div>
     <div class="progress"><i style="width:${Math.round((100 * (i + 1)) / s.items.length)}%"></i></div>
-    ${q.title ? `<p class="muted small" style="margin-top:10px">${esc(q.title)}</p>` : ''}
+    ${q.title || (q.series && q.series !== 'bank' && q.series !== 'mock') ? `<p class="muted small" style="margin-top:10px">${esc([seriesLabel(q.series), q.title].filter(Boolean).join(' · '))}</p>` : ''}
     <p class="stem">${esc(q.stem)}</p>
     ${item.order.map((k) => optionHtml(q, k, item, revealed, graded)).join('')}
     ${revealed ? explanationHtml(q, item) : ''}
@@ -316,19 +329,24 @@ function endSession() {
 const actions = {
   home: () => navigate('home'),
   go: (el) => navigate(el.dataset.view),
-  'set-exam': (el) => { S.examId = el.dataset.exam; S.setup.domains = []; save(); render(); },
+  'set-exam': (el) => { S.examId = el.dataset.exam; S.setup.domains = []; S.setup.series = []; save(); render(); },
   'set-strategy': (el) => { S.setup.strategy = el.dataset.strategy; save(); render(); },
   'set-count': (el) => { S.setup.count = Number(el.dataset.count); save(); render(); },
+  'toggle-series': (el) => {
+    const d = el.dataset.series;
+    S.setup.series = S.setup.series.includes(d) ? S.setup.series.filter((x) => x !== d) : [...S.setup.series, d];
+    save(); render();
+  },
   'toggle-domain': (el) => {
     const d = el.dataset.domain;
     S.setup.domains = S.setup.domains.includes(d) ? S.setup.domains.filter((x) => x !== d) : [...S.setup.domains, d];
     save(); render();
   },
   'start-training': () => {
-    const pool = filterPool(S.questions, { exam: S.examId, domains: S.setup.domains });
+    const pool = filterPool(S.questions, { exam: S.examId, domains: S.setup.domains, series: S.setup.series });
     const count = S.setup.count || pool.length;
     const offsets = S.store.get('offsets', {});
-    const key = `${S.examId}:${S.setup.domains.slice().sort().join(',')}`;
+    const key = `${S.examId}:${S.setup.domains.slice().sort().join(',')}:${S.setup.series.slice().sort().join(',')}`;
     const qs = selectQuestions(pool, { strategy: S.setup.strategy, count, offset: offsets[key] ?? 0, progress: S.progress, rng: rng() });
     if (!qs.length) { alertInline('Aucune question ne correspond : rien à revoir pour l’instant.'); return; }
     if (S.setup.strategy === 'sequential') { offsets[key] = ((offsets[key] ?? 0) + qs.length) % pool.length; S.store.set('offsets', offsets); }
@@ -436,6 +454,13 @@ async function boot() {
     S.examId = pack.exams.some((e) => e.id === prefs.examId) ? prefs.examId : pack.exams[0].id;
     S.setup = { ...S.setup, ...(prefs.setup ?? {}) };
     S.session = S.store.get('session') ?? S.store.get('lastSession');
+    // Une session qui référence des questions retirées du pack n'est plus jouable.
+    if (S.session && !S.session.items.every((it) => S.byId.has(it.questionId))) {
+      S.session = null;
+      S.store.remove('session');
+      S.store.remove('lastSession');
+    }
+    S.setup.series = (S.setup.series ?? []).filter((id) => pack.series?.some((x) => x.id === id));
     if (S.session && S.session.status === 'in_progress' && isExpired(S.session)) endSession();
     render();
     timerHandle = setInterval(updateTimer, 1000);
