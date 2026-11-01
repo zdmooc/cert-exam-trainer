@@ -142,3 +142,26 @@ test('filtre par série et liste des séries présentes', async () => {
   assert.deepEqual(filterPool(mixed, { exam: 'demo', series: ['advanced'] }).map((x) => x.id), ['x2', 'y1']);
   assert.deepEqual(listSeries(mixed, 'demo', [{ id: 'advanced', label: 'Avancé' }]).map((s) => s.id), ['advanced', 'bank']);
 });
+
+test('sauvegarde : export, lecture, fusion sans perte', async () => {
+  const { exportProgress, parseProgressFile, mergeProgress, recordSession } = await import('../app/js/core/progress.js');
+  let phone = emptyProgress();
+  phone = recordAnswer(phone, 'x1', false, 100);
+  phone = recordAnswer(phone, 'x2', true, 100);
+  phone = recordSession(phone, { at: 100, label: 'Examen blanc 01', total: 30, max: 40 });
+  const file = JSON.stringify(exportProgress('demo', phone, 200));
+
+  assert.ok(parseProgressFile('pas du json', 'demo').error);
+  assert.ok(parseProgressFile(file, 'autre-pack').error);
+  const { progress } = parseProgressFile(file, 'demo');
+  assert.deepEqual(progress.questions, phone.questions);
+
+  let laptop = emptyProgress();
+  laptop = recordAnswer(laptop, 'x1', true, 300); // plus récent : gagne
+  laptop = recordAnswer(laptop, 'y1', true, 50);
+  laptop = recordSession(laptop, { at: 100, label: 'Examen blanc 01', total: 30, max: 40 }); // doublon
+  const merged = mergeProgress(laptop, progress);
+  assert.equal(merged.questions.x1.lastAt, 300);
+  assert.ok(merged.questions.x2 && merged.questions.y1);
+  assert.equal(merged.sessions.length, 1);
+});

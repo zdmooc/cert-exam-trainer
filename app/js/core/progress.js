@@ -48,3 +48,52 @@ export function recordSession(progress, summary) {
   const sessions = [...progress.sessions, summary].slice(-200);
   return { ...progress, sessions };
 }
+
+// ---------- Sauvegarde : export, import, fusion ----------
+// Format de fichier indépendant du navigateur, pour changer d'appareil ou
+// se protéger d'un effacement des données du navigateur.
+
+export const EXPORT_FORMAT = 'cert-exam-trainer/progress';
+
+export function exportProgress(packId, progress, now = Date.now()) {
+  return { format: EXPORT_FORMAT, version: 1, pack: packId, exportedAt: new Date(now).toISOString(), progress };
+}
+
+// Lit un fichier exporté. Retourne { progress } ou { error } (message lisible).
+export function parseProgressFile(text, packId) {
+  let data;
+  try {
+    data = JSON.parse(text);
+  } catch {
+    return { error: 'Ce fichier n’est pas une sauvegarde valide (JSON illisible).' };
+  }
+  if (data?.format !== EXPORT_FORMAT) return { error: 'Ce fichier n’est pas une sauvegarde Cert Exam Trainer.' };
+  if (data.pack !== packId) return { error: `Cette sauvegarde concerne le pack « ${data.pack} », pas « ${packId} ».` };
+  const p = data.progress;
+  if (!p || typeof p.questions !== 'object' || !Array.isArray(p.sessions)) return { error: 'Sauvegarde incomplète.' };
+  for (const s of Object.values(p.questions)) {
+    if (![s?.seen, s?.correct, s?.wrong, s?.box, s?.lastAt].every(Number.isFinite)) return { error: 'Sauvegarde corrompue.' };
+  }
+  return { progress: { version: 1, questions: p.questions, sessions: p.sessions } };
+}
+
+// Fusionne deux progressions sans rien perdre : pour chaque question, on garde
+// l'état le plus récent ; les historiques de sessions sont réunis sans doublon.
+export function mergeProgress(a, b) {
+  const questions = { ...a.questions };
+  for (const [id, s] of Object.entries(b.questions)) {
+    const cur = questions[id];
+    if (!cur || s.lastAt > cur.lastAt || (s.lastAt === cur.lastAt && s.seen > cur.seen)) questions[id] = s;
+  }
+  const seen = new Set();
+  const sessions = [...a.sessions, ...b.sessions]
+    .filter((s) => {
+      const k = `${s.at}|${s.label}|${s.total}|${s.max}`;
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    })
+    .sort((x, y) => x.at - y.at)
+    .slice(-200);
+  return { version: 1, questions, sessions };
+}

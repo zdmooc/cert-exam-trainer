@@ -7,7 +7,9 @@ import {
   createSession, answer, finish, toggleFlag, goTo, canReveal, isExpired, remainingMs, answeredCount,
 } from './core/session.js';
 import { filterPool, selectQuestions, generateExam, fixedSet, listFixedSets, listSeries } from './core/selection.js';
-import { emptyProgress, recordAnswer, recordSession, statOf, needsReview } from './core/progress.js';
+import {
+  emptyProgress, recordAnswer, recordSession, statOf, needsReview, exportProgress, parseProgressFile, mergeProgress,
+} from './core/progress.js';
 import { createLocalStorage } from './adapters/storage.js';
 
 const $view = document.getElementById('view');
@@ -91,6 +93,8 @@ function viewHome() {
     ${lastExam ? `<div class="card"><div class="row"><span>Dernier examen blanc</span>
       <span class="badge ${lastExam.go ? 'ok' : lastExam.passed ? '' : 'ko'}">${lastExam.total}/${lastExam.max}</span></div>
       <p class="muted small">Seuil ${e.passMark}/${e.maxPoints} · objectif avant de réserver ${e.goMark}/${e.maxPoints}</p></div>` : ''}
+    ${backupDue() ? `<div class="card small"><div class="row"><span>Pense à sauvegarder ta progression.</span>
+      <button class="btn compact" data-action="export">Exporter</button></div></div>` : ''}
     ${ongoing ? `<button class="btn primary" data-action="resume">Reprendre la session<span class="sub">&nbsp;· ${answeredCount(S.session)}/${S.session.items.length}</span></button>` : ''}
     <button class="btn" data-action="go" data-view="train"><span>Entraînement<span class="sub">Correction et explication après chaque question</span></span></button>
     <button class="btn" data-action="go" data-view="exam"><span>Examen blanc<span class="sub">${e.questionCount} questions · ${e.durationMinutes} min · correction à la fin</span></span></button>
@@ -292,12 +296,76 @@ function viewStats() {
     <h3>Dernières sessions</h3>
     ${hist.length ? `<ul class="list">${hist.map((h) => `<li class="row"><span>${esc(h.label)}<br><span class="muted small">${new Date(h.at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</span></span>
       <span class="badge ${h.go ? 'ok' : h.passed ? '' : 'ko'}">${h.total}/${h.max}</span></li>`).join('')}</ul>` : '<p class="muted">Aucune session terminée.</p>'}
+    <h3>Sauvegarde</h3>
+    <p class="muted small">Ta progression est stockée dans ce navigateur. Exporte-la régulièrement pour la retrouver sur un autre appareil ou après un effacement des données. L’import fusionne : rien n’est perdu.</p>
+    <p class="small">${lastExportText()}</p>
+    <button class="btn" data-action="export"><span>Exporter ma progression<span class="sub">Fichier à enregistrer (Drive, e-mail, fichiers du téléphone)</span></span></button>
+    <button class="btn" data-action="import"><span>Importer une sauvegarde<span class="sub">Fusionne avec la progression de cet appareil</span></span></button>
+    <input type="file" id="import-file" accept="application/json,.json" hidden>
     <h3>Données</h3>
     ${S.confirm === 'reset'
       ? `<div class="card"><p>Effacer toute la progression ${esc(S.pack.name)} sur cet appareil ?</p>
           <button class="btn danger" data-action="confirm-reset">Effacer</button><button class="btn" data-action="cancel">Annuler</button></div>`
       : '<button class="btn danger" data-action="reset">Effacer ma progression</button>'}`;
 }
+
+// ---------- Sauvegarde ----------
+
+function lastExportText() {
+  const at = S.store.get('lastExport');
+  if (!at) return 'Aucune sauvegarde exportée depuis cet appareil.';
+  const days = Math.floor((Date.now() - at) / 86_400_000);
+  return `Dernière sauvegarde : ${days === 0 ? 'aujourd’hui' : days === 1 ? 'hier' : `il y a ${days} jours`}.`;
+}
+
+function backupDue() {
+  const seen = Object.keys(S.progress.questions).length;
+  const at = S.store.get('lastExport');
+  return seen >= 20 && (!at || Date.now() - at > 14 * 86_400_000);
+}
+
+async function doExport() {
+  const day = new Date().toISOString().slice(0, 10);
+  const name = `cert-trainer-${S.pack.id}-${day}.json`;
+  const json = JSON.stringify(exportProgress(S.pack.id, S.progress));
+  const file = new File([json], name, { type: 'application/json' });
+  try {
+    if (navigator.canShare?.({ files: [file] })) {
+      await navigator.share({ files: [file], title: 'Sauvegarde Cert Exam Trainer' });
+    } else {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(file);
+      a.download = name;
+      document.body.append(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 10_000);
+    }
+    S.store.set('lastExport', Date.now());
+    render();
+    alertInline(`Sauvegarde créée : ${name}`);
+  } catch (err) {
+    if (err?.name !== 'AbortError') alertInline('L’export a échoué. Réessaie.');
+  }
+}
+
+async function doImport(fileInput) {
+  const file = fileInput.files?.[0];
+  fileInput.value = '';
+  if (!file) return;
+  const { progress, error } = parseProgressFile(await file.text(), S.pack.id);
+  if (error) { alertInline(error); return; }
+  const before = Object.keys(S.progress.questions).length;
+  S.progress = mergeProgress(S.progress, progress);
+  save();
+  render();
+  const after = Object.keys(S.progress.questions).length;
+  alertInline(`Sauvegarde importée : ${after} questions suivies (${after - before} nouvelle(s)), ${S.progress.sessions.length} session(s) dans l’historique.`);
+}
+
+document.addEventListener('change', (ev) => {
+  if (ev.target.id === 'import-file') doImport(ev.target);
+});
 
 // ---------- Actions ----------
 
@@ -392,6 +460,8 @@ const actions = {
   'confirm-finish': () => endSession(),
   cancel: () => render(),
   review: (el) => { S.session = goTo(S.session, Number(el.dataset.index)); S.showGrid = false; navigate('session'); },
+  export: () => doExport(),
+  import: () => document.getElementById('import-file')?.click(),
   reset: () => rerenderWith('reset'),
   'confirm-reset': () => { S.progress = emptyProgress(); S.session = null; S.store.remove('lastSession'); S.store.remove('offsets'); save(); navigate('home'); },
 };

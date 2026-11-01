@@ -55,6 +55,12 @@
 
 Par question : `seen`, `correct`, `wrong`, `box` (Leitner 1–5), `lastAt`, `lastCorrect`. La difficulté est **mesurée** : `(wrong + 1) / (seen + 2)`.
 
+## Sauvegarde (fichier exporté)
+
+`{ "format": "cert-exam-trainer/progress", "version": 1, "pack": "togaf", "exportedAt": "…", "progress": { "questions": {…}, "sessions": […] } }`
+
+À l'import, la fusion garde pour chaque question l'état le plus récent (`lastAt`) et réunit les historiques sans doublon : importer deux fois ou depuis deux appareils ne fait rien perdre.
+
 ## Qualité des données (contrôlée en CI)
 
 - Identifiants uniques, domaine et examen connus du pack, 4 options non vides, une seule meilleure option, explication présente.

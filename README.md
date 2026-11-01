@@ -14,10 +14,11 @@ Premier pack : **TOGAF Enterprise Architecture** (Foundation OGEA-F101 et Practi
 | Examen blanc | Format officiel (F101 : 40 QCM en 60 min ; F102 : 8 scénarios en 90 min, barème 5/3/1/0). Correction à la fin uniquement. Examen généré selon la répartition officielle, ciblé sur tes faiblesses, ou l'un des 6 examens blancs du dépôt. |
 | Revoir mes erreurs | Boîtes de Leitner : une question ratée revient jusqu'à être réussie plusieurs fois. |
 | Progression | Maîtrise par domaine, taux de réussite, historique des examens. |
+| Sauvegarde | Export de la progression dans un fichier (partage Android : Drive, e-mail…) et import par fusion, sans perte. Rappel sur l'accueil après 14 jours sans sauvegarde. |
 
 Les options sont **mélangées à chaque affichage** : on ne peut pas mémoriser la position de la bonne réponse. Après réponse, la correction rappelle les options avec leur lettre d'origine, à laquelle les explications font référence.
 
-La progression est enregistrée **sur l'appareil** (stockage du navigateur) : elle ne suit pas d'un téléphone à l'autre.
+La progression est enregistrée **sur l'appareil** (stockage du navigateur). Pour changer d'appareil : *Progression › Exporter*, puis *Importer* sur l'autre appareil.
 
 ## Architecture
 
