@@ -305,11 +305,73 @@ for (const file of mockFiles) {
   }
 }
 
+// ---------- 5. Objectifs X2202 (matrice de traçabilité du dépôt de cours) ----------
+// La matrice associe chaque objectif à des exercices « candidats » : ce rattachement
+// n'est pas une validation (statut « Candidat précis — non relu » dans la source).
+
+const MATRIX = '14-official-sources/06-x2202-learning-outcome-traceability.md';
+const CODE_TO_ID = {
+  Q: (n) => `togaf-f101-q${n}`, S: (n) => `togaf-f102-s${n}`, XP: (n) => `togaf-f102-xp${n}`,
+  XF: (n) => `togaf-f101-xf${n}`, F: (n) => `togaf-f101-f${n}`, D: (n) => `togaf-f101-d${n}`, A: (n) => `togaf-f102-a${n}`,
+};
+const REF = /\b(XP|XF|Q|S|F|D|A)(\d{2,3})(?:\s*[–-]\s*(?:XP|XF|Q|S|F|D|A)?(\d{2,3}))?\b/g;
+
+function expandRefs(cell, ctx) {
+  const ids = [];
+  for (const m of cell.matchAll(REF)) {
+    const [, prefix, from, to] = m;
+    const width = from.length;
+    const end = to ? Number(to) : Number(from);
+    if (end < Number(from) || end - Number(from) > 60) throw new Error(`${ctx} : plage invalide « ${m[0]} »`);
+    for (let n = Number(from); n <= end; n++) ids.push(CODE_TO_ID[prefix](String(n).padStart(width, '0')));
+  }
+  return ids;
+}
+
+const byId = new Map(questions.map((q) => [q.id, q]));
+const objectives = [];
+const unknownRefs = [];
+const matrixText = read(MATRIX);
+let unitLabel = '';
+for (const line of matrixText.split('\n')) {
+  const h = line.match(/^## (L[12]) U(\d) — (.*?)(?: \(\d+ objectifs?\))?$/);
+  if (h) { unitLabel = h[3].trim(); continue; }
+  const row = line.match(/^\| (L([12])\.(\d)\.(\d+)) \|(.*)\|\s*$/);
+  if (!row) continue;
+  const [, id, level, unit] = row;
+  const cells = row[5].split('|').map((c) => c.trim());
+  const [label, courseCell, refsCell, status = ''] = cells;
+  const coursePath = (courseCell.match(/\]\(([^)]+)\)/) ?? [])[1];
+  const refs = expandRefs(refsCell, id);
+  for (const ref of refs) {
+    const q = byId.get(ref);
+    if (!q) { unknownRefs.push(`${id} → ${ref}`); continue; }
+    q.los = [...new Set([...(q.los ?? []), id])];
+  }
+  objectives.push({
+    id, level: Number(level), unit: Number(unit), unitLabel,
+    label: plain(label),
+    course: coursePath ? join('14-official-sources', coursePath).replace(/\\/g, '/') : null,
+    bloom: (status.match(/Bloom officiel\s*:\s*([\w_]+)/) ?? [])[1] ?? null,
+    review: plain(status.split(';')[0]),
+    questionCount: refs.filter((r) => byId.has(r)).length,
+  });
+}
+if (objectives.length === 0) throw new Error(`${MATRIX} : aucun objectif lu`);
+if (unknownRefs.length) {
+  throw new Error(`${MATRIX} : ${unknownRefs.length} référence(s) sans question correspondante :\n  ${unknownRefs.join('\n  ')}`);
+}
+for (const q of questions) if (q.los) q.los.sort((a, b) => a.localeCompare(b, 'fr', { numeric: true }));
+
 mkdirSync(out, { recursive: true });
 writeFileSync(join(out, 'questions.json'), JSON.stringify(questions, null, 1) + '\n');
+writeFileSync(join(out, 'objectives.json'), JSON.stringify(objectives, null, 1) + '\n');
 const count = (f) => questions.filter(f).length;
 const withRat = count((q) => q.options.some((o) => o.rationale));
 console.log(`Pack TOGAF : ${questions.length} questions (${withRat} avec justification par option)`);
+const orphans = objectives.filter((o) => o.questionCount === 0);
+console.log(`Objectifs X2202 : ${objectives.length}, ${objectives.length - orphans.length} avec au moins une question, ${questions.filter((q) => q.los).length} questions rattachées (rattachement candidat, non relu)`);
+if (orphans.length) console.log(`  Objectifs sans question : ${orphans.map((o) => o.id).join(', ')}`);
 for (const ex of ['f101', 'f102']) {
   const bySeries = {};
   for (const q of questions.filter((x) => x.exam === ex)) bySeries[q.series] = (bySeries[q.series] ?? 0) + 1;
