@@ -132,5 +132,21 @@
       "id": "conformance",
       "label": "Conformité et migration"
     }
+  ],
+  "resets": [
+    {
+      "id": "2026-11-02-practitioner-s-rescore",
+      "reason": "Barème des scénarios S corrigé dans le dépôt de cours (PR #7)",
+      "questions": [
+        "togaf-f102-s009",
+        "togaf-f102-s013",
+        "togaf-f102-s019",
+        "togaf-f102-s020",
+        "togaf-f102-s023",
+        "togaf-f102-s024",
+        "togaf-f102-s028",
+        "togaf-f102-s056"
+      ]
+    }
   ]
 }

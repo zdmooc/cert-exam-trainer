@@ -48,11 +48,11 @@ export function selectQuestions(pool, { strategy = 'random', count = 20, offset 
     case 'random':
       return shuffle(pool, rng).slice(0, count);
     case 'adaptive':
-      return weightedSample(pool, (q) => adaptiveWeight(statOf(progress, q.id), now), count, rng);
+      return weightedSample(pool, (q) => adaptiveWeight(statOf(progress, q), now), count, rng);
     case 'review': {
-      const due = pool.filter((q) => needsReview(statOf(progress, q.id)));
+      const due = pool.filter((q) => needsReview(statOf(progress, q)));
       return shuffle(due, rng)
-        .sort((a, b) => difficulty(statOf(progress, b.id)) - difficulty(statOf(progress, a.id)))
+        .sort((a, b) => difficulty(statOf(progress, b)) - difficulty(statOf(progress, a)))
         .slice(0, count);
     }
     default:
@@ -68,7 +68,7 @@ export function generateExam(questions, examDef, { rng, progress, adaptive = fal
     const pool = filterPool(questions, { exam: examDef.id, domains: [d.id] });
     if (pool.length < d.count) throw new Error(`Banque insuffisante pour le domaine ${d.id}`);
     const chosen = adaptive
-      ? weightedSample(pool, (q) => adaptiveWeight(statOf(progress, q.id), now), d.count, rng)
+      ? weightedSample(pool, (q) => adaptiveWeight(statOf(progress, q), now), d.count, rng)
       : shuffle(pool, rng).slice(0, d.count);
     picked.push(...chosen);
   }

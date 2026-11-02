@@ -11,6 +11,7 @@ Toute modification passe par une pull request et doit respecter :
 | Le mélange des options équilibre les positions (P7) | Test `le mélange répartit la bonne réponse sur les 4 positions` |
 | Les packs JSON ne sont pas modifiés à la main (P4) | La CI régénère le pack depuis le dépôt de cours |
 | Aucune dépendance serveur (P1, P2) | Revue ; l'appli est servie en statique |
+| Une progression ne survit pas à un changement de barème (P7) | Empreinte `rev` vérifiée par le validateur ; tests du moteur (ADR-004) |
 
 **Définition de « terminé » :** tests verts, validation verte, appli vérifiée sur un écran mobile, documentation à jour (ce dossier + ADR si décision structurante).
 

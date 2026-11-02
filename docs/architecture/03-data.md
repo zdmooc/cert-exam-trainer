@@ -38,6 +38,7 @@
   ],
   "series": "bank",
   "lo": "L2.4.2",
+  "rev": "3f9a1c02",
   "explanation": "…",
   "topic": "Architecture Development — Phase B vs Phase C",
   "source": "10-practitioner-scenarios/04-bcd-s022-s030.md"
@@ -49,11 +50,16 @@
 - `key` est la lettre d'origine, utilisée seulement pour relier l'explication aux options.
 - `series` regroupe les questions par série d'exercices (déclarées dans `pack.json` → `series`) ; filtrable en entraînement.
 - `lo` (facultatif) est l'objectif d'apprentissage du syllabus (ex. X2202 `L2.1.7`).
+- `rev` est l'empreinte de la question (8 caractères de SHA-256 sur l'énoncé, le texte et les points des options ; voir `content-pipeline/rev.mjs`). Elle ne change pas pour une justification ou une explication (ADR-004).
 - `rationale` (facultatif, par option) justifie le score de l'option ; l'appli l'affiche sous chaque réponse dans la correction.
 
 ## Progression (stockage local, clé `cet:<pack>:progress`)
 
-Par question : `seen`, `correct`, `wrong`, `box` (Leitner 1–5), `lastAt`, `lastCorrect`. La difficulté est **mesurée** : `(wrong + 1) / (seen + 2)`.
+Par question : `seen`, `correct`, `wrong`, `box` (Leitner 1–5), `lastAt`, `lastCorrect`, `rev` (version de la question au moment de la réponse). La difficulté est **mesurée** : `(wrong + 1) / (seen + 2)`.
+
+- Une statistique dont la `rev` ne correspond plus à la question est ignorée : la question repart de zéro (ADR-004).
+- Une statistique sans `rev` (antérieure à cette règle) est conservée, sauf si le pack déclare une remise à zéro (`pack.json` → `resets`), appliquée une seule fois et tracée dans `migrations`.
+- `sessions` : historique des sessions terminées ; la règle « Prêt à réserver » (`bookingReadiness`) lit les 3 derniers examens blancs de l'examen concerné.
 
 ## Sauvegarde (fichier exporté)
 

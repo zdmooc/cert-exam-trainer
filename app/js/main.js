@@ -9,6 +9,7 @@ import {
 import { filterPool, selectQuestions, generateExam, fixedSet, listFixedSets, listSeries } from './core/selection.js';
 import {
   emptyProgress, recordAnswer, recordSession, statOf, needsReview, exportProgress, parseProgressFile, mergeProgress,
+  applyResets, bookingReadiness,
 } from './core/progress.js';
 import { createLocalStorage } from './adapters/storage.js';
 
@@ -28,6 +29,10 @@ let timerHandle = null;
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const exam = () => S.pack.exams.find((e) => e.id === S.examId);
 const domainLabel = (id) => exam()?.domains.find((d) => d.id === id)?.label ?? id;
+const readiness = () => bookingReadiness(S.progress.sessions, exam());
+const readinessBadge = (r) => (r.ready
+  ? '<span class="badge ok">Prêt à réserver</span>'
+  : `<span class="badge">Objectif réservation ${r.streak}/${r.required}</span>`);
 const seriesLabel = (id) => (id && id !== 'bank' && id !== 'mock' ? S.pack.series?.find((x) => x.id === id)?.label ?? id : '');
 const isGraded = (q) => Math.max(...q.options.map((o) => o.points)) > 1;
 const rng = () => createRng(Date.now() ^ Math.floor(Math.random() * 1e9));
@@ -67,7 +72,7 @@ function examStats() {
   const pool = filterPool(S.questions, { exam: S.examId, set: null });
   let seen = 0, mastered = 0, review = 0;
   for (const q of pool) {
-    const s = statOf(S.progress, q.id);
+    const s = statOf(S.progress, q);
     if (s.seen) seen++;
     if (s.box >= 3) mastered++;
     if (needsReview(s)) review++;
@@ -92,7 +97,7 @@ function viewHome() {
     </div>
     ${lastExam ? `<div class="card"><div class="row"><span>Dernier examen blanc</span>
       <span class="badge ${lastExam.go ? 'ok' : lastExam.passed ? '' : 'ko'}">${lastExam.total}/${lastExam.max}</span></div>
-      <p class="muted small">Seuil ${e.passMark}/${e.maxPoints} · objectif avant de réserver ${e.goMark}/${e.maxPoints}</p></div>` : ''}
+      <div class="row" style="margin-top:6px"><span class="muted small">Seuil ${e.passMark}/${e.maxPoints} · objectif ${e.goMark}/${e.maxPoints} sur ${readiness().required} examens blancs consécutifs</span>${readinessBadge(readiness())}</div></div>` : ''}
     ${backupDue() ? `<div class="card small"><div class="row"><span>Pense à sauvegarder ta progression.</span>
       <button class="btn compact" data-action="export">Exporter</button></div></div>` : ''}
     ${ongoing ? `<button class="btn primary" data-action="resume">Reprendre la session<span class="sub">&nbsp;· ${answeredCount(S.session)}/${S.session.items.length}</span></button>` : ''}
@@ -253,8 +258,8 @@ function viewResult() {
       <p class="score">${r.total}/${r.max}</p>
       <p>${r.percent} % · ${mins} min ·
         ${r.passed ? '<span class="badge ok">Seuil atteint</span>' : '<span class="badge ko">Sous le seuil</span>'}
-        ${official ? (r.go ? ' <span class="badge ok">Prêt à réserver</span>' : '') : ''}</p>
-      <p class="muted small">Seuil ${r.passMark}/${r.max}${r.goMark != null ? ` · objectif avant de réserver ${r.goMark}/${r.max}` : ''}${official ? '' : ' (ramenés à la taille de la série)'}.</p>
+        ${official ? ` ${readinessBadge(readiness())}` : ''}</p>
+      <p class="muted small">Seuil ${r.passMark}/${r.max}${r.goMark != null ? ` · objectif avant de réserver ${r.goMark}/${r.max}${official ? `, à atteindre sur ${readiness().required} examens blancs consécutifs` : ''}` : ''}${official ? '' : ' (ramenés à la taille de la série)'}.</p>
     </div>
     <h3>Par domaine</h3>
     ${Object.entries(r.byDomain).map(([d, v]) => {
@@ -278,7 +283,7 @@ function viewStats() {
     const pool = filterPool(S.questions, { exam: S.examId, domains: [d.id], set: null });
     let seen = 0, correct = 0, answers = 0, review = 0, mastered = 0;
     for (const q of pool) {
-      const st = statOf(S.progress, q.id);
+      const st = statOf(S.progress, q);
       if (st.seen) seen++;
       answers += st.seen;
       correct += st.correct;
@@ -356,7 +361,10 @@ async function doImport(fileInput) {
   const { progress, error } = parseProgressFile(await file.text(), S.pack.id);
   if (error) { alertInline(error); return; }
   const before = Object.keys(S.progress.questions).length;
-  S.progress = mergeProgress(S.progress, progress);
+  S.progress = mergeProgress(S.progress, progress, {
+    revById: new Map(S.questions.map((q) => [q.id, q.rev])),
+    resets: S.pack.resets ?? [],
+  });
   save();
   render();
   const after = Object.keys(S.progress.questions).length;
@@ -382,7 +390,7 @@ function endSession() {
   const r = scoreSession(S.session, S.byId, exam());
   if (S.session.mode === 'exam') {
     for (const it of S.session.items) {
-      if (it.answer !== null) S.progress = recordAnswer(S.progress, it.questionId, scoreQuestion(S.byId.get(it.questionId), it.answer).correct);
+      if (it.answer !== null) S.progress = recordAnswer(S.progress, S.byId.get(it.questionId), scoreQuestion(S.byId.get(it.questionId), it.answer).correct);
     }
   }
   S.progress = recordSession(S.progress, {
@@ -444,7 +452,7 @@ const actions = {
     if (S.session.status === 'finished') { endSession(); return; }
     if (S.session.mode === 'training' && before === null) {
       const q = S.byId.get(s.items[s.current].questionId);
-      S.progress = recordAnswer(S.progress, q.id, scoreQuestion(q, el.dataset.key).correct);
+      S.progress = recordAnswer(S.progress, q, scoreQuestion(q, el.dataset.key).correct);
     }
     save(); render();
   },
@@ -519,7 +527,9 @@ async function boot() {
     S.questions = questions;
     S.byId = new Map(questions.map((q) => [q.id, q]));
     S.store = createLocalStorage(`cet:${pack.id}:`);
-    S.progress = S.store.get('progress', emptyProgress());
+    // Remises à zéro déclarées par le pack (barème corrigé…), appliquées une seule fois.
+    S.progress = applyResets(S.store.get('progress', emptyProgress()), pack.resets);
+    S.store.set('progress', S.progress);
     const prefs = S.store.get('prefs', {});
     S.examId = pack.exams.some((e) => e.id === prefs.examId) ? prefs.examId : pack.exams[0].id;
     S.setup = { ...S.setup, ...(prefs.setup ?? {}) };

@@ -5,6 +5,7 @@
 
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { questionRev } from './rev.mjs';
 
 const dir = process.argv[2];
 if (!dir) {
@@ -33,6 +34,7 @@ for (const q of questions) {
   if (max <= 0) err(q, 'aucune bonne réponse');
   if (q.options.filter((o) => o.points === max).length !== 1) err(q, 'plusieurs meilleures réponses');
   if (!q.explanation?.trim()) err(q, 'explication manquante');
+  if (q.rev !== questionRev(q)) err(q, `empreinte « rev » absente ou périmée (${q.rev ?? 'aucune'})`);
 }
 
 // Les examens blancs figés doivent respecter le format officiel.
@@ -50,6 +52,11 @@ for (const exam of pack.exams) {
   for (const d of exam.domains) {
     if (bank.filter((q) => q.domain === d.id).length < d.count) errors.push(`${exam.id} : banque insuffisante pour générer un examen (domaine ${d.id})`);
   }
+}
+
+// Les remises à zéro déclarées doivent viser des questions existantes.
+for (const r of pack.resets ?? []) {
+  for (const id of r.questions) if (!ids.has(id)) errors.push(`remise à zéro ${r.id} : question inconnue ${id}`);
 }
 
 // Information : position d'origine des meilleures réponses. Le moteur mélange les
