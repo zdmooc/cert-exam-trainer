@@ -33,7 +33,10 @@
   "explanation": "L'EA organise la cohérence et la transformation de l'entreprise. B est trop technique, C n'est qu'un moyen, D relève du delivery.",
   "topic": "Concepts — Enterprise Architecture",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "a9dcc83e"
+  "rev": "a9dcc83e",
+  "los": [
+   "L1.1.2"
+  ]
  },
  {
   "id": "togaf-f101-q002",
@@ -68,7 +71,11 @@
   "explanation": "La valeur de l'Enterprise Architecture vient de l'alignement entre stratégie, décisions et transformation. A confond production de vues et impact réel ; C relève du pilotage de projet ; D traite la standardisation technologique comme une fin en soi.",
   "topic": "Concepts — Value of Architecture",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "35ede5af"
+  "rev": "35ede5af",
+  "los": [
+   "L1.1.2",
+   "L1.1.3"
+  ]
  },
  {
   "id": "togaf-f101-q003",
@@ -103,7 +110,10 @@
   "explanation": "TOGAF fournit un cadre et l'ADM. A, B et D décrivent d'autres types d'objets.",
   "topic": "Concepts — What is TOGAF",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "4f71d7b6"
+  "rev": "4f71d7b6",
+  "los": [
+   "L1.1.4"
+  ]
  },
  {
   "id": "togaf-f101-q004",
@@ -138,7 +148,10 @@
   "explanation": "ADM = Architecture Development Method. Les autres développements sont faux.",
   "topic": "Concepts — ADM",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "cec59e26"
+  "rev": "cec59e26",
+  "los": [
+   "L1.3.1"
+  ]
  },
  {
   "id": "togaf-f101-q005",
@@ -173,7 +186,10 @@
   "explanation": "Les capacités et processus sont d'abord métier. B traite l'information, C les applications, D les plateformes techniques.",
   "topic": "Concepts — Four Domains",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "ceff4942"
+  "rev": "ceff4942",
+  "los": [
+   "L1.1.5"
+  ]
  },
  {
   "id": "togaf-f101-q006",
@@ -208,7 +224,10 @@
   "explanation": "La Data Architecture couvre structure, gouvernance, flux et lifecycle des données. A/C/D relèvent d'autres préoccupations.",
   "topic": "Concepts — Data Architecture",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "bcd7566d"
+  "rev": "bcd7566d",
+  "los": [
+   "L1.1.5"
+  ]
  },
  {
   "id": "togaf-f101-q007",
@@ -244,7 +263,10 @@
   "explanation": "L'Application Architecture traite le paysage applicatif et les services. A est métier ; B hors sujet ; D est technologique.",
   "topic": "Concepts — Application Architecture",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "6601ad2d"
+  "rev": "6601ad2d",
+  "los": [
+   "L1.1.5"
+  ]
  },
  {
   "id": "togaf-f101-q008",
@@ -279,7 +301,10 @@
   "explanation": "Les plateformes et technologies relèvent du domaine Technology. A/B/C appartiennent à d'autres concepts.",
   "topic": "Concepts — Technology Architecture",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "1819a3e1"
+  "rev": "1819a3e1",
+  "los": [
+   "L1.1.5"
+  ]
  },
  {
   "id": "togaf-f101-q009",
@@ -315,7 +340,10 @@
   "explanation": "Une capability décrit une aptitude métier indépendante d'une solution particulière. B/C sont des moyens possibles ; D est différent.",
   "topic": "Concepts — Capability",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "c8567185"
+  "rev": "c8567185",
+  "los": [
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q010",
@@ -350,7 +378,10 @@
   "explanation": "Le terme couvre sponsor, métier, sécurité, opérations, etc. A et C sont trop restrictifs ; D est une catégorie de contenu.",
   "topic": "Concepts — Stakeholders",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "c781a89c"
+  "rev": "c781a89c",
+  "los": [
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q011",
@@ -385,7 +416,10 @@
   "explanation": "Le concern exprime ce qui importe au stakeholder. A/B/D sont d'autres objets.",
   "topic": "Concepts — Concerns",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "7b2b2bdd"
+  "rev": "7b2b2bdd",
+  "los": [
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q012",
@@ -420,7 +454,11 @@
   "explanation": "Le viewpoint définit comment produire la view. A décrit la view ; B/C sont différents.",
   "topic": "Concepts — View/Viewpoint",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "37115562"
+  "rev": "37115562",
+  "los": [
+   "L1.2.1",
+   "L1.7.1"
+  ]
  },
  {
   "id": "togaf-f101-q013",
@@ -455,7 +493,11 @@
   "explanation": "La view est la représentation produite pour répondre à des concerns. B/C/D sont d'autres notions.",
   "topic": "Concepts — View/Viewpoint",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "c949a839"
+  "rev": "c949a839",
+  "los": [
+   "L1.2.1",
+   "L1.7.1"
+  ]
  },
  {
   "id": "togaf-f101-q014",
@@ -490,7 +532,11 @@
   "explanation": "On part du stakeholder et de ses concerns pour choisir un viewpoint et produire une view. Les autres inversent la logique.",
   "topic": "Concepts — Stakeholders, Concerns, Views",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "5307f0ea"
+  "rev": "5307f0ea",
+  "los": [
+   "L1.2.1",
+   "L1.7.1"
+  ]
  },
  {
   "id": "togaf-f101-q015",
@@ -526,7 +572,11 @@
   "explanation": "Un principe guide les décisions. A/D sont opérationnels ; B est faux car principe et requirement sont distincts.",
   "topic": "Concepts — Architecture Principles",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "ae1e337e"
+  "rev": "ae1e337e",
+  "los": [
+   "L1.2.1",
+   "L1.4.2"
+  ]
  },
  {
   "id": "togaf-f101-q016",
@@ -561,7 +611,10 @@
   "explanation": "Le principe est durable et directeur ; la requirement est contextuelle et testable. A/B/C sont faux.",
   "topic": "Concepts — Principle vs Requirement",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "dda6a03a"
+  "rev": "dda6a03a",
+  "los": [
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q017",
@@ -597,7 +650,10 @@
   "explanation": "Baseline = current state. B = Target ; C = Transition ; D n'est pas une architecture.",
   "topic": "Concepts — Baseline/Target/Transition",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "e74b6560"
+  "rev": "e74b6560",
+  "los": [
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q018",
@@ -632,7 +688,10 @@
   "explanation": "Target = future desired state. A est Baseline ; C/D ne définissent pas une Target.",
   "topic": "Concepts — Baseline/Target/Transition",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "9adfe226"
+  "rev": "9adfe226",
+  "los": [
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q019",
@@ -667,7 +726,10 @@
   "explanation": "Elle décrit un plateau intermédiaire cohérent. A est un planning ; B/D sont différents.",
   "topic": "Concepts — Transition Architecture",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "b17bfab3"
+  "rev": "b17bfab3",
+  "los": [
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q020",
@@ -702,7 +764,11 @@
   "explanation": "Le gap montre ce qui doit changer. A/B/C sont d'autres objets.",
   "topic": "Concepts — Gap",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "c103f9ca"
+  "rev": "c103f9ca",
+  "los": [
+   "L1.1.12",
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q021",
@@ -738,7 +804,11 @@
   "explanation": "C'est un mécanisme de classification/contexte. B décrit plutôt le rôle du Repository ; C/D sont hors sujet.",
   "topic": "Concepts — Enterprise Continuum",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "99556d20"
+  "rev": "99556d20",
+  "los": [
+   "L1.1.7",
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q022",
@@ -773,7 +843,11 @@
   "explanation": "Le Repository stocke et organise les assets. C décrit le Continuum de façon simplifiée ; A/D sont faux.",
   "topic": "Concepts — Architecture Repository",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "3a535ccd"
+  "rev": "3a535ccd",
+  "los": [
+   "L1.1.8",
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q023",
@@ -808,7 +882,11 @@
   "explanation": "C'est la distinction fondamentale : l'Enterprise Continuum permet de classifier et contextualiser les assets ; l'Architecture Repository sert à les conserver et les gérer.",
   "topic": "Concepts — Repository vs Continuum",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "43b6e8c9"
+  "rev": "43b6e8c9",
+  "los": [
+   "L1.1.7",
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q024",
@@ -844,7 +922,11 @@
   "explanation": "Elle couvre rôles, gouvernance, processus, compétences et repository. A/B/C sont trop limités.",
   "topic": "Concepts — Architecture Capability",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "c5269f94"
+  "rev": "c5269f94",
+  "los": [
+   "L1.1.10",
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q025",
@@ -879,7 +961,10 @@
   "explanation": "Il soutient décisions, conformité et exceptions. B/C/D ne correspondent pas.",
   "topic": "Concepts — Architecture Capability/Governance",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "fdea5496"
+  "rev": "fdea5496",
+  "los": [
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q026",
@@ -914,7 +999,10 @@
   "explanation": "Les requirements sont identifiées, maintenues et tracées tout au long de l'ADM. A/C/D sont faux.",
   "topic": "Concepts — Requirements Management",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "93063e89"
+  "rev": "93063e89",
+  "los": [
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q027",
@@ -949,7 +1037,10 @@
   "explanation": "Une requirement d'architecture doit être compréhensible, traçable et vérifiable. A décrit un objectif trop général, B perd la traçabilité et D préjuge d'une solution plutôt que d'exprimer le besoin.",
   "topic": "Concepts — Requirements",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "dc85a8a5"
+  "rev": "dc85a8a5",
+  "los": [
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q028",
@@ -984,7 +1075,10 @@
   "explanation": "Un deliverable peut contenir plusieurs artifacts. A est trop restrictif ; B peut être un SBB ; C est différent.",
   "topic": "Concepts — Deliverable",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "dd58e870"
+  "rev": "dd58e870",
+  "los": [
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q029",
@@ -1019,7 +1113,10 @@
   "explanation": "Un artifact représente du contenu architectural. B/C/D sont faux.",
   "topic": "Concepts — Artifact",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "f921ee0e"
+  "rev": "f921ee0e",
+  "los": [
+   "L1.2.1"
+  ]
  },
  {
   "id": "togaf-f101-q030",
@@ -1056,7 +1153,11 @@
   "explanation": "Les building blocks structurent l'architecture. A/C/D ne sont pas des building blocks.",
   "topic": "Concepts — Building Blocks",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "35cdaecb"
+  "rev": "35cdaecb",
+  "los": [
+   "L1.2.1",
+   "L1.7.2"
+  ]
  },
  {
   "id": "togaf-f101-q031",
@@ -1093,7 +1194,10 @@
   "explanation": "Un ABB décrit une capacité architecturale sans imposer sa réalisation. A et B se rapprochent des SBB (produits ou composants de solution sélectionnés) ; D relève d'un work package de migration.",
   "topic": "Concepts — ABB",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "617dbc36"
+  "rev": "617dbc36",
+  "los": [
+   "L1.7.2"
+  ]
  },
  {
   "id": "togaf-f101-q032",
@@ -1128,7 +1232,10 @@
   "explanation": "Le SBB réalise ou contribue à réaliser les capacités décrites par les ABB. A inverse la relation ; B/C sont faux.",
   "topic": "Concepts — SBB",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "4aba68c3"
+  "rev": "4aba68c3",
+  "los": [
+   "L1.7.2"
+  ]
  },
  {
   "id": "togaf-f101-q033",
@@ -1164,7 +1271,10 @@
   "explanation": "L'ABB exprime la capacité, le SBB une réalisation plus concrète. B/C/D mélangent des catégories.",
   "topic": "Concepts — ABB vs SBB",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "1b3126d8"
+  "rev": "1b3126d8",
+  "los": [
+   "L1.7.2"
+  ]
  },
  {
   "id": "togaf-f101-q034",
@@ -1199,7 +1309,10 @@
   "explanation": "L'Architecture Landscape conserve la vue des architectures à différents niveaux. A renvoie aux contrats et à la gouvernance, C à la base de standards, D à la fonction de classification de l'Enterprise Continuum.",
   "topic": "Concepts — Architecture Repository",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "c5798439"
+  "rev": "c5798439",
+  "los": [
+   "L1.1.8"
+  ]
  },
  {
   "id": "togaf-f101-q035",
@@ -1235,7 +1348,10 @@
   "explanation": "Elle soutient la standardisation. A/B/D ne correspondent pas à sa finalité.",
   "topic": "Concepts — Architecture Repository",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "1be080bf"
+  "rev": "1be080bf",
+  "los": [
+   "L1.1.8"
+  ]
  },
  {
   "id": "togaf-f101-q036",
@@ -1272,7 +1388,10 @@
   "explanation": "Il trace la gouvernance. A/B/C sont hors périmètre.",
   "topic": "Concepts — Architecture Repository",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "e6154c34"
+  "rev": "e6154c34",
+  "los": [
+   "L1.1.8"
+  ]
  },
  {
   "id": "togaf-f101-q037",
@@ -1307,7 +1426,10 @@
   "explanation": "Elle facilite réutilisation et apprentissage. B/C/D sont faux.",
   "topic": "Concepts — Architecture Repository",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "20b2ac7e"
+  "rev": "20b2ac7e",
+  "los": [
+   "L1.1.8"
+  ]
  },
  {
   "id": "togaf-f101-q038",
@@ -1413,7 +1535,10 @@
   "explanation": "Le scope rend le travail gouvernable et proportionné. A/B/C sont contraires à la méthode.",
   "topic": "Concepts — Scope",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "2e2a536b"
+  "rev": "2e2a536b",
+  "los": [
+   "L1.3.5"
+  ]
  },
  {
   "id": "togaf-f101-q041",
@@ -1518,7 +1643,10 @@
   "explanation": "L'itération permet adaptation et convergence. A/B/D sont faux.",
   "topic": "Concepts — Iteration",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "43fb5239"
+  "rev": "43fb5239",
+  "los": [
+   "L1.3.3"
+  ]
  },
  {
   "id": "togaf-f101-q044",
@@ -2083,7 +2211,10 @@
   "explanation": "Une architecture efficace soutient des décisions traçables et les résultats métier. A et B mesurent la documentation, D un indicateur technique partiel ; aucun ne démontre à lui seul l'alignement et l'utilité de l'architecture.",
   "topic": "Concepts — Value of Architecture",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "e0376d52"
+  "rev": "e0376d52",
+  "los": [
+   "L1.1.3"
+  ]
  },
  {
   "id": "togaf-f101-q060",
@@ -2119,7 +2250,10 @@
   "explanation": "Il relie motivation, parties prenantes, exigences, architecture, transformation et gouvernance. Les autres commencent par la solution ou mélangent les concepts.",
   "topic": "Concepts — Synthesis",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "a32019a1"
+  "rev": "a32019a1",
+  "los": [
+   "L1.3.25"
+  ]
  },
  {
   "id": "togaf-f101-q061",
@@ -2154,7 +2288,10 @@
   "explanation": "Preliminary établit la capacité d'architecture, sa gouvernance et le tailoring. B relève d'une Compliance Review, notamment en phase G ; C concerne surtout l'identification des solutions, work packages et transitions en phase E ; D relève de la planification de migration en phase F.",
   "topic": "ADM — Preliminary",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "33a67f8a"
+  "rev": "33a67f8a",
+  "los": [
+   "L1.3.7"
+  ]
  },
  {
   "id": "togaf-f101-q062",
@@ -2189,7 +2326,11 @@
   "explanation": "Preliminary prépare le fonctionnement et la gouvernance de la capacité d'architecture. A relève de la phase F (Migration Planning), C de la phase G (Implementation Governance) et D de la phase A (Architecture Vision).",
   "topic": "ADM — Preliminary vs Phase A",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "41465a30"
+  "rev": "41465a30",
+  "los": [
+   "L1.3.7",
+   "L1.3.8"
+  ]
  },
  {
   "id": "togaf-f101-q063",
@@ -2224,7 +2365,10 @@
   "explanation": "Gouvernance et rôles appartiennent à la capacité d'architecture. A=F, B=G, D=C.",
   "topic": "ADM — Preliminary",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "acc774d3"
+  "rev": "acc774d3",
+  "los": [
+   "L1.3.8"
+  ]
  },
  {
   "id": "togaf-f101-q064",
@@ -2259,7 +2403,10 @@
   "explanation": "Le tailoring rend l'ADM proportionné. A/B/C ne sont pas son objectif.",
   "topic": "ADM — Preliminary/Tailoring",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "e34586ee"
+  "rev": "e34586ee",
+  "los": [
+   "L1.3.8"
+  ]
  },
  {
   "id": "togaf-f101-q065",
@@ -2329,7 +2476,11 @@
   "explanation": "La Phase A établit une Vision et un périmètre de haut niveau. La priorisation des lots relève de F ; la vérification des SBB livrés relève de G ; la maintenance du Landscape concerne la gouvernance continue, notamment H.",
   "topic": "ADM — Phase A",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "539d3d4f"
+  "rev": "539d3d4f",
+  "los": [
+   "L1.3.9",
+   "L1.3.10"
+  ]
  },
  {
   "id": "togaf-f101-q067",
@@ -2364,7 +2515,10 @@
   "explanation": "La phase A clarifie d'abord le périmètre, les concerns et la valeur attendue. A relève surtout de C Data, B de D Technology et D de la planification/exécution ultérieure.",
   "topic": "ADM — Phase A",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "e7f660af"
+  "rev": "e7f660af",
+  "los": [
+   "L1.3.10"
+  ]
  },
  {
   "id": "togaf-f101-q068",
@@ -2400,7 +2554,10 @@
   "explanation": "Les stakeholders conditionnent views, requirements et décisions. A/B/C sont faux.",
   "topic": "ADM — Phase A/Stakeholders",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "0be6478d"
+  "rev": "0be6478d",
+  "los": [
+   "L1.3.10"
+  ]
  },
  {
   "id": "togaf-f101-q069",
@@ -2435,7 +2592,11 @@
   "explanation": "Elle aligne sans détailler toute la cible. B/C sont excessifs ; D est opérationnel.",
   "topic": "ADM — Phase A",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "a8909e58"
+  "rev": "a8909e58",
+  "los": [
+   "L1.3.9",
+   "L1.3.10"
+  ]
  },
  {
   "id": "togaf-f101-q070",
@@ -2470,7 +2631,10 @@
   "explanation": "Il formalise l'engagement. A/C/D ne correspondent pas.",
   "topic": "ADM — Phase A",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "4eecf2c2"
+  "rev": "4eecf2c2",
+  "los": [
+   "L1.3.10"
+  ]
  },
  {
   "id": "togaf-f101-q071",
@@ -2505,7 +2669,10 @@
   "explanation": "Les business goals donnent la direction et les bénéfices attendus de l'Architecture Vision. A et B anticipent des décisions de domaine, D relève de la planification des migrations en phase F.",
   "topic": "ADM — Phase A",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "ecdcda0b"
+  "rev": "ecdcda0b",
+  "los": [
+   "L1.3.10"
+  ]
  },
  {
   "id": "togaf-f101-q072",
@@ -2540,7 +2707,10 @@
   "explanation": "Le risque doit influencer scope, vision et gouvernance dès le départ.",
   "topic": "ADM — Phase A/Risk",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "ea0a0382"
+  "rev": "ea0a0382",
+  "los": [
+   "L1.3.10"
+  ]
  },
  {
   "id": "togaf-f101-q073",
@@ -2575,7 +2745,10 @@
   "explanation": "La Phase A établit l'Architecture Vision et le périmètre ; la Phase B développe la Business Architecture, notamment ses états Baseline/Target et ses gaps. Ce ne sont pas deux phases interchangeables.",
   "topic": "ADM — Phase A vs B",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "09d91082"
+  "rev": "09d91082",
+  "los": [
+   "L1.3.11"
+  ]
  },
  {
   "id": "togaf-f101-q074",
@@ -2610,7 +2783,10 @@
   "explanation": "La Phase B traite le métier : capabilities, processus et organisation. La Technology Architecture relève de D ; la planification détaillée des migrations de F ; la conformité des réalisations de G.",
   "topic": "ADM — Phase B",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "5dad82a9"
+  "rev": "5dad82a9",
+  "los": [
+   "L1.3.12"
+  ]
  },
  {
   "id": "togaf-f101-q075",
@@ -2645,7 +2821,10 @@
   "explanation": "Baseline = current business state. A/B/D sont autres sujets.",
   "topic": "ADM — Phase B",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "3d30119e"
+  "rev": "3d30119e",
+  "los": [
+   "L1.3.12"
+  ]
  },
  {
   "id": "togaf-f101-q076",
@@ -2682,7 +2861,10 @@
   "explanation": "La Target Business exprime le futur fonctionnement métier. A/B/C sont trop techniques ou limités.",
   "topic": "ADM — Phase B",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "fee99dba"
+  "rev": "fee99dba",
+  "los": [
+   "L1.3.12"
+  ]
  },
  {
   "id": "togaf-f101-q077",
@@ -2717,7 +2899,10 @@
   "explanation": "La Gap Analysis identifie ce qui doit changer. B/C/D ne sont pas l'output principal.",
   "topic": "ADM — Phase B",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "60f90da1"
+  "rev": "60f90da1",
+  "los": [
+   "L1.3.12"
+  ]
  },
  {
   "id": "togaf-f101-q078",
@@ -2753,7 +2938,10 @@
   "explanation": "Les capabilities sont centrales au métier. A/C/D relèvent davantage de Technology/Data.",
   "topic": "ADM — Phase B",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "626d2239"
+  "rev": "626d2239",
+  "los": [
+   "L1.3.12"
+  ]
  },
  {
   "id": "togaf-f101-q079",
@@ -2823,7 +3011,11 @@
   "explanation": "Phase C = Information Systems Architectures, Data + Application.",
   "topic": "ADM — Phase C",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "020086c4"
+  "rev": "020086c4",
+  "los": [
+   "L1.3.11",
+   "L1.3.13"
+  ]
  },
  {
   "id": "togaf-f101-q081",
@@ -2858,7 +3050,10 @@
   "explanation": "Data ownership et flux d'information relèvent de Phase C Data. La priorisation des projets relève de F ; Architecture Board est un mécanisme de gouvernance ; la conformité des solutions livrées relève de G.",
   "topic": "ADM — Phase C Data",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "c337897a"
+  "rev": "c337897a",
+  "los": [
+   "L1.3.13"
+  ]
  },
  {
   "id": "togaf-f101-q082",
@@ -2893,7 +3088,10 @@
   "explanation": "Le cycle Baseline→Target→Gap s'applique au domaine Data. A/C/D sont trop étroits.",
   "topic": "ADM — Phase C Data",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "f6b282f0"
+  "rev": "f6b282f0",
+  "los": [
+   "L1.3.13"
+  ]
  },
  {
   "id": "togaf-f101-q083",
@@ -2928,7 +3126,10 @@
   "explanation": "L'ownership soutient la gouvernance des données. A/B/D sont faux.",
   "topic": "ADM — Phase C Data",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "a299e920"
+  "rev": "a299e920",
+  "los": [
+   "L1.3.13"
+  ]
  },
  {
   "id": "togaf-f101-q084",
@@ -2963,7 +3164,10 @@
   "explanation": "La Data Architecture est plus large que la technologie de stockage.",
   "topic": "ADM — Phase C Data",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "33369069"
+  "rev": "33369069",
+  "los": [
+   "L1.3.13"
+  ]
  },
  {
   "id": "togaf-f101-q085",
@@ -2998,7 +3202,10 @@
   "explanation": "La Phase C Application définit les services applicatifs et leurs interactions. Les entités, propriétaires et règles de rétention sont du domaine Data (également en C), les capabilities/parcours de Business (B), les plateformes de Technology (D).",
   "topic": "ADM — Phase C Application",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "75a0a51f"
+  "rev": "75a0a51f",
+  "los": [
+   "L1.3.13"
+  ]
  },
  {
   "id": "togaf-f101-q086",
@@ -3033,7 +3240,10 @@
   "explanation": "La Target Application Architecture structure les services/applications. A/C/D sont autres catégories.",
   "topic": "ADM — Phase C Application",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "f2377b3c"
+  "rev": "f2377b3c",
+  "los": [
+   "L1.3.13"
+  ]
  },
  {
   "id": "togaf-f101-q087",
@@ -3068,7 +3278,10 @@
   "explanation": "La duplication entre Baseline et Target constitue un gap applicatif. A/B/D ne décrivent pas directement le problème.",
   "topic": "ADM — Phase C Application",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "6fa90154"
+  "rev": "6fa90154",
+  "los": [
+   "L1.3.13"
+  ]
  },
  {
   "id": "togaf-f101-q088",
@@ -3103,7 +3316,10 @@
   "explanation": "C'est la distinction centrale : Data Architecture s'intéresse aux informations et à leur gouvernance ; Application Architecture s'intéresse aux services et composants applicatifs qui les produisent et les consomment.",
   "topic": "ADM — Phase C Data vs Application",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "ca367b7c"
+  "rev": "ca367b7c",
+  "los": [
+   "L1.3.13"
+  ]
  },
  {
   "id": "togaf-f101-q089",
@@ -3138,7 +3354,10 @@
   "explanation": "Les deux domaines sont interdépendants. B/C/D sont faux.",
   "topic": "ADM — Phase C iteration",
   "source": "09-foundation-question-bank/02-adm-q061-q095.md",
-  "rev": "0bd836f1"
+  "rev": "0bd836f1",
+  "los": [
+   "L1.3.13"
+  ]
  },
  {
   "id": "togaf-f101-q090",
@@ -3386,7 +3605,11 @@
   "explanation": "La Phase D développe la Technology Architecture. Business Architecture correspond à la phase B, Migration Planning à F et Architecture Change Management à H.",
   "topic": "ADM — Phase D",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "ad6283c2"
+  "rev": "ad6283c2",
+  "los": [
+   "L1.3.11",
+   "L1.3.14"
+  ]
  },
  {
   "id": "togaf-f101-q097",
@@ -3421,7 +3644,10 @@
   "explanation": "D traduit les besoins en architecture technologique. B/C/D relèvent d'autres moments.",
   "topic": "ADM — Phase D",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "214f02d8"
+  "rev": "214f02d8",
+  "los": [
+   "L1.3.14"
+  ]
  },
  {
   "id": "togaf-f101-q098",
@@ -3456,7 +3682,10 @@
   "explanation": "Baseline Technology décrit l'existant technique pertinent. A/C/D sont d'autres éléments.",
   "topic": "ADM — Phase D",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "4231897c"
+  "rev": "4231897c",
+  "los": [
+   "L1.3.14"
+  ]
  },
  {
   "id": "togaf-f101-q099",
@@ -3491,7 +3720,10 @@
   "explanation": "L'écart entre capacité technique actuelle et cible est un Technology gap. A/B/D ne décrivent pas l'écart.",
   "topic": "ADM — Phase D/Gap",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "777def1b"
+  "rev": "777def1b",
+  "los": [
+   "L1.3.14"
+  ]
  },
  {
   "id": "togaf-f101-q100",
@@ -3561,7 +3793,10 @@
   "explanation": "La phase E est Opportunities & Solutions ; Architecture Vision correspond à A, Migration Planning à F et Implementation Governance à G.",
   "topic": "ADM — Phase E",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "75fe5ccf"
+  "rev": "75fe5ccf",
+  "los": [
+   "L1.3.15"
+  ]
  },
  {
   "id": "togaf-f101-q102",
@@ -3596,7 +3831,11 @@
   "explanation": "La phase E dégage des opportunités de transformation, regroupe des gaps en solutions/work packages candidats et envisage les Transition Architectures. La consolidation détaillée des vagues correspond à F ; la conformité à G ; les changements post-déploiement à H.",
   "topic": "ADM — Phase E",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "f23ee291"
+  "rev": "f23ee291",
+  "los": [
+   "L1.3.15",
+   "L1.3.16"
+  ]
  },
  {
   "id": "togaf-f101-q103",
@@ -3631,7 +3870,10 @@
   "explanation": "E identifie et regroupe les changements en work packages. Ils pourront ensuite être priorisés en F.",
   "topic": "ADM — Phase E",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "e7becca7"
+  "rev": "e7becca7",
+  "los": [
+   "L1.3.16"
+  ]
  },
  {
   "id": "togaf-f101-q104",
@@ -3666,7 +3908,10 @@
   "explanation": "Les transitions permettent une trajectoire réaliste. A/B/C sont faux.",
   "topic": "ADM — Phase E/Transition Architecture",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "de7e4127"
+  "rev": "de7e4127",
+  "los": [
+   "L1.3.16"
+  ]
  },
  {
   "id": "togaf-f101-q105",
@@ -3701,7 +3946,10 @@
   "explanation": "Les transitions réduisent le risque et structurent la trajectoire. B/C/D sont anti-méthodiques.",
   "topic": "ADM — Phase E",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "b82782d8"
+  "rev": "b82782d8",
+  "los": [
+   "L1.3.16"
+  ]
  },
  {
   "id": "togaf-f101-q106",
@@ -3736,7 +3984,10 @@
   "explanation": "E transforme les gaps en éléments de trajectoire. A/C/D sont faux.",
   "topic": "ADM — Phase E/Roadmap",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "24cd7eb8"
+  "rev": "24cd7eb8",
+  "los": [
+   "L1.3.16"
+  ]
  },
  {
   "id": "togaf-f101-q107",
@@ -3806,7 +4057,10 @@
   "explanation": "La phase F est Migration Planning. A désigne Business Architecture (phase B), B Implementation Governance (phase G) et C Architecture Vision (phase A).",
   "topic": "ADM — Phase F",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "48576a85"
+  "rev": "48576a85",
+  "los": [
+   "L1.3.17"
+  ]
  },
  {
   "id": "togaf-f101-q109",
@@ -3841,7 +4095,11 @@
   "explanation": "F transforme la roadmap en plan de migration réaliste. B/C/D ne sont pas son objectif principal.",
   "topic": "ADM — Phase F",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "f54a1060"
+  "rev": "f54a1060",
+  "los": [
+   "L1.3.17",
+   "L1.3.18"
+  ]
  },
  {
   "id": "togaf-f101-q110",
@@ -3876,7 +4134,10 @@
   "explanation": "L'Implementation and Migration Plan est consolidé en F. La Request for Architecture Work précède le cadrage ; la Vision est portée par A ; le Governance Log n'est pas le livrable principal de planification.",
   "topic": "ADM — Phase F",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "87acd20f"
+  "rev": "87acd20f",
+  "los": [
+   "L1.3.18"
+  ]
  },
  {
   "id": "togaf-f101-q111",
@@ -3911,7 +4172,10 @@
   "explanation": "Les waves structurent l'exécution dans le temps. A/B/D sont faux.",
   "topic": "ADM — Phase F",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "075c9540"
+  "rev": "075c9540",
+  "los": [
+   "L1.3.18"
+  ]
  },
  {
   "id": "togaf-f101-q112",
@@ -3946,7 +4210,10 @@
   "explanation": "Valeur, coûts, risques et dépendances soutiennent la priorisation. A/B/C sont arbitraires.",
   "topic": "ADM — Phase F",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "82b01e78"
+  "rev": "82b01e78",
+  "los": [
+   "L1.3.18"
+  ]
  },
  {
   "id": "togaf-f101-q113",
@@ -3981,7 +4248,10 @@
   "explanation": "L'analyse des dépendances évite un séquencement irréaliste. B renvoie aux viewpoints, C confond dépendances et transitions, D au classement des assets ; ces démarches ne remplacent pas l'analyse des prérequis.",
   "topic": "ADM — Phase F",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "7c09e54a"
+  "rev": "7c09e54a",
+  "los": [
+   "L1.3.18"
+  ]
  },
  {
   "id": "togaf-f101-q114",
@@ -4016,7 +4286,10 @@
   "explanation": "Les deux sont liés mais pas synonymes. A/C/D sont faux.",
   "topic": "ADM — Phase E/F",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "058849af"
+  "rev": "058849af",
+  "los": [
+   "L1.3.18"
+  ]
  },
  {
   "id": "togaf-f101-q115",
@@ -4051,7 +4324,10 @@
   "explanation": "G = Implementation Governance.",
   "topic": "ADM — F to G",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "60df6927"
+  "rev": "60df6927",
+  "los": [
+   "L1.3.19"
+  ]
  },
  {
   "id": "togaf-f101-q116",
@@ -4121,7 +4397,10 @@
   "explanation": "G s'assure que les solutions réalisées respectent l'architecture approuvée. La sélection des modèles et viewpoints est préparée en amont, notamment Preliminary/A ; les capabilities métier sont définies en B ; la consolidation des work packages est liée à E.",
   "topic": "ADM — Phase G",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "748faae7"
+  "rev": "748faae7",
+  "los": [
+   "L1.3.19"
+  ]
  },
  {
   "id": "togaf-f101-q118",
@@ -4156,7 +4435,10 @@
   "explanation": "Il soutient la gouvernance de l'implémentation. A/C/D ne correspondent pas.",
   "topic": "ADM — Phase G",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "b4862b77"
+  "rev": "b4862b77",
+  "los": [
+   "L1.3.20"
+  ]
  },
  {
   "id": "togaf-f101-q119",
@@ -4191,7 +4473,10 @@
   "explanation": "C'est une activité d'Implementation Governance (phase G) : évaluer la solution réalisée par rapport aux exigences et décisions d'architecture approuvées. La consolidation des gaps et work packages concerne E, la Baseline les phases de définition, et la Vision A.",
   "topic": "ADM — Phase G",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "cc5e7af1"
+  "rev": "cc5e7af1",
+  "los": [
+   "L1.3.20"
+  ]
  },
  {
   "id": "togaf-f101-q120",
@@ -4226,7 +4511,10 @@
   "explanation": "L'écart doit être documenté, évalué et soumis à l'autorité de gouvernance compétente. A contourne l'arbitrage, B change la cible sans décision, C diffère le traitement de non-conformité.",
   "topic": "ADM — Phase G/Governance",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "55150317"
+  "rev": "55150317",
+  "los": [
+   "L1.3.20"
+  ]
  },
  {
   "id": "togaf-f101-q121",
@@ -4261,7 +4549,10 @@
   "explanation": "F = planning ; G = governance during execution. B/C/D sont faux.",
   "topic": "ADM — F vs G",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "cf5bb814"
+  "rev": "cf5bb814",
+  "los": [
+   "L1.3.20"
+  ]
  },
  {
   "id": "togaf-f101-q122",
@@ -4296,7 +4587,10 @@
   "explanation": "G doit pouvoir vérifier la réalisation. A est insuffisant ; C/D sont faux.",
   "topic": "ADM — Phase G",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "d1c1658f"
+  "rev": "d1c1658f",
+  "los": [
+   "L1.3.20"
+  ]
  },
  {
   "id": "togaf-f101-q123",
@@ -4331,7 +4625,10 @@
   "explanation": "TOGAF privilégie décision explicite et traçable. A/B/D sont non gouvernés.",
   "topic": "ADM — Phase G/Change",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "821e3b3b"
+  "rev": "821e3b3b",
+  "los": [
+   "L1.3.20"
+  ]
  },
  {
   "id": "togaf-f101-q124",
@@ -4401,7 +4698,10 @@
   "explanation": "La phase H est Architecture Change Management. Opportunities & Solutions désigne E, Business Architecture désigne B et Migration Planning désigne F.",
   "topic": "ADM — Phase H",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "54b50f8b"
+  "rev": "54b50f8b",
+  "los": [
+   "L1.3.21"
+  ]
  },
  {
   "id": "togaf-f101-q126",
@@ -4436,7 +4736,10 @@
   "explanation": "La phase H surveille les changements et décide comment adapter l'architecture. Les options de solutions et work packages sont identifiés en E ; les capabilities métier en B ; les Compliance Assessments de réalisations en G.",
   "topic": "ADM — Phase H",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "1bde2b44"
+  "rev": "1bde2b44",
+  "los": [
+   "L1.3.21"
+  ]
  },
  {
   "id": "togaf-f101-q127",
@@ -4471,7 +4774,10 @@
   "explanation": "Les drivers stratégiques, réglementaires ou technologiques peuvent nécessiter réévaluation. A peut rester opérationnel ; B/D sont faux.",
   "topic": "ADM — Phase H",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "47e8a1bb"
+  "rev": "47e8a1bb",
+  "los": [
+   "L1.3.22"
+  ]
  },
  {
   "id": "togaf-f101-q128",
@@ -4506,7 +4812,10 @@
   "explanation": "H décide du niveau de réponse approprié. A/B/C sont faux.",
   "topic": "ADM — Phase H",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "114af66a"
+  "rev": "114af66a",
+  "los": [
+   "L1.3.22"
+  ]
  },
  {
   "id": "togaf-f101-q129",
@@ -4541,7 +4850,10 @@
   "explanation": "C'est la distinction essentielle. B/C/D sont faux.",
   "topic": "ADM — G vs H",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "dd268c79"
+  "rev": "dd268c79",
+  "los": [
+   "L1.3.22"
+  ]
  },
  {
   "id": "togaf-f101-q130",
@@ -4576,7 +4888,10 @@
   "explanation": "H assure la continuité de l'architecture face aux nouveaux drivers.",
   "topic": "ADM — Phase H",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "a3daaf8e"
+  "rev": "a3daaf8e",
+  "los": [
+   "L1.3.22"
+  ]
  },
  {
   "id": "togaf-f101-q131",
@@ -4611,7 +4926,11 @@
   "explanation": "Les requirements sont identifiées, maintenues, tracées et réconciliées tout au long du cycle. A/B/D sont trop restrictifs.",
   "topic": "ADM — Requirements Management",
   "source": "09-foundation-question-bank/04-adm-q131-q165.md",
-  "rev": "984dd8ae"
+  "rev": "984dd8ae",
+  "los": [
+   "L1.3.23",
+   "L1.3.24"
+  ]
  },
  {
   "id": "togaf-f101-q132",
@@ -4646,7 +4965,10 @@
   "explanation": "Les requirements évoluent avec la compréhension de l'architecture. A/B/C sont faux.",
   "topic": "ADM — Requirements Management",
   "source": "09-foundation-question-bank/04-adm-q131-q165.md",
-  "rev": "de82d4cf"
+  "rev": "de82d4cf",
+  "los": [
+   "L1.3.23"
+  ]
  },
  {
   "id": "togaf-f101-q133",
@@ -4681,7 +5003,10 @@
   "explanation": "La traçabilité soutient conformité et change impact analysis. B/C/D ne sont pas le but.",
   "topic": "ADM — Requirements traceability",
   "source": "09-foundation-question-bank/04-adm-q131-q165.md",
-  "rev": "a3cba4c6"
+  "rev": "a3cba4c6",
+  "los": [
+   "L1.3.23"
+  ]
  },
  {
   "id": "togaf-f101-q134",
@@ -4716,7 +5041,11 @@
   "explanation": "Le changement doit être géré transversalement. A/C/D sont inadaptés.",
   "topic": "ADM — Requirements change",
   "source": "09-foundation-question-bank/04-adm-q131-q165.md",
-  "rev": "dd632257"
+  "rev": "dd632257",
+  "los": [
+   "L1.3.23",
+   "L1.3.24"
+  ]
  },
  {
   "id": "togaf-f101-q135",
@@ -4751,7 +5080,10 @@
   "explanation": "La contrainte limite les choix et doit être traduite dans les requirements. A/B/D ne correspondent pas.",
   "topic": "ADM — Requirements/Constraints",
   "source": "09-foundation-question-bank/04-adm-q131-q165.md",
-  "rev": "394878db"
+  "rev": "394878db",
+  "los": [
+   "L1.3.23"
+  ]
  },
  {
   "id": "togaf-f101-q136",
@@ -4786,7 +5118,10 @@
   "explanation": "Une gestion structurée évite incohérences et pertes. A/B/C sont faux.",
   "topic": "ADM — Requirements Management",
   "source": "09-foundation-question-bank/04-adm-q131-q165.md",
-  "rev": "14354a13"
+  "rev": "14354a13",
+  "los": [
+   "L1.3.23"
+  ]
  },
  {
   "id": "togaf-f101-q137",
@@ -4961,7 +5296,10 @@
   "explanation": "L'itération est un mécanisme d'adaptation et d'apprentissage. B/C/D caricaturent le concept.",
   "topic": "ADM — Iteration",
   "source": "09-foundation-question-bank/04-adm-q131-q165.md",
-  "rev": "656a72cb"
+  "rev": "656a72cb",
+  "los": [
+   "L1.3.3"
+  ]
  },
  {
   "id": "togaf-f101-q142",
@@ -5451,7 +5789,10 @@
   "explanation": "C'est l'ordre nominal des phases A à H après Preliminary. L'ADM permet néanmoins des cycles et itérations entre les phases selon le contexte.",
   "topic": "ADM — Sequence",
   "source": "09-foundation-question-bank/04-adm-q131-q165.md",
-  "rev": "e5ebc230"
+  "rev": "e5ebc230",
+  "los": [
+   "L1.3.1"
+  ]
  },
  {
   "id": "togaf-f101-q156",
@@ -5766,7 +6107,10 @@
   "explanation": "L'ADM organise le travail d'architecture mais reste tailorable et itératif. A/B/C sont réducteurs.",
   "topic": "ADM — Big Picture",
   "source": "09-foundation-question-bank/04-adm-q131-q165.md",
-  "rev": "97279e3f"
+  "rev": "97279e3f",
+  "los": [
+   "L1.3.1"
+  ]
  },
  {
   "id": "togaf-f101-q165",
@@ -5801,7 +6145,10 @@
   "explanation": "Il résume correctement Preliminary, A, B/C/D, E, F, G et H. Les autres inversent ou cassent la logique.",
   "topic": "ADM — Complete Flow",
   "source": "09-foundation-question-bank/04-adm-q131-q165.md",
-  "rev": "0b33ff78"
+  "rev": "0b33ff78",
+  "los": [
+   "L1.3.25"
+  ]
  },
  {
   "id": "togaf-f101-q166",
@@ -5978,7 +6325,10 @@
   "explanation": "La technique transforme un besoin métier en exigences compréhensibles. A/C/D sont d'autres usages.",
   "topic": "ADM Techniques — Business Scenarios",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "75944c81"
+  "rev": "75944c81",
+  "los": [
+   "L1.4.5"
+  ]
  },
  {
   "id": "togaf-f101-q171",
@@ -6014,7 +6364,10 @@
   "explanation": "Le scénario décrit suffisamment le contexte pour dériver les requirements. A/B/D sont insuffisants.",
   "topic": "ADM Techniques — Business Scenarios",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "13f5c832"
+  "rev": "13f5c832",
+  "los": [
+   "L1.4.5"
+  ]
  },
  {
   "id": "togaf-f101-q172",
@@ -6049,7 +6402,10 @@
   "explanation": "Le Business Scenario clarifie problème, acteurs, contexte et résultats attendus.",
   "topic": "ADM Techniques — Business Scenarios",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "74faafc7"
+  "rev": "74faafc7",
+  "los": [
+   "L1.4.5"
+  ]
  },
  {
   "id": "togaf-f101-q173",
@@ -6084,7 +6440,10 @@
   "explanation": "La validation garantit pertinence et compréhension partagée. B/C/D sont faux.",
   "topic": "ADM Techniques — Business Scenarios",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "40a81c59"
+  "rev": "40a81c59",
+  "los": [
+   "L1.4.5"
+  ]
  },
  {
   "id": "togaf-f101-q174",
@@ -6120,7 +6479,11 @@
   "explanation": "Elle identifie ce qui doit être créé, modifié, supprimé ou conservé. A/C/D ne sont pas son objet.",
   "topic": "ADM Techniques — Gap Analysis",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "706343aa"
+  "rev": "706343aa",
+  "los": [
+   "L1.1.12",
+   "L1.4.6"
+  ]
  },
  {
   "id": "togaf-f101-q175",
@@ -6156,7 +6519,10 @@
   "explanation": "Un manque entre actuel et cible est un gap. A est autre technique ; B/D hors sujet.",
   "topic": "ADM Techniques — Gap Analysis",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "ab5b010d"
+  "rev": "ab5b010d",
+  "los": [
+   "L1.4.6"
+  ]
  },
  {
   "id": "togaf-f101-q176",
@@ -6191,7 +6557,10 @@
   "explanation": "La Gap Analysis identifie aussi ce qui doit être éliminé.",
   "topic": "ADM Techniques — Gap Analysis",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "ad511bc2"
+  "rev": "ad511bc2",
+  "los": [
+   "L1.4.6"
+  ]
  },
  {
   "id": "togaf-f101-q177",
@@ -6227,7 +6596,10 @@
   "explanation": "Gap = quoi changer ; migration planning = comment/ordre de mise en œuvre.",
   "topic": "ADM Techniques — Gap Analysis",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "d707ebdd"
+  "rev": "d707ebdd",
+  "los": [
+   "L1.4.6"
+  ]
  },
  {
   "id": "togaf-f101-q178",
@@ -6262,7 +6634,10 @@
   "explanation": "Les gaps sont souvent interdépendants et doivent être consolidés.",
   "topic": "ADM Techniques — Gap Analysis",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "7597b98c"
+  "rev": "7597b98c",
+  "los": [
+   "L1.4.6"
+  ]
  },
  {
   "id": "togaf-f101-q179",
@@ -6297,7 +6672,10 @@
   "explanation": "Elle concerne échanges, compatibilité et coopération à plusieurs niveaux.",
   "topic": "ADM Techniques — Interoperability",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "ed8ef334"
+  "rev": "ed8ef334",
+  "los": [
+   "L1.4.7"
+  ]
  },
  {
   "id": "togaf-f101-q180",
@@ -6332,7 +6710,10 @@
   "explanation": "Elle est multi-dimensionnelle. A/B/C sont trop étroits.",
   "topic": "ADM Techniques — Interoperability",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "f18abe61"
+  "rev": "f18abe61",
+  "los": [
+   "L1.4.7"
+  ]
  },
  {
   "id": "togaf-f101-q181",
@@ -6367,7 +6748,10 @@
   "explanation": "L'échange technique fonctionne mais le sens n'est pas partagé.",
   "topic": "ADM Techniques — Interoperability",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "88309b15"
+  "rev": "88309b15",
+  "los": [
+   "L1.4.7"
+  ]
  },
  {
   "id": "togaf-f101-q182",
@@ -6402,7 +6786,10 @@
   "explanation": "L'interopérabilité dépasse la technique et inclut processus et responsabilités.",
   "topic": "ADM Techniques — Interoperability",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "e72483bd"
+  "rev": "e72483bd",
+  "los": [
+   "L1.4.7"
+  ]
  },
  {
   "id": "togaf-f101-q183",
@@ -6438,7 +6825,10 @@
   "explanation": "La technique évalue capacité organisationnelle, culture, compétences, leadership, etc.",
   "topic": "ADM Techniques — Business Transformation Readiness",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "18a2a514"
+  "rev": "18a2a514",
+  "los": [
+   "L1.4.8"
+  ]
  },
  {
   "id": "togaf-f101-q184",
@@ -6474,7 +6864,10 @@
   "explanation": "La readiness couvre leadership, culture, compétences, ressources et capacité d'absorption du changement. A/B/C évaluent des conditions techniques ou contractuelles isolées, insuffisantes pour qualifier l'adoption organisationnelle.",
   "topic": "ADM Techniques — Business Transformation Readiness",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "2c48d0ba"
+  "rev": "2c48d0ba",
+  "los": [
+   "L1.4.8"
+  ]
  },
  {
   "id": "togaf-f101-q185",
@@ -6509,7 +6902,10 @@
   "explanation": "Le manque de compétences est un frein de readiness.",
   "topic": "ADM Techniques — Business Transformation Readiness",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "5d2b6d49"
+  "rev": "5d2b6d49",
+  "los": [
+   "L1.4.8"
+  ]
  },
  {
   "id": "togaf-f101-q186",
@@ -6544,7 +6940,10 @@
   "explanation": "La technique alimente la planification de transformation.",
   "topic": "ADM Techniques — Business Transformation Readiness",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "4efb0cf0"
+  "rev": "4efb0cf0",
+  "los": [
+   "L1.4.8"
+  ]
  },
  {
   "id": "togaf-f101-q187",
@@ -6579,7 +6978,11 @@
   "explanation": "Le risque traverse le cycle. A/B/D sont faux.",
   "topic": "ADM Techniques — Risk Management",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "36af5160"
+  "rev": "36af5160",
+  "los": [
+   "L1.1.11",
+   "L1.4.9"
+  ]
  },
  {
   "id": "togaf-f101-q188",
@@ -6614,7 +7017,11 @@
   "explanation": "L'exposition est classiquement appréciée par likelihood × impact.",
   "topic": "ADM Techniques — Risk Management",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "4deb54bc"
+  "rev": "4deb54bc",
+  "los": [
+   "L1.1.11",
+   "L1.4.9"
+  ]
  },
  {
   "id": "togaf-f101-q189",
@@ -6649,7 +7056,10 @@
   "explanation": "La mitigation réduit l'exposition. B/C/D sont autres concepts.",
   "topic": "ADM Techniques — Risk Management",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "ad3019aa"
+  "rev": "ad3019aa",
+  "los": [
+   "L1.4.9"
+  ]
  },
  {
   "id": "togaf-f101-q190",
@@ -6684,7 +7094,10 @@
   "explanation": "Après mitigation, une exposition peut subsister et doit être acceptée ou traitée.",
   "topic": "ADM Techniques — Risk Management",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "a192c99e"
+  "rev": "a192c99e",
+  "los": [
+   "L1.4.9"
+  ]
  },
  {
   "id": "togaf-f101-q191",
@@ -6720,7 +7133,10 @@
   "explanation": "L'ownership rend le traitement gouvernable.",
   "topic": "ADM Techniques — Risk Management",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "5f78333e"
+  "rev": "5f78333e",
+  "los": [
+   "L1.4.9"
+  ]
  },
  {
   "id": "togaf-f101-q192",
@@ -7071,7 +7487,10 @@
   "explanation": "La technique traite identification, influence, concerns et engagement.",
   "topic": "ADM Techniques — Selection",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "d61bbc94"
+  "rev": "d61bbc94",
+  "los": [
+   "L1.4.1"
+  ]
  },
  {
   "id": "togaf-f101-q202",
@@ -7106,7 +7525,10 @@
   "explanation": "Business Scenarios clarifie le besoin et les requirements.",
   "topic": "ADM Techniques — Selection",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "8c25c828"
+  "rev": "8c25c828",
+  "los": [
+   "L1.4.1"
+  ]
  },
  {
   "id": "togaf-f101-q203",
@@ -7141,7 +7563,10 @@
   "explanation": "Gap Analysis compare Baseline et Target.",
   "topic": "ADM Techniques — Selection",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "965235cf"
+  "rev": "965235cf",
+  "los": [
+   "L1.4.1"
+  ]
  },
  {
   "id": "togaf-f101-q204",
@@ -7176,7 +7601,10 @@
   "explanation": "L'interoperability examine compatibilité business, information, application et technology.",
   "topic": "ADM Techniques — Selection",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "d50afea1"
+  "rev": "d50afea1",
+  "los": [
+   "L1.4.1"
+  ]
  },
  {
   "id": "togaf-f101-q205",
@@ -7211,7 +7639,10 @@
   "explanation": "Elle évalue leadership, culture, compétences et capacité d'adoption.",
   "topic": "ADM Techniques — Selection",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "3bfc0454"
+  "rev": "3bfc0454",
+  "los": [
+   "L1.4.1"
+  ]
  },
  {
   "id": "togaf-f101-q206",
@@ -7246,7 +7677,10 @@
   "explanation": "Le risque traite incertitude, impact et mitigation.",
   "topic": "ADM Techniques — Selection",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "999c2e5c"
+  "rev": "999c2e5c",
+  "los": [
+   "L1.4.1"
+  ]
  },
  {
   "id": "togaf-f101-q207",
@@ -7281,7 +7715,10 @@
   "explanation": "La technique structure la transformation par capacités.",
   "topic": "ADM Techniques — Selection",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "558c12dc"
+  "rev": "558c12dc",
+  "los": [
+   "L1.4.1"
+  ]
  },
  {
   "id": "togaf-f101-q208",
@@ -7316,7 +7753,10 @@
   "explanation": "Ces techniques priorisent et séquencent la transformation.",
   "topic": "ADM Techniques — Selection",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "7446972c"
+  "rev": "7446972c",
+  "los": [
+   "L1.4.1"
+  ]
  },
  {
   "id": "togaf-f101-q209",
@@ -7351,7 +7791,10 @@
   "explanation": "Un engagement réel combine souvent stakeholder, gap, risk, readiness, capability et migration planning.",
   "topic": "ADM Techniques — Integration",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "38a53132"
+  "rev": "38a53132",
+  "los": [
+   "L1.4.1"
+  ]
  },
  {
   "id": "togaf-f101-q210",
@@ -7386,7 +7829,10 @@
   "explanation": "Il combine les techniques selon la progression du problème. A/C/D sont prématurés ou incohérents.",
   "topic": "ADM Techniques — Synthesis",
   "source": "09-foundation-question-bank/05-techniques-q166-q210.md",
-  "rev": "5be03959"
+  "rev": "5be03959",
+  "los": [
+   "L1.4.1"
+  ]
  },
  {
   "id": "togaf-f101-q211",
@@ -7421,7 +7867,10 @@
   "explanation": "Le tailoring garde la logique TOGAF tout en l'adaptant au contexte. A/B/D sont des déformations.",
   "topic": "Applying ADM — Tailoring",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "be4fa903"
+  "rev": "be4fa903",
+  "los": [
+   "L1.5.1"
+  ]
  },
  {
   "id": "togaf-f101-q212",
@@ -7561,7 +8010,10 @@
   "explanation": "L'itération est structurée, pas arbitraire. A/B/D sont faux.",
   "topic": "Applying ADM — Iteration",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "85382297"
+  "rev": "85382297",
+  "los": [
+   "L1.5.2"
+  ]
  },
  {
   "id": "togaf-f101-q216",
@@ -7596,7 +8048,10 @@
   "explanation": "L'ADM permet des boucles cohérentes entre domaines interdépendants.",
   "topic": "Applying ADM — Iteration",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "c1ed128c"
+  "rev": "c1ed128c",
+  "los": [
+   "L1.5.2"
+  ]
  },
  {
   "id": "togaf-f101-q217",
@@ -7631,7 +8086,10 @@
   "explanation": "Les feedback loops soutiennent l'apprentissage et l'évolution contrôlée.",
   "topic": "Applying ADM — Iteration/Digital",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "892ee166"
+  "rev": "892ee166",
+  "los": [
+   "L1.5.2"
+  ]
  },
  {
   "id": "togaf-f101-q218",
@@ -7666,7 +8124,10 @@
   "explanation": "Les niveaux d'architecture aident à maîtriser la complexité et à calibrer le détail par type de décision. A impose la même granularité, C rompt la cohérence entre niveaux et D abandonne la direction commune.",
   "topic": "Applying ADM — Levels of Architecture",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "52c5770a"
+  "rev": "52c5770a",
+  "los": [
+   "L1.5.3"
+  ]
  },
  {
   "id": "togaf-f101-q219",
@@ -7702,7 +8163,10 @@
   "explanation": "Le niveau Enterprise est large et stratégique.",
   "topic": "Applying ADM — Levels",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "79d5ddae"
+  "rev": "79d5ddae",
+  "los": [
+   "L1.5.3"
+  ]
  },
  {
   "id": "togaf-f101-q220",
@@ -7737,7 +8201,10 @@
   "explanation": "Il fournit un niveau intermédiaire de décision.",
   "topic": "Applying ADM — Levels",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "0d535770"
+  "rev": "0d535770",
+  "los": [
+   "L1.5.3"
+  ]
  },
  {
   "id": "togaf-f101-q221",
@@ -7772,7 +8239,10 @@
   "explanation": "Les niveaux doivent rester cohérents, sans nier les contraintes locales.",
   "topic": "Applying ADM — Levels",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "c42c00fd"
+  "rev": "c42c00fd",
+  "los": [
+   "L1.5.3"
+  ]
  },
  {
   "id": "togaf-f101-q222",
@@ -7807,7 +8277,10 @@
   "explanation": "Le partitioning structure la complexité et les responsabilités.",
   "topic": "Applying ADM — Partitioning",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "b110b8d1"
+  "rev": "b110b8d1",
+  "los": [
+   "L1.5.4"
+  ]
  },
  {
   "id": "togaf-f101-q223",
@@ -7842,7 +8315,10 @@
   "explanation": "Les frontières ambiguës génèrent incohérences et doublons.",
   "topic": "Applying ADM — Partitioning",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "d000f649"
+  "rev": "d000f649",
+  "los": [
+   "L1.5.4"
+  ]
  },
  {
   "id": "togaf-f101-q224",
@@ -7877,7 +8353,10 @@
   "explanation": "La fédération combine autonomie et gouvernance partagée.",
   "topic": "Applying ADM — Federation",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "bea001d4"
+  "rev": "bea001d4",
+  "los": [
+   "L1.5.4"
+  ]
  },
  {
   "id": "togaf-f101-q225",
@@ -7912,7 +8391,10 @@
   "explanation": "Des règles partagées rendent l'autonomie compatible avec la cohérence.",
   "topic": "Applying ADM — Federation",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "d7b1cb83"
+  "rev": "d7b1cb83",
+  "los": [
+   "L1.5.4"
+  ]
  },
  {
   "id": "togaf-f101-q226",
@@ -8087,7 +8569,10 @@
   "explanation": "TOGAF peut être appliqué dans un contexte digital de manière adaptée.",
   "topic": "Applying ADM — Digital Enterprise",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "9b4455bf"
+  "rev": "9b4455bf",
+  "los": [
+   "L1.5.6"
+  ]
  },
  {
   "id": "togaf-f101-q231",
@@ -8122,7 +8607,10 @@
   "explanation": "La modularité bien gouvernée soutient vitesse et cohérence.",
   "topic": "Applying ADM — Digital Enterprise",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "2aea25a7"
+  "rev": "2aea25a7",
+  "los": [
+   "L1.5.6"
+  ]
  },
  {
   "id": "togaf-f101-q232",
@@ -8157,7 +8645,10 @@
   "explanation": "Les environnements digitaux évoluent et exigent feedback et change management.",
   "topic": "Applying ADM — Digital Enterprise",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "d5493187"
+  "rev": "d5493187",
+  "los": [
+   "L1.5.6"
+  ]
  },
  {
   "id": "togaf-f101-q233",
@@ -8192,7 +8683,10 @@
   "explanation": "L'un organise l'architecture, l'autre le delivery adaptatif ; ils peuvent se compléter.",
   "topic": "Applying ADM — Agile and TOGAF",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "455a2c43"
+  "rev": "455a2c43",
+  "los": [
+   "L1.3.26"
+  ]
  },
  {
   "id": "togaf-f101-q234",
@@ -8227,7 +8721,10 @@
   "explanation": "L'architecture donne une direction évolutive et gouvernée.",
   "topic": "Applying ADM — Agile and TOGAF",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "c0f7c9ec"
+  "rev": "c0f7c9ec",
+  "los": [
+   "L1.3.26"
+  ]
  },
  {
   "id": "togaf-f101-q235",
@@ -8262,7 +8759,10 @@
   "explanation": "Une gouvernance légère et continue est plus adaptée au rythme Agile.",
   "topic": "Applying ADM — Agile and TOGAF",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "4d86f449"
+  "rev": "4d86f449",
+  "los": [
+   "L1.3.26"
+  ]
  },
  {
   "id": "togaf-f101-q236",
@@ -8403,7 +8903,10 @@
   "explanation": "TOGAF est tailorable mais reste discipliné.",
   "topic": "Applying ADM — Synthesis",
   "source": "09-foundation-question-bank/06-applying-q211-q240.md",
-  "rev": "4f700ffb"
+  "rev": "4f700ffb",
+  "los": [
+   "L1.5.1"
+  ]
  },
  {
   "id": "togaf-f101-q240",
@@ -8473,7 +8976,12 @@
   "explanation": "La gouvernance rend les décisions explicites, appliquées et traçables. B/C/D sont faux.",
   "topic": "Architecture Governance — Fundamentals",
   "source": "09-foundation-question-bank/07-governance-q241-q262.md",
-  "rev": "2fb4237a"
+  "rev": "2fb4237a",
+  "los": [
+   "L1.3.4",
+   "L1.6.1",
+   "L1.6.2"
+  ]
  },
  {
   "id": "togaf-f101-q242",
@@ -8509,7 +9017,10 @@
   "explanation": "Les deux se coordonnent mais ont des objets différents.",
   "topic": "Architecture Governance — Governance boundaries",
   "source": "09-foundation-question-bank/07-governance-q241-q262.md",
-  "rev": "8c4f3b89"
+  "rev": "8c4f3b89",
+  "los": [
+   "L1.6.1"
+  ]
  },
  {
   "id": "togaf-f101-q243",
@@ -8545,7 +9056,10 @@
   "explanation": "L'Architecture Board arbitre les décisions architecturales significatives. A relève de la conception détaillée, B du pilotage de livraison et D court-circuite les responsabilités métier et les architectes de domaine.",
   "topic": "Architecture Governance — Architecture Board",
   "source": "09-foundation-question-bank/07-governance-q241-q262.md",
-  "rev": "fa1b7279"
+  "rev": "fa1b7279",
+  "los": [
+   "L1.6.3"
+  ]
  },
  {
   "id": "togaf-f101-q244",
@@ -8580,7 +9094,10 @@
   "explanation": "Le Board doit se concentrer sur les décisions architecturales significatives.",
   "topic": "Architecture Governance — Architecture Board",
   "source": "09-foundation-question-bank/07-governance-q241-q262.md",
-  "rev": "ed3da305"
+  "rev": "ed3da305",
+  "los": [
+   "L1.6.3"
+  ]
  },
  {
   "id": "togaf-f101-q245",
@@ -8615,7 +9132,12 @@
   "explanation": "Sa composition dépend du scope mais doit rendre les arbitrages crédibles et exécutoires.",
   "topic": "Architecture Governance — Architecture Board",
   "source": "09-foundation-question-bank/07-governance-q241-q262.md",
-  "rev": "8a86056f"
+  "rev": "8a86056f",
+  "los": [
+   "L1.3.4",
+   "L1.6.2",
+   "L1.6.3"
+  ]
  },
  {
   "id": "togaf-f101-q246",
@@ -8650,7 +9172,10 @@
   "explanation": "Il explicite les engagements de conformité et collaboration. A/C/D sont d'autres objets.",
   "topic": "Architecture Governance — Architecture Contract",
   "source": "09-foundation-question-bank/07-governance-q241-q262.md",
-  "rev": "306fa682"
+  "rev": "306fa682",
+  "los": [
+   "L1.6.4"
+  ]
  },
  {
   "id": "togaf-f101-q247",
@@ -8685,7 +9210,10 @@
   "explanation": "Le contrat soutient la gouvernance de mise en œuvre.",
   "topic": "Architecture Governance — Architecture Contract",
   "source": "09-foundation-question-bank/07-governance-q241-q262.md",
-  "rev": "52242da9"
+  "rev": "52242da9",
+  "los": [
+   "L1.6.4"
+  ]
  },
  {
   "id": "togaf-f101-q248",
@@ -8720,7 +9248,10 @@
   "explanation": "Les deux ont des finalités différentes.",
   "topic": "Architecture Governance — Contract vs Vision",
   "source": "09-foundation-question-bank/07-governance-q241-q262.md",
-  "rev": "d80310e8"
+  "rev": "d80310e8",
+  "los": [
+   "L1.6.4"
+  ]
  },
  {
   "id": "togaf-f101-q249",
@@ -8755,7 +9286,10 @@
   "explanation": "Elle vérifie l'alignement effectif.",
   "topic": "Architecture Governance — Compliance",
   "source": "09-foundation-question-bank/07-governance-q241-q262.md",
-  "rev": "d2a39401"
+  "rev": "d2a39401",
+  "los": [
+   "L1.6.5"
+  ]
  },
  {
   "id": "togaf-f101-q250",
@@ -8791,7 +9325,10 @@
   "explanation": "Une review doit être factuelle et traçable.",
   "topic": "Architecture Governance — Compliance",
   "source": "09-foundation-question-bank/07-governance-q241-q262.md",
-  "rev": "bbc3564c"
+  "rev": "bbc3564c",
+  "los": [
+   "L1.6.5"
+  ]
  },
  {
   "id": "togaf-f101-q251",
@@ -8826,7 +9363,10 @@
   "explanation": "La gouvernance traite explicitement les écarts.",
   "topic": "Architecture Governance — Compliance/Exception",
   "source": "09-foundation-question-bank/07-governance-q241-q262.md",
-  "rev": "579dea02"
+  "rev": "579dea02",
+  "los": [
+   "L1.6.5"
+  ]
  },
  {
   "id": "togaf-f101-q252",
@@ -9071,7 +9611,11 @@
   "explanation": "Les principles soutiennent les décisions tout au long du cycle.",
   "topic": "Architecture Governance — Principles",
   "source": "09-foundation-question-bank/07-governance-q241-q262.md",
-  "rev": "9e46565d"
+  "rev": "9e46565d",
+  "los": [
+   "L1.4.2",
+   "L1.6.2"
+  ]
  },
  {
   "id": "togaf-f101-q259",
@@ -9247,7 +9791,10 @@
   "explanation": "Il organise deliverables, artifacts et building blocks. A/B/D sont hors sujet.",
   "topic": "Architecture Content — Content Framework",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "971b0b69"
+  "rev": "971b0b69",
+  "los": [
+   "L1.1.9"
+  ]
  },
  {
   "id": "togaf-f101-q264",
@@ -9706,7 +10253,10 @@
   "explanation": "Viewpoint = manière/convention ; View = représentation produite.",
   "topic": "Architecture Content — Views/Viewpoints",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "2b99ecb3"
+  "rev": "2b99ecb3",
+  "los": [
+   "L1.7.1"
+  ]
  },
  {
   "id": "togaf-f101-q277",
@@ -9741,7 +10291,10 @@
   "explanation": "B décrit le viewpoint ; C/D sont autres concepts.",
   "topic": "Architecture Content — Views/Viewpoints",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "4950409a"
+  "rev": "4950409a",
+  "los": [
+   "L1.7.1"
+  ]
  },
  {
   "id": "togaf-f101-q278",
@@ -9777,7 +10330,10 @@
   "explanation": "Views et viewpoints sont orientés stakeholders/concerns.",
   "topic": "Architecture Content — Views/Viewpoints",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "dc79b8e6"
+  "rev": "dc79b8e6",
+  "los": [
+   "L1.7.1"
+  ]
  },
  {
   "id": "togaf-f101-q279",
@@ -9812,7 +10368,10 @@
   "explanation": "Un viewpoint est une convention réutilisable de représentation.",
   "topic": "Architecture Content — Viewpoints",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "9023460c"
+  "rev": "9023460c",
+  "los": [
+   "L1.7.1"
+  ]
  },
  {
   "id": "togaf-f101-q280",
@@ -9847,7 +10406,10 @@
   "explanation": "ABB = besoin/capacité logique de l'architecture.",
   "topic": "Architecture Content — ABB",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "8f2edf1f"
+  "rev": "8f2edf1f",
+  "los": [
+   "L1.7.2"
+  ]
  },
  {
   "id": "togaf-f101-q281",
@@ -9882,7 +10444,10 @@
   "explanation": "Le SBB se rapproche de l'implémentation réelle.",
   "topic": "Architecture Content — SBB",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "3cf56896"
+  "rev": "3cf56896",
+  "los": [
+   "L1.7.2"
+  ]
  },
  {
   "id": "togaf-f101-q282",
@@ -9917,7 +10482,10 @@
   "explanation": "L'ABB exprime la capacité, le SBB une réalisation possible.",
   "topic": "Architecture Content — ABB vs SBB",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "8160c28e"
+  "rev": "8160c28e",
+  "los": [
+   "L1.7.2"
+  ]
  },
  {
   "id": "togaf-f101-q283",
@@ -9952,7 +10520,10 @@
   "explanation": "L'ABB doit décrire le besoin/capacité avant la réalisation concrète.",
   "topic": "Architecture Content — ABB",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "412bc30b"
+  "rev": "412bc30b",
+  "los": [
+   "L1.7.2"
+  ]
  },
  {
   "id": "togaf-f101-q284",
@@ -9987,7 +10558,10 @@
   "explanation": "La traçabilité ABB→SBB soutient justification et conformité.",
   "topic": "Architecture Content — ABB/SBB",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "eec5892d"
+  "rev": "eec5892d",
+  "los": [
+   "L1.7.2"
+  ]
  },
  {
   "id": "togaf-f101-q285",
@@ -10023,7 +10597,10 @@
   "explanation": "Le metamodel donne une structure sémantique au contenu.",
   "topic": "Architecture Content — Content Metamodel",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "a4759705"
+  "rev": "a4759705",
+  "los": [
+   "L1.1.9"
+  ]
  },
  {
   "id": "togaf-f101-q286",
@@ -10198,7 +10775,10 @@
   "explanation": "Il rassemble des éléments architecturaux formels produits pendant l'ADM.",
   "topic": "Architecture Content — Deliverables",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "40aa088b"
+  "rev": "40aa088b",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-q291",
@@ -10233,7 +10813,10 @@
   "explanation": "Elle formalise ce que l'architecture/solution doit satisfaire.",
   "topic": "Architecture Content — Deliverables",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "01552a33"
+  "rev": "01552a33",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-q292",
@@ -10268,7 +10851,10 @@
   "explanation": "Elle formalise la transition vers la cible et les work packages/plateaux.",
   "topic": "Architecture Content — Deliverables",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "a01bc71d"
+  "rev": "a01bc71d",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-q293",
@@ -10589,7 +11175,11 @@
   "explanation": "Sans rôle d'arbitrage ni règles communes, la Target reste ingouvernable.",
   "topic": "Context for Enterprise Architecture — Architecture Capability / Preliminary",
   "source": "10-practitioner-scenarios/01-context-s001-s007.md",
-  "rev": "07d702f5"
+  "rev": "07d702f5",
+  "los": [
+   "L2.1.1",
+   "L2.1.3"
+  ]
  },
  {
   "id": "togaf-f102-s002",
@@ -10628,7 +11218,11 @@
   "explanation": "La comparaison des deux capacités protège l'agilité locale et l'audit groupe.",
   "topic": "Context — Tailoring, Federation, Architecture Capability",
   "source": "10-practitioner-scenarios/01-context-s001-s007.md",
-  "rev": "d6db0bdc"
+  "rev": "d6db0bdc",
+  "los": [
+   "L2.1.3",
+   "L2.1.4"
+  ]
  },
  {
   "id": "togaf-f102-s003",
@@ -10667,7 +11261,10 @@
   "explanation": "La liaison explicite drivers–capacités–risques–coûts relie la motivation de l'architecture aux décisions de transformation attendues.",
   "topic": "Context — Value of Enterprise Architecture",
   "source": "10-practitioner-scenarios/01-context-s001-s007.md",
-  "rev": "830a4585"
+  "rev": "830a4585",
+  "los": [
+   "L2.1.1"
+  ]
  },
  {
   "id": "togaf-f102-s004",
@@ -10706,7 +11303,11 @@
   "explanation": "Le tailoring et l'itération de l'ADM maintiennent les exigences et décisions traçables tout en permettant la livraison incrémentale.",
   "topic": "Context — Tailoring, Iteration, Agile",
   "source": "10-practitioner-scenarios/01-context-s001-s007.md",
-  "rev": "066aec0e"
+  "rev": "066aec0e",
+  "los": [
+   "L2.1.4",
+   "L2.1.6"
+  ]
  },
  {
   "id": "togaf-f102-s005",
@@ -10784,7 +11385,11 @@
   "explanation": "Réévaluer requirements et risques et itérer sur les domaines affectés intègre réellement la sécurité dans la Target et les décisions de migration.",
   "topic": "Context — Integrating Risk and Security / Iteration",
   "source": "10-practitioner-scenarios/01-context-s001-s007.md",
-  "rev": "dbfadf93"
+  "rev": "dbfadf93",
+  "los": [
+   "L2.1.8",
+   "L2.1.9"
+  ]
  },
  {
   "id": "togaf-f102-s007",
@@ -10862,7 +11467,10 @@
   "explanation": "Identifier Operations comme stakeholder, capturer ses concerns et mettre à jour requirements et views relie l'architecture cible à son exploitation réelle.",
   "topic": "Stakeholder Management — Concerns, Views, Requirements",
   "source": "10-practitioner-scenarios/02-stakeholders-s008-s014.md",
-  "rev": "055d674d"
+  "rev": "055d674d",
+  "los": [
+   "L2.2.1"
+  ]
  },
  {
   "id": "togaf-f102-s009",
@@ -10901,7 +11509,10 @@
   "explanation": "La gouvernance documente les arbitrages de scope, exigences métier et sécurité en impliquant les autorités appropriées; elle rend la décision traçable.",
   "topic": "Stakeholder Management — Conflicting Concerns / Governance",
   "source": "10-practitioner-scenarios/02-stakeholders-s008-s014.md",
-  "rev": "a35f7341"
+  "rev": "a35f7341",
+  "los": [
+   "L2.2.4"
+  ]
  },
  {
   "id": "togaf-f102-s010",
@@ -10940,7 +11551,10 @@
   "explanation": "Mettre à jour stakeholders, concerns, engagement et impacts sur views/requirements rétablit la traçabilité des parties concernées.",
   "topic": "Stakeholder Management — Continuous Engagement",
   "source": "10-practitioner-scenarios/02-stakeholders-s008-s014.md",
-  "rev": "8d0400ac"
+  "rev": "8d0400ac",
+  "los": [
+   "L2.2.1"
+  ]
  },
  {
   "id": "togaf-f102-s011",
@@ -10979,7 +11593,10 @@
   "explanation": "Des views adaptées à chaque concern, issues d'une base cohérente, appliquent la distinction TOGAF entre stakeholder, concern, viewpoint et view.",
   "topic": "Stakeholder Management — Viewpoints and Views",
   "source": "10-practitioner-scenarios/02-stakeholders-s008-s014.md",
-  "rev": "9fdbf772"
+  "rev": "9fdbf772",
+  "los": [
+   "L2.2.2"
+  ]
  },
  {
   "id": "togaf-f102-s012",
@@ -11018,7 +11635,10 @@
   "explanation": "Tenir cet acteur satisfait grâce à des messages ciblés sur décisions, risques et impacts applique la stratégie d'engagement adaptée à forte influence/faible intérêt.",
   "topic": "Stakeholder Management — Influence / Interest",
   "source": "10-practitioner-scenarios/02-stakeholders-s008-s014.md",
-  "rev": "543a62c9"
+  "rev": "543a62c9",
+  "los": [
+   "L2.2.3"
+  ]
  },
  {
   "id": "togaf-f102-s013",
@@ -11057,7 +11677,10 @@
   "explanation": "RTO/RPO, reprise, observabilité, critères de test et traçabilité transforment le concern en requirements vérifiables et gouvernables.",
   "topic": "Stakeholder Management — Concern → Requirement",
   "source": "10-practitioner-scenarios/02-stakeholders-s008-s014.md",
-  "rev": "d816e662"
+  "rev": "d816e662",
+  "los": [
+   "L2.2.3"
+  ]
  },
  {
   "id": "togaf-f102-s014",
@@ -11096,7 +11719,10 @@
   "explanation": "Distinguer autorité du Board et acceptation métier, puis réviser views/requirements et soumettre les arbitrages traite les deux décisions.",
   "topic": "Stakeholder Management — Governance and Stakeholder Acceptance",
   "source": "10-practitioner-scenarios/02-stakeholders-s008-s014.md",
-  "rev": "49f614e7"
+  "rev": "49f614e7",
+  "los": [
+   "L2.2.4"
+  ]
  },
  {
   "id": "togaf-f102-s015",
@@ -11135,7 +11761,11 @@
   "explanation": "La Phase A construit la Vision à partir des drivers, stakeholders, périmètre et valeur attendue avant de figer les solutions.",
   "topic": "Phase A — Scope, Drivers, Architecture Vision",
   "source": "10-practitioner-scenarios/03-phase-a-s015-s021.md",
-  "rev": "9336f78c"
+  "rev": "9336f78c",
+  "los": [
+   "L2.3.1",
+   "L2.3.2"
+  ]
  },
  {
   "id": "togaf-f102-s016",
@@ -11174,7 +11804,10 @@
   "explanation": "Adapter au besoin la capability construite en Preliminary, puis cadrer la Vision propre à l'initiative en Phase A, distingue correctement les finalités.",
   "topic": "Phase A — Preliminary vs Phase A",
   "source": "10-practitioner-scenarios/03-phase-a-s015-s021.md",
-  "rev": "8f3dec80"
+  "rev": "8f3dec80",
+  "los": [
+   "L2.3.1"
+  ]
  },
  {
   "id": "togaf-f102-s017",
@@ -11252,7 +11885,10 @@
   "explanation": "Le scoping documente drivers, valeur, capacité de delivery, in-scope/out-of-scope et suites éventuelles pour maîtriser l'Architecture Vision.",
   "topic": "Phase A — Scope and Boundaries",
   "source": "10-practitioner-scenarios/03-phase-a-s015-s021.md",
-  "rev": "5715ab45"
+  "rev": "5715ab45",
+  "los": [
+   "L2.3.2"
+  ]
  },
  {
   "id": "togaf-f102-s019",
@@ -11408,7 +12044,10 @@
   "explanation": "Distinguer capability et application protège l'abstraction métier pendant le remplacement.",
   "topic": "Architecture Development — Phase B vs Phase C",
   "source": "10-practitioner-scenarios/04-bcd-s022-s030.md",
-  "rev": "0a85f542"
+  "rev": "0a85f542",
+  "los": [
+   "L2.4.4"
+  ]
  },
  {
   "id": "togaf-f102-s023",
@@ -11447,7 +12086,10 @@
   "explanation": "Documenter seulement l'existant nécessaire au périmètre, aux impacts et aux gaps rend la Baseline proportionnée à la décision.",
   "topic": "Architecture Development — Baseline / Fit-for-Purpose Detail",
   "source": "10-practitioner-scenarios/04-bcd-s022-s030.md",
-  "rev": "51efd583"
+  "rev": "51efd583",
+  "los": [
+   "L2.4.4"
+  ]
  },
  {
   "id": "togaf-f102-s024",
@@ -11486,7 +12128,11 @@
   "explanation": "Entities, ownership, lifecycle, quality, flows et exigences produisent une Data Architecture complète indépendamment du SGBD choisi.",
   "topic": "Architecture Development — Phase C Data",
   "source": "10-practitioner-scenarios/04-bcd-s022-s030.md",
-  "rev": "b751903c"
+  "rev": "b751903c",
+  "los": [
+   "L2.4.5",
+   "L2.4.6"
+  ]
  },
  {
   "id": "togaf-f102-s025",
@@ -11525,7 +12171,10 @@
   "explanation": "Services et interfaces cibles doivent être décrits avant de retenir un progiciel.",
   "topic": "Architecture Development — Phase C Application / ABB vs SBB",
   "source": "10-practitioner-scenarios/04-bcd-s022-s030.md",
-  "rev": "51bb3533"
+  "rev": "51bb3533",
+  "los": [
+   "L2.4.6"
+  ]
  },
  {
   "id": "togaf-f102-s026",
@@ -11564,7 +12213,11 @@
   "explanation": "Raccorder building blocks et requirements des phases B/C aux choix D et aux gaps assure la cohérence de l'architecture cible.",
   "topic": "Architecture Development — Phase D / Cross-Domain Alignment",
   "source": "10-practitioner-scenarios/04-bcd-s022-s030.md",
-  "rev": "ddcc4f70"
+  "rev": "ddcc4f70",
+  "los": [
+   "L2.4.7",
+   "L2.4.8"
+  ]
  },
  {
   "id": "togaf-f102-s027",
@@ -11603,7 +12256,10 @@
   "explanation": "Tracer les impacts cross-domain et consolider les gaps avant Phase E relie les décisions B, C et D à des work packages justifiables.",
   "topic": "Architecture Development — Gap Analysis across B/C/D",
   "source": "10-practitioner-scenarios/04-bcd-s022-s030.md",
-  "rev": "ac3ecc06"
+  "rev": "ac3ecc06",
+  "los": [
+   "L2.4.9"
+  ]
  },
  {
   "id": "togaf-f102-s028",
@@ -11642,7 +12298,12 @@
   "explanation": "Itérer entre Data et Application jusqu'à satisfaire les requirements garantit une Target cohérente et traçable.",
   "topic": "Architecture Development — Iteration within Phase C",
   "source": "10-practitioner-scenarios/04-bcd-s022-s030.md",
-  "rev": "884f6968"
+  "rev": "884f6968",
+  "los": [
+   "L2.4.5",
+   "L2.4.9",
+   "L2.8.13"
+  ]
  },
  {
   "id": "togaf-f102-s029",
@@ -11681,7 +12342,11 @@
   "explanation": "Le viewpoint sélectionné en fonction des concerns donne au directeur une view métier lisible des capacités, services et impacts.",
   "topic": "Architecture Development — Stakeholders / Views",
   "source": "10-practitioner-scenarios/04-bcd-s022-s030.md",
-  "rev": "ef8ca440"
+  "rev": "ef8ca440",
+  "los": [
+   "L2.2.2",
+   "L2.4.9"
+  ]
  },
  {
   "id": "togaf-f102-s030",
@@ -11720,7 +12385,11 @@
   "explanation": "Requirements Management traite la nouvelle exigence comme un changement traçable, avec itérations B/C/D et mise à jour des gaps.",
   "topic": "Architecture Development — Requirements Management / Iteration",
   "source": "10-practitioner-scenarios/04-bcd-s022-s030.md",
-  "rev": "f60a85bd"
+  "rev": "f60a85bd",
+  "los": [
+   "L2.4.8",
+   "L2.4.9"
+  ]
  },
  {
   "id": "togaf-f102-s031",
@@ -11759,7 +12428,10 @@
   "explanation": "La consolidation cross-domain, les SBB candidats, work packages et Transition Architectures forment la sortie utile de Phase E.",
   "topic": "Implementing Architecture — Phase E",
   "source": "10-practitioner-scenarios/05-efg-s031-s039.md",
-  "rev": "31c56340"
+  "rev": "31c56340",
+  "los": [
+   "L2.5.4"
+  ]
  },
  {
   "id": "togaf-f102-s032",
@@ -11837,7 +12509,11 @@
   "explanation": "Des états intermédiaires conçus et gouvernés permettent de maîtriser la coexistence de l'ancien et du nouveau.",
   "topic": "Implementing Architecture — Transition Architectures",
   "source": "10-practitioner-scenarios/05-efg-s031-s039.md",
-  "rev": "658e0d6c"
+  "rev": "658e0d6c",
+  "los": [
+   "L2.5.2",
+   "L2.5.5"
+  ]
  },
  {
   "id": "togaf-f102-s034",
@@ -11876,7 +12552,11 @@
   "explanation": "Une priorisation fondée sur la valeur, les risques, les coûts et les dépendances rend l'arbitrage défendable.",
   "topic": "Implementing Architecture — Phase F / Prioritization",
   "source": "10-practitioner-scenarios/05-efg-s031-s039.md",
-  "rev": "8aefa6f5"
+  "rev": "8aefa6f5",
+  "los": [
+   "L2.5.7",
+   "L2.5.15"
+  ]
  },
  {
   "id": "togaf-f102-s035",
@@ -11915,7 +12595,11 @@
   "explanation": "La revue des dépendances et le réordonnancement des vagues protègent le prérequis IAM avant l'API.",
   "topic": "Implementing Architecture — Phase F / Dependencies",
   "source": "10-practitioner-scenarios/05-efg-s031-s039.md",
-  "rev": "e2d2b4e3"
+  "rev": "e2d2b4e3",
+  "los": [
+   "L2.5.4",
+   "L2.5.8"
+  ]
  },
  {
   "id": "togaf-f102-s036",
@@ -11954,7 +12638,11 @@
   "explanation": "Un Architecture Contract ou accord équivalent attribue les obligations et soutient les revues G.",
   "topic": "Implementing Architecture — Phase G / Architecture Contract",
   "source": "10-practitioner-scenarios/05-efg-s031-s039.md",
-  "rev": "4fd186be"
+  "rev": "4fd186be",
+  "los": [
+   "L2.5.12",
+   "L2.5.14"
+  ]
  },
  {
   "id": "togaf-f102-s037",
@@ -11993,7 +12681,10 @@
   "explanation": "L'écart est rendu visible, qualifié et soumis à l'autorité qui peut décider correction ou exception.",
   "topic": "Implementing Architecture — Phase G / Exceptions and Deviations",
   "source": "10-practitioner-scenarios/05-efg-s031-s039.md",
-  "rev": "707be3aa"
+  "rev": "707be3aa",
+  "los": [
+   "L2.5.12"
+  ]
  },
  {
   "id": "togaf-f102-s038",
@@ -12032,7 +12723,12 @@
   "explanation": "La review confrontant la réalisation aux exigences, principes, building blocks et décisions établit la conformité.",
   "topic": "Implementing Architecture — Phase G / Compliance Review",
   "source": "10-practitioner-scenarios/05-efg-s031-s039.md",
-  "rev": "e447c7fc"
+  "rev": "e447c7fc",
+  "los": [
+   "L2.1.5",
+   "L2.5.14",
+   "L2.8.3"
+  ]
  },
  {
   "id": "togaf-f102-s039",
@@ -12110,7 +12806,10 @@
   "explanation": "H qualifie l'impact réglementaire avant de décider d'un nouveau cycle.",
   "topic": "Phase H — Change Assessment / New ADM Cycle",
   "source": "10-practitioner-scenarios/06-phase-h-s040-s045.md",
-  "rev": "1e0d0254"
+  "rev": "1e0d0254",
+  "los": [
+   "L2.6.1"
+  ]
  },
  {
   "id": "togaf-f102-s041",
@@ -12149,7 +12848,10 @@
   "explanation": "Une vérification d'impact permet de traiter proportionnellement ce patch sans relancer tout l'ADM.",
   "topic": "Phase H — Change Classification",
   "source": "10-practitioner-scenarios/06-phase-h-s040-s045.md",
-  "rev": "1f683359"
+  "rev": "1f683359",
+  "los": [
+   "L2.6.1"
+  ]
  },
  {
   "id": "togaf-f102-s042",
@@ -12422,7 +13124,10 @@
   "explanation": "Tracer la source et les concerns, puis déterminer les artifacts et building blocks affectés permet l'impact analysis et la vérification de la requirement.",
   "topic": "Requirements Management — Traceability",
   "source": "10-practitioner-scenarios/07-requirements-s046-s052.md",
-  "rev": "aef80a4d"
+  "rev": "aef80a4d",
+  "los": [
+   "L2.7.2"
+  ]
  },
  {
   "id": "togaf-f102-s049",
@@ -12461,7 +13166,10 @@
   "explanation": "Le changement réglementaire se propage aux domaines, gaps et lots avant de réviser le plan de migration.",
   "topic": "Requirements Management — Change during ADM / Iteration",
   "source": "10-practitioner-scenarios/07-requirements-s046-s052.md",
-  "rev": "c102c19a"
+  "rev": "c102c19a",
+  "los": [
+   "L2.7.2"
+  ]
  },
  {
   "id": "togaf-f102-s050",
@@ -12617,7 +13325,10 @@
   "explanation": "Le Business Scenario explicite ensemble problème, acteurs, environnement, outcomes et requirements; il permet de valider la demande avant le choix d'une solution.",
   "topic": "Supporting ADM Work — Business Scenarios",
   "source": "10-practitioner-scenarios/08-supporting-adm-s053-s060.md",
-  "rev": "c3d15b0e"
+  "rev": "c3d15b0e",
+  "los": [
+   "L2.8.2"
+  ]
  },
  {
   "id": "togaf-f102-s054",
@@ -12656,7 +13367,10 @@
   "explanation": "Comparer Baseline et Target détermine les changements à traiter avant de grouper les solutions candidates.",
   "topic": "Supporting ADM Work — Gap Analysis",
   "source": "10-practitioner-scenarios/08-supporting-adm-s053-s060.md",
-  "rev": "c234fd70"
+  "rev": "c234fd70",
+  "los": [
+   "L2.8.12"
+  ]
  },
  {
   "id": "togaf-f102-s055",
@@ -12734,7 +13448,10 @@
   "explanation": "Qualifier risque initial et résiduel, propriétaires, mitigation et acceptation ou escalade appropriée fournit une décision traçable et conforme à la tolérance.",
   "topic": "Supporting ADM Work — Risk Management",
   "source": "10-practitioner-scenarios/08-supporting-adm-s053-s060.md",
-  "rev": "d7880c00"
+  "rev": "d7880c00",
+  "los": [
+   "L2.8.19"
+  ]
  },
  {
   "id": "togaf-f102-s057",
@@ -12890,7 +13607,10 @@
   "explanation": "La réutilisation exige comparaison des hypothèses d'origine, contraintes, risques et besoins réels.",
   "topic": "Supporting ADM Work — Repository / Reuse / Tailoring",
   "source": "10-practitioner-scenarios/08-supporting-adm-s053-s060.md",
-  "rev": "937718d6"
+  "rev": "937718d6",
+  "los": [
+   "L2.8.13"
+  ]
  },
  {
   "id": "togaf-f101-xf01",
@@ -12926,7 +13646,10 @@
   "topic": "",
   "lo": "L1.1.1",
   "source": "09-foundation-question-bank/10-x2202-targeted-drills.md",
-  "rev": "2b28f89c"
+  "rev": "2b28f89c",
+  "los": [
+   "L1.1.1"
+  ]
  },
  {
   "id": "togaf-f101-xf02",
@@ -12962,7 +13685,10 @@
   "topic": "",
   "lo": "L1.4.3",
   "source": "09-foundation-question-bank/10-x2202-targeted-drills.md",
-  "rev": "d4dfa1cd"
+  "rev": "d4dfa1cd",
+  "los": [
+   "L1.4.3"
+  ]
  },
  {
   "id": "togaf-f101-d01",
@@ -12997,7 +13723,10 @@
   "explanation": "La demande déclenche l'engagement ; elle n'est pas le mandat de l'architecte déjà négocié. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "0739faee"
+  "rev": "0739faee",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d02",
@@ -13032,7 +13761,10 @@
   "explanation": "Le Statement décrit le travail architectural convenu ; il ne remplace ni la Vision ni les exigences détaillées. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "f6b4dde4"
+  "rev": "f6b4dde4",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d03",
@@ -13067,7 +13799,10 @@
   "explanation": "La Vision établit l'alignement initial ; les modèles détaillés et le plan d'exécution viennent ensuite. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "6d9e46ae"
+  "rev": "6d9e46ae",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d04",
@@ -13102,7 +13837,10 @@
   "explanation": "Le Communications Plan organise les messages, destinataires, canaux et rythmes ; il ne définit pas les engagements d'implémentation. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "34d59dc2"
+  "rev": "34d59dc2",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d05",
@@ -13137,7 +13875,10 @@
   "explanation": "Ces fondements métier orientent le travail architectural ; ils ne sont pas encore les descriptions Baseline/Target. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "7bc5719d"
+  "rev": "7bc5719d",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d06",
@@ -13172,7 +13913,10 @@
   "explanation": "La Capability Assessment examine les capacités ; la Roadmap présente un itinéraire de transformation. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "18776c0b"
+  "rev": "18776c0b",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d07",
@@ -13207,7 +13951,10 @@
   "explanation": "Les principes guident les décisions transverses ; les requirements précisent les conditions à satisfaire. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "c7666ad0"
+  "rev": "c7666ad0",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d08",
@@ -13242,7 +13989,10 @@
   "explanation": "Le Definition Document décrit les architectures ; la Requirements Specification décrit ce qu'elles doivent satisfaire. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "38c148de"
+  "rev": "38c148de",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d09",
@@ -13277,7 +14027,10 @@
   "explanation": "La spécification consolide les exigences ; elle ne doit pas être confondue avec les diagrammes ni le planning. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "8597b53a"
+  "rev": "8597b53a",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d10",
@@ -13312,7 +14065,10 @@
   "explanation": "La Roadmap présente la trajectoire et les grands états ; le Migration Plan détaille les séquences d'exécution. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "2b7b81e6"
+  "rev": "2b7b81e6",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d11",
@@ -13347,7 +14103,10 @@
   "explanation": "Le plan de migration apporte le séquencement détaillé de mise en œuvre à partir des travaux préparés. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "98d6374a"
+  "rev": "98d6374a",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d12",
@@ -13382,7 +14141,10 @@
   "explanation": "Le Governance Model définit comment piloter et contrôler la réalisation, à distinguer des obligations contractuelles spécifiques. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "f3034f12"
+  "rev": "f3034f12",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d13",
@@ -13417,7 +14179,10 @@
   "explanation": "Le Contract formalise les engagements entre les parties ; le Governance Model décrit les règles du dispositif général. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "e2b60096"
+  "rev": "e2b60096",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d14",
@@ -13452,7 +14217,10 @@
   "explanation": "L'Assessment mesure la conformité de la réalisation par rapport à la cible et aux exigences approuvées. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "d90d9023"
+  "rev": "d90d9023",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d15",
@@ -13487,7 +14255,10 @@
   "explanation": "La Change Request est la demande de modification ; l'Impact Assessment en analyse les conséquences. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "42b61d49"
+  "rev": "42b61d49",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-d16",
@@ -13522,7 +14293,10 @@
   "explanation": "L'Impact Assessment examine les conséquences d'une requirement modifiée ; ce n'est pas la demande de changement elle-même. Les trois autres options désignent des livrables réels, mais avec d'autres rôles dans l'ADM.",
   "topic": "",
   "source": "09-foundation-question-bank/11-x2202-deliverables-drills.md",
-  "rev": "74a9ae30"
+  "rev": "74a9ae30",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-f01",
@@ -13558,7 +14332,10 @@
   "topic": "L1 5.5. Source : X2202, section 3.1",
   "lo": "L1.5.5",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "5b02bd4e"
+  "rev": "5b02bd4e",
+  "los": [
+   "L1.5.5"
+  ]
  },
  {
   "id": "togaf-f101-f02",
@@ -13594,7 +14371,10 @@
   "topic": "L1 5.5. Source : X2202, section 3.1",
   "lo": "L1.5.5",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "25655953"
+  "rev": "25655953",
+  "los": [
+   "L1.5.5"
+  ]
  },
  {
   "id": "togaf-f101-f03",
@@ -13630,7 +14410,10 @@
   "topic": "L1 1.6. Source : X2202, section 3.1",
   "lo": "L1.1.6",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "d4fb27c9"
+  "rev": "d4fb27c9",
+  "los": [
+   "L1.1.6"
+  ]
  },
  {
   "id": "togaf-f101-f04",
@@ -13774,7 +14557,10 @@
   "topic": "L1 4.4. Source : X2202, section 3.1",
   "lo": "L1.4.4",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "1cab3268"
+  "rev": "1cab3268",
+  "los": [
+   "L1.4.4"
+  ]
  },
  {
   "id": "togaf-f101-f08",
@@ -13810,7 +14596,10 @@
   "topic": "L1 3.2. Source : X2202, section 3.1",
   "lo": "L1.3.2",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "169d84dc"
+  "rev": "169d84dc",
+  "los": [
+   "L1.3.2"
+  ]
  },
  {
   "id": "togaf-f101-f09",
@@ -13846,7 +14635,10 @@
   "topic": "L1 3.5. Source : X2202, section 3.1",
   "lo": "L1.3.5",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "f25caa4e"
+  "rev": "f25caa4e",
+  "los": [
+   "L1.3.5"
+  ]
  },
  {
   "id": "togaf-f101-f10",
@@ -13882,7 +14674,10 @@
   "topic": "L1 7.3. Source : X2202, section 3.1",
   "lo": "L1.7.3",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "a8ecc60b"
+  "rev": "a8ecc60b",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-f11",
@@ -13918,7 +14713,10 @@
   "topic": "L1 7.3. Source : X2202, section 3.1",
   "lo": "L1.7.3",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "7b37ba03"
+  "rev": "7b37ba03",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-f12",
@@ -13954,7 +14752,10 @@
   "topic": "L1 7.3. Source : X2202, section 3.1",
   "lo": "L1.7.3",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "ff97908e"
+  "rev": "ff97908e",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-f13",
@@ -13990,7 +14791,10 @@
   "topic": "L1 7.3. Source : X2202, section 3.1",
   "lo": "L1.7.3",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "f85ed884"
+  "rev": "f85ed884",
+  "los": [
+   "L1.7.3"
+  ]
  },
  {
   "id": "togaf-f101-f14",
@@ -14062,7 +14866,10 @@
   "topic": "L1 3.21–3.22. Source : X2202, section 3.1",
   "lo": "L1.3.21",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "18250a30"
+  "rev": "18250a30",
+  "los": [
+   "L1.3.22"
+  ]
  },
  {
   "id": "togaf-f101-f16",
@@ -14170,7 +14977,10 @@
   "topic": "L1 6.1. Source : X2202, section 3.1",
   "lo": "L1.6.1",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "90ecdc29"
+  "rev": "90ecdc29",
+  "los": [
+   "L1.6.1"
+  ]
  },
  {
   "id": "togaf-f101-f19",
@@ -14426,7 +15236,10 @@
   "topic": "",
   "lo": "L2.1.11",
   "source": "10-practitioner-scenarios/10-x2202-targeted-cases.md",
-  "rev": "6219febe"
+  "rev": "6219febe",
+  "los": [
+   "L2.1.11"
+  ]
  },
  {
   "id": "togaf-f102-xp02",
@@ -14466,7 +15279,10 @@
   "topic": "",
   "lo": "L2.8.5",
   "source": "10-practitioner-scenarios/10-x2202-targeted-cases.md",
-  "rev": "e6141c9b"
+  "rev": "e6141c9b",
+  "los": [
+   "L2.8.5"
+  ]
  },
  {
   "id": "togaf-f102-xp03",
@@ -14506,7 +15322,10 @@
   "topic": "",
   "lo": "L2.8.14",
   "source": "10-practitioner-scenarios/10-x2202-targeted-cases.md",
-  "rev": "0814ac80"
+  "rev": "0814ac80",
+  "los": [
+   "L2.8.14"
+  ]
  },
  {
   "id": "togaf-f102-xp04",
@@ -14546,7 +15365,10 @@
   "topic": "",
   "lo": "L2.8.18",
   "source": "10-practitioner-scenarios/10-x2202-targeted-cases.md",
-  "rev": "3dcdac55"
+  "rev": "3dcdac55",
+  "los": [
+   "L2.8.18"
+  ]
  },
  {
   "id": "togaf-f102-xp05",
@@ -14586,7 +15408,10 @@
   "topic": "",
   "lo": "L2.1.7",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "0e845f15"
+  "rev": "0e845f15",
+  "los": [
+   "L2.1.7"
+  ]
  },
  {
   "id": "togaf-f102-xp06",
@@ -14626,7 +15451,10 @@
   "topic": "",
   "lo": "L2.3.3",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "4defcdea"
+  "rev": "4defcdea",
+  "los": [
+   "L2.3.3"
+  ]
  },
  {
   "id": "togaf-f102-xp07",
@@ -14666,7 +15494,10 @@
   "topic": "",
   "lo": "L2.5.6",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "bd0eff9f"
+  "rev": "bd0eff9f",
+  "los": [
+   "L2.5.6"
+  ]
  },
  {
   "id": "togaf-f102-xp08",
@@ -14706,7 +15537,10 @@
   "topic": "",
   "lo": "L2.8.1",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "cd4255ac"
+  "rev": "cd4255ac",
+  "los": [
+   "L2.8.1"
+  ]
  },
  {
   "id": "togaf-f102-xp09",
@@ -14746,7 +15580,10 @@
   "topic": "",
   "lo": "L2.8.6",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "2be9394c"
+  "rev": "2be9394c",
+  "los": [
+   "L2.8.6"
+  ]
  },
  {
   "id": "togaf-f102-xp10",
@@ -14786,7 +15623,11 @@
   "topic": "",
   "lo": "L2.8.7",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "7db4fdee"
+  "rev": "7db4fdee",
+  "los": [
+   "L2.8.7",
+   "L2.8.8"
+  ]
  },
  {
   "id": "togaf-f102-xp11",
@@ -14826,7 +15667,10 @@
   "topic": "",
   "lo": "L2.8.9",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "16689eb6"
+  "rev": "16689eb6",
+  "los": [
+   "L2.8.9"
+  ]
  },
  {
   "id": "togaf-f102-xp12",
@@ -14866,7 +15710,10 @@
   "topic": "",
   "lo": "L2.8.11",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "a7848384"
+  "rev": "a7848384",
+  "los": [
+   "L2.8.11"
+  ]
  },
  {
   "id": "togaf-f102-xp13",
@@ -14906,7 +15753,10 @@
   "topic": "",
   "lo": "L2.8.15",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "beeb5733"
+  "rev": "beeb5733",
+  "los": [
+   "L2.8.15"
+  ]
  },
  {
   "id": "togaf-f102-xp14",
@@ -14946,7 +15796,10 @@
   "topic": "",
   "lo": "L2.8.16",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "61e59bf1"
+  "rev": "61e59bf1",
+  "los": [
+   "L2.8.16"
+  ]
  },
  {
   "id": "togaf-f102-xp15",
@@ -14986,7 +15839,10 @@
   "topic": "",
   "lo": "L2.8.17",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "0270c42f"
+  "rev": "0270c42f",
+  "los": [
+   "L2.8.17"
+  ]
  },
  {
   "id": "togaf-f102-xp16",
@@ -15026,7 +15882,10 @@
   "topic": "",
   "lo": "L2.6.2",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "caa7e4ea"
+  "rev": "caa7e4ea",
+  "los": [
+   "L2.6.2"
+  ]
  },
  {
   "id": "togaf-f102-xp17",
@@ -15066,7 +15925,10 @@
   "topic": "",
   "lo": "L1.3.6",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "bbb6cb65"
+  "rev": "bbb6cb65",
+  "los": [
+   "L1.3.6"
+  ]
  },
  {
   "id": "togaf-f102-xp18",
@@ -15106,7 +15968,10 @@
   "topic": "",
   "lo": "L2.1.10",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "2cac8a0c"
+  "rev": "2cac8a0c",
+  "los": [
+   "L2.1.10"
+  ]
  },
  {
   "id": "togaf-f102-xp19",
@@ -15146,7 +16011,10 @@
   "topic": "",
   "lo": "L2.4.1",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "7d930d39"
+  "rev": "7d930d39",
+  "los": [
+   "L2.4.1"
+  ]
  },
  {
   "id": "togaf-f102-xp20",
@@ -15186,7 +16054,10 @@
   "topic": "",
   "lo": "L2.4.2",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "f4d20cf1"
+  "rev": "f4d20cf1",
+  "los": [
+   "L2.4.2"
+  ]
  },
  {
   "id": "togaf-f102-xp21",
@@ -15226,7 +16097,10 @@
   "topic": "",
   "lo": "L2.4.3",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "fbbe8ef0"
+  "rev": "fbbe8ef0",
+  "los": [
+   "L2.4.3"
+  ]
  },
  {
   "id": "togaf-f102-xp22",
@@ -15266,7 +16140,10 @@
   "topic": "",
   "lo": "L2.5.1",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "ed2be641"
+  "rev": "ed2be641",
+  "los": [
+   "L2.5.1"
+  ]
  },
  {
   "id": "togaf-f102-xp23",
@@ -15306,7 +16183,11 @@
   "topic": "",
   "lo": "L2.5.9",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "189b125b"
+  "rev": "189b125b",
+  "los": [
+   "L2.5.9",
+   "L2.5.10"
+  ]
  },
  {
   "id": "togaf-f102-xp24",
@@ -15346,7 +16227,11 @@
   "topic": "",
   "lo": "L2.5.11",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "141ec1ed"
+  "rev": "141ec1ed",
+  "los": [
+   "L2.5.11",
+   "L2.5.13"
+  ]
  },
  {
   "id": "togaf-f102-xp25",
@@ -15386,7 +16271,10 @@
   "topic": "",
   "lo": "L2.6.3",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "dfffe2c6"
+  "rev": "dfffe2c6",
+  "los": [
+   "L2.6.3"
+  ]
  },
  {
   "id": "togaf-f102-xp26",
@@ -15426,7 +16314,10 @@
   "topic": "",
   "lo": "L2.7.3",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "1f3f2bc5"
+  "rev": "1f3f2bc5",
+  "los": [
+   "L2.7.3"
+  ]
  },
  {
   "id": "togaf-f102-xp27",
@@ -15466,7 +16357,10 @@
   "topic": "",
   "lo": "L2.8.4",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "8dd8ddca"
+  "rev": "8dd8ddca",
+  "los": [
+   "L2.8.4"
+  ]
  },
  {
   "id": "togaf-f102-xp28",
@@ -15506,7 +16400,10 @@
   "topic": "",
   "lo": "L2.8.10",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "b1cf075e"
+  "rev": "b1cf075e",
+  "los": [
+   "L2.8.10"
+  ]
  },
  {
   "id": "togaf-f102-xp29",
@@ -15546,7 +16443,10 @@
   "topic": "",
   "lo": "L2.1.2",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "229b736f"
+  "rev": "229b736f",
+  "los": [
+   "L2.1.2"
+  ]
  },
  {
   "id": "togaf-f102-xp30",
@@ -15586,7 +16486,10 @@
   "topic": "",
   "lo": "L2.3.4",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "069e211a"
+  "rev": "069e211a",
+  "los": [
+   "L2.3.4"
+  ]
  },
  {
   "id": "togaf-f102-xp31",
@@ -15626,7 +16529,10 @@
   "topic": "",
   "lo": "L2.5.3",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "5da6f264"
+  "rev": "5da6f264",
+  "los": [
+   "L2.5.3"
+  ]
  },
  {
   "id": "togaf-f102-xp32",
@@ -15666,7 +16572,10 @@
   "topic": "",
   "lo": "L2.7.1",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "6746c343"
+  "rev": "6746c343",
+  "los": [
+   "L2.7.1"
+  ]
  },
  {
   "id": "togaf-f102-xp33",
@@ -15706,7 +16615,10 @@
   "topic": "",
   "lo": "L2.1.5",
   "source": "10-practitioner-scenarios/12-conformance-and-migration-xp033-xp036.md",
-  "rev": "8691fcd2"
+  "rev": "8691fcd2",
+  "los": [
+   "L2.1.5"
+  ]
  },
  {
   "id": "togaf-f102-xp34",
@@ -15746,7 +16658,10 @@
   "topic": "",
   "lo": "L2.1.5",
   "source": "10-practitioner-scenarios/12-conformance-and-migration-xp033-xp036.md",
-  "rev": "1d5d8e77"
+  "rev": "1d5d8e77",
+  "los": [
+   "L2.1.5"
+  ]
  },
  {
   "id": "togaf-f102-xp35",
@@ -15786,7 +16701,10 @@
   "topic": "",
   "lo": "L2.5.3",
   "source": "10-practitioner-scenarios/12-conformance-and-migration-xp033-xp036.md",
-  "rev": "efa52f93"
+  "rev": "efa52f93",
+  "los": [
+   "L2.5.3"
+  ]
  },
  {
   "id": "togaf-f102-xp36",
@@ -15826,7 +16744,10 @@
   "topic": "",
   "lo": "L2.5.3",
   "source": "10-practitioner-scenarios/12-conformance-and-migration-xp033-xp036.md",
-  "rev": "14782d8a"
+  "rev": "14782d8a",
+  "los": [
+   "L2.5.3"
+  ]
  },
  {
   "id": "togaf-f102-a01",
@@ -15866,7 +16787,11 @@
   "topic": "",
   "lo": "L2.1.5",
   "source": "10-practitioner-scenarios/09-advanced-multi-constraint-scenarios.md",
-  "rev": "644feb34"
+  "rev": "644feb34",
+  "los": [
+   "L2.1.5",
+   "L2.8.3"
+  ]
  },
  {
   "id": "togaf-f102-a02",
@@ -16026,7 +16951,11 @@
   "topic": "",
   "lo": "L2.5.2",
   "source": "10-practitioner-scenarios/09-advanced-multi-constraint-scenarios.md",
-  "rev": "79a84619"
+  "rev": "79a84619",
+  "los": [
+   "L2.5.2",
+   "L2.5.15"
+  ]
  },
  {
   "id": "togaf-f102-a06",

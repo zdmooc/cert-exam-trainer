@@ -235,3 +235,43 @@ test('prêt à réserver : 3 examens blancs consécutifs au-dessus de l’object
   assert.deepEqual(bookingReadiness(mixed, def), { ready: true, streak: 3, required: 3, examsTaken: 4 });
   assert.equal(bookingReadiness([ex(1, 40), ex(2, 40), ex(3, 31)], def).streak, 0);
 });
+
+// ---------- Lot 2 : progression par objectif ----------
+
+test('objectif : jamais vu, en cours, à réviser, acquis', async () => {
+  const { objectiveProgress, summarizeObjectives } = await import('../app/js/core/objectives.js');
+  const qa = { id: 'o1', rev: 'r1', los: ['L1.1.1'] };
+  const qb = { id: 'o2', rev: 'r2', los: ['L1.1.1', 'L1.1.2'] };
+  let p = emptyProgress();
+  assert.equal(objectiveProgress([qa, qb], p).status, 'never');
+  p = recordAnswer(p, qa, true, 0);
+  p = recordAnswer(p, qb, true, 0);
+  assert.equal(objectiveProgress([qa, qb], p).status, 'learning'); // 2 réponses < 3
+  p = recordAnswer(p, qa, true, 0);
+  assert.equal(objectiveProgress([qa, qb], p).status, 'acquired'); // 3 réponses, 100 %
+  p = recordAnswer(p, qb, false, 0);
+  assert.equal(objectiveProgress([qa, qb], p).status, 'review'); // erreur non corrigée
+  p = recordAnswer(p, qb, true, 0);
+  p = recordAnswer(p, qb, true, 0); // qb remonte en boîte 3 : plus à revoir
+  const r = objectiveProgress([qa, qb], p);
+  assert.deepEqual([r.status, r.answers, r.correct], ['acquired', 6, 5]); // 83 %
+  const qc = { id: 'o3', rev: 'r3', los: ['L1.1.3'] };
+  let p3 = recordAnswer(emptyProgress(), qc, false, 0);
+  p3 = recordAnswer(p3, qc, true, 0);
+  p3 = recordAnswer(p3, qc, true, 0); // boîte 3 (plus à revoir) mais 2/3 = 67 % < 75 %
+  assert.equal(objectiveProgress([qc], p3).status, 'learning');
+  let p4 = p3;
+  p4 = recordAnswer(p4, qc, true, 0); // 3/4 = 75 % : seuil atteint
+  assert.equal(objectiveProgress([qc], p4).status, 'acquired');
+  const sum = summarizeObjectives([{ id: 'L1.1.1' }, { id: 'L1.1.2' }, { id: 'L1.8.1' }], [qa, qb], p);
+  assert.equal(sum.withoutQuestions, 1);
+  assert.equal(sum.items.find((i) => i.id === 'L1.1.2').questions, 1);
+});
+
+test('objectif : une statistique d’une ancienne version de question ne compte pas', async () => {
+  const { objectiveProgress } = await import('../app/js/core/objectives.js');
+  let p = emptyProgress();
+  for (let i = 0; i < 3; i++) p = recordAnswer(p, { id: 'o1', rev: 'old' }, true, 0);
+  assert.equal(objectiveProgress([{ id: 'o1', rev: 'old' }], p).status, 'acquired');
+  assert.equal(objectiveProgress([{ id: 'o1', rev: 'new' }], p).status, 'never');
+});

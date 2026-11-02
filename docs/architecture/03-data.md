@@ -49,9 +49,26 @@
 - Le barème est porté par les **points de chaque option** : 1/0 pour un QCM simple, 5/3/1/0 pour un scénario gradué. Le moteur n'a pas d'autre notion de barème.
 - `key` est la lettre d'origine, utilisée seulement pour relier l'explication aux options.
 - `series` regroupe les questions par série d'exercices (déclarées dans `pack.json` → `series`) ; filtrable en entraînement.
-- `lo` (facultatif) est l'objectif d'apprentissage du syllabus (ex. X2202 `L2.1.7`).
+- `lo` (facultatif) est l'objectif d'apprentissage écrit à côté de la question dans le dépôt de cours (ex. X2202 `L2.1.7`).
+- `los` (facultatif) liste les objectifs auxquels la matrice de traçabilité du dépôt de cours rattache la question (une question peut en servir plusieurs). Rattachement **candidat, non relu** : il sert à détecter les manques et à orienter la révision, pas à certifier une couverture.
 - `rev` est l'empreinte de la question (8 caractères de SHA-256 sur l'énoncé, le texte et les points des options ; voir `content-pipeline/rev.mjs`). Elle ne change pas pour une justification ou une explication (ADR-004).
 - `rationale` (facultatif, par option) justifie le score de l'option ; l'appli l'affiche sous chaque réponse dans la correction.
+
+## Objectifs (`objectives.json`)
+
+Généré depuis `14-official-sources/06-x2202-learning-outcome-traceability.md` du dépôt de cours :
+
+| Champ | Exemple |
+| --- | --- |
+| `id`, `level`, `unit`, `unitLabel` | `L2.1.5`, 2, 1, « Context for Enterprise Architecture » |
+| `label` | « Conformance et niveaux de conformité » |
+| `course` | chemin de la fiche dans le dépôt de cours (l'appli renvoie vers GitHub, rien n'est recopié — P4) |
+| `bloom`, `review` | niveau Bloom officiel indiqué par la matrice, statut de revue (« Candidat précis — non relu ») |
+| `questionCount` | nombre de questions rattachées |
+
+Le build **échoue** si une référence de la matrice (Q###, S###, XP##, XF##, F##, D##, A##, plages « Q005–Q008 ») ne correspond à aucune question, et liste les objectifs sans question.
+
+Statut d'un objectif (`js/core/objectives.js`), par priorité : **jamais vu** (aucune réponse) → **à réviser** (une question à revoir) → **acquis** (≥ 3 réponses et ≥ 75 %) → **en cours** (sinon).
 
 ## Progression (stockage local, clé `cet:<pack>:progress`)
 

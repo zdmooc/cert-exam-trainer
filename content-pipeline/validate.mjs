@@ -3,7 +3,7 @@
 // Usage : node content-pipeline/validate.mjs app/packs/<pack>
 // Code de sortie 1 si une erreur bloquante est trouvée.
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { questionRev } from './rev.mjs';
 
@@ -51,6 +51,22 @@ for (const exam of pack.exams) {
   const bank = questions.filter((q) => q.exam === exam.id && q.set === 'bank');
   for (const d of exam.domains) {
     if (bank.filter((q) => q.domain === d.id).length < d.count) errors.push(`${exam.id} : banque insuffisante pour générer un examen (domaine ${d.id})`);
+  }
+}
+
+// Objectifs d'apprentissage : chaque « los » doit exister dans objectives.json.
+if (pack.objectives?.file) {
+  const f = join(dir, pack.objectives.file);
+  if (!existsSync(f)) errors.push(`${pack.objectives.file} introuvable`);
+  else {
+    const objs = JSON.parse(readFileSync(f, 'utf8'));
+    const known = new Set(objs.map((o) => o.id));
+    for (const q of questions) for (const lo of q.los ?? []) if (!known.has(lo)) err(q, `objectif inconnu ${lo}`);
+    for (const o of objs) {
+      const n = questions.filter((q) => q.los?.includes(o.id)).length;
+      if (n !== o.questionCount) errors.push(`objectif ${o.id} : ${o.questionCount} annoncée(s), ${n} trouvée(s)`);
+    }
+    console.log(`Objectifs : ${objs.length}, dont ${objs.filter((o) => o.questionCount === 0).length} sans question`);
   }
 }
 

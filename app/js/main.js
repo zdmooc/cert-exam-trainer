@@ -12,6 +12,7 @@ import {
   applyResets, bookingReadiness,
 } from './core/progress.js';
 import { createLocalStorage } from './adapters/storage.js';
+import { summarizeObjectives, questionsByObjective } from './core/objectives.js';
 
 const $view = document.getElementById('view');
 const $title = document.getElementById('title');
@@ -19,7 +20,7 @@ const $timer = document.getElementById('timer');
 const $homeBtn = document.getElementById('home-btn');
 
 const S = {
-  pack: null, questions: [], byId: new Map(), store: null,
+  pack: null, questions: [], byId: new Map(), objectives: [], store: null,
   examId: null, progress: emptyProgress(), session: null,
   setup: { strategy: 'adaptive', count: 20, domains: [], series: [] },
   confirm: null, showGrid: false,
@@ -29,6 +30,11 @@ let timerHandle = null;
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const exam = () => S.pack.exams.find((e) => e.id === S.examId);
 const domainLabel = (id) => exam()?.domains.find((d) => d.id === id)?.label ?? id;
+const objectiveText = (q) => {
+  const ids = [...new Set([...(q.los ?? []), ...(q.lo && !/U\d$/.test(q.lo) ? [q.lo] : [])])];
+  if (!ids.length) return q.lo ? `Objectif X2202 ${q.lo}` : '';
+  return `Objectif${ids.length > 1 ? 's' : ''} X2202 ${ids.join(', ')}${q.los ? ' (rattachement candidat)' : ''}`;
+};
 const readiness = () => bookingReadiness(S.progress.sessions, exam());
 const readinessBadge = (r) => (r.ready
   ? '<span class="badge ok">Prêt à réserver</span>'
@@ -186,7 +192,7 @@ function explanationHtml(q, item) {
       <ol>${ordered.map((o) => `<li class="${o.key === r.bestKey ? 'is-best' : o.key === item.answer ? 'is-mine' : ''}">
         <span class="k">${o.key}</span>${esc(o.text)}${graded ? ` <span class="badge">${o.points} pt${o.points > 1 ? 's' : ''}</span>` : ''}${o.key === r.bestKey ? ' ✓' : ''}${o.key === item.answer && !r.correct ? ' <b>← ton choix</b>' : ''}
         ${o.rationale ? `<div class="why">${esc(o.rationale)}</div>` : ''}</li>`).join('')}</ol>
-      ${q.topic || q.lo ? `<p class="muted small">${esc([q.lo ? `Objectif X2202 ${q.lo}` : '', q.topic].filter(Boolean).join(' · '))}</p>` : ''}
+      ${q.topic || q.lo || q.los ? `<p class="muted small">${esc([objectiveText(q), q.topic].filter(Boolean).join(' · '))}</p>` : ''}
       ${src ? `<p class="small"><a href="${esc(src)}" target="_blank" rel="noopener">Voir dans le cours</a></p>` : ''}
     </div>`;
 }
@@ -298,6 +304,7 @@ function viewStats() {
   const hist = S.progress.sessions.filter((x) => x.exam === S.examId).slice(-15).reverse();
   return `
     <ul class="list">${rows}</ul>
+    ${objectivesHtml()}
     <h3>Dernières sessions</h3>
     ${hist.length ? `<ul class="list">${hist.map((h) => `<li class="row"><span>${esc(h.label)}<br><span class="muted small">${new Date(h.at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</span></span>
       <span class="badge ${h.go ? 'ok' : h.passed ? '' : 'ko'}">${h.total}/${h.max}</span></li>`).join('')}</ul>` : '<p class="muted">Aucune session terminée.</p>'}
@@ -312,6 +319,43 @@ function viewStats() {
       ? `<div class="card"><p>Effacer toute la progression ${esc(S.pack.name)} sur cet appareil ?</p>
           <button class="btn danger" data-action="confirm-reset">Effacer</button><button class="btn" data-action="cancel">Annuler</button></div>`
       : '<button class="btn danger" data-action="reset">Effacer ma progression</button>'}`;
+}
+
+// ---------- Objectifs d'apprentissage ----------
+
+const STATUS_INFO = {
+  never: ['Jamais vu', 'neutral'],
+  learning: ['En cours', ''],
+  review: ['À réviser', 'ko'],
+  acquired: ['Acquis', 'ok'],
+};
+
+function objectivesHtml() {
+  const level = exam().objectiveLevel;
+  const objs = S.objectives.filter((o) => o.level === level);
+  if (!objs.length) return '';
+  const { items, counts } = summarizeObjectives(objs, S.questions, S.progress);
+  const withQ = items.filter((i) => i.questions > 0).length;
+  const units = [...new Set(items.map((i) => i.unit))];
+  const courseUrl = (path) => `${S.pack.source}/blob/main/${path}`;
+  return `
+    <h3>${esc(S.pack.objectives.label)} · niveau ${level}</h3>
+    <div class="stat-row" style="grid-template-columns:repeat(4,1fr)">
+      ${['acquired', 'learning', 'review', 'never'].map((st) => `<div class="stat"><b>${counts[st]}</b><span>${STATUS_INFO[st][0].toLowerCase()}</span></div>`).join('')}
+    </div>
+    <div class="progress"><i class="ok" style="width:${withQ ? Math.round((100 * counts.acquired) / withQ) : 0}%"></i></div>
+    <p class="muted small">${counts.acquired}/${withQ} objectifs acquis (au moins 3 réponses et 75 % de réussite, aucune erreur en attente). ${esc(S.pack.objectives.note)}</p>
+    ${units.map((u) => {
+      const list = items.filter((i) => i.unit === u);
+      const acq = list.filter((i) => i.status === 'acquired').length;
+      return `<details class="unit"><summary><b>U${u} · ${esc(list[0].unitLabel)}</b> <span class="muted small">${acq}/${list.filter((i) => i.questions).length} acquis</span></summary>
+        <ul class="list">${list.map((o) => `<li>
+          <div class="row"><span><b>${o.id}</b> ${esc(o.label)}</span>${o.questions ? `<span class="badge ${STATUS_INFO[o.status][1]}">${STATUS_INFO[o.status][0]}</span>` : '<span class="badge">Sans question</span>'}</div>
+          <span class="muted small">${o.questions} question(s)${o.answers ? ` · ${o.answers} réponse(s) · ${Math.round(100 * o.rate)} %` : ''}${o.review ? ` · ${o.review} à revoir` : ''}</span>
+          <div class="row small" style="margin-top:4px">${o.course ? `<a href="${esc(courseUrl(o.course))}" target="_blank" rel="noopener">Fiche de cours</a>` : '<span></span>'}
+            ${o.questions ? `<button class="btn compact" data-action="train-objective" data-objective="${o.id}">S’entraîner</button>` : ''}</div>
+        </li>`).join('')}</ul></details>`;
+    }).join('')}`;
 }
 
 // ---------- Sauvegarde ----------
@@ -468,6 +512,13 @@ const actions = {
   'confirm-finish': () => endSession(),
   cancel: () => render(),
   review: (el) => { S.session = goTo(S.session, Number(el.dataset.index)); S.showGrid = false; navigate('session'); },
+  'train-objective': (el) => {
+    const id = el.dataset.objective;
+    const qs = questionsByObjective(S.questions).get(id) ?? [];
+    if (!qs.length) return;
+    const ordered = selectQuestions(qs, { strategy: 'adaptive', count: qs.length, progress: S.progress, rng: rng() });
+    startSession('training', ordered, `Objectif ${id}`);
+  },
   export: () => doExport(),
   import: () => document.getElementById('import-file')?.click(),
   reset: () => rerenderWith('reset'),
@@ -526,6 +577,9 @@ async function boot() {
     S.pack = pack;
     S.questions = questions;
     S.byId = new Map(questions.map((q) => [q.id, q]));
+    if (pack.objectives?.file) {
+      S.objectives = await fetch(`${entry.path}${pack.objectives.file}`).then((r) => (r.ok ? r.json() : [])).catch(() => []);
+    }
     S.store = createLocalStorage(`cet:${pack.id}:`);
     // Remises à zéro déclarées par le pack (barème corrigé…), appliquées une seule fois.
     S.progress = applyResets(S.store.get('progress', emptyProgress()), pack.resets);
