@@ -26,7 +26,7 @@ Une appli de poche qui transforme n'importe quelle banque de questions en entra�
 
 | Indicateur | Cible |
 | --- | --- |
-| Score aux examens blancs F101 | ≥ 32/40 sur 3 examens consécutifs avant réservation |
+| Score aux examens blancs F101 | ≥ 32/40 sur 3 examens consécutifs avant réservation (badge « Prêt à réserver », règle `bookingReadiness`) |
 | Score aux examens blancs F102 | ≥ 28/40 sur 3 examens consécutifs avant réservation |
 | Biais de position visible à l'utilisateur | 0 (≈ 25 % par position après mélange, testé en CI) |
 | Coût mensuel | 0 € |

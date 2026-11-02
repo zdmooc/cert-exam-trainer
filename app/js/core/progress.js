@@ -7,16 +7,34 @@ export const BOX_INTERVAL_DAYS = [0, 0, 1, 3, 7, 14]; // index = boîte (1 à 5)
 export const MAX_BOX = 5;
 
 export function emptyProgress() {
-  return { version: 1, questions: {}, sessions: [] };
+  return { version: 1, questions: {}, sessions: [], migrations: [] };
 }
 
-export function statOf(progress, id) {
-  return progress.questions[id] ?? { seen: 0, correct: 0, wrong: 0, box: 0, lastAt: 0, lastCorrect: null };
+const EMPTY_STAT = Object.freeze({ seen: 0, correct: 0, wrong: 0, box: 0, lastAt: 0, lastCorrect: null });
+
+// `q` est une question ({ id, rev }) ou un identifiant seul.
+const idOf = (q) => (typeof q === 'string' ? q : q.id);
+const revOf = (q) => (typeof q === 'string' ? undefined : q.rev);
+
+// Une statistique est obsolète quand elle a été enregistrée pour une autre version
+// de la question (empreinte « rev » différente : énoncé, options ou points modifiés).
+// Une statistique sans « rev » (enregistrée avant cette règle) est conservée.
+export function isStale(stat, rev) {
+  return Boolean(stat && stat.rev && rev && stat.rev !== rev);
+}
+
+export function statOf(progress, q) {
+  const s = progress.questions[idOf(q)];
+  if (!s || isStale(s, revOf(q))) return { ...EMPTY_STAT };
+  return s;
 }
 
 // Enregistre une réponse. `correct` = la meilleure option a été choisie.
-export function recordAnswer(progress, id, correct, now = Date.now()) {
-  const s = statOf(progress, id);
+// La statistique d'une version précédente de la question repart de zéro.
+export function recordAnswer(progress, q, correct, now = Date.now()) {
+  const id = idOf(q);
+  const rev = revOf(q);
+  const s = statOf(progress, q);
   const next = {
     seen: s.seen + 1,
     correct: s.correct + (correct ? 1 : 0),
@@ -24,6 +42,7 @@ export function recordAnswer(progress, id, correct, now = Date.now()) {
     box: correct ? Math.min(MAX_BOX, Math.max(1, s.box) + 1) : 1,
     lastAt: now,
     lastCorrect: correct,
+    ...(rev ? { rev } : {}),
   };
   return { ...progress, questions: { ...progress.questions, [id]: next } };
 }
@@ -74,14 +93,46 @@ export function parseProgressFile(text, packId) {
   for (const s of Object.values(p.questions)) {
     if (![s?.seen, s?.correct, s?.wrong, s?.box, s?.lastAt].every(Number.isFinite)) return { error: 'Sauvegarde corrompue.' };
   }
-  return { progress: { version: 1, questions: p.questions, sessions: p.sessions } };
+  return { progress: { version: 1, questions: p.questions, sessions: p.sessions, migrations: Array.isArray(p.migrations) ? p.migrations : [] } };
+}
+
+// Remises à zéro ponctuelles déclarées par le pack (ex. barème corrigé) :
+// chacune s'applique une seule fois, identifiée par son `id`.
+export function applyResets(progress, resets = []) {
+  const done = new Set(progress.migrations ?? []);
+  let questions = progress.questions;
+  for (const r of resets) {
+    if (done.has(r.id)) continue;
+    questions = { ...questions };
+    for (const qid of r.questions) {
+      // Une statistique déjà portée par une « rev » est jugée par sa rev, pas par la migration.
+      if (questions[qid] && !questions[qid].rev) delete questions[qid];
+    }
+    done.add(r.id);
+  }
+  return { ...progress, questions, migrations: [...done] };
+}
+
+// Retire les statistiques obsolètes au regard des « rev » actuelles du pack.
+export function dropStale(progress, revById) {
+  const questions = {};
+  for (const [id, s] of Object.entries(progress.questions)) if (!isStale(s, revById.get(id))) questions[id] = s;
+  return { ...progress, questions };
 }
 
 // Fusionne deux progressions sans rien perdre : pour chaque question, on garde
 // l'état le plus récent ; les historiques de sessions sont réunis sans doublon.
-export function mergeProgress(a, b) {
-  const questions = { ...a.questions };
-  for (const [id, s] of Object.entries(b.questions)) {
+// Avec `revById` et `resets`, les mêmes règles que sur l'appareil s'appliquent
+// (statistiques d'une ancienne version de question ignorées, remises à zéro du pack).
+export function mergeProgress(a, b, { revById = null, resets = [] } = {}) {
+  const prep = (p) => {
+    const migrated = applyResets({ migrations: [], ...p }, resets);
+    return revById ? dropStale(migrated, revById) : migrated;
+  };
+  const left = prep(a);
+  const right = prep(b);
+  const questions = { ...left.questions };
+  for (const [id, s] of Object.entries(right.questions)) {
     const cur = questions[id];
     if (!cur || s.lastAt > cur.lastAt || (s.lastAt === cur.lastAt && s.seen > cur.seen)) questions[id] = s;
   }
@@ -95,5 +146,28 @@ export function mergeProgress(a, b) {
     })
     .sort((x, y) => x.at - y.at)
     .slice(-200);
-  return { version: 1, questions, sessions };
+  const migrations = [...new Set([...(left.migrations ?? []), ...(right.migrations ?? [])])];
+  return { version: 1, questions, sessions, migrations };
+}
+
+// ---------- Prêt à réserver ----------
+// Règle de la Vision (docs/architecture/01-vision.md) : l'objectif `goMark` doit
+// être atteint sur les `required` derniers examens blancs terminés, consécutifs.
+// Seuls les examens blancs (mode « exam ») de l'examen concerné comptent.
+
+export const READINESS_STREAK = 3;
+
+export function reachedGoMark(session, examDef) {
+  if (!examDef?.goMark || !examDef?.maxPoints || !session.max) return false;
+  return session.total >= Math.ceil((examDef.goMark / examDef.maxPoints) * session.max);
+}
+
+export function bookingReadiness(sessions, examDef, required = READINESS_STREAK) {
+  const exams = sessions.filter((s) => s.exam === examDef.id && s.mode === 'exam').sort((a, b) => a.at - b.at);
+  let streak = 0;
+  for (let i = exams.length - 1; i >= 0 && streak < required; i--) {
+    if (!reachedGoMark(exams[i], examDef)) break;
+    streak++;
+  }
+  return { ready: streak >= required, streak, required, examsTaken: exams.length };
 }

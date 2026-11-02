@@ -7,6 +7,7 @@ import { scoreQuestion, scoreSession } from '../app/js/core/scoring.js';
 import { createSession, answer, finish, canReveal, isExpired } from '../app/js/core/session.js';
 import { selectQuestions, generateExam, filterPool, fixedSet } from '../app/js/core/selection.js';
 import { emptyProgress, recordAnswer, statOf, needsReview, difficulty } from '../app/js/core/progress.js';
+import { questionRev } from '../content-pipeline/rev.mjs';
 
 // Pack fictif, sans rapport avec TOGAF : le moteur ne doit dépendre d'aucune certification.
 const pack = {
@@ -164,4 +165,73 @@ test('sauvegarde : export, lecture, fusion sans perte', async () => {
   assert.equal(merged.questions.x1.lastAt, 300);
   assert.ok(merged.questions.x2 && merged.questions.y1);
   assert.equal(merged.sessions.length, 1);
+});
+
+// ---------- Lot 1 : fiabilité des scores ----------
+
+test('rev : un changement de points rend la statistique obsolète', async () => {
+  const { isStale } = await import('../app/js/core/progress.js');
+  let p = emptyProgress();
+  p = recordAnswer(p, { id: 's9', rev: 'aaaa1111' }, true, 0);
+  p = recordAnswer(p, { id: 's9', rev: 'aaaa1111' }, true, 0);
+  p = recordAnswer(p, { id: 's9', rev: 'aaaa1111' }, true, 0);
+  assert.equal(statOf(p, { id: 's9', rev: 'aaaa1111' }).box, 4);
+  // Nouveau barème → nouvelle empreinte : la question repart de zéro.
+  assert.equal(statOf(p, { id: 's9', rev: 'bbbb2222' }).seen, 0);
+  assert.equal(isStale(p.questions.s9, 'bbbb2222'), true);
+  p = recordAnswer(p, { id: 's9', rev: 'bbbb2222' }, false, 1);
+  assert.deepEqual([p.questions.s9.seen, p.questions.s9.rev], [1, 'bbbb2222']);
+});
+
+test('rev : changer seulement une justification ne remet pas à zéro', () => {
+  const base = { id: 'q1', stem: 'Énoncé', options: [{ key: 'A', text: 'a', points: 1 }, { key: 'B', text: 'b', points: 0 }] };
+  const revA = questionRev(base);
+  const reworded = { ...base, options: [{ ...base.options[0], rationale: 'nouvelle justification' }, base.options[1]], explanation: 'autre' };
+  assert.equal(questionRev(reworded), revA);
+  const rescored = { ...base, options: [{ ...base.options[0], points: 0 }, { ...base.options[1], points: 1 }] };
+  assert.notEqual(questionRev(rescored), revA);
+  let p = recordAnswer(emptyProgress(), { id: 'q1', rev: revA }, true, 0);
+  assert.equal(statOf(p, { id: 'q1', rev: questionRev(reworded) }).seen, 1);
+  assert.equal(statOf(p, { id: 'q1', rev: questionRev(rescored) }).seen, 0);
+});
+
+test('migration : anciennes statistiques sans rev conservées, sauf les questions déclarées', async () => {
+  const { applyResets } = await import('../app/js/core/progress.js');
+  const legacy = { version: 1, sessions: [], questions: { s9: { seen: 3, correct: 3, wrong: 0, box: 4, lastAt: 1 }, q1: { seen: 2, correct: 2, wrong: 0, box: 3, lastAt: 1 } } };
+  const resets = [{ id: 'reset-1', questions: ['s9'] }];
+  const once = applyResets(legacy, resets);
+  assert.deepEqual(Object.keys(once.questions), ['q1']);
+  assert.deepEqual(once.migrations, ['reset-1']);
+  // Ré-appliquée : sans effet, même sur une nouvelle réponse enregistrée depuis.
+  const again = applyResets(recordAnswer(once, { id: 's9', rev: 'new' }, true, 2), resets);
+  assert.equal(again.questions.s9.seen, 1);
+});
+
+test('import : mêmes règles (rev obsolète ignorée, remise à zéro du pack appliquée)', async () => {
+  const { mergeProgress } = await import('../app/js/core/progress.js');
+  const device = recordAnswer(emptyProgress(), { id: 'x1', rev: 'r-new' }, true, 10);
+  const oldBackup = { version: 1, sessions: [], questions: {
+    x1: { seen: 9, correct: 9, wrong: 0, box: 5, lastAt: 99, rev: 'r-old' }, // ancienne version, plus récente
+    s9: { seen: 4, correct: 4, wrong: 0, box: 5, lastAt: 5 }, // sans rev, question re-notée
+    q2: { seen: 1, correct: 1, wrong: 0, box: 2, lastAt: 5 }, // sans rev, conservée
+  } };
+  const merged = mergeProgress(device, oldBackup, {
+    revById: new Map([['x1', 'r-new'], ['s9', 'r-s9'], ['q2', 'r-q2']]),
+    resets: [{ id: 'reset-1', questions: ['s9'] }],
+  });
+  assert.equal(merged.questions.x1.rev, 'r-new');
+  assert.equal(merged.questions.s9, undefined);
+  assert.equal(merged.questions.q2.seen, 1);
+});
+
+test('prêt à réserver : 3 examens blancs consécutifs au-dessus de l’objectif', async () => {
+  const { bookingReadiness } = await import('../app/js/core/progress.js');
+  const def = { id: 'f101', maxPoints: 40, goMark: 32 };
+  const ex = (at, total, extra = {}) => ({ at, exam: 'f101', mode: 'exam', total, max: 40, ...extra });
+  assert.deepEqual(bookingReadiness([ex(1, 39)], def), { ready: false, streak: 1, required: 3, examsTaken: 1 });
+  assert.equal(bookingReadiness([ex(1, 33), ex(2, 25), ex(3, 34), ex(4, 32)], def).streak, 2);
+  // Entraînement et autre examen ignorés ; ordre chronologique respecté.
+  const mixed = [ex(5, 35), ex(1, 20), ex(3, 36), { at: 4, exam: 'f101', mode: 'training', total: 2, max: 10 }, ex(2, 33), ex(6, 10, { exam: 'f102' })];
+  assert.deepEqual(bookingReadiness(mixed, def), { ready: true, streak: 3, required: 3, examsTaken: 4 });
+  assert.equal(bookingReadiness([ex(1, 40), ex(2, 40), ex(3, 31)], def).streak, 0);
 });

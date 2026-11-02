@@ -20,3 +20,4 @@ Ce dossier applique l'ADM TOGAF (10e édition) à un petit produit. Le **tailori
 | [ADR-001](adr/ADR-001-pwa-statique.md) | Application web installable, statique, hors ligne | Acceptée |
 | [ADR-002](adr/ADR-002-moteur-generique.md) | Moteur indépendant de toute certification, piloté par les packs | Acceptée |
 | [ADR-003](adr/ADR-003-melange-des-options.md) | Mélange des options à l'affichage, correction en ordre d'origine | Acceptée |
+| [ADR-004](adr/ADR-004-empreinte-des-questions.md) | Empreinte « rev » : la progression repart de zéro quand une question change | Acceptée |

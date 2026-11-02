@@ -13,6 +13,7 @@
 
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
+import { questionRev } from '../rev.mjs';
 
 const src = process.argv[2];
 const out = resolve(process.argv[3] ?? 'app/packs/togaf');
@@ -162,6 +163,7 @@ function finalize(q, ctx) {
   for (const o of q.options) if (!o.rationale) delete o.rationale;
   if (!q.lo) delete q.lo;
   if (!q.domain) throw new Error(`${ctx} : domaine introuvable`);
+  q.rev = questionRev(q);
   questions.push(q);
 }
 
