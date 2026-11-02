@@ -18,6 +18,8 @@ const SHELL = [
   'packs/index.json',
   'packs/togaf/pack.json',
   'packs/togaf/questions.json',
+  'packs/togaf/objectives.json',
+  'js/core/objectives.js',
   'manifest.webmanifest',
   'icons/icon-192.png',
   'icons/icon-512.png',

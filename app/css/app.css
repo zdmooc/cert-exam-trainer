@@ -120,3 +120,8 @@ p { margin: 0 0 10px; }
 .list li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 a { color: var(--accent); }
 label.field { display: block; margin-bottom: 10px; }
+details.unit { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px; margin-bottom: 8px; }
+details.unit summary { cursor: pointer; display: flex; justify-content: space-between; gap: 8px; list-style: none; }
+details.unit summary::-webkit-details-marker { display: none; }
+details.unit[open] summary { margin-bottom: 6px; }
+.badge.neutral { background: var(--line); color: var(--muted); }

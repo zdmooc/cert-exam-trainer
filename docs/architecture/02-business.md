@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | S'entraîner | Répondre et comprendre immédiatement pourquoi | Entraînement |
 | Simuler l'examen | Conditions réelles : durée, nombre, barème, pas de correction avant la fin | Examen blanc |
-| Diagnostiquer | Savoir quels domaines sont faibles | Résultat par domaine, Progression |
+| Diagnostiquer | Savoir quels domaines et quels objectifs X2202 sont faibles | Résultat par domaine, Progression (domaines + objectifs) |
 | Consolider | Faire revenir les erreurs jusqu'à maîtrise | Revoir mes erreurs (Leitner) |
 | Décider de réserver | Comparer ses scores au seuil et à l'objectif de sécurité | Badges « Seuil atteint » / « Prêt à réserver » |
 | Ajouter une certification | Brancher une nouvelle banque sans développement | Pack + pipeline de contenu |

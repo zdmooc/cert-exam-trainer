@@ -47,7 +47,8 @@
           "label": "Contenu d'architecture",
           "count": 5
         }
-      ]
+      ],
+      "objectiveLevel": 1
     },
     {
       "id": "f102",
@@ -100,7 +101,8 @@
           "label": "Support du travail ADM",
           "count": 1
         }
-      ]
+      ],
+      "objectiveLevel": 2
     }
   ],
   "series": [
@@ -148,5 +150,10 @@
         "togaf-f102-s056"
       ]
     }
-  ]
+  ],
+  "objectives": {
+    "file": "objectives.json",
+    "label": "Objectifs X2202",
+    "note": "Rattachement issu de la matrice de traçabilité du dépôt de cours : associations candidates, non relues, à confronter au syllabus officiel X2202."
+  }
 }
