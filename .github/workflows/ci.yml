@@ -33,6 +33,12 @@ jobs:
       - name: Régénérer le pack TOGAF
         run: npm run build:togaf -- ../togaf-src
 
+      - name: Récupérer le dépôt de cours Claude
+        run: git clone --depth 1 https://github.com/zdmooc/claude-architect-lab.git ../claude-src
+
+      - name: Régénérer le pack Claude
+        run: npm run build:claude -- ../claude-src
+
       - name: Tests du moteur et validation des packs
         run: npm test
 

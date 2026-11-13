@@ -1,0 +1,232 @@
+{
+  "id": "claude",
+  "name": "Certifications Claude",
+  "edition": "Guides d'examen v1.0 (juillet 2026)",
+  "language": "fr",
+  "source": "https://github.com/zdmooc/claude-architect-lab",
+  "disclaimer": "Questions originales d'autoformation, ni officielles ni issues d'examens. Les examens Claude sont notés sur une échelle 100–1000 (seuil 720) : le pourcentage affiché ici n'en est pas l'équivalent. Claude est une marque d'Anthropic ; ce projet n'est pas affilié à Anthropic.",
+  "scoreNote": "Mini-examen : la banque est trop petite pour un examen blanc complet. Seuil officiel 720/1000 échelonné, non convertible en pourcentage ; l'objectif affiché (80 %) est un repère personnel.",
+  "exams": [
+    {
+      "id": "ccar-f",
+      "name": "Foundations (CCAR-F)",
+      "scoring": "points",
+      "questionCount": 15,
+      "durationMinutes": 30,
+      "maxPoints": 15,
+      "passMark": null,
+      "goMark": 12,
+      "openBook": false,
+      "official": "60 questions, 120 min (selon le dossier de préparation, à confirmer)",
+      "domains": [
+        {
+          "id": "d1",
+          "label": "Architecture agentique et orchestration",
+          "count": 4
+        },
+        {
+          "id": "d2",
+          "label": "Outils et intégration MCP",
+          "count": 3
+        },
+        {
+          "id": "d3",
+          "label": "Claude Code : configuration et workflows",
+          "count": 3
+        },
+        {
+          "id": "d4",
+          "label": "Prompting et sorties structurées",
+          "count": 3
+        },
+        {
+          "id": "d5",
+          "label": "Contexte et fiabilité",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "ccar-p",
+      "name": "Professional (CCAR-P)",
+      "scoring": "points",
+      "questionCount": 14,
+      "durationMinutes": 27,
+      "maxPoints": 14,
+      "passMark": null,
+      "goMark": 12,
+      "openBook": false,
+      "official": "63 questions, 120 min, 720/1000 échelonné (guide v1.0)",
+      "domains": [
+        {
+          "id": "d1",
+          "label": "Solution Design & Architecture",
+          "count": 2
+        },
+        {
+          "id": "d2",
+          "label": "Models, Prompting & Context Engineering",
+          "count": 2
+        },
+        {
+          "id": "d3",
+          "label": "Integration",
+          "count": 3
+        },
+        {
+          "id": "d4",
+          "label": "Evaluation, Testing & Optimization",
+          "count": 2
+        },
+        {
+          "id": "d5",
+          "label": "Governance, Safety & Risk Management",
+          "count": 2
+        },
+        {
+          "id": "d6",
+          "label": "Stakeholder Communication & Lifecycle",
+          "count": 2
+        },
+        {
+          "id": "d7",
+          "label": "Developer Productivity & Enablement",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ccdv-f",
+      "name": "Developer (CCDV-F)",
+      "scoring": "points",
+      "questionCount": 12,
+      "durationMinutes": 27,
+      "maxPoints": 12,
+      "passMark": null,
+      "goMark": 10,
+      "openBook": false,
+      "official": "53 questions, 120 min, 720/1000 échelonné (guide v1.0)",
+      "domains": [
+        {
+          "id": "v1",
+          "label": "Agents and Workflows",
+          "count": 2
+        },
+        {
+          "id": "v2",
+          "label": "Applications and Integration",
+          "count": 4
+        },
+        {
+          "id": "v3",
+          "label": "Claude Code",
+          "count": 1
+        },
+        {
+          "id": "v4",
+          "label": "Eval, Testing, and Debugging",
+          "count": 0
+        },
+        {
+          "id": "v5",
+          "label": "Model Selection and Optimization",
+          "count": 2
+        },
+        {
+          "id": "v6",
+          "label": "Prompt and Context Engineering",
+          "count": 1
+        },
+        {
+          "id": "v7",
+          "label": "Security and Safety",
+          "count": 1
+        },
+        {
+          "id": "v8",
+          "label": "Tools and MCPs",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ccao-f",
+      "name": "Associate (CCAO-F)",
+      "scoring": "points",
+      "questionCount": 10,
+      "durationMinutes": 20,
+      "maxPoints": 10,
+      "passMark": null,
+      "goMark": 8,
+      "openBook": false,
+      "official": "60 questions, 120 min, 720/1000 échelonné (à revérifier)",
+      "domains": [
+        {
+          "id": "a1",
+          "label": "Output Evaluation and Validation",
+          "count": 2
+        },
+        {
+          "id": "a2",
+          "label": "Workflow Integration and Solution Design",
+          "count": 2
+        },
+        {
+          "id": "a3",
+          "label": "Governance, Risk, and Responsible Use",
+          "count": 2
+        },
+        {
+          "id": "a4",
+          "label": "Prompting and Task Execution",
+          "count": 1
+        },
+        {
+          "id": "a5",
+          "label": "Product and Model Selection",
+          "count": 1
+        },
+        {
+          "id": "a6",
+          "label": "Configuration and Knowledge Management",
+          "count": 1
+        },
+        {
+          "id": "a7",
+          "label": "Troubleshooting and Optimization",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "series": [
+    {
+      "id": "m2",
+      "label": "Module M2"
+    },
+    {
+      "id": "m3",
+      "label": "Module M3"
+    },
+    {
+      "id": "m4",
+      "label": "Module M4"
+    },
+    {
+      "id": "m5",
+      "label": "Module M5"
+    },
+    {
+      "id": "m6",
+      "label": "Module M6"
+    },
+    {
+      "id": "m7",
+      "label": "Module M7"
+    },
+    {
+      "id": "m8",
+      "label": "M8 · Scénarios"
+    }
+  ]
+}

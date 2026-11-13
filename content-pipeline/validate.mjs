@@ -32,7 +32,11 @@ for (const q of questions) {
   if (q.options.some((o) => !Number.isInteger(o.points) || o.points < 0)) err(q, 'points invalides');
   const max = Math.max(...q.options.map((o) => o.points));
   if (max <= 0) err(q, 'aucune bonne réponse');
-  if (q.options.filter((o) => o.points === max).length !== 1) err(q, 'plusieurs meilleures réponses');
+  if (q.select !== undefined) {
+    // Plusieurs réponses : exactement `select` options valent 1 point, les autres 0.
+    if (!Number.isInteger(q.select) || q.select < 2 || q.select >= q.options.length) err(q, `select invalide (${q.select})`);
+    else if (q.options.filter((o) => o.points === 1).length !== q.select || q.options.some((o) => o.points > 1)) err(q, `${q.select} bonnes réponses attendues à 1 point`);
+  } else if (q.options.filter((o) => o.points === max).length !== 1) err(q, 'plusieurs meilleures réponses');
   if (!q.explanation?.trim()) err(q, 'explication manquante');
   if (q.rev !== questionRev(q)) err(q, `empreinte « rev » absente ou périmée (${q.rev ?? 'aucune'})`);
 }

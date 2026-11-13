@@ -29,10 +29,18 @@ export function createSession({ mode, exam, questions, rng, durationMinutes = nu
     items: questions.map((q) => ({
       questionId: q.id,
       order: shuffle(q.options.map((o) => o.key), rng),
+      ...(q.select > 1 ? { select: q.select } : {}),
       answer: null,
       flagged: false,
     })),
   };
+}
+
+// Une question à plusieurs réponses (`select`) est répondue quand le nombre
+// d'options demandé est coché ; sa réponse est alors un tableau de lettres.
+export function isAnswered(item) {
+  if (item.select > 1) return Array.isArray(item.answer) && item.answer.length === item.select;
+  return item.answer !== null;
 }
 
 export function isExpired(session, now = Date.now()) {
@@ -46,7 +54,7 @@ export function remainingMs(session, now = Date.now()) {
 // La correction d'une question est-elle visible ?
 export function canReveal(session, index) {
   if (session.status === 'finished') return true;
-  return session.mode === 'training' && session.items[index].answer !== null;
+  return session.mode === 'training' && isAnswered(session.items[index]);
 }
 
 export function answer(session, index, optionKey, now = Date.now()) {
@@ -55,8 +63,17 @@ export function answer(session, index, optionKey, now = Date.now()) {
   const item = session.items[index];
   if (!item) throw new Error(`Question ${index} inexistante`);
   if (!item.order.includes(optionKey)) throw new Error(`Option ${optionKey} inconnue`);
-  if (session.mode === 'training' && item.answer !== null) return session; // réponse figée en entraînement
-  const items = session.items.map((it, i) => (i === index ? { ...it, answer: optionKey } : it));
+  if (session.mode === 'training' && isAnswered(item)) return session; // réponse figée en entraînement
+  let value = optionKey;
+  if (item.select > 1) {
+    // Cocher / décocher ; au-delà du nombre demandé, il faut d'abord décocher.
+    const cur = Array.isArray(item.answer) ? item.answer : [];
+    if (cur.includes(optionKey)) value = cur.filter((k) => k !== optionKey);
+    else if (cur.length < item.select) value = [...cur, optionKey];
+    else return session;
+    if (!value.length) value = null;
+  }
+  const items = session.items.map((it, i) => (i === index ? { ...it, answer: value } : it));
   return { ...session, items };
 }
 
@@ -77,7 +94,7 @@ export function finish(session, now = Date.now()) {
 }
 
 export function answeredCount(session) {
-  return session.items.filter((it) => it.answer !== null).length;
+  return session.items.filter(isAnswered).length;
 }
 
 // Résultat par question, une fois la correction visible.

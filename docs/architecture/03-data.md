@@ -15,7 +15,7 @@
 | --- | --- | --- |
 | `id`, `name` | `f101`, « Foundation (OGEA-F101) » | Identification |
 | `questionCount`, `durationMinutes` | 40, 60 | Format de l'examen blanc |
-| `maxPoints`, `passMark`, `goMark` | 40, 24, 32 | Seuil officiel et objectif avant réservation |
+| `maxPoints`, `passMark`, `goMark` | 40, 24, 32 | Seuil officiel et objectif avant réservation. `passMark: null` quand le seuil officiel n'est pas un nombre de points (examens Claude, 720/1000 échelonné) : pas de verdict, seul l'objectif personnel est affiché |
 | `domains[] {id, label, count}` | `adm`, « Introduction à l'ADM », 14 | Répartition officielle |
 | `openBook` | `false` | Information affichée |
 
@@ -47,6 +47,7 @@
 
 - `set` vaut `bank` (banque d'entraînement) ou l'identifiant d'un examen blanc figé (`mock-01`…).
 - Le barème est porté par les **points de chaque option** : 1/0 pour un QCM simple, 5/3/1/0 pour un scénario gradué. Le moteur n'a pas d'autre notion de barème.
+- `select` (facultatif, ≥ 2) : question à plusieurs réponses. Exactement `select` options valent 1 point ; la réponse enregistrée est un tableau de lettres et ne rapporte 1 point que si toutes les bonnes options sont cochées (pas de point partiel).
 - `key` est la lettre d'origine, utilisée seulement pour relier l'explication aux options.
 - `series` regroupe les questions par série d'exercices (déclarées dans `pack.json` → `series`) ; filtrable en entraînement.
 - `lo` (facultatif) est l'objectif d'apprentissage écrit à côté de la question dans le dépôt de cours (ex. X2202 `L2.1.7`).

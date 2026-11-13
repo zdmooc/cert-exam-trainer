@@ -3,17 +3,33 @@
 // - Barème gradué (TOGAF Practitioner) : 5 / 3 / 1 / 0.
 // Le moteur ne connaît pas ces cas : il additionne les points du pack.
 
-export function scoreQuestion(question, chosenKey) {
+// - Plusieurs réponses (`select: n`) : 1 point si exactement les n bonnes options
+//   sont choisies, 0 sinon (pas de point partiel).
+export function scoreQuestion(question, chosen) {
+  if (isMulti(question)) {
+    const bestKeys = question.options.filter((o) => o.points > 0).map((o) => o.key);
+    const picked = Array.isArray(chosen) ? chosen : [];
+    const answered = picked.length === question.select;
+    const correct = answered && picked.every((k) => bestKeys.includes(k));
+    return { answered, points: correct ? 1 : 0, max: 1, correct, bestKey: bestKeys[0], bestKeys };
+  }
   const max = Math.max(...question.options.map((o) => o.points));
-  const chosen = question.options.find((o) => o.key === chosenKey) ?? null;
-  const points = chosen ? chosen.points : 0;
+  const chosenOpt = question.options.find((o) => o.key === chosen) ?? null;
+  const points = chosenOpt ? chosenOpt.points : 0;
+  const bestKey = question.options.find((o) => o.points === max).key;
   return {
-    answered: chosen !== null,
+    answered: chosenOpt !== null,
     points,
     max,
-    correct: chosen !== null && points === max,
-    bestKey: question.options.find((o) => o.points === max).key,
+    correct: chosenOpt !== null && points === max,
+    bestKey,
+    bestKeys: [bestKey],
   };
+}
+
+// Question à plusieurs réponses : le pack indique combien d'options choisir.
+export function isMulti(question) {
+  return Number.isInteger(question.select) && question.select > 1;
 }
 
 // Score d'une session terminée, global et par domaine.
