@@ -2,9 +2,9 @@
 // et le contenu (packs/). Aucune règle de certification ici : tout vient du pack.
 
 import { createRng } from './core/random.js';
-import { scoreQuestion, scoreSession } from './core/scoring.js';
+import { scoreQuestion, scoreSession, isMulti } from './core/scoring.js';
 import {
-  createSession, answer, finish, toggleFlag, goTo, canReveal, isExpired, remainingMs, answeredCount,
+  createSession, answer, finish, toggleFlag, goTo, canReveal, isExpired, remainingMs, answeredCount, isAnswered,
 } from './core/session.js';
 import { filterPool, selectQuestions, generateExam, fixedSet, listFixedSets, listSeries } from './core/selection.js';
 import {
@@ -20,7 +20,7 @@ const $timer = document.getElementById('timer');
 const $homeBtn = document.getElementById('home-btn');
 
 const S = {
-  pack: null, questions: [], byId: new Map(), objectives: [], store: null,
+  packs: [], pack: null, questions: [], byId: new Map(), objectives: [], store: null,
   examId: null, progress: emptyProgress(), session: null,
   setup: { strategy: 'adaptive', count: 20, domains: [], series: [] },
   confirm: null, showGrid: false,
@@ -41,6 +41,9 @@ const readinessBadge = (r) => (r.ready
   : `<span class="badge">Objectif réservation ${r.streak}/${r.required}</span>`);
 const seriesLabel = (id) => (id && id !== 'bank' && id !== 'mock' ? S.pack.series?.find((x) => x.id === id)?.label ?? id : '');
 const isGraded = (q) => Math.max(...q.options.map((o) => o.points)) > 1;
+const chosenKeys = (answer) => (Array.isArray(answer) ? answer : answer == null ? [] : [answer]);
+const thresholdText = (e) => (e.passMark != null ? `Seuil ${e.passMark}/${e.maxPoints} · objectif ${e.goMark}/${e.maxPoints}` : `Objectif personnel ${e.goMark}/${e.maxPoints}`);
+const passBadge = (r) => (r.passed === null ? '' : r.passed ? '<span class="badge ok">Seuil atteint</span>' : '<span class="badge ko">Sous le seuil</span>');
 const rng = () => createRng(Date.now() ^ Math.floor(Math.random() * 1e9));
 
 function save() {
@@ -93,6 +96,9 @@ function viewHome() {
   const ongoing = S.session && S.session.status === 'in_progress';
   const e = exam();
   return `
+    ${S.packs.length > 1 ? `<div class="seg" role="group" aria-label="Certification">
+      ${S.packs.map((p) => `<button data-action="set-pack" data-pack="${p.id}" aria-pressed="${p.id === S.pack.id}">${esc(p.label ?? p.id)}</button>`).join('')}
+    </div>` : ''}
     <div class="seg" role="group" aria-label="Examen">
       ${S.pack.exams.map((x) => `<button data-action="set-exam" data-exam="${x.id}" aria-pressed="${x.id === S.examId}">${esc(x.name)}</button>`).join('')}
     </div>
@@ -103,12 +109,13 @@ function viewHome() {
     </div>
     ${lastExam ? `<div class="card"><div class="row"><span>Dernier examen blanc</span>
       <span class="badge ${lastExam.go ? 'ok' : lastExam.passed ? '' : 'ko'}">${lastExam.total}/${lastExam.max}</span></div>
-      <div class="row" style="margin-top:6px"><span class="muted small">Seuil ${e.passMark}/${e.maxPoints} · objectif ${e.goMark}/${e.maxPoints} sur ${readiness().required} examens blancs consécutifs</span>${readinessBadge(readiness())}</div></div>` : ''}
+      <div class="row" style="margin-top:6px"><span class="muted small">${thresholdText(e)} sur ${readiness().required} examens blancs consécutifs</span>${readinessBadge(readiness())}</div></div>` : ''}
     ${backupDue() ? `<div class="card small"><div class="row"><span>Pense à sauvegarder ta progression.</span>
       <button class="btn compact" data-action="export">Exporter</button></div></div>` : ''}
     ${ongoing ? `<button class="btn primary" data-action="resume">Reprendre la session<span class="sub">&nbsp;· ${answeredCount(S.session)}/${S.session.items.length}</span></button>` : ''}
     <button class="btn" data-action="go" data-view="train"><span>Entraînement<span class="sub">Correction et explication après chaque question</span></span></button>
-    <button class="btn" data-action="go" data-view="exam"><span>Examen blanc<span class="sub">${e.questionCount} questions · ${e.durationMinutes} min · correction à la fin</span></span></button>
+    <button class="btn" data-action="go" data-view="exam"><span>${S.pack.scoreNote ? 'Mini-examen' : 'Examen blanc'}<span class="sub">${e.questionCount} questions · ${e.durationMinutes} min · correction à la fin</span></span></button>
+    ${e.official ? `<p class="muted small center">Examen réel : ${esc(e.official)}</p>` : ''}
     <button class="btn" data-action="review-errors"><span>Revoir mes erreurs<span class="sub">${st.review ? `${st.review} question(s) ratée(s) non maîtrisée(s)` : 'Aucune erreur à revoir pour l’instant'}</span></span></button>
     <button class="btn" data-action="go" data-view="stats"><span>Progression<span class="sub">Par domaine et historique des examens</span></span></button>
     ${S.store.persistent ? '' : '<p class="muted small center">Stockage indisponible dans ce navigateur : la progression sera perdue à la fermeture.</p>'}
@@ -145,17 +152,18 @@ function viewTrain() {
 
 function viewExam() {
   const e = exam();
-  $title.textContent = `Examen blanc · ${e.name}`;
+  const mini = Boolean(S.pack.scoreNote);
+  $title.textContent = `${mini ? 'Mini-examen' : 'Examen blanc'} · ${e.name}`;
   const sets = listFixedSets(S.questions, S.examId);
   const last = (label) => [...S.progress.sessions].reverse().find((s) => s.exam === S.examId && s.label === label);
   return `
-    <div class="card small">${e.questionCount} questions · ${e.durationMinutes} min · seuil ${e.passMark}/${e.maxPoints}.
+    <div class="card small">${e.questionCount} questions · ${e.durationMinutes} min · ${e.passMark != null ? `seuil ${e.passMark}/${e.maxPoints}` : `objectif personnel ${e.goMark}/${e.maxPoints}`}.
       ${e.openBook ? 'Livre ouvert : garde le PDF du standard (en anglais) à côté, comme le jour de l’examen.' : 'Documentation fermée.'}
-      La correction n’apparaît qu’à la fin.</div>
-    <h3>Examen généré selon la répartition officielle</h3>
+      La correction n’apparaît qu’à la fin.${mini ? `<br><span class="muted">${esc(S.pack.scoreNote)}</span>` : ''}</div>
+    <h3>${mini ? 'Mini-examen réparti selon les poids officiels des domaines' : 'Examen généré selon la répartition officielle'}</h3>
     <button class="btn" data-action="start-exam" data-kind="random"><span>Nouvel examen aléatoire<span class="sub">Tiré dans toute la banque</span></span></button>
     <button class="btn" data-action="start-exam" data-kind="adaptive"><span>Examen ciblé sur mes faiblesses<span class="sub">Même répartition, questions moins maîtrisées en priorité</span></span></button>
-    <h3>Examens blancs du dépôt</h3>
+    ${sets.length ? '<h3>Examens blancs du dépôt</h3>' : ''}
     ${sets.map((set) => {
       const label = `Examen blanc ${set.replace('mock-', '')}`;
       const l = last(label);
@@ -167,21 +175,25 @@ function viewExam() {
 function optionHtml(q, key, item, revealed, graded) {
   const opt = q.options.find((o) => o.key === key);
   const r = revealed ? scoreQuestion(q, item.answer) : null;
+  const mine = chosenKeys(item.answer).includes(key);
   let cls = '';
-  if (revealed && key === r.bestKey) cls = 'best';
-  else if (revealed && key === item.answer) cls = 'wrong';
+  if (revealed && r.bestKeys.includes(key)) cls = 'best';
+  else if (revealed && mine) cls = 'wrong';
   const pts = revealed && graded ? `<span class="pts">${opt.points} pt${opt.points > 1 ? 's' : ''}</span>` : '';
-  return `<button class="option ${cls}" data-action="choose" data-key="${key}" aria-pressed="${item.answer === key}" ${revealed ? 'disabled' : ''}>${pts}${esc(opt.text)}</button>`;
+  const box = isMulti(q) ? `<span class="check" aria-hidden="true">${mine ? '☑' : '☐'}</span> ` : '';
+  return `<button class="option ${cls}" data-action="choose" data-key="${key}" aria-pressed="${mine}" ${revealed ? 'disabled' : ''}>${pts}${box}${esc(opt.text)}</button>`;
 }
 
 function explanationHtml(q, item) {
   const r = scoreQuestion(q, item.answer);
-  const verdict = !r.answered ? 'Non répondue' : r.correct ? 'Bonne réponse' : isGraded(q) ? `Pas la meilleure réponse · ${r.points}/${r.max} points` : 'Mauvaise réponse';
+  const mine = chosenKeys(item.answer);
+  const verdict = !r.answered ? (mine.length ? `Incomplète : ${q.select} réponses attendues` : 'Non répondue') : r.correct ? 'Bonne réponse' : isGraded(q) ? `Pas la meilleure réponse · ${r.points}/${r.max} points` : 'Mauvaise réponse';
   const src = S.pack.source && q.source ? `${S.pack.source}/blob/main/${q.source}` : null;
   const graded = isGraded(q);
   const hasRationale = q.options.some((o) => o.rationale);
   const best = q.options.find((o) => o.key === r.bestKey);
-  const showExpl = q.explanation && q.explanation !== best.rationale;
+  const isBest = (o) => r.bestKeys.includes(o.key);
+  const showExpl = q.explanation && (isMulti(q) || q.explanation !== best.rationale);
   // Barème gradué : on présente les options de la meilleure à la moins bonne ; sinon ordre d'origine.
   const ordered = graded ? [...q.options].sort((a, b) => b.points - a.points) : q.options;
   return `
@@ -189,8 +201,8 @@ function explanationHtml(q, item) {
       <p><b>${verdict}</b></p>
       ${showExpl ? `<p>${esc(q.explanation)}</p>` : ''}
       <p class="muted small">${hasRationale ? 'Pourquoi chaque réponse (lettres d’origine, citées dans les explications) :' : 'L’explication désigne les options par leur lettre d’origine :'}</p>
-      <ol>${ordered.map((o) => `<li class="${o.key === r.bestKey ? 'is-best' : o.key === item.answer ? 'is-mine' : ''}">
-        <span class="k">${o.key}</span>${esc(o.text)}${graded ? ` <span class="badge">${o.points} pt${o.points > 1 ? 's' : ''}</span>` : ''}${o.key === r.bestKey ? ' ✓' : ''}${o.key === item.answer && !r.correct ? ' <b>← ton choix</b>' : ''}
+      <ol>${ordered.map((o) => `<li class="${isBest(o) ? 'is-best' : mine.includes(o.key) ? 'is-mine' : ''}">
+        <span class="k">${o.key}</span>${esc(o.text)}${graded ? ` <span class="badge">${o.points} pt${o.points > 1 ? 's' : ''}</span>` : ''}${isBest(o) ? ' ✓' : ''}${mine.includes(o.key) && !r.correct ? ' <b>← ton choix</b>' : ''}
         ${o.rationale ? `<div class="why">${esc(o.rationale)}</div>` : ''}</li>`).join('')}</ol>
       ${q.topic || q.lo || q.los ? `<p class="muted small">${esc([objectiveText(q), q.topic].filter(Boolean).join(' · '))}</p>` : ''}
       ${src ? `<p class="small"><a href="${esc(src)}" target="_blank" rel="noopener">Voir dans le cours</a></p>` : ''}
@@ -214,7 +226,7 @@ function viewSession() {
       <button class="btn" data-action="go" data-view="result">Résultat</button>
       <button class="btn" data-action="next" ${last ? 'disabled' : ''}>Suiv. ›</button>`;
   } else if (s.mode === 'training') {
-    nav = item.answer === null
+    nav = !isAnswered(item)
       ? `<button class="btn" data-action="finish">Arrêter</button><button class="btn" data-action="next" ${last ? 'disabled' : ''}>Passer ›</button>`
       : `<button class="btn primary" data-action="${last ? 'finish' : 'next'}">${last ? 'Voir le résultat' : 'Question suivante ›'}</button>`;
   } else {
@@ -226,7 +238,7 @@ function viewSession() {
   const grid = (s.mode === 'exam' && !finished) || finished ? `
     <button class="btn compact" data-action="toggle-grid">${S.showGrid ? 'Masquer l’aperçu' : `Aperçu · ${answeredCount(s)}/${s.items.length} répondues`}</button>
     ${S.showGrid ? `<div class="grid">${s.items.map((it, k) => {
-      let c = it.answer !== null ? 'done' : '';
+      let c = isAnswered(it) ? 'done' : '';
       if (finished) c = scoreQuestion(S.byId.get(it.questionId), it.answer).correct ? 'ok' : 'ko';
       return `<button class="${c} ${it.flagged ? 'flag' : ''} ${k === i ? 'cur' : ''}" data-action="goto" data-index="${k}">${k + 1}</button>`;
     }).join('')}</div>` : ''}` : '';
@@ -245,6 +257,7 @@ function viewSession() {
     <div class="progress"><i style="width:${Math.round((100 * (i + 1)) / s.items.length)}%"></i></div>
     ${q.title || (q.series && q.series !== 'bank' && q.series !== 'mock') ? `<p class="muted small" style="margin-top:10px">${esc([seriesLabel(q.series), q.title].filter(Boolean).join(' · '))}</p>` : ''}
     <p class="stem">${esc(q.stem)}</p>
+    ${isMulti(q) && !revealed ? `<p class="muted small">Choisis ${q.select} réponses${item.answer ? ` · ${chosenKeys(item.answer).length}/${q.select} cochée(s)` : ''}.</p>` : ''}
     ${item.order.map((k) => optionHtml(q, k, item, revealed, graded)).join('')}
     ${revealed ? explanationHtml(q, item) : ''}
     ${grid}
@@ -263,9 +276,10 @@ function viewResult() {
     <div class="card">
       <p class="score">${r.total}/${r.max}</p>
       <p>${r.percent} % · ${mins} min ·
-        ${r.passed ? '<span class="badge ok">Seuil atteint</span>' : '<span class="badge ko">Sous le seuil</span>'}
+        ${passBadge(r)}
         ${official ? ` ${readinessBadge(readiness())}` : ''}</p>
-      <p class="muted small">Seuil ${r.passMark}/${r.max}${r.goMark != null ? ` · objectif avant de réserver ${r.goMark}/${r.max}${official ? `, à atteindre sur ${readiness().required} examens blancs consécutifs` : ''}` : ''}${official ? '' : ' (ramenés à la taille de la série)'}.</p>
+      <p class="muted small">${r.passMark != null ? `Seuil ${r.passMark}/${r.max} · ` : ''}${r.goMark != null ? `${r.passMark != null ? 'objectif' : 'Objectif personnel'} avant de réserver ${r.goMark}/${r.max}${official ? `, à atteindre sur ${readiness().required} examens blancs consécutifs` : ''}` : ''}${official ? '' : ' (ramenés à la taille de la série)'}.</p>
+      ${S.pack.scoreNote ? `<p class="muted small">${esc(S.pack.scoreNote)}</p>` : ''}
     </div>
     <h3>Par domaine</h3>
     ${Object.entries(r.byDomain).map(([d, v]) => {
@@ -449,6 +463,15 @@ function endSession() {
 const actions = {
   home: () => navigate('home'),
   go: (el) => navigate(el.dataset.view),
+  'set-pack': (el) => {
+    if (el.dataset.pack === S.pack.id) return;
+    save();
+    clearInterval(timerHandle);
+    try { localStorage.setItem('cet:activePack', el.dataset.pack); } catch { /* stockage indisponible */ }
+    S.session = null;
+    S.setup = { strategy: 'adaptive', count: 20, domains: [], series: [] };
+    loadPack(el.dataset.pack);
+  },
   'set-exam': (el) => { S.examId = el.dataset.exam; S.setup.domains = []; S.setup.series = []; save(); render(); },
   'set-strategy': (el) => { S.setup.strategy = el.dataset.strategy; save(); render(); },
   'set-count': (el) => { S.setup.count = Number(el.dataset.count); save(); render(); },
@@ -491,12 +514,13 @@ const actions = {
   choose: (el) => {
     const s = S.session;
     if (s.status !== 'in_progress') return;
-    const before = s.items[s.current].answer;
+    const wasAnswered = isAnswered(s.items[s.current]);
     S.session = answer(s, s.current, el.dataset.key);
     if (S.session.status === 'finished') { endSession(); return; }
-    if (S.session.mode === 'training' && before === null) {
-      const q = S.byId.get(s.items[s.current].questionId);
-      S.progress = recordAnswer(S.progress, q, scoreQuestion(q, el.dataset.key).correct);
+    const item = S.session.items[S.session.current];
+    if (S.session.mode === 'training' && !wasAnswered && isAnswered(item)) {
+      const q = S.byId.get(item.questionId);
+      S.progress = recordAnswer(S.progress, q, scoreQuestion(q, item.answer).correct);
     }
     save(); render();
   },
@@ -568,8 +592,19 @@ function updateTimer() {
 
 async function boot() {
   try {
-    const packs = await (await fetch('packs/index.json')).json();
-    const entry = packs[0];
+    S.packs = await (await fetch('packs/index.json')).json();
+    let wanted = null;
+    try { wanted = localStorage.getItem('cet:activePack'); } catch { /* stockage indisponible */ }
+    await loadPack(wanted, { home: false });
+  } catch (err) {
+    $view.innerHTML = `<div class="card"><p><b>Impossible de charger les questions.</b></p><p class="muted small">${esc(err.message)}</p></div>`;
+  }
+}
+
+// Charge un pack (certification) : questions, progression et préférences propres au pack.
+async function loadPack(packId, { home = true } = {}) {
+  try {
+    const entry = S.packs.find((p) => p.id === packId) ?? S.packs[0];
     const [pack, questions] = await Promise.all([
       fetch(`${entry.path}pack.json`).then((r) => r.json()),
       fetch(`${entry.path}questions.json`).then((r) => r.json()),
@@ -577,6 +612,7 @@ async function boot() {
     S.pack = pack;
     S.questions = questions;
     S.byId = new Map(questions.map((q) => [q.id, q]));
+    S.objectives = [];
     if (pack.objectives?.file) {
       S.objectives = await fetch(`${entry.path}${pack.objectives.file}`).then((r) => (r.ok ? r.json() : [])).catch(() => []);
     }
@@ -587,7 +623,7 @@ async function boot() {
     const prefs = S.store.get('prefs', {});
     S.examId = pack.exams.some((e) => e.id === prefs.examId) ? prefs.examId : pack.exams[0].id;
     S.setup = { ...S.setup, ...(prefs.setup ?? {}) };
-    S.session = S.store.get('session') ?? S.store.get('lastSession');
+    S.session = S.store.get('session') ?? S.store.get('lastSession') ?? null;
     // Une session qui référence des questions retirées du pack n'est plus jouable.
     if (S.session && !S.session.items.every((it) => S.byId.has(it.questionId))) {
       S.session = null;
@@ -596,7 +632,9 @@ async function boot() {
     }
     S.setup.series = (S.setup.series ?? []).filter((id) => pack.series?.some((x) => x.id === id));
     if (S.session && S.session.status === 'in_progress' && isExpired(S.session)) endSession();
-    render();
+    if (home) navigate('home', true);
+    else render();
+    clearInterval(timerHandle);
     timerHandle = setInterval(updateTimer, 1000);
   } catch (err) {
     $view.innerHTML = `<div class="card"><p><b>Impossible de charger les questions.</b></p><p class="muted small">${esc(err.message)}</p></div>`;

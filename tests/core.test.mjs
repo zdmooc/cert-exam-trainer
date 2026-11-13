@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 
 import { createRng, shuffle } from '../app/js/core/random.js';
 import { scoreQuestion, scoreSession } from '../app/js/core/scoring.js';
-import { createSession, answer, finish, canReveal, isExpired } from '../app/js/core/session.js';
+import { createSession, answer, finish, canReveal, isExpired, isAnswered, answeredCount } from '../app/js/core/session.js';
 import { selectQuestions, generateExam, filterPool, fixedSet } from '../app/js/core/selection.js';
 import { emptyProgress, recordAnswer, statOf, needsReview, difficulty } from '../app/js/core/progress.js';
 import { questionRev } from '../content-pipeline/rev.mjs';
@@ -274,4 +274,56 @@ test('objectif : une statistique d’une ancienne version de question ne compte 
   for (let i = 0; i < 3; i++) p = recordAnswer(p, { id: 'o1', rev: 'old' }, true, 0);
   assert.equal(objectiveProgress([{ id: 'o1', rev: 'old' }], p).status, 'acquired');
   assert.equal(objectiveProgress([{ id: 'o1', rev: 'new' }], p).status, 'never');
+});
+
+// ---------- Questions à plusieurs réponses (select) ----------
+
+const multi = {
+  id: 'm1', exam: 'demo', set: 'bank', domain: 'x', stem: 'Deux réponses', explanation: '-', select: 2,
+  options: [{ key: 'A', text: 'A', points: 1 }, { key: 'B', text: 'B', points: 0 }, { key: 'C', text: 'C', points: 1 }, { key: 'D', text: 'D', points: 0 }],
+};
+
+test('plusieurs réponses : 1 point seulement si toutes les bonnes options sont choisies', () => {
+  assert.deepEqual(scoreQuestion(multi, ['C', 'A']).points, 1);
+  assert.equal(scoreQuestion(multi, ['A', 'B']).correct, false);
+  assert.equal(scoreQuestion(multi, ['A']).answered, false);
+  assert.equal(scoreQuestion(multi, ['A']).points, 0);
+  assert.equal(scoreQuestion(multi, null).answered, false);
+  assert.deepEqual(scoreQuestion(multi, null).bestKeys, ['A', 'C']);
+  assert.deepEqual(scoreQuestion(bank[1], 'B').bestKeys, ['B']);
+});
+
+test('plusieurs réponses : cocher, décocher, limite et correction en entraînement', () => {
+  let s = createSession({ mode: 'training', exam: 'demo', questions: [multi], rng: createRng(1) });
+  s = answer(s, 0, 'A');
+  assert.deepEqual(s.items[0].answer, ['A']);
+  assert.equal(isAnswered(s.items[0]), false);
+  assert.equal(canReveal(s, 0), false);
+  s = answer(s, 0, 'A');
+  assert.equal(s.items[0].answer, null, 'décocher la seule option vide la réponse');
+  s = answer(answer(s, 0, 'A'), 0, 'B');
+  assert.equal(isAnswered(s.items[0]), true);
+  assert.equal(canReveal(s, 0), true);
+  assert.deepEqual(answer(s, 0, 'C').items[0].answer, ['A', 'B'], 'réponse figée une fois complète');
+});
+
+test('plusieurs réponses : en examen, pas plus que le nombre demandé', () => {
+  let s = createSession({ mode: 'exam', exam: 'demo', questions: [multi, bank[0]], rng: createRng(2), durationMinutes: 10, now: 0 });
+  s = answer(answer(s, 0, 'A', 1), 0, 'C', 1);
+  assert.deepEqual(answer(s, 0, 'B', 1).items[0].answer, ['A', 'C']);
+  s = answer(answer(s, 0, 'C', 1), 0, 'D', 1);
+  assert.deepEqual(s.items[0].answer, ['A', 'D']);
+  assert.equal(answeredCount(s), 1);
+  s = finish(answer(s, 1, 'A', 1), 2);
+  const r = scoreSession(s, new Map([[multi.id, multi], [bank[0].id, bank[0]]]));
+  assert.equal(r.total, 1);
+  assert.equal(r.max, 2);
+});
+
+test('pack sans seuil officiel : pas de verdict réussi/échoué, objectif conservé', () => {
+  let s = createSession({ mode: 'exam', exam: 'demo', questions: [bank[0]], rng: createRng(3) });
+  s = finish(answer(s, 0, 'A'));
+  const r = scoreSession(s, byId, { maxPoints: 10, passMark: null, goMark: 8 });
+  assert.equal(r.passed, null);
+  assert.equal(r.go, true);
 });

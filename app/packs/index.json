@@ -1,3 +1,4 @@
 [
-  { "id": "togaf", "path": "packs/togaf/" }
+  { "id": "togaf", "path": "packs/togaf/", "label": "TOGAF" },
+  { "id": "claude", "path": "packs/claude/", "label": "Claude" }
 ]

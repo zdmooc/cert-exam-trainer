@@ -6,9 +6,10 @@
   "type": "module",
   "engines": { "node": ">=20" },
   "scripts": {
-    "test": "node --test tests/*.test.mjs && node content-pipeline/validate.mjs app/packs/togaf",
+    "test": "node --test tests/*.test.mjs && node content-pipeline/validate.mjs app/packs/togaf && node content-pipeline/validate.mjs app/packs/claude",
     "build:togaf": "node content-pipeline/togaf/build.mjs",
-    "validate": "node content-pipeline/validate.mjs app/packs/togaf",
+    "build:claude": "node content-pipeline/claude/build.mjs",
+    "validate": "node content-pipeline/validate.mjs app/packs/togaf && node content-pipeline/validate.mjs app/packs/claude",
     "serve": "python3 -m http.server 8080 --directory app"
   }
 }

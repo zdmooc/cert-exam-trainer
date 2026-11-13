@@ -2,7 +2,10 @@
 
 Application mobile d'entraînement aux certifications : questions avec explications, révision des erreurs et examens blancs chronométrés. Elle fonctionne hors ligne et s'installe sur l'écran d'accueil du téléphone.
 
-Premier pack : **TOGAF Enterprise Architecture** (Foundation OGEA-F101 et Practitioner OGEA-F102), 734 questions originales en français, rattachées aux objectifs X2202, issues de [togaf-ogea-103-combined-certification-prep](https://github.com/zdmooc/togaf-ogea-103-combined-certification-prep).
+Packs disponibles (choix en haut de l'accueil) :
+
+- **Certifications Claude** : Foundations (CCAR-F), Professional (CCAR-P), Developer (CCDV-F) et Associate (CCAO-F), 96 questions originales issues de [claude-architect-lab](https://github.com/zdmooc/claude-architect-lab), dont 9 à plusieurs réponses. La banque étant petite, l'examen blanc est un **mini-examen** réparti selon les poids officiels des domaines ; le score officiel (720/1000 échelonné) n'est pas reproduit, l'appli affiche un pourcentage et un objectif personnel de 80 %.
+- **TOGAF Enterprise Architecture** (Foundation OGEA-F101 et Practitioner OGEA-F102), 734 questions originales en français, rattachées aux objectifs X2202, issues de [togaf-ogea-103-combined-certification-prep](https://github.com/zdmooc/togaf-ogea-103-combined-certification-prep).
 
 **Utiliser l'appli :** <https://zdmooc.github.io/cert-exam-trainer/> → sur Android (Chrome) menu ⋮ › *Ajouter à l'écran d'accueil* ; sur iPhone (Safari) Partager › *Sur l'écran d'accueil*.
 
@@ -40,6 +43,7 @@ Le moteur ne contient aucune règle propre à une certification : formats, barè
 ```bash
 npm test                      # tests du moteur + validation des packs
 npm run build:togaf -- ../togaf-ogea-103-combined-certification-prep
+npm run build:claude -- ../claude-architect-lab
 npm run serve                 # http://localhost:8080
 ```
 
