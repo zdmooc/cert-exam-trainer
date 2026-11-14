@@ -119,6 +119,10 @@
       "label": "Les 16 livrables"
     },
     {
+      "id": "official-format",
+      "label": "Formats officiels"
+    },
+    {
       "id": "x2202-targeted",
       "label": "Ciblés X2202"
     },

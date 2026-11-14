@@ -41,7 +41,7 @@
   "course": "01-togaf-foundations/02-what-is-togaf.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 1
+  "questionCount": 3
  },
  {
   "id": "L1.1.5",
@@ -85,7 +85,7 @@
   "course": "01-togaf-foundations/08-architecture-repository.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 5
+  "questionCount": 6
  },
  {
   "id": "L1.1.9",
@@ -118,7 +118,7 @@
   "course": "03-adm-techniques/06-risk-management.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 2
+  "questionCount": 3
  },
  {
   "id": "L1.1.12",
@@ -151,7 +151,7 @@
   "course": "02-adm/00-adm-big-picture.md",
   "bloom": "1_Remembering",
   "review": "Candidat précis — non relu",
-  "questionCount": 3
+  "questionCount": 6
  },
  {
   "id": "L1.3.2",
@@ -162,7 +162,7 @@
   "course": "01-togaf-foundations/10-x2202-foundation-deepening.md",
   "bloom": "1_Remembering",
   "review": "Candidat précis — non relu",
-  "questionCount": 1
+  "questionCount": 3
  },
  {
   "id": "L1.3.3",
@@ -195,7 +195,7 @@
   "course": "01-togaf-foundations/10-x2202-foundation-deepening.md",
   "bloom": "1_Remembering",
   "review": "Candidat précis — non relu",
-  "questionCount": 2
+  "questionCount": 3
  },
  {
   "id": "L1.3.6",
@@ -206,7 +206,7 @@
   "course": "02-adm/02-phase-a-architecture-vision.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 1
+  "questionCount": 2
  },
  {
   "id": "L1.3.7",
@@ -393,7 +393,7 @@
   "course": "02-adm/11-requirements-management.md",
   "bloom": "1_Remembering",
   "review": "Candidat précis — non relu",
-  "questionCount": 6
+  "questionCount": 7
  },
  {
   "id": "L1.3.24",
@@ -415,7 +415,7 @@
   "course": "02-adm/13-adm-complete-flow.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 2
+  "questionCount": 6
  },
  {
   "id": "L1.3.26",
@@ -426,7 +426,7 @@
   "course": "04-applying-the-adm/07-agile-and-togaf.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 3
+  "questionCount": 4
  },
  {
   "id": "L1.4.1",
@@ -459,7 +459,7 @@
   "course": "01-togaf-foundations/06-architecture-principles.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 1
+  "questionCount": 2
  },
  {
   "id": "L1.4.4",
@@ -470,7 +470,7 @@
   "course": "01-togaf-foundations/10-x2202-foundation-deepening.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 1
+  "questionCount": 3
  },
  {
   "id": "L1.4.5",
@@ -525,7 +525,7 @@
   "course": "03-adm-techniques/06-risk-management.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 5
+  "questionCount": 6
  },
  {
   "id": "L1.5.1",
@@ -558,7 +558,7 @@
   "course": "04-applying-the-adm/03-levels-of-architecture.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 4
+  "questionCount": 5
  },
  {
   "id": "L1.5.4",
@@ -569,7 +569,7 @@
   "course": "04-applying-the-adm/04-partitioning.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 4
+  "questionCount": 5
  },
  {
   "id": "L1.5.5",
@@ -602,7 +602,7 @@
   "course": "05-architecture-governance/01-governance-fundamentals.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 3
+  "questionCount": 5
  },
  {
   "id": "L1.6.2",
@@ -624,7 +624,7 @@
   "course": "05-architecture-governance/02-architecture-board.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 3
+  "questionCount": 4
  },
  {
   "id": "L1.6.4",
@@ -635,7 +635,7 @@
   "course": "05-architecture-governance/03-architecture-contract.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 3
+  "questionCount": 4
  },
  {
   "id": "L1.6.5",
@@ -679,7 +679,7 @@
   "course": "06-architecture-content/03-deliverables.md",
   "bloom": "2_Remembering",
   "review": "Candidat précis — non relu",
-  "questionCount": 23
+  "questionCount": 26
  },
  {
   "id": "L1.8.1",

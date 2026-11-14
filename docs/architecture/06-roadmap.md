@@ -19,6 +19,8 @@
 | v2.1 (lot 1) | Empreinte `rev` (progression remise à zéro quand une question change), « Prêt à réserver » sur 3 examens consécutifs | Scores fiables | PR #1 |
 | v2.2 (lot 2) | Rattachement aux 131 objectifs X2202 (matrice du dépôt de cours), progression par objectif, entraînement par objectif | Suivre la couverture du syllabus | PR #2 |
 | v2.4 | Écran « Jour J » (réservation et règles d'examen, décrit dans `pack.json`), intitulé de l'objectif X2202 sous chaque explication, contrôle du biais de longueur des réponses dans la validation des packs | Réserver sans erreur ; scores non devinables | **Livrée** (14 nov. 2026) |
+| v2.5 | Série « Formats officiels » : 30 QCM Foundation d'association, de lecture de tableau et à réponses courtes (pack TOGAF : 764 questions) | S'entraîner aux formats réels de l'examen | **Livrée** (14 nov. 2026) |
+| — | Questions sur image (schéma du cycle ADM) : le moteur n'affiche pas encore d'image | Couvrir le dernier format de l'examen | À faire |
 | v2.3 | Parcours séquentiel Foundation → Practitioner | Apprendre dans l'ordre | À préciser |
 | — | Mode sombre manuel, recherche d'une question | Confort | À faire |
 | — | Pack TOGAF F102 : scénarios plus longs, proches du format réel ; justification déjà présente pour chaque option, à relire | Entraînement Practitioner plus réaliste | À faire après la Foundation |

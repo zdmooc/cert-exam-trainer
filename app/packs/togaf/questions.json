@@ -14299,6 +14299,1245 @@
   ]
  },
  {
+  "id": "togaf-f101-o01",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "adm",
+  "title": "Associer des objectifs à leur phase (1)",
+  "stem": "Voici quatre objectifs de phases de l'ADM :\n\n1. Déterminer l'Architecture Capability souhaitée par l'organisation\n2. Développer une vision de haut niveau des capacités et de la valeur métier à délivrer\n3. Produire la première version complète de l'Architecture Roadmap\n4. S'assurer que le cycle de développement de l'architecture est maintenu\n\nÀ quelle phase correspond chaque objectif ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "1 Phase A – 2 Phase B – 3 Phase E – 4 Phase H",
+    "points": 0
+   },
+   {
+    "key": "B",
+    "text": "1 Preliminary – 2 Phase A – 3 Phase F – 4 Phase G",
+    "points": 0
+   },
+   {
+    "key": "C",
+    "text": "1 Preliminary – 2 Phase A – 3 Phase E – 4 Phase H",
+    "points": 1
+   },
+   {
+    "key": "D",
+    "text": "1 Phase A – 2 Preliminary – 3 Phase F – 4 Phase H",
+    "points": 0
+   }
+  ],
+  "explanation": "Déterminer puis établir l'Architecture Capability relève de la Preliminary Phase. La vision de haut niveau des capacités et de la valeur métier est un objectif de la Phase A. La première version complète de l'Architecture Roadmap est produite en Phase E, à partir des gaps des Phases B, C et D. Maintenir le cycle de développement de l'architecture est un objectif de la Phase H. Piège : la Phase F finalise la Roadmap ; elle n'en produit pas la première version complète.",
+  "topic": "",
+  "lo": "L1.3.1",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "f702d661",
+  "los": [
+   "L1.3.1"
+  ]
+ },
+ {
+  "id": "togaf-f101-o02",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "adm",
+  "title": "Associer des objectifs à leur phase (2)",
+  "stem": "Voici quatre objectifs de l'ADM :\n\n1. Développer la Target Technology Architecture\n2. Gérer les exigences d'architecture identifiées pendant un cycle ou une phase de l'ADM\n3. Développer la Target Business Architecture\n4. Développer les Target Data et Application Architectures\n\nÀ quelle phase correspond chaque objectif ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "1 Phase D – 2 Requirements Management – 3 Phase B – 4 Phase C",
+    "points": 1
+   },
+   {
+    "key": "B",
+    "text": "1 Phase C – 2 Phase H – 3 Phase B – 4 Phase D",
+    "points": 0
+   },
+   {
+    "key": "C",
+    "text": "1 Phase D – 2 Phase A – 3 Phase B – 4 Phase C",
+    "points": 0
+   },
+   {
+    "key": "D",
+    "text": "1 Phase C – 2 Requirements Management – 3 Phase A – 4 Phase D",
+    "points": 0
+   }
+  ],
+  "explanation": "Chaque phase de domaine développe sa Target Architecture : Business en Phase B, Data et Application en Phase C, Technology en Phase D. Gérer les exigences identifiées pendant un cycle ou une phase est un objectif de Requirements Management, qui opère pendant toutes les phases.",
+  "topic": "",
+  "lo": "L1.3.1",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "4907083f",
+  "los": [
+   "L1.3.1"
+  ]
+ },
+ {
+  "id": "togaf-f101-o03",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "adm",
+  "title": "Associer des objectifs à leur phase (3)",
+  "stem": "Voici quatre objectifs de phases de l'ADM :\n\n1. S'assurer que l'Architecture Governance Framework est exécuté\n2. Assurer la conformité des projets d'implémentation à la Target Architecture\n3. Coordonner l'Implementation and Migration Plan avec la gestion du changement de l'entreprise\n4. Déterminer si une approche incrémentale est nécessaire et identifier les Transition Architectures\n\nÀ quelle phase correspond chaque objectif ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "1 Phase G – 2 Phase H – 3 Phase E – 4 Phase F",
+    "points": 0
+   },
+   {
+    "key": "B",
+    "text": "1 Phase H – 2 Phase G – 3 Phase E – 4 Phase F",
+    "points": 0
+   },
+   {
+    "key": "C",
+    "text": "1 Phase G – 2 Phase G – 3 Phase F – 4 Phase E",
+    "points": 0
+   },
+   {
+    "key": "D",
+    "text": "1 Phase H – 2 Phase G – 3 Phase F – 4 Phase E",
+    "points": 1
+   }
+  ],
+  "explanation": "La Phase H s'assure que l'Architecture Governance Framework est exécuté. La Phase G assure la conformité des projets d'implémentation. La Phase F coordonne l'Implementation and Migration Plan avec l'approche de gestion du changement de l'entreprise. La Phase E détermine si une approche incrémentale est nécessaire et identifie les Transition Architectures. Piège : G gouverne l'implémentation en cours ; H veille au dispositif de gouvernance et au maintien de l'architecture dans la durée.",
+  "topic": "",
+  "lo": "L1.3.1",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "4692e953",
+  "los": [
+   "L1.3.1"
+  ]
+ },
+ {
+  "id": "togaf-f101-o04",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "adm",
+  "title": "Un objectif de Requirements Management",
+  "stem": "Lequel de ces objectifs appartient à Requirements Management ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Obtenir l'approbation du Statement of Architecture Work",
+    "points": 0,
+    "rationale": "Objectif de la Phase A."
+   },
+   {
+    "key": "B",
+    "text": "Rendre les exigences pertinentes disponibles pour chaque phase",
+    "points": 1
+   },
+   {
+    "key": "C",
+    "text": "Finaliser l'Architecture Roadmap",
+    "points": 0,
+    "rationale": "Objectif de la Phase F."
+   },
+   {
+    "key": "D",
+    "text": "Établir l'Architecture Capability",
+    "points": 0,
+    "rationale": "Objectif de la Preliminary Phase."
+   }
+  ],
+  "explanation": "Requirements Management s'assure que les exigences d'architecture pertinentes sont disponibles pour chaque phase au moment où elle s'exécute.",
+  "topic": "",
+  "lo": "L1.3.23",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "7ce7a747",
+  "los": [
+   "L1.3.23"
+  ]
+ },
+ {
+  "id": "togaf-f101-o05",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "content",
+  "title": "Associer des livrables à leur description (1)",
+  "stem": "Voici quatre descriptions de livrables de l'ADM :\n\n1. Vue quantitative de la solution : critères mesurables à respecter pendant l'implémentation\n2. Liste des work packages, placés sur une ligne de temps, qui réalisent la Target Architecture\n3. Résultat de la revue d'un projet au regard de l'architecture convenue\n4. Organisation de la diffusion de l'information d'architecture aux bonnes parties prenantes, au bon moment\n\nQuel livrable correspond à chaque description ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "1 Architecture Definition Document – 2 Implementation and Migration Plan – 3 Compliance Assessment – 4 Communications Plan",
+    "points": 0
+   },
+   {
+    "key": "B",
+    "text": "1 Architecture Requirements Specification – 2 Architecture Roadmap – 3 Compliance Assessment – 4 Communications Plan",
+    "points": 1
+   },
+   {
+    "key": "C",
+    "text": "1 Architecture Requirements Specification – 2 Architecture Roadmap – 3 Change Request – 4 Architecture Vision",
+    "points": 0
+   },
+   {
+    "key": "D",
+    "text": "1 Architecture Definition Document – 2 Architecture Roadmap – 3 Requirements Impact Assessment – 4 Communications Plan",
+    "points": 0
+   }
+  ],
+  "explanation": "L'Architecture Requirements Specification donne la vue quantitative : ce qu'un projet d'implémentation doit respecter pour être conforme. L'Architecture Roadmap liste les work packages et les place sur une ligne de temps. Le Compliance Assessment restitue la revue d'un projet au regard de l'architecture. Le Communications Plan organise la diffusion de l'information aux bonnes parties prenantes, au bon moment. Piège : l'Architecture Definition Document donne la vue qualitative ; l'Architecture Requirements Specification, la vue quantitative.",
+  "topic": "",
+  "lo": "L1.7.3",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "a7671c97",
+  "los": [
+   "L1.7.3"
+  ]
+ },
+ {
+  "id": "togaf-f101-o06",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "content",
+  "title": "Associer des livrables à leur description (2)",
+  "stem": "Voici quatre descriptions de livrables de l'ADM :\n\n1. Périmètre des organisations concernées, rôles et responsabilités, exigences de maturité\n2. Méthode et contenu d'architecture adaptés au contexte de l'entreprise\n3. État de référence et état cible des capacités métier, IT et d'architecture\n4. Description formelle d'un état intermédiaire entre Baseline et Target\n\nQuel livrable correspond à chaque description ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "1 Organizational Model for Enterprise Architecture – 2 Tailored Architecture Framework – 3 Capability Assessment – 4 Transition Architecture",
+    "points": 1
+   },
+   {
+    "key": "B",
+    "text": "1 Tailored Architecture Framework – 2 Architecture Principles – 3 Capability Assessment – 4 Architecture Roadmap",
+    "points": 0
+   },
+   {
+    "key": "C",
+    "text": "1 Organizational Model for Enterprise Architecture – 2 Tailored Architecture Framework – 3 Compliance Assessment – 4 Architecture Roadmap",
+    "points": 0
+   },
+   {
+    "key": "D",
+    "text": "1 Statement of Architecture Work – 2 Architecture Principles – 3 Capability Assessment – 4 Transition Architecture",
+    "points": 0
+   }
+  ],
+  "explanation": "L'Organizational Model for Enterprise Architecture décrit le périmètre des organisations concernées, les rôles et les exigences de maturité. Le Tailored Architecture Framework adapte méthode et contenu au contexte. Le Capability Assessment compare l'état de référence et l'état cible des capacités. Une Transition Architecture décrit formellement un état intermédiaire entre Baseline et Target. Piège : l'Architecture Roadmap ordonne des work packages dans le temps ; elle ne décrit pas un état de l'architecture.",
+  "topic": "",
+  "lo": "L1.7.3",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "fd50ce3a",
+  "los": [
+   "L1.7.3"
+  ]
+ },
+ {
+  "id": "togaf-f101-o07",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "techniques",
+  "title": "Les sections d'un Architecture Principle",
+  "stem": "Voici quatre descriptions des sections du modèle TOGAF d'un Architecture Principle :\n\n1. Énonce la règle fondamentale de façon succincte et sans ambiguïté\n2. Met en avant les bénéfices métier de l'adhésion au principe\n3. Précise ce que le métier et l'IT devront faire pour appliquer le principe\n4. Représente l'essence de la règle et se retient facilement\n\nQuelle section correspond à chaque description ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "1 Name – 2 Rationale – 3 Implications – 4 Statement",
+    "points": 0
+   },
+   {
+    "key": "B",
+    "text": "1 Statement – 2 Implications – 3 Rationale – 4 Name",
+    "points": 0
+   },
+   {
+    "key": "C",
+    "text": "1 Rationale – 2 Statement – 3 Implications – 4 Name",
+    "points": 0
+   },
+   {
+    "key": "D",
+    "text": "1 Statement – 2 Rationale – 3 Implications – 4 Name",
+    "points": 1
+   }
+  ],
+  "explanation": "Le Statement énonce la règle. Le Rationale en donne les bénéfices métier. Les Implications précisent ce que le métier et l'IT devront faire pour l'appliquer (ressources, coûts, activités). Le Name en résume l'essence et doit être facile à retenir.",
+  "topic": "",
+  "lo": "L1.4.3",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "fae65371",
+  "los": [
+   "L1.4.3"
+  ]
+ },
+ {
+  "id": "togaf-f101-o08",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "applying",
+  "title": "Les niveaux de l'Architecture Landscape",
+  "stem": "Voici trois descriptions de niveaux de l'Architecture Landscape :\n\n1. Cadre d'ensemble qui donne la direction au niveau exécutif\n2. Cadre d'organisation des activités au niveau d'un programme ou d'un portefeuille\n3. Cadre d'organisation du changement par incréments de capacité\n\nQuel niveau correspond à chaque description ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "1 Strategic Architecture – 2 Segment Architecture – 3 Capability Architecture",
+    "points": 1
+   },
+   {
+    "key": "B",
+    "text": "1 Capability Architecture – 2 Segment Architecture – 3 Strategic Architecture",
+    "points": 0
+   },
+   {
+    "key": "C",
+    "text": "1 Strategic Architecture – 2 Capability Architecture – 3 Segment Architecture",
+    "points": 0
+   },
+   {
+    "key": "D",
+    "text": "1 Segment Architecture – 2 Strategic Architecture – 3 Capability Architecture",
+    "points": 0
+   }
+  ],
+  "explanation": "La Strategic Architecture fixe la direction au niveau exécutif. La Segment Architecture organise les activités au niveau d'un programme ou d'un portefeuille. La Capability Architecture organise le changement par incréments de capacité.",
+  "topic": "",
+  "lo": "L1.5.3",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "c65bfda1",
+  "los": [
+   "L1.5.3"
+  ]
+ },
+ {
+  "id": "togaf-f101-o09",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "adm",
+  "title": "Lire le tableau : quelle phase ? (1)",
+  "stem": "Soit la description suivante d'une phase de l'ADM :\n\nRésultat attendu : une documentation suffisante pour obtenir l'autorisation de poursuivre, c'est-à-dire de développer une Target Architecture qui éprouve une cible résumée.\n\nConnaissances essentielles : le périmètre du problème traité ; les parties dont les intérêts sont fondamentaux pour ce problème ; la réponse résumée que les stakeholders jugent acceptable.\n\nQuelle phase est décrite ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Preliminary",
+    "points": 0,
+    "rationale": "La Preliminary Phase met en place la capacité d'architecture; elle ne traite pas un problème particulier."
+   },
+   {
+    "key": "B",
+    "text": "Phase A",
+    "points": 1
+   },
+   {
+    "key": "C",
+    "text": "Phase E",
+    "points": 0,
+    "rationale": "La Phase E produit des work packages."
+   },
+   {
+    "key": "D",
+    "text": "Phase H",
+    "points": 0,
+    "rationale": "La Phase H décide d'un nouveau cycle à partir des écarts constatés après réalisation."
+   }
+  ],
+  "explanation": "Obtenir l'autorisation de poursuivre sur la base d'une cible résumée, en connaissant le périmètre du problème, les stakeholders et leurs concerns, est le propre de la Phase A (Architecture Vision).",
+  "topic": "",
+  "lo": "L1.3.25",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "221260bf",
+  "los": [
+   "L1.3.25"
+  ]
+ },
+ {
+  "id": "togaf-f101-o10",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "adm",
+  "title": "Lire le tableau : quelle phase ? (2)",
+  "stem": "Soit la description suivante :\n\nRésultat attendu : un ensemble d'architectures de domaine approuvées par les stakeholders, avec les gaps identifiés et le travail nécessaire pour les combler.\n\nConnaissances essentielles : en quoi l'entreprise actuelle ne répond pas aux préférences des stakeholders ; ce qui doit changer ; le travail nécessaire pour réaliser ces changements.\n\nQuelle(s) phase(s) est (sont) décrite(s) ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Phase A",
+    "points": 0,
+    "rationale": "La Phase A ne livre qu'une cible résumée."
+   },
+   {
+    "key": "B",
+    "text": "Phase F",
+    "points": 0,
+    "rationale": "La Phase F livre un ensemble de projets approuvés."
+   },
+   {
+    "key": "C",
+    "text": "Phase G",
+    "points": 0,
+    "rationale": "La Phase G livre des projets achevés."
+   },
+   {
+    "key": "D",
+    "text": "Phases B, C et D",
+    "points": 1
+   }
+  ],
+  "explanation": "Les Phases B, C et D produisent les architectures de domaine approuvées, les gaps et le travail nécessaire pour les combler.",
+  "topic": "",
+  "lo": "L1.3.25",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "94d85e6b",
+  "los": [
+   "L1.3.25"
+  ]
+ },
+ {
+  "id": "togaf-f101-o11",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "adm",
+  "title": "Lire le tableau : quelle phase ? (3)",
+  "stem": "Soit la description suivante d'une phase de l'ADM :\n\nRésultat attendu : un ensemble de work packages qui traitent les gaps, avec la valeur produite, l'effort requis et les dépendances entre eux pour atteindre la cible ajustée.\n\nConnaissances essentielles : les dépendances entre les ensembles de changements ; la valeur, l'effort et le risque associés à chacun.\n\nQuelle phase est décrite ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Phase E",
+    "points": 1
+   },
+   {
+    "key": "B",
+    "text": "Phase F",
+    "points": 0,
+    "rationale": "La Phase F transforme ces work packages en projets approuvés, avec ressources et dates."
+   },
+   {
+    "key": "C",
+    "text": "Phase G",
+    "points": 0,
+    "rationale": "La Phase G suit la réalisation des projets."
+   },
+   {
+    "key": "D",
+    "text": "Phases B, C et D",
+    "points": 0,
+    "rationale": "Les Phases B, C et D identifient les gaps; elles ne les regroupent pas encore en work packages dépendants."
+   }
+  ],
+  "explanation": "La Phase E regroupe les changements en work packages, avec leur valeur, leur effort et leurs dépendances.",
+  "topic": "",
+  "lo": "L1.3.25",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "57e24564",
+  "los": [
+   "L1.3.25"
+  ]
+ },
+ {
+  "id": "togaf-f101-o12",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "adm",
+  "title": "Lire le tableau : quelle phase ? (4)",
+  "stem": "Soit la description suivante d'une phase de l'ADM :\n\nRésultat attendu : l'achèvement des projets qui mettent en œuvre les changements nécessaires pour atteindre la cible ajustée.\n\nConnaissances essentielles : la finalité et les contraintes fixées à l'équipe d'implémentation ; l'évolution des priorités des stakeholders selon le succès, la valeur, l'effort et le risque du changement.\n\nQuelle phase est décrite ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Phase E",
+    "points": 0,
+    "rationale": "La Phase E définit les work packages."
+   },
+   {
+    "key": "B",
+    "text": "Phase F",
+    "points": 0,
+    "rationale": "La Phase F approuve les projets et leur calendrier."
+   },
+   {
+    "key": "C",
+    "text": "Phase G",
+    "points": 1
+   },
+   {
+    "key": "D",
+    "text": "Phase H",
+    "points": 0,
+    "rationale": "La Phase H intervient après la réalisation, pour décider d'un éventuel nouveau cycle."
+   }
+  ],
+  "explanation": "L'achèvement des projets, dans le respect de la finalité et des contraintes fixées à l'équipe d'implémentation, caractérise la Phase G (Implementation Governance).",
+  "topic": "",
+  "lo": "L1.3.25",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "d31beb10",
+  "los": [
+   "L1.3.25"
+  ]
+ },
+ {
+  "id": "togaf-f101-o13",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "concepts",
+  "title": "Le socle du TOGAF Standard",
+  "stem": "Quelle partie du TOGAF Standard, 10th Edition, regroupe les concepts universels et les bonnes pratiques stables ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "TOGAF Series Guides",
+    "points": 0,
+    "rationale": "Les Series Guides expliquent comment appliquer le standard à des contextes particuliers."
+   },
+   {
+    "key": "B",
+    "text": "TOGAF Library",
+    "points": 0,
+    "rationale": "La TOGAF Library rassemble des ressources complémentaires (modèles, exemples, références)."
+   },
+   {
+    "key": "C",
+    "text": "Architecture Repository",
+    "points": 0,
+    "rationale": "L'Architecture Repository est le référentiel d'une entreprise, pas une partie du standard."
+   },
+   {
+    "key": "D",
+    "text": "TOGAF Fundamental Content",
+    "points": 1
+   }
+  ],
+  "explanation": "Le TOGAF Fundamental Content contient les concepts universels et les bonnes pratiques éprouvées, appelés à rester stables.",
+  "topic": "",
+  "lo": "L1.1.4",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "acf8d92a",
+  "los": [
+   "L1.1.4"
+  ]
+ },
+ {
+  "id": "togaf-f101-o14",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "concepts",
+  "title": "Appliquer le standard à un contexte",
+  "stem": "Un architecte cherche des conseils pour appliquer le TOGAF Standard à un contexte précis, par exemple l'agilité ou l'entreprise digitale. Où les trouve-t-il en priorité ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "TOGAF Series Guides",
+    "points": 1
+   },
+   {
+    "key": "B",
+    "text": "TOGAF Fundamental Content",
+    "points": 0,
+    "rationale": "Le Fundamental Content pose les concepts généraux."
+   },
+   {
+    "key": "C",
+    "text": "Architecture Requirements Specification",
+    "points": 0,
+    "rationale": "C'est un livrable d'un projet d'architecture."
+   },
+   {
+    "key": "D",
+    "text": "Enterprise Continuum",
+    "points": 0,
+    "rationale": "C'est un moyen de classer les actifs d'architecture et de solution."
+   }
+  ],
+  "explanation": "Les TOGAF Series Guides donnent les conseils pratiques d'application du standard à un contexte donné.",
+  "topic": "",
+  "lo": "L1.1.4",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "83ecd84b",
+  "los": [
+   "L1.1.4"
+  ]
+ },
+ {
+  "id": "togaf-f101-o15",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "governance",
+  "title": "La hiérarchie de gouvernance",
+  "stem": "Quels domaines composent, avec l'Architecture Governance, la hiérarchie de gouvernance décrite par le TOGAF Standard ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Business, Data et Application Governance",
+    "points": 0,
+    "rationale": "Ce sont des domaines d'architecture."
+   },
+   {
+    "key": "B",
+    "text": "Strategic, Segment et Capability Governance",
+    "points": 0,
+    "rationale": "Ce sont les niveaux de l'Architecture Landscape."
+   },
+   {
+    "key": "C",
+    "text": "Corporate, Technology et IT Governance",
+    "points": 1
+   },
+   {
+    "key": "D",
+    "text": "Project, Program et Portfolio Governance",
+    "points": 0,
+    "rationale": "Ce sont des niveaux de gestion du changement, pas la hiérarchie citée par le standard."
+   }
+  ],
+  "explanation": "L'Architecture Governance n'opère pas isolément : elle s'inscrit dans une hiérarchie qui comprend aussi Corporate Governance, Technology Governance et IT Governance.",
+  "topic": "",
+  "lo": "L1.6.1",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "2d6acd71",
+  "los": [
+   "L1.6.1"
+  ]
+ },
+ {
+  "id": "togaf-f101-o16",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "governance",
+  "title": "Diriger et contrôler",
+  "stem": "La gouvernance se définit par « diriger et contrôler ». Selon le TOGAF Standard, qui dirige et contrôle le praticien de l'architecture et l'implémenteur ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "L'implémenteur",
+    "points": 0,
+    "rationale": "L'implémenteur est dirigé et contrôlé."
+   },
+   {
+    "key": "B",
+    "text": "Le stakeholder",
+    "points": 1
+   },
+   {
+    "key": "C",
+    "text": "Le chef de projet",
+    "points": 0,
+    "rationale": "Le chef de projet n'est pas l'autorité de gouvernance de l'architecture."
+   },
+   {
+    "key": "D",
+    "text": "Le praticien de l'architecture",
+    "points": 0,
+    "rationale": "Le praticien conseille et développe; il ne se gouverne pas lui-même."
+   }
+  ],
+  "explanation": "Le praticien et l'implémenteur sont dirigés, et tous deux sont contrôlés par le stakeholder : c'est lui qui oriente le développement de l'architecture et qui contrôle ses changements.",
+  "topic": "",
+  "lo": "L1.6.1",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "5c88705e",
+  "los": [
+   "L1.6.1"
+  ]
+ },
+ {
+  "id": "togaf-f101-o17",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "concepts",
+  "title": "Un Architecture Repository durable",
+  "stem": "Quel facteur contribue fortement à un Architecture Repository bien tenu et durable ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Capturer tous les artifacts listés dans le standard",
+    "points": 0,
+    "rationale": "Rien n'oblige à capturer tous les artifacts du standard."
+   },
+   {
+    "key": "B",
+    "text": "Réserver son contenu à l'équipe d'architecture",
+    "points": 0,
+    "rationale": "Le Repository sert aussi les stakeholders et les projets."
+   },
+   {
+    "key": "C",
+    "text": "Y conserver le code source des solutions",
+    "points": 0,
+    "rationale": "Le Repository contient des actifs d'architecture, pas le code."
+   },
+   {
+    "key": "D",
+    "text": "Limiter l'information collectée et maintenue au nécessaire",
+    "points": 1
+   }
+  ],
+  "explanation": "Un Repository durable limite l'information collectée et maintenue : ce qui n'est pas nécessaire au projet en cours ou à une traçabilité minimale n'a pas à être capturé.",
+  "topic": "",
+  "lo": "L1.1.8",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "cffdc628",
+  "los": [
+   "L1.1.8"
+  ]
+ },
+ {
+  "id": "togaf-f101-o18",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "adm",
+  "title": "Numérotation des versions",
+  "stem": "Par convention dans l'ADM, que désigne la version 1.0 d'un livrable ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Une architecture détaillée, formellement revue",
+    "points": 1
+   },
+   {
+    "key": "B",
+    "text": "Une ébauche de haut niveau",
+    "points": 0,
+    "rationale": "C'est la version 0.1."
+   },
+   {
+    "key": "C",
+    "text": "Un document finalisé, qui ne changera plus",
+    "points": 0,
+    "rationale": "Une version 1.0 peut encore évoluer, sous contrôle."
+   },
+   {
+    "key": "D",
+    "text": "Un document archivé",
+    "points": 0,
+    "rationale": "La numérotation ne dit rien de l'archivage."
+   }
+  ],
+  "explanation": "Par convention, la version 0.1 indique qu'une ébauche de haut niveau est en place, et la version 1.0 une architecture détaillée, formellement revue.",
+  "topic": "",
+  "lo": "L1.3.2",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "77ff96fa",
+  "los": [
+   "L1.3.2"
+  ]
+ },
+ {
+  "id": "togaf-f101-o19",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "adm",
+  "title": "Approuvé ne veut pas dire figé",
+  "stem": "Un document approuvé en Phase B doit être mis à jour en Phase D. Que prévoit l'ADM ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Il est figé jusqu'à la Phase H",
+    "points": 0,
+    "rationale": "Rien ne fige un document jusqu'à la Phase H."
+   },
+   {
+    "key": "B",
+    "text": "Il redevient un brouillon, sans formalité particulière",
+    "points": 0,
+    "rationale": "Le changement est formalisé, il n'est pas libre."
+   },
+   {
+    "key": "C",
+    "text": "Il peut évoluer, sous contrôle de la gouvernance",
+    "points": 1
+   },
+   {
+    "key": "D",
+    "text": "Il doit être remplacé par un nouveau document",
+    "points": 0,
+    "rationale": "On fait évoluer le document, on ne le remplace pas."
+   }
+  ],
+  "explanation": "Approuvé ne veut pas dire finalisé. Un document approuvé peut évoluer dans les phases suivantes, mais seulement par un processus de contrôle du changement et de gouvernance.",
+  "topic": "",
+  "lo": "L1.3.2",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "47b6a027",
+  "los": [
+   "L1.3.2"
+  ]
+ },
+ {
+  "id": "togaf-f101-o20",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "techniques",
+  "title": "Les deux niveaux de risque",
+  "stem": "Quel niveau de risque est établi après la mise en œuvre des actions d'atténuation ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Initial",
+    "points": 0,
+    "rationale": "C'est le niveau avant atténuation."
+   },
+   {
+    "key": "B",
+    "text": "Marginal",
+    "points": 0,
+    "rationale": "Ce n'est pas l'un des deux niveaux définis."
+   },
+   {
+    "key": "C",
+    "text": "Acceptable",
+    "points": 0,
+    "rationale": "Ce n'est pas l'un des deux niveaux définis."
+   },
+   {
+    "key": "D",
+    "text": "Residual",
+    "points": 1
+   }
+  ],
+  "explanation": "Le niveau Residual est établi après la mise en œuvre des actions d'atténuation ; le niveau Initial l'est avant.",
+  "topic": "",
+  "lo": "L1.4.9",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "6b09d95a",
+  "los": [
+   "L1.4.9"
+  ]
+ },
+ {
+  "id": "togaf-f101-o21",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "concepts",
+  "title": "Qui accepte les risques ?",
+  "stem": "L'architecte identifie des risques et peut en atténuer certains. Où ces risques doivent-ils être acceptés puis gérés ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Dans le cadre de gouvernance",
+    "points": 1
+   },
+   {
+    "key": "B",
+    "text": "Dans l'Architecture Vision",
+    "points": 0,
+    "rationale": "La Vision peut mentionner des risques; elle ne les accepte pas."
+   },
+   {
+    "key": "C",
+    "text": "Dans l'équipe d'implémentation seule",
+    "points": 0,
+    "rationale": "L'acceptation d'un risque n'appartient pas à la seule équipe d'implémentation."
+   },
+   {
+    "key": "D",
+    "text": "Dans l'Architecture Roadmap",
+    "points": 0,
+    "rationale": "La Roadmap ordonne le travail; elle ne gouverne pas les risques."
+   }
+  ],
+  "explanation": "L'architecte identifie les risques et peut en atténuer certains, mais c'est dans le cadre de gouvernance qu'ils sont d'abord acceptés, puis gérés.",
+  "topic": "",
+  "lo": "L1.1.11",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "952c0f53",
+  "los": [
+   "L1.1.11"
+  ]
+ },
+ {
+  "id": "togaf-f101-o22",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "adm",
+  "title": "La méthode Alternatives and Trade-Offs",
+  "stem": "La méthode Architecture Alternatives and Trade-Offs comporte trois parties. Que fait la deuxième ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Elle sélectionne des critères à partir de la vision, des principes et des exigences",
+    "points": 0,
+    "rationale": "C'est la première partie."
+   },
+   {
+    "key": "B",
+    "text": "Elle définit les alternatives à partir des critères et permet de comprendre chacune",
+    "points": 1
+   },
+   {
+    "key": "C",
+    "text": "Elle retient une alternative ou en combine plusieurs",
+    "points": 0,
+    "rationale": "C'est la troisième partie."
+   },
+   {
+    "key": "D",
+    "text": "Elle vérifie la conformité de l'alternative retenue",
+    "points": 0,
+    "rationale": "La méthode ne comporte pas de vérification de conformité."
+   }
+  ],
+  "explanation": "La première partie sélectionne des critères à partir de la vision, des principes et des exigences. La deuxième définit les alternatives à partir de ces critères et permet de comprendre chacune. La troisième retient une alternative ou en combine plusieurs pour former la proposition.",
+  "topic": "",
+  "lo": "L1.3.6",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "20beb48a",
+  "los": [
+   "L1.3.6"
+  ]
+ },
+ {
+  "id": "togaf-f101-o23",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "adm",
+  "title": "Les dimensions du périmètre",
+  "stem": "Quelle dimension du périmètre d'une architecture fixe l'étendue de l'entreprise à couvrir ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Depth",
+    "points": 0,
+    "rationale": "Fixe le niveau de détail."
+   },
+   {
+    "key": "B",
+    "text": "Time Period",
+    "points": 0,
+    "rationale": "Fixe l'horizon temporel."
+   },
+   {
+    "key": "C",
+    "text": "Breadth",
+    "points": 1
+   },
+   {
+    "key": "D",
+    "text": "Architecture Domains",
+    "points": 0,
+    "rationale": "Désigne les domaines traités (Business, Data, Application, Technology)."
+   }
+  ],
+  "explanation": "Breadth fixe l'étendue de l'entreprise que l'effort d'architecture va couvrir.",
+  "topic": "",
+  "lo": "L1.3.5",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "d48ac917",
+  "los": [
+   "L1.3.5"
+  ]
+ },
+ {
+  "id": "togaf-f101-o24",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "applying",
+  "title": "Pourquoi partitionner ?",
+  "stem": "Quel est l'intérêt du partitioning des architectures ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Remplacer la gouvernance par des règles locales",
+    "points": 0,
+    "rationale": "Le partitioning s'appuie sur la gouvernance, il ne la remplace pas."
+   },
+   {
+    "key": "B",
+    "text": "Supprimer les dépendances entre domaines",
+    "points": 0,
+    "rationale": "Les dépendances subsistent; elles deviennent explicites."
+   },
+   {
+    "key": "C",
+    "text": "Réduire le nombre de livrables de l'ADM",
+    "points": 0,
+    "rationale": "Le nombre de livrables n'est pas l'objet du partitioning."
+   },
+   {
+    "key": "D",
+    "text": "Répartir le travail entre équipes en maîtrisant conflits et réutilisation",
+    "points": 1
+   }
+  ],
+  "explanation": "Le partitioning permet à des équipes différentes de posséder et de développer des architectures distinctes, de gérer les conflits entre elles et de faciliter la réutilisation.",
+  "topic": "",
+  "lo": "L1.5.4",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "016355bd",
+  "los": [
+   "L1.5.4"
+  ]
+ },
+ {
+  "id": "togaf-f101-o25",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "content",
+  "title": "L'architecture ne suffit plus",
+  "stem": "Pendant l'implémentation, un projet constate que l'architecture définie ne permet pas de réaliser la solution. Quel livrable soumet-il ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Change Request",
+    "points": 1
+   },
+   {
+    "key": "B",
+    "text": "Compliance Assessment",
+    "points": 0,
+    "rationale": "Le Compliance Assessment constate la conformité; il ne demande pas de changement."
+   },
+   {
+    "key": "C",
+    "text": "Architecture Vision",
+    "points": 0,
+    "rationale": "La Vision est un livrable de début de cycle."
+   },
+   {
+    "key": "D",
+    "text": "Communications Plan",
+    "points": 0,
+    "rationale": "Le Communications Plan organise la communication."
+   }
+  ],
+  "explanation": "Quand l'architecture définie ne convient plus ou ne suffit plus, le projet soumet une Change Request : elle demande une dérogation ou déclenche un nouveau cycle de travail d'architecture.",
+  "topic": "",
+  "lo": "L1.7.3",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "1faa3797",
+  "los": [
+   "L1.7.3"
+  ]
+ },
+ {
+  "id": "togaf-f101-o26",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "techniques",
+  "title": "Qualité d'un jeu de principes (1)",
+  "stem": "Complétez la phrase. Un jeu d'Architecture Principles qui couvre toutes les situations perçues satisfait le critère de …",
+  "options": [
+   {
+    "key": "A",
+    "text": "Consistency",
+    "points": 0,
+    "rationale": "Concerne l'absence de contradiction entre principes."
+   },
+   {
+    "key": "B",
+    "text": "Completeness",
+    "points": 1
+   },
+   {
+    "key": "C",
+    "text": "Robustness",
+    "points": 0,
+    "rationale": "Concerne la capacité à fonder des décisions de qualité et des règles applicables."
+   },
+   {
+    "key": "D",
+    "text": "Stability",
+    "points": 0,
+    "rationale": "Concerne la durabilité des principes, qui restent capables d'accueillir le changement."
+   }
+  ],
+  "explanation": "Un jeu complet (Completeness) définit tout principe potentiellement important et couvre toutes les situations perçues.",
+  "topic": "",
+  "lo": "L1.4.4",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "f71cb659",
+  "los": [
+   "L1.4.4"
+  ]
+ },
+ {
+  "id": "togaf-f101-o27",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "techniques",
+  "title": "Qualité d'un jeu de principes (2)",
+  "stem": "Complétez la phrase. Des Architecture Principles qui ne se contredisent pas, même lorsque l'application stricte de l'un oblige à interpréter l'autre avec souplesse, satisfont le critère de …",
+  "options": [
+   {
+    "key": "A",
+    "text": "Stability",
+    "points": 0,
+    "rationale": "Concerne la durabilité."
+   },
+   {
+    "key": "B",
+    "text": "Completeness",
+    "points": 0,
+    "rationale": "Concerne la couverture des situations."
+   },
+   {
+    "key": "C",
+    "text": "Consistency",
+    "points": 1
+   },
+   {
+    "key": "D",
+    "text": "Understandability",
+    "points": 0,
+    "rationale": "Concerne la facilité à saisir l'intention du principe."
+   }
+  ],
+  "explanation": "Consistency : les principes ne doivent pas se contredire, et leur formulation doit permettre une interprétation équilibrée lorsque l'un tire dans un sens différent de l'autre.",
+  "topic": "",
+  "lo": "L1.4.4",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "06ca53cd",
+  "los": [
+   "L1.4.4"
+  ]
+ },
+ {
+  "id": "togaf-f101-o28",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "governance",
+  "title": "Une responsabilité de l'Architecture Board",
+  "stem": "Laquelle de ces responsabilités revient à l'Architecture Board ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Rédiger l'Architecture Definition Document",
+    "points": 0,
+    "rationale": "La rédaction revient aux architectes."
+   },
+   {
+    "key": "B",
+    "text": "Planifier les sprints des équipes",
+    "points": 0,
+    "rationale": "La planification des sprints revient aux équipes de delivery."
+   },
+   {
+    "key": "C",
+    "text": "Allouer les ressources des projets d'architecture",
+    "points": 0,
+    "rationale": "L'allocation des ressources des projets n'est pas une responsabilité du Board."
+   },
+   {
+    "key": "D",
+    "text": "Assurer la cohérence entre les sous-architectures",
+    "points": 1
+   }
+  ],
+  "explanation": "L'Architecture Board veille notamment à la cohérence entre les sous-architectures, à la conformité, aux objectifs de réutilisation et à la maturité de la discipline.",
+  "topic": "",
+  "lo": "L1.6.3",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "93075ed1",
+  "los": [
+   "L1.6.3"
+  ]
+ },
+ {
+  "id": "togaf-f101-o29",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "adm",
+  "title": "Sprints de delivery et ADM",
+  "stem": "Des équipes livrent la solution par sprints. Quelle phase de l'ADM encadre ces sprints par la gouvernance d'architecture ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Phase G",
+    "points": 1
+   },
+   {
+    "key": "B",
+    "text": "Phase B",
+    "points": 0,
+    "rationale": "La Phase B développe la Business Architecture."
+   },
+   {
+    "key": "C",
+    "text": "Phase E",
+    "points": 0,
+    "rationale": "La Phase E identifie les work packages."
+   },
+   {
+    "key": "D",
+    "text": "Phase F",
+    "points": 0,
+    "rationale": "La Phase F planifie la migration."
+   }
+  ],
+  "explanation": "L'alignement avec le développement Agile se fait en Phase G : les sprints de delivery s'y déroulent sous la gouvernance de l'implémentation.",
+  "topic": "",
+  "lo": "L1.3.26",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "7b806fc2",
+  "los": [
+   "L1.3.26"
+  ]
+ },
+ {
+  "id": "togaf-f101-o30",
+  "exam": "f101",
+  "set": "bank",
+  "series": "official-format",
+  "domain": "governance",
+  "title": "Gouverner les Architecture Contracts",
+  "stem": "Que garantit une gestion gouvernée des Architecture Contracts ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "La livraison des projets dans les délais et le budget prévus",
+    "points": 0,
+    "rationale": "Les délais et le budget relèvent de la gestion de projet."
+   },
+   {
+    "key": "B",
+    "text": "La responsabilité et la discipline dans l'usage des artifacts",
+    "points": 1
+   },
+   {
+    "key": "C",
+    "text": "Le remplacement des Compliance Reviews",
+    "points": 0,
+    "rationale": "Les contrats ne remplacent pas les Compliance Reviews."
+   },
+   {
+    "key": "D",
+    "text": "La validation automatique des Change Requests",
+    "points": 0,
+    "rationale": "Une Change Request reste soumise à décision."
+   }
+  ],
+  "explanation": "Une gestion gouvernée des contrats assure des processus et des pratiques qui garantissent responsabilité et discipline dans le développement et l'usage de tous les artifacts d'architecture.",
+  "topic": "",
+  "lo": "L1.6.4",
+  "source": "09-foundation-question-bank/12-official-format-drills.md",
+  "rev": "7e749886",
+  "los": [
+   "L1.6.4"
+  ]
+ },
+ {
   "id": "togaf-f101-f01",
   "exam": "f101",
   "set": "bank",

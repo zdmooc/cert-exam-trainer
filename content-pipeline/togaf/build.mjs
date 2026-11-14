@@ -39,6 +39,7 @@ const SERIES = {
     '09': { id: 'advanced', label: 'Exercices discriminants', exam: 'f101' },
     '10': { id: 'x2202-targeted', label: 'Ciblés X2202', exam: 'f101' },
     '11': { id: 'deliverables', label: 'Les 16 livrables', exam: 'f101', domain: 'content' },
+    '12': { id: 'official-format', label: 'Formats officiels', exam: 'f101' },
   },
   '10-practitioner-scenarios': {
     '09': { id: 'multi-constraint', label: 'Ateliers multi-contraintes', exam: 'f102' },
@@ -313,8 +314,9 @@ const MATRIX = '14-official-sources/06-x2202-learning-outcome-traceability.md';
 const CODE_TO_ID = {
   Q: (n) => `togaf-f101-q${n}`, S: (n) => `togaf-f102-s${n}`, XP: (n) => `togaf-f102-xp${n}`,
   XF: (n) => `togaf-f101-xf${n}`, F: (n) => `togaf-f101-f${n}`, D: (n) => `togaf-f101-d${n}`, A: (n) => `togaf-f102-a${n}`,
+  O: (n) => `togaf-f101-o${n}`,
 };
-const REF = /\b(XP|XF|Q|S|F|D|A)(\d{2,3})(?:\s*[–-]\s*(?:XP|XF|Q|S|F|D|A)?(\d{2,3}))?\b/g;
+const REF = /\b(XP|XF|Q|S|F|D|A|O)(\d{2,3})(?:\s*[–-]\s*(?:XP|XF|Q|S|F|D|A|O)?(\d{2,3}))?\b/g;
 
 function expandRefs(cell, ctx) {
   const ids = [];
