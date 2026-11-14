@@ -129,12 +129,24 @@ const STRATEGY_INFO = {
   review: ['Mes erreurs', 'Uniquement les questions ratées non maîtrisées'],
 };
 
+// Explique pourquoi la sélection est vide, au lieu d'un message générique.
+function emptySelectionMessage(pool) {
+  if (pool.length && S.setup.strategy === 'review') return 'Rien à revoir pour l’instant : aucune question ratée dans cette sélection.';
+  if (S.setup.series.length && S.setup.domains.length) {
+    return 'Aucune question ne combine ce domaine et cette série. Désélectionne la série (plus bas) ou choisis un autre domaine.';
+  }
+  return 'Aucune question ne correspond à cette sélection.';
+}
+
 function viewTrain() {
   $title.textContent = `Entraînement · ${exam().name}`;
   const pool = filterPool(S.questions, { exam: S.examId, domains: S.setup.domains, series: S.setup.series });
   const counts = [10, 20, 40, 0];
   const series = listSeries(S.questions, S.examId, S.pack.series);
-  const countOf = (id) => filterPool(S.questions, { exam: S.examId, series: [id] }).length;
+  // Les compteurs tiennent compte de l'autre filtre : on voit tout de suite
+  // qu'un domaine est vide dans la série choisie (et inversement).
+  const countOf = (id) => filterPool(S.questions, { exam: S.examId, domains: S.setup.domains, series: [id] }).length;
+  const domainCount = (id) => filterPool(S.questions, { exam: S.examId, domains: [id], series: S.setup.series }).length;
   return `
     <h3>Mode de sélection</h3>
     ${Object.entries(STRATEGY_INFO).map(([k, [name, sub]]) => `
@@ -143,7 +155,7 @@ function viewTrain() {
     <h3>Nombre de questions</h3>
     <div class="chips">${counts.map((c) => `<button class="chip" data-action="set-count" data-count="${c}" aria-pressed="${S.setup.count === c}">${c || 'Toutes'}</button>`).join('')}</div>
     <h3>Domaines <span class="muted small">(aucun = tous)</span></h3>
-    <div class="chips">${exam().domains.map((d) => `<button class="chip" data-action="toggle-domain" data-domain="${d.id}" aria-pressed="${S.setup.domains.includes(d.id)}">${esc(d.label)}</button>`).join('')}</div>
+    <div class="chips">${exam().domains.map((d) => `<button class="chip" data-action="toggle-domain" data-domain="${d.id}" aria-pressed="${S.setup.domains.includes(d.id)}">${esc(d.label)} · ${domainCount(d.id)}</button>`).join('')}</div>
     ${series.length > 1 ? `<h3>Séries <span class="muted small">(aucune = toutes)</span></h3>
     <div class="chips">${series.map((x) => `<button class="chip" data-action="toggle-series" data-series="${x.id}" aria-pressed="${S.setup.series.includes(x.id)}">${esc(x.label)} · ${countOf(x.id)}</button>`).join('')}</div>` : ''}
     <p class="muted small">${pool.length} question(s) dans la sélection.</p>
@@ -491,7 +503,7 @@ const actions = {
     const offsets = S.store.get('offsets', {});
     const key = `${S.examId}:${S.setup.domains.slice().sort().join(',')}:${S.setup.series.slice().sort().join(',')}`;
     const qs = selectQuestions(pool, { strategy: S.setup.strategy, count, offset: offsets[key] ?? 0, progress: S.progress, rng: rng() });
-    if (!qs.length) { alertInline('Aucune question ne correspond : rien à revoir pour l’instant.'); return; }
+    if (!qs.length) { alertInline(emptySelectionMessage(pool)); return; }
     if (S.setup.strategy === 'sequential') { offsets[key] = ((offsets[key] ?? 0) + qs.length) % pool.length; S.store.set('offsets', offsets); }
     startSession('training', qs, `Entraînement · ${STRATEGY_INFO[S.setup.strategy][0]}`);
   },
