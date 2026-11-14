@@ -409,14 +409,14 @@
    },
    {
     "key": "D",
-    "text": "Une décision d'architecture prise par le Board et enregistrée dans le Governance Log",
+    "text": "Une décision d'architecture prise par le Board et enregistrée dans le Governance Repository",
     "points": 0
    }
   ],
   "explanation": "Le concern exprime ce qui importe au stakeholder. A/B/D sont d'autres objets.",
   "topic": "Concepts — Concerns",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "7b2b2bdd",
+  "rev": "b57d603e",
   "los": [
    "L1.2.1"
   ]
@@ -437,7 +437,7 @@
    },
    {
     "key": "B",
-    "text": "Un content metamodel spécifiant les types, propriétés et relations des éléments",
+    "text": "Un Enterprise Metamodel spécifiant les types, propriétés et relations des éléments",
     "points": 0
    },
    {
@@ -454,7 +454,7 @@
   "explanation": "Le viewpoint définit comment produire la view. A décrit la view ; B/C sont différents.",
   "topic": "Concepts — View/Viewpoint",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "37115562",
+  "rev": "25a95888",
   "los": [
    "L1.2.1",
    "L1.7.1"
@@ -1320,8 +1320,8 @@
   "set": "bank",
   "series": "bank",
   "domain": "concepts",
-  "title": "Standards Information Base",
-  "stem": "La Standards Information Base contient principalement :",
+  "title": "Standards Library",
+  "stem": "La Standards Library contient principalement :",
   "options": [
    {
     "key": "A",
@@ -1348,7 +1348,7 @@
   "explanation": "Elle soutient la standardisation. A/B/D ne correspondent pas à sa finalité.",
   "topic": "Concepts — Architecture Repository",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "1be080bf",
+  "rev": "3fd17867",
   "los": [
    "L1.1.8"
   ]
@@ -1359,8 +1359,8 @@
   "set": "bank",
   "series": "bank",
   "domain": "concepts",
-  "title": "Governance Log",
-  "stem": "Le Governance Log sert surtout à conserver :",
+  "title": "Governance Repository",
+  "stem": "Le Governance Repository sert surtout à conserver :",
   "options": [
    {
     "key": "A",
@@ -1371,13 +1371,13 @@
     "key": "B",
     "text": "Les versions successives de l'Architecture Definition Document",
     "points": 0,
-    "rationale": "Le Governance Log documente décisions et conformité, pas simplement le contenu des architectures."
+    "rationale": "Le Governance Repository documente décisions et conformité, pas simplement le contenu des architectures."
    },
    {
     "key": "C",
     "text": "Les états de migration et leurs dépendances détaillées",
     "points": 0,
-    "rationale": "La planification de migration peut être tracée dans une roadmap/plan, sans être le rôle du Governance Log."
+    "rationale": "La planification de migration peut être tracée dans une roadmap/plan, sans être le rôle du Governance Repository."
    },
    {
     "key": "D",
@@ -1388,7 +1388,7 @@
   "explanation": "Il trace la gouvernance. A/B/C sont hors périmètre.",
   "topic": "Concepts — Architecture Repository",
   "source": "09-foundation-question-bank/01-concepts-q001-q060.md",
-  "rev": "e6154c34",
+  "rev": "b37108cb",
   "los": [
    "L1.1.8"
   ]
@@ -4127,14 +4127,14 @@
    },
    {
     "key": "D",
-    "text": "Governance Log uniquement",
+    "text": "Governance Repository uniquement",
     "points": 0
    }
   ],
-  "explanation": "L'Implementation and Migration Plan est consolidé en F. La Request for Architecture Work précède le cadrage ; la Vision est portée par A ; le Governance Log n'est pas le livrable principal de planification.",
+  "explanation": "L'Implementation and Migration Plan est consolidé en F. La Request for Architecture Work précède le cadrage ; la Vision est portée par A ; le Governance Repository n'est pas le livrable principal de planification.",
   "topic": "ADM — Phase F",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "87acd20f",
+  "rev": "4f7d5162",
   "los": [
    "L1.3.18"
   ]
@@ -4542,14 +4542,14 @@
    },
    {
     "key": "D",
-    "text": "F produit le Content Metamodel et G sélectionne les Architecture Viewpoints",
+    "text": "F produit l'Enterprise Metamodel et G sélectionne les Architecture Viewpoints",
     "points": 0
    }
   ],
   "explanation": "F = planning ; G = governance during execution. B/C/D sont faux.",
   "topic": "ADM — F vs G",
   "source": "09-foundation-question-bank/03-adm-q096-q130.md",
-  "rev": "cf5bb814",
+  "rev": "29ce1b66",
   "los": [
    "L1.3.20"
   ]
@@ -9514,8 +9514,8 @@
   "set": "bank",
   "series": "bank",
   "domain": "governance",
-  "title": "Governance log",
-  "stem": "Pourquoi tenir un Governance Log ?",
+  "title": "Governance Repository",
+  "stem": "Pourquoi tenir un Governance Repository ?",
   "options": [
    {
     "key": "A",
@@ -9538,10 +9538,10 @@
     "points": 1
    }
   ],
-  "explanation": "Le log fournit une mémoire de gouvernance.",
-  "topic": "Architecture Governance — Governance Log",
+  "explanation": "Le Governance Repository fournit une mémoire de gouvernance.",
+  "topic": "Architecture Governance — Governance Repository",
   "source": "09-foundation-question-bank/07-governance-q241-q262.md",
-  "rev": "a028a902"
+  "rev": "52228361"
  },
  {
   "id": "togaf-f101-q257",
@@ -10236,7 +10236,7 @@
    },
    {
     "key": "B",
-    "text": "Les décisions et exceptions de l'Architecture Board enregistrées dans le Governance Log",
+    "text": "Les décisions et exceptions de l'Architecture Board enregistrées dans le Governance Repository",
     "points": 0
    },
    {
@@ -10253,7 +10253,7 @@
   "explanation": "Viewpoint = manière/convention ; View = représentation produite.",
   "topic": "Architecture Content — Views/Viewpoints",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "2b99ecb3",
+  "rev": "a42dfffe",
   "los": [
    "L1.7.1"
   ]
@@ -10569,8 +10569,8 @@
   "set": "bank",
   "series": "bank",
   "domain": "content",
-  "title": "Content Metamodel",
-  "stem": "Le Content Metamodel définit :",
+  "title": "Enterprise Metamodel",
+  "stem": "L'Enterprise Metamodel définit :",
   "options": [
    {
     "key": "A",
@@ -10595,9 +10595,9 @@
    }
   ],
   "explanation": "Le metamodel donne une structure sémantique au contenu.",
-  "topic": "Architecture Content — Content Metamodel",
+  "topic": "Architecture Content — Enterprise Metamodel",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
-  "rev": "a4759705",
+  "rev": "9f035313",
   "los": [
    "L1.1.9"
   ]
@@ -10633,7 +10633,7 @@
    }
   ],
   "explanation": "Il aide à produire des modèles cohérents et comparables.",
-  "topic": "Architecture Content — Content Metamodel",
+  "topic": "Architecture Content — Enterprise Metamodel",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
   "rev": "2a0ebabc"
  },
@@ -10668,7 +10668,7 @@
    }
   ],
   "explanation": "Le framework est tailorable, y compris le contenu, mais les extensions doivent rester cohérentes.",
-  "topic": "Architecture Content — Content Metamodel",
+  "topic": "Architecture Content — Enterprise Metamodel",
   "source": "09-foundation-question-bank/08-content-q263-q300.md",
   "rev": "df795990"
  },
@@ -11198,7 +11198,7 @@
    },
    {
     "key": "B",
-    "text": "Évaluer les deux capacités d’architecture, déterminer les responsabilités et adapter/fédérer les pratiques avant de lancer les transformations communes.",
+    "text": "Évaluer les deux capacités d’architecture, clarifier les responsabilités et fédérer les pratiques avant les transformations communes.",
     "points": 5,
     "rationale": "La comparaison des deux capacités protège l'agilité locale et l'audit groupe."
    },
@@ -11218,7 +11218,7 @@
   "explanation": "La comparaison des deux capacités protège l'agilité locale et l'audit groupe.",
   "topic": "Context — Tailoring, Federation, Architecture Capability",
   "source": "10-practitioner-scenarios/01-context-s001-s007.md",
-  "rev": "d6db0bdc",
+  "rev": "9af1a2a6",
   "los": [
    "L2.1.3",
    "L2.1.4"
@@ -11459,7 +11459,7 @@
    },
    {
     "key": "D",
-    "text": "Reconnaître Operations comme stakeholder critique, comprendre ses concerns, produire les vues nécessaires et intégrer les requirements opérationnels dans l’architecture.",
+    "text": "Reconnaître Operations comme stakeholder critique, comprendre ses concerns et intégrer ses requirements opérationnels dans les vues et l’architecture.",
     "points": 5,
     "rationale": "Identifier Operations comme stakeholder, capturer ses concerns et mettre à jour requirements et views relie l'architecture cible à son exploitation réelle."
    }
@@ -11467,7 +11467,7 @@
   "explanation": "Identifier Operations comme stakeholder, capturer ses concerns et mettre à jour requirements et views relie l'architecture cible à son exploitation réelle.",
   "topic": "Stakeholder Management — Concerns, Views, Requirements",
   "source": "10-practitioner-scenarios/02-stakeholders-s008-s014.md",
-  "rev": "055d674d",
+  "rev": "9751333d",
   "los": [
    "L2.2.1"
   ]
@@ -11913,7 +11913,7 @@
    },
    {
     "key": "C",
-    "text": "Identifier la readiness comme un risque/constraint architectural, évaluer les capacités nécessaires et intégrer les actions de transformation dans la trajectoire.",
+    "text": "Traiter la readiness comme un risque architectural, évaluer les capacités nécessaires et intégrer les actions à la trajectoire.",
     "points": 5,
     "rationale": "Évaluer la capacité de transformation comme risque architectural et intégrer les actions de montée en compétence dans la roadmap traite la readiness de bout en bout."
    },
@@ -11927,7 +11927,7 @@
   "explanation": "Évaluer la capacité de transformation comme risque architectural et intégrer les actions de montée en compétence dans la roadmap traite la readiness de bout en bout.",
   "topic": "Phase A — Capability Assessment / Transformation Readiness",
   "source": "10-practitioner-scenarios/03-phase-a-s015-s021.md",
-  "rev": "666f1667"
+  "rev": "a3b8bd5a"
  },
  {
   "id": "togaf-f102-s020",
@@ -12365,7 +12365,7 @@
    },
    {
     "key": "B",
-    "text": "Enregistrer et évaluer la requirement via Requirements Management, puis itérer sur les domaines impactés et mettre à jour les artifacts/gaps.",
+    "text": "Enregistrer et évaluer la requirement via Requirements Management, puis itérer sur les domaines impactés et leurs artifacts.",
     "points": 5,
     "rationale": "Requirements Management traite la nouvelle exigence comme un changement traçable, avec itérations B/C/D et mise à jour des gaps."
    },
@@ -12385,7 +12385,7 @@
   "explanation": "Requirements Management traite la nouvelle exigence comme un changement traçable, avec itérations B/C/D et mise à jour des gaps.",
   "topic": "Architecture Development — Requirements Management / Iteration",
   "source": "10-practitioner-scenarios/04-bcd-s022-s030.md",
-  "rev": "f60a85bd",
+  "rev": "4f0f3698",
   "los": [
    "L2.4.8",
    "L2.4.9"
@@ -12798,7 +12798,7 @@
    },
    {
     "key": "D",
-    "text": "Évaluer le changement, son impact et son importance via Architecture Change Management, puis décider s’il faut une modification limitée ou un nouveau cycle ADM.",
+    "text": "Évaluer le changement et son impact via Architecture Change Management, puis décider entre modification limitée et nouveau cycle ADM.",
     "points": 5,
     "rationale": "H qualifie l'impact réglementaire avant de décider d'un nouveau cycle."
    }
@@ -12806,7 +12806,7 @@
   "explanation": "H qualifie l'impact réglementaire avant de décider d'un nouveau cycle.",
   "topic": "Phase H — Change Assessment / New ADM Cycle",
   "source": "10-practitioner-scenarios/06-phase-h-s040-s045.md",
-  "rev": "1e0d0254",
+  "rev": "96d76260",
   "los": [
    "L2.6.1"
   ]
@@ -12915,7 +12915,7 @@
    },
    {
     "key": "C",
-    "text": "Maintenir et surveiller l’Architecture Landscape, intégrer les changements approuvés et utiliser la gouvernance pour détecter les dérives significatives.",
+    "text": "Surveiller l’Architecture Landscape, intégrer les changements approuvés et détecter les dérives significatives par la gouvernance.",
     "points": 5,
     "rationale": "Maintenir le Landscape avec les changements approuvés et surveiller les dérives relie architecture de référence, solutions déployées et gouvernance Phase H."
    },
@@ -12929,7 +12929,7 @@
   "explanation": "Maintenir le Landscape avec les changements approuvés et surveiller les dérives relie architecture de référence, solutions déployées et gouvernance Phase H.",
   "topic": "Phase H — Architecture Landscape / Monitoring",
   "source": "10-practitioner-scenarios/06-phase-h-s040-s045.md",
-  "rev": "b741cf2a"
+  "rev": "d7b964b6"
  },
  {
   "id": "togaf-f102-s044",
@@ -13026,7 +13026,7 @@
    },
    {
     "key": "B",
-    "text": "Décomposer et clarifier la requirement en critères vérifiables — disponibilité, RTO/RPO, modes de défaillance, failover, tests — tout en conservant la traçabilité vers le concern initial.",
+    "text": "Décomposer la requirement en critères vérifiables (disponibilité, RTO/RPO, failover, tests) en conservant la traçabilité vers le concern initial.",
     "points": 5,
     "rationale": "Disponibilité, RTO/RPO, modes de panne et critères de test clarifiés rendent l'exigence vérifiable."
    },
@@ -13046,7 +13046,7 @@
   "explanation": "Disponibilité, RTO/RPO, modes de panne et critères de test clarifiés rendent l'exigence vérifiable.",
   "topic": "Requirements Management — Quality of Requirements",
   "source": "10-practitioner-scenarios/07-requirements-s046-s052.md",
-  "rev": "47a63852"
+  "rev": "e7b76a28"
  },
  {
   "id": "togaf-f102-s047",
@@ -13140,7 +13140,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Enregistrer et analyser la nouvelle requirement, itérer sur les architectures impactées si nécessaire, puis mettre à jour gaps, work packages et Migration Plan.",
+    "text": "Enregistrer et analyser la nouvelle requirement, itérer sur les architectures impactées, puis mettre à jour gaps et Migration Plan.",
     "points": 5,
     "rationale": "Le changement réglementaire se propage aux domaines, gaps et lots avant de réviser le plan de migration."
    },
@@ -13166,7 +13166,7 @@
   "explanation": "Le changement réglementaire se propage aux domaines, gaps et lots avant de réviser le plan de migration.",
   "topic": "Requirements Management — Change during ADM / Iteration",
   "source": "10-practitioner-scenarios/07-requirements-s046-s052.md",
-  "rev": "c102c19a",
+  "rev": "ec209456",
   "los": [
    "L2.7.2"
   ]
@@ -13233,7 +13233,7 @@
    },
    {
     "key": "C",
-    "text": "Le principe guide durablement les décisions ; la règle précise de gestion des secrets est une requirement/standard applicable au contexte et doit être tracée comme telle.",
+    "text": "Le principe guide durablement les décisions ; la règle précise sur les secrets est une requirement ou un standard, à tracer comme tel.",
     "points": 5,
     "rationale": "Le principe oriente les décisions durables, tandis qu'une requirement ou un standard défini pour le contexte doit être vérifiable et tracé."
    },
@@ -13247,7 +13247,7 @@
   "explanation": "Le principe oriente les décisions durables, tandis qu'une requirement ou un standard défini pour le contexte doit être vérifiable et tracé.",
   "topic": "Requirements Management — Principle vs Requirement",
   "source": "10-practitioner-scenarios/07-requirements-s046-s052.md",
-  "rev": "f7be8fee"
+  "rev": "46ba7782"
  },
  {
   "id": "togaf-f102-s052",
@@ -13464,7 +13464,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Utiliser Capability-Based Planning pour relier les investissements aux capabilities/outcomes nécessaires, puis déterminer les building blocks et work packages qui les réalisent.",
+    "text": "Utiliser Capability-Based Planning pour relier les investissements aux capabilities nécessaires, puis en déduire building blocks et work packages.",
     "points": 5,
     "rationale": "Le Capability-Based Planning rattache outcomes et capacités aux investissements, building blocks, work packages et dépendances, ce que demande Finance."
    },
@@ -13490,7 +13490,7 @@
   "explanation": "Le Capability-Based Planning rattache outcomes et capacités aux investissements, building blocks, work packages et dépendances, ce que demande Finance.",
   "topic": "Supporting ADM Work — Capability-Based Planning",
   "source": "10-practitioner-scenarios/08-supporting-adm-s053-s060.md",
-  "rev": "6d3a073b"
+  "rev": "bda6f779"
  },
  {
   "id": "togaf-f102-s058",
@@ -13509,7 +13509,7 @@
    },
    {
     "key": "B",
-    "text": "Évaluer l’interopérabilité sur plusieurs dimensions — sémantique, information, processus, technique et gouvernance — et traiter les incompatibilités.",
+    "text": "Évaluer l’interopérabilité sur plusieurs dimensions — sémantique, information, processus, technique, gouvernance — puis traiter les écarts.",
     "points": 5,
     "rationale": "L'analyse interopérabilité couvre sens des données, contrats, processus et gouvernance des deux partenaires."
    },
@@ -13529,7 +13529,7 @@
   "explanation": "L'analyse interopérabilité couvre sens des données, contrats, processus et gouvernance des deux partenaires.",
   "topic": "Supporting ADM Work — Interoperability",
   "source": "10-practitioner-scenarios/08-supporting-adm-s053-s060.md",
-  "rev": "84d18f5a"
+  "rev": "9aa0fb69"
  },
  {
   "id": "togaf-f102-s059",
@@ -13554,7 +13554,7 @@
    },
    {
     "key": "C",
-    "text": "Expliquer que le deliverable est le produit de travail formel, qu’il peut contenir plusieurs artifacts, et que les services/capacités représentés peuvent être des building blocks.",
+    "text": "Expliquer que le deliverable est un produit de travail formel pouvant contenir plusieurs artifacts, qui peuvent décrire des building blocks.",
     "points": 5,
     "rationale": "La distinction explicite entre deliverable formel, artifacts constitutifs et building blocks représentés répond au besoin du comité de validation."
    },
@@ -13568,7 +13568,7 @@
   "explanation": "La distinction explicite entre deliverable formel, artifacts constitutifs et building blocks représentés répond au besoin du comité de validation.",
   "topic": "Supporting ADM Work — Architecture Content",
   "source": "10-practitioner-scenarios/08-supporting-adm-s053-s060.md",
-  "rev": "6080230d"
+  "rev": "89a57d60"
  },
  {
   "id": "togaf-f102-s060",
@@ -14445,7 +14445,7 @@
     "points": 1
    }
   ],
-  "explanation": "Solutions Landscape concerne les réalisations de solutions ; Standards Information Base, Requirements Repository et Governance Log ont d'autres rôles.",
+  "explanation": "Solutions Landscape concerne les réalisations de solutions ; Standards Library, Requirements Repository et Governance Repository ont d'autres rôles.",
   "topic": "L1 1.8. Source : X2202, section 3.1",
   "lo": "L1.1.8",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
@@ -14467,7 +14467,7 @@
    },
    {
     "key": "B",
-    "text": "Standards Information Base",
+    "text": "Standards Library",
     "points": 0
    },
    {
@@ -14477,7 +14477,7 @@
    },
    {
     "key": "D",
-    "text": "Governance Log",
+    "text": "Governance Repository",
     "points": 0
    }
   ],
@@ -14485,7 +14485,7 @@
   "topic": "L1 1.9. Source : X2202, section 3.1",
   "lo": "L1.1.9",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "e0b882c7"
+  "rev": "ef0082f9"
  },
  {
   "id": "togaf-f101-f06",
@@ -14622,7 +14622,7 @@
    },
    {
     "key": "C",
-    "text": "Le Governance Log",
+    "text": "Le Governance Repository",
     "points": 0
    },
    {
@@ -14635,7 +14635,7 @@
   "topic": "L1 3.5. Source : X2202, section 3.1",
   "lo": "L1.3.5",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "f25caa4e",
+  "rev": "565de1cd",
   "los": [
    "L1.3.5"
   ]
@@ -14700,7 +14700,7 @@
    },
    {
     "key": "C",
-    "text": "Standards Information Base",
+    "text": "Standards Library",
     "points": 0
    },
    {
@@ -14709,11 +14709,11 @@
     "points": 0
    }
   ],
-  "explanation": "ADD décrit l'architecture et ses vues ; ARS formalise les exigences ; SIB recense les standards ; Impact Assessment analyse un changement.",
+  "explanation": "ADD décrit l'architecture et ses vues ; ARS formalise les exigences ; la Standards Library recense les standards ; Impact Assessment analyse un changement.",
   "topic": "L1 7.3. Source : X2202, section 3.1",
   "lo": "L1.7.3",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "7b37ba03",
+  "rev": "ef7cd64d",
   "los": [
    "L1.7.3"
   ]
@@ -14933,7 +14933,7 @@
    },
    {
     "key": "D",
-    "text": "Content Metamodel",
+    "text": "Enterprise Metamodel",
     "points": 0
    }
   ],
@@ -14941,7 +14941,7 @@
   "topic": "L1 4.8. Source : X2202, section 3.1",
   "lo": "L1.4.8",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "f04b318f"
+  "rev": "17efb9d2"
  },
  {
   "id": "togaf-f101-f18",
@@ -15173,7 +15173,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Standards Information Base",
+    "text": "Standards Library",
     "points": 0
    },
    {
@@ -15196,7 +15196,7 @@
   "topic": "L1 7.3. Source : X2202, section 3.1",
   "lo": "L1.7.3",
   "source": "09-foundation-question-bank/09-advanced-drills.md",
-  "rev": "9ab29b5b"
+  "rev": "d662db07"
  },
  {
   "id": "togaf-f102-xp01",
@@ -15221,7 +15221,7 @@
    },
    {
     "key": "C",
-    "text": "Distinguer Individual/Founder, Team, Team of Teams et Enterprise ; augmenter progressivement la coordination, les standards et la gouvernance selon les interdépendances réelles.",
+    "text": "Distinguer Individual/Founder, Team, Team of Teams et Enterprise ; renforcer coordination, standards et gouvernance selon les interdépendances réelles.",
     "points": 5,
     "rationale": "Distingue les quatre contextes DPBoK et lie leur évolution au rôle d'architecture et à la coordination."
    },
@@ -15236,7 +15236,7 @@
   "topic": "",
   "lo": "L2.1.11",
   "source": "10-practitioner-scenarios/10-x2202-targeted-cases.md",
-  "rev": "6219febe",
+  "rev": "117d1a12",
   "los": [
    "L2.1.11"
   ]
@@ -15516,9 +15516,9 @@
    },
    {
     "key": "B",
-    "text": "Utiliser exclusivement le Governance Log interne, car aucun guide externe ne peut contribuer au tailoring ADM.",
+    "text": "Utiliser exclusivement le Governance Repository interne, car aucun guide externe ne peut contribuer au tailoring ADM.",
     "points": 0,
-    "rationale": "Le Governance Log interne ne remplace pas les guides externes."
+    "rationale": "Le Governance Repository interne ne remplace pas les guides externes."
    },
    {
     "key": "C",
@@ -15537,7 +15537,7 @@
   "topic": "",
   "lo": "L2.8.1",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "cd4255ac",
+  "rev": "d09f5984",
   "los": [
    "L2.8.1"
   ]
@@ -15738,7 +15738,7 @@
    },
    {
     "key": "C",
-    "text": "Définir concepts, propriétés et relations dans un Enterprise Metamodel cohérent avec le Content Framework, puis l'utiliser pour structurer artifacts, deliverables et traçabilité.",
+    "text": "Définir concepts, propriétés et relations dans un Enterprise Metamodel cohérent avec le Content Framework, pour structurer artifacts et traçabilité.",
     "points": 5,
     "rationale": "C clarifie le rôle du Metamodel et du Content Framework."
    },
@@ -15753,7 +15753,7 @@
   "topic": "",
   "lo": "L2.8.15",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "beeb5733",
+  "rev": "6a2c7182",
   "los": [
    "L2.8.15"
   ]
@@ -15947,7 +15947,7 @@
    },
    {
     "key": "B",
-    "text": "Mesurer les incertitudes sur les capacités et dépendances, analyser scénarios/risques/bénéfices, prévoir des mesures et décisions jalonnées, puis ajuster la trajectoire selon des preuves.",
+    "text": "Mesurer les incertitudes sur capacités et dépendances, analyser scénarios, risques et bénéfices, puis ajuster la trajectoire par décisions jalonnées.",
     "points": 5,
     "rationale": "B combine risque, outcomes et gouvernance de l'incertitude. C apporte une mesure initiale et un pilote, mais reporte trop de vérifications structurantes."
    },
@@ -15968,7 +15968,7 @@
   "topic": "",
   "lo": "L2.1.10",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "2cac8a0c",
+  "rev": "2d10ce09",
   "los": [
    "L2.1.10"
   ]
@@ -16027,7 +16027,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Évaluer les threats, vulnerabilities, requirements, contrôles et risques résiduels dans B/C/D ; intégrer les contraintes aux vues Data/Application/Technology, aux gaps et à la gouvernance.",
+    "text": "Évaluer threats, vulnerabilities, contrôles et risques résiduels dans B/C/D, puis intégrer les contraintes aux vues, aux gaps et à la gouvernance.",
     "points": 5,
     "rationale": "A traite les risques de sécurité à chaque domaine; C recueille des exigences clés mais reporte la réconciliation et la mitigation."
    },
@@ -16054,7 +16054,7 @@
   "topic": "",
   "lo": "L2.4.2",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "f4d20cf1",
+  "rev": "46b1dc75",
   "los": [
    "L2.4.2"
   ]
@@ -16174,7 +16174,7 @@
    },
    {
     "key": "D",
-    "text": "Confirmer la Roadmap et l'Implementation and Migration Plan après analyse valeur/risque/dépendances, préciser Transition Architectures, engagements et informations à transmettre à Phase G.",
+    "text": "Confirmer Roadmap et Implementation and Migration Plan après analyse valeur/risque/dépendances, et préciser les éléments à transmettre à Phase G.",
     "points": 5,
     "rationale": "D confirme les sorties de F pour l'exécution; C donne un séquencement initial mais ne garantit pas la readiness."
    }
@@ -16183,7 +16183,7 @@
   "topic": "",
   "lo": "L2.5.9",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "189b125b",
+  "rev": "a5de3b92",
   "los": [
    "L2.5.9",
    "L2.5.10"
@@ -16336,7 +16336,7 @@
    },
    {
     "key": "B",
-    "text": "Utiliser l'Implementation Factor Catalog, consolider gaps/solutions/dépendances, analyser readiness et work packages, puis comparer les transitions et priorités de migration.",
+    "text": "Utiliser l'Implementation Factor Catalog, consolider gaps, solutions et dépendances, puis comparer transitions et priorités de migration.",
     "points": 5,
     "rationale": "B articule les techniques de planification et relie E/F à la réalisation; D reconnaît les dépendances et des prérequis mais ne couvre pas tous les facteurs."
    },
@@ -16357,7 +16357,7 @@
   "topic": "",
   "lo": "L2.8.4",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "8dd8ddca",
+  "rev": "03ac2502",
   "los": [
    "L2.8.4"
   ]
@@ -16373,7 +16373,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Définir les ABB logiques à partir des capacités et exigences, clarifier leurs interfaces et relations, puis évaluer les SBB candidats qui peuvent les réaliser.",
+    "text": "Définir les ABB logiques à partir des capacités et exigences, clarifier leurs interfaces, puis évaluer les SBB candidats pour les réaliser.",
     "points": 5,
     "rationale": "A place les ABB au bon niveau d'abstraction; C en définit un premier mais anticipe une sélection avant la traçabilité complète."
    },
@@ -16400,7 +16400,7 @@
   "topic": "",
   "lo": "L2.8.10",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "b1cf075e",
+  "rev": "a96e70ea",
   "los": [
    "L2.8.10"
   ]
@@ -16514,7 +16514,7 @@
    },
    {
     "key": "C",
-    "text": "Distinguer greenfield pour le service neuf, revolutionary pour la bascule radicale, evolutionary pour la migration progressive ; justifier chaque choix par valeur, dépendances, risque et readiness.",
+    "text": "Distinguer greenfield (service neuf), revolutionary (bascule radicale) et evolutionary (migration progressive), en justifiant chaque choix par valeur, risque et readiness.",
     "points": 5,
     "rationale": "C distingue les trois approches et leurs conditions; D réalise la classification mais manque l'évaluation de viabilité."
    },
@@ -16529,7 +16529,7 @@
   "topic": "",
   "lo": "L2.5.3",
   "source": "10-practitioner-scenarios/11-x2202-gap-closure-scenarios.md",
-  "rev": "5da6f264",
+  "rev": "b81312b0",
   "los": [
    "L2.5.3"
   ]
@@ -16766,7 +16766,7 @@
    },
    {
     "key": "B",
-    "text": "Évaluer les implémentations contre les features de la spécification, distinguer les niveaux de conformité appropriés, établir les preuves et faire arbitrer les exceptions sous un cadre de gouvernance clarifié.",
+    "text": "Évaluer les implémentations au regard de la spécification, qualifier leur niveau de conformité avec preuves, puis faire arbitrer les exceptions par la gouvernance.",
     "points": 5,
     "rationale": "Utilise les features réellement spécifiées pour évaluer l'implémentation, évite une classification par intuition, demande des preuves et met en place l'autorité de gouvernance des écarts."
    },
@@ -16787,7 +16787,7 @@
   "topic": "",
   "lo": "L2.1.5",
   "source": "10-practitioner-scenarios/09-advanced-multi-constraint-scenarios.md",
-  "rev": "644feb34",
+  "rev": "28f0fe73",
   "los": [
    "L2.1.5",
    "L2.8.3"
@@ -16942,7 +16942,7 @@
    },
    {
     "key": "D",
-    "text": "Consolider gaps, solutions et dépendances, comparer les stratégies de migration et les Transition Architectures, puis faire arbitrer en Phase F le séquencement selon valeur, readiness et risque avant de gouverner l'exécution en G.",
+    "text": "Consolider gaps, solutions et dépendances, comparer stratégies de migration et Transition Architectures, puis faire arbitrer le séquencement en Phase F.",
     "points": 5,
     "rationale": "Rend visibles les dépendances et la readiness avant de choisir la stratégie et les transitions; distingue la planification F de la gouvernance G."
    }
@@ -16951,7 +16951,7 @@
   "topic": "",
   "lo": "L2.5.2",
   "source": "10-practitioner-scenarios/09-advanced-multi-constraint-scenarios.md",
-  "rev": "79a84619",
+  "rev": "3b615bb0",
   "los": [
    "L2.5.2",
    "L2.5.15"
@@ -17048,7 +17048,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Réutiliser le pattern comme candidat après analyse de son applicabilité, compléter ownership, scénarios métier, readiness et risques, puis proposer une trajectoire avec work packages préparatoires si nécessaires.",
+    "text": "Réutiliser le pattern comme candidat après analyse d'applicabilité, compléter ownership, readiness et risques, puis proposer une trajectoire adaptée.",
     "points": 5,
     "rationale": "Réutilise conditionnellement, clarifie l'ownership et la préparation opérationnelle, et prévoit des travaux préalables."
    },
@@ -17075,7 +17075,7 @@
   "topic": "",
   "lo": "L2 U8",
   "source": "10-practitioner-scenarios/09-advanced-multi-constraint-scenarios.md",
-  "rev": "656403b6"
+  "rev": "f5276899"
  },
  {
   "id": "togaf-f101-mock01-q01",
@@ -17125,8 +17125,8 @@
   "options": [
    {
     "key": "A",
-    "text": "La Viewpoint est l'instance représentée et la View en spécifie la notation",
-    "points": 0
+    "text": "Une View concrète représente l'architecture conformément aux conventions d'une Viewpoint",
+    "points": 1
    },
    {
     "key": "B",
@@ -17135,8 +17135,8 @@
    },
    {
     "key": "C",
-    "text": "Une View concrète représente l'architecture conformément aux conventions d'une Viewpoint",
-    "points": 1
+    "text": "La Viewpoint est l'instance représentée et la View en spécifie la notation",
+    "points": 0
    },
    {
     "key": "D",
@@ -17147,7 +17147,7 @@
   "explanation": "la View est produite selon une Viewpoint.",
   "topic": "",
   "source": "11-mock-exams/mock-01-exam.md",
-  "rev": "bdb0a1ed"
+  "rev": "73b3d990"
  },
  {
   "id": "togaf-f101-mock01-q03",
@@ -17238,8 +17238,8 @@
    },
    {
     "key": "B",
-    "text": "La capacité organisationnelle à pratiquer et gouverner l'architecture",
-    "points": 1
+    "text": "Architecture Requirements Specification — exigences d'une seule cible",
+    "points": 0
    },
    {
     "key": "C",
@@ -17248,14 +17248,14 @@
    },
    {
     "key": "D",
-    "text": "Architecture Requirements Specification — exigences d'une seule cible",
-    "points": 0
+    "text": "La capacité organisationnelle à pratiquer et gouverner l'architecture",
+    "points": 1
    }
   ],
   "explanation": "Architecture Capability = capacité organisationnelle à pratiquer l'EA.",
   "topic": "",
   "source": "11-mock-exams/mock-01-exam.md",
-  "rev": "c57e4cea"
+  "rev": "bb679e51"
  },
  {
   "id": "togaf-f101-mock01-q06",
@@ -17449,8 +17449,8 @@
   "options": [
    {
     "key": "A",
-    "text": "Une Target Business Architecture distinguant capacités, processus et services métier de l'application actuelle.",
-    "points": 1
+    "text": "Une liste de SBB retenus sans lien aux concerns du métier.",
+    "points": 0
    },
    {
     "key": "B",
@@ -17464,14 +17464,14 @@
    },
    {
     "key": "D",
-    "text": "Une liste de SBB retenus sans lien aux concerns du métier.",
-    "points": 0
+    "text": "Une Target Business Architecture distinguant capacités, processus et services métier de l'application actuelle.",
+    "points": 1
    }
   ],
   "explanation": "La Phase B établit les besoins et représentations métier indépendamment du produit actuellement déployé.",
   "topic": "",
   "source": "11-mock-exams/mock-01-exam.md",
-  "rev": "eeb373da"
+  "rev": "4fab6c6a"
  },
  {
   "id": "togaf-f101-mock01-q12",
@@ -17593,13 +17593,13 @@
   "options": [
    {
     "key": "A",
-    "text": "Phase E — options, work packages et Transition Architectures",
-    "points": 1
+    "text": "Phase F — confirmer l'ordre et le plan détaillé de la migration",
+    "points": 0
    },
    {
     "key": "B",
-    "text": "Phase F — confirmer l'ordre et le plan détaillé de la migration",
-    "points": 0
+    "text": "Phase E — options, work packages et Transition Architectures",
+    "points": 1
    },
    {
     "key": "C",
@@ -17615,7 +17615,7 @@
   "explanation": "Phase E structure options, work packages et transitions.",
   "topic": "",
   "source": "11-mock-exams/mock-01-exam.md",
-  "rev": "0d631a0a"
+  "rev": "434c4584"
  },
  {
   "id": "togaf-f101-mock01-q16",
@@ -17809,8 +17809,8 @@
   "options": [
    {
     "key": "A",
-    "text": "L'ADM est linéaire et ne permet pas de revenir sur les domaines",
-    "points": 0
+    "text": "ADM itératif — révision des phases et domaines selon les impacts",
+    "points": 1
    },
    {
     "key": "B",
@@ -17819,8 +17819,8 @@
    },
    {
     "key": "C",
-    "text": "ADM itératif — révision des phases et domaines selon les impacts",
-    "points": 1
+    "text": "L'ADM est linéaire et ne permet pas de revenir sur les domaines",
+    "points": 0
    },
    {
     "key": "D",
@@ -17831,7 +17831,7 @@
   "explanation": "l'ADM est itératif et tailorable.",
   "topic": "",
   "source": "11-mock-exams/mock-01-exam.md",
-  "rev": "8c7d28ad"
+  "rev": "02b28700"
  },
  {
   "id": "togaf-f101-mock01-q22",
@@ -18004,14 +18004,14 @@
    },
    {
     "key": "D",
-    "text": "Content Metamodel — types d'entités et relations du référentiel",
+    "text": "Enterprise Metamodel — types d'entités et relations du référentiel",
     "points": 0
    }
   ],
   "explanation": "Transformation Readiness évalue capacité d'adoption.",
   "topic": "",
   "source": "11-mock-exams/mock-01-exam.md",
-  "rev": "2fdbf730"
+  "rev": "81d84d8b"
  },
  {
   "id": "togaf-f101-mock01-q27",
@@ -18359,19 +18359,19 @@
    },
    {
     "key": "C",
-    "text": "Viewpoint — convention de représentation d'une view",
-    "points": 0
+    "text": "Un produit de travail formel pouvant contenir plusieurs artifacts",
+    "points": 1
    },
    {
     "key": "D",
-    "text": "Un produit de travail formel pouvant contenir plusieurs artifacts",
-    "points": 1
+    "text": "Viewpoint — convention de représentation d'une view",
+    "points": 0
    }
   ],
   "explanation": "Deliverable = produit formel pouvant contenir des artifacts.",
   "topic": "",
   "source": "11-mock-exams/mock-01-exam.md",
-  "rev": "a8584016"
+  "rev": "f9fc67de"
  },
  {
   "id": "togaf-f101-mock01-q37",
@@ -18529,7 +18529,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Évaluer les capacités d'architecture existantes, harmoniser principes, responsabilités et processus d'exception avec le Board, puis ajuster le tailoring et relier ce cadre au travail de transformation.",
+    "text": "Évaluer les capacités existantes, harmoniser principes et processus d'exception avec le Board, puis ajuster le tailoring.",
     "points": 5,
     "rationale": "Comparer les deux Architecture Capabilities et établir les autorités de gouvernance commune permet une fédération vérifiable sans jeter les architectures déjà produites."
    },
@@ -18555,7 +18555,7 @@
   "explanation": "Comparer les deux Architecture Capabilities et établir les autorités de gouvernance commune permet une fédération vérifiable sans jeter les architectures déjà produites.",
   "topic": "",
   "source": "11-mock-exams/mock-01-exam.md",
-  "rev": "53faebdd"
+  "rev": "1a60bbd4"
  },
  {
   "id": "togaf-f102-mock01-p2",
@@ -18575,7 +18575,7 @@
    },
    {
     "key": "B",
-    "text": "Mettre à jour l'analyse des stakeholders et concerns, intégrer les exigences de continuité, de support et de sécurité dans des vues appropriées, puis faire arbitrer les impacts avant de confirmer la vague pilote.",
+    "text": "Mettre à jour stakeholders et concerns, intégrer continuité, support et sécurité dans des vues adaptées, puis faire arbitrer les impacts avant la vague pilote.",
     "points": 5,
     "rationale": "Operations et CISO doivent participer aux concerns et à la mise à jour de la Vision, avec requirements et views de continuité réellement validées."
    },
@@ -18595,7 +18595,7 @@
   "explanation": "Operations et CISO doivent participer aux concerns et à la mise à jour de la Vision, avec requirements et views de continuité réellement validées.",
   "topic": "",
   "source": "11-mock-exams/mock-01-exam.md",
-  "rev": "88ff3828"
+  "rev": "e4d4bc67"
  },
  {
   "id": "togaf-f102-mock01-p3",
@@ -18667,7 +18667,7 @@
    },
    {
     "key": "D",
-    "text": "Confirmer les capabilities et parcours métier, développer et itérer les architectures Data/Application/Technology avec leurs gaps et requirements, comparer les modèles de traitement fédéré et centralisé, puis soumettre les arbitrages.",
+    "text": "Confirmer capabilities et parcours métier, itérer les architectures Data/Application/Technology, puis soumettre les arbitrages.",
     "points": 5,
     "rationale": "L'itération B/C/D réconcilie besoins métier, données, services, technologies et règles de résidence avant le regroupement des gaps."
    }
@@ -18675,7 +18675,7 @@
   "explanation": "L'itération B/C/D réconcilie besoins métier, données, services, technologies et règles de résidence avant le regroupement des gaps.",
   "topic": "",
   "source": "11-mock-exams/mock-01-exam.md",
-  "rev": "aa51b753"
+  "rev": "bd165895"
  },
  {
   "id": "togaf-f102-mock01-p5",
@@ -18695,7 +18695,7 @@
    },
    {
     "key": "B",
-    "text": "En Phase F, évaluer valeur, dépendances, readiness et coûts des transitions, puis confirmer les priorités, séquencement, critères de bascule et Implementation and Migration Plan avant la Phase G.",
+    "text": "En Phase F, évaluer valeur, dépendances, readiness et coûts des transitions, puis confirmer le séquencement et l'Implementation and Migration Plan avant la Phase G.",
     "points": 5,
     "rationale": "La Phase F doit prioriser les lots selon valeur, dépendances, coûts de coexistence et readiness, puis formaliser leur séquence de migration."
    },
@@ -18715,7 +18715,7 @@
   "explanation": "La Phase F doit prioriser les lots selon valeur, dépendances, coûts de coexistence et readiness, puis formaliser leur séquence de migration.",
   "topic": "",
   "source": "11-mock-exams/mock-01-exam.md",
-  "rev": "4d8afc31"
+  "rev": "958f5f17"
  },
  {
   "id": "togaf-f102-mock01-p6",
@@ -18859,7 +18859,7 @@
    },
    {
     "key": "C",
-    "text": "Business, Data, Application et Technology — les quatre domaines de l'architecture d'entreprise",
+    "text": "Business, Data, Application et Technology comme domaines de l'architecture",
     "points": 1
    },
    {
@@ -18871,7 +18871,7 @@
   "explanation": "quatre domaines : Business, Data, Application, Technology.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "44d7a36b"
+  "rev": "c91cc733"
  },
  {
   "id": "togaf-f101-mock02-q02",
@@ -19178,7 +19178,7 @@
    },
    {
     "key": "B",
-    "text": "Phase A — cadrage du scope, des stakeholders et des drivers ; création de l'Architecture Vision",
+    "text": "Phase A — cadrer scope et stakeholders, créer l'Architecture Vision",
     "points": 1
    },
    {
@@ -19195,7 +19195,7 @@
   "explanation": "Phase A = stakeholders + Vision.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "c96eb940"
+  "rev": "f9a3b203"
  },
  {
   "id": "togaf-f101-mock02-q11",
@@ -19219,19 +19219,19 @@
    },
    {
     "key": "C",
-    "text": "La sélection anticipée des SBB d'infrastructure à partir du Repository.",
-    "points": 0
+    "text": "La Target Business Architecture de Phase B, alimentant ensuite Data/Application/Technology.",
+    "points": 1
    },
    {
     "key": "D",
-    "text": "La Target Business Architecture de Phase B, alimentant ensuite Data/Application/Technology.",
-    "points": 1
+    "text": "La sélection anticipée des SBB d'infrastructure à partir du Repository.",
+    "points": 0
    }
   ],
   "explanation": "Les besoins métier guident la dérivation des architectures des domaines techniques.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "ed8c97cc"
+  "rev": "f59911db"
  },
  {
   "id": "togaf-f101-mock02-q12",
@@ -19399,7 +19399,7 @@
    },
    {
     "key": "C",
-    "text": "Phase F — priorisation des work packages et séquencement de la migration vers la Target",
+    "text": "Phase F — prioriser les work packages et séquencer la migration",
     "points": 1
    },
    {
@@ -19411,7 +19411,7 @@
   "explanation": "F priorise et séquence.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "fad56f59"
+  "rev": "5b2c5470"
  },
  {
   "id": "togaf-f101-mock02-q17",
@@ -19533,7 +19533,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Les phases peuvent être revisitées pour réconcilier les modèles et exigences avec la nouvelle contrainte.",
+    "text": "Les phases peuvent être revisitées pour intégrer la nouvelle contrainte",
     "points": 1
    },
    {
@@ -19555,7 +19555,7 @@
   "explanation": "L'ADM est itératif ; les impacts sur les domaines peuvent provoquer des retours contrôlés.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "74c6e24e"
+  "rev": "586eea31"
  },
  {
   "id": "togaf-f101-mock02-q21",
@@ -19569,8 +19569,8 @@
   "options": [
    {
     "key": "A",
-    "text": "Compliance Review — évaluer une implémentation vis-à-vis de la cible",
-    "points": 0
+    "text": "Gap Analysis — identifier les écarts pertinents entre Baseline et Target",
+    "points": 1
    },
    {
     "key": "B",
@@ -19579,8 +19579,8 @@
    },
    {
     "key": "C",
-    "text": "Gap Analysis — identification des écarts pertinents entre architectures Baseline et Target",
-    "points": 1
+    "text": "Compliance Review — évaluer une implémentation vis-à-vis de la cible",
+    "points": 0
    },
    {
     "key": "D",
@@ -19591,7 +19591,7 @@
   "explanation": "Gap = différence Baseline/Target.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "ea90be4e"
+  "rev": "e0663879"
  },
  {
   "id": "togaf-f101-mock02-q22",
@@ -19713,8 +19713,8 @@
   "options": [
    {
     "key": "A",
-    "text": "Technology Architecture — mêmes produits, sans vérifier la sémantique",
-    "points": 0
+    "text": "Interoperability — capacité de collaboration métier, information et technique",
+    "points": 1
    },
    {
     "key": "B",
@@ -19723,8 +19723,8 @@
    },
    {
     "key": "C",
-    "text": "Interoperability — capacité de collaboration métier, information et technique",
-    "points": 1
+    "text": "Technology Architecture — mêmes produits, sans vérifier la sémantique",
+    "points": 0
    },
    {
     "key": "D",
@@ -19735,7 +19735,7 @@
   "explanation": "Interoperability Analysis.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "d1b0eeaf"
+  "rev": "0e9e04b9"
  },
  {
   "id": "togaf-f101-mock02-q26",
@@ -19764,14 +19764,14 @@
    },
    {
     "key": "D",
-    "text": "Content Metamodel — types d'entités et relations du référentiel",
+    "text": "Enterprise Metamodel — types d'entités et relations du référentiel",
     "points": 0
    }
   ],
   "explanation": "Transformation Readiness.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "bfd91637"
+  "rev": "6c64b81b"
  },
  {
   "id": "togaf-f101-mock02-q27",
@@ -19857,8 +19857,8 @@
   "options": [
    {
     "key": "A",
-    "text": "Adapter méthode, profondeur, gouvernance et artifacts au contexte",
-    "points": 1
+    "text": "Compliance Assessment — vérifier le respect de la Target livrée",
+    "points": 0
    },
    {
     "key": "B",
@@ -19872,14 +19872,14 @@
    },
    {
     "key": "D",
-    "text": "Compliance Assessment — vérifier le respect de la Target livrée",
-    "points": 0
+    "text": "Adapter méthode, profondeur, gouvernance et artifacts au contexte",
+    "points": 1
    }
   ],
   "explanation": "Tailoring adapte l'ADM.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "10c10b2d"
+  "rev": "18f88c6b"
  },
  {
   "id": "togaf-f101-mock02-q30",
@@ -19970,7 +19970,7 @@
    },
    {
     "key": "B",
-    "text": "Architecture Partitioning — délimitation des responsabilités et gouvernance fédérée des domaines",
+    "text": "Architecture Partitioning — délimiter les responsabilités entre domaines",
     "points": 1
    },
    {
@@ -19987,7 +19987,7 @@
   "explanation": "Partitioning/federation aident les grandes organisations.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "45976a21"
+  "rev": "b995bd5e"
  },
  {
   "id": "togaf-f101-mock02-q33",
@@ -20037,8 +20037,8 @@
   "options": [
    {
     "key": "A",
-    "text": "Arbitrer et tracer conformité, exceptions et responsabilités selon un cadre approuvé.",
-    "points": 1
+    "text": "Transformer toute dérogation en nouvelle norme permanente sans analyse des risques.",
+    "points": 0
    },
    {
     "key": "B",
@@ -20052,14 +20052,14 @@
    },
    {
     "key": "D",
-    "text": "Transformer toute dérogation en nouvelle norme permanente sans analyse des risques.",
-    "points": 0
+    "text": "Arbitrer et tracer conformité, exceptions et responsabilités selon un cadre approuvé.",
+    "points": 1
    }
   ],
   "explanation": "Le Board prend ou fait prendre des décisions d'architecture explicites ; les exceptions doivent rester gouvernées.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "5b7a870c"
+  "rev": "1880f9e8"
  },
  {
   "id": "togaf-f101-mock02-q35",
@@ -20155,7 +20155,7 @@
    },
    {
     "key": "C",
-    "text": "Artifact — représentation du contenu architectural sous forme de catalogue, matrice ou diagramme",
+    "text": "Artifact — représentation en catalogue, matrice ou diagramme",
     "points": 1
    },
    {
@@ -20167,7 +20167,7 @@
   "explanation": "Artifact = représentation architecturale.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "fbb4d228"
+  "rev": "95a33e71"
  },
  {
   "id": "togaf-f101-mock02-q38",
@@ -20258,7 +20258,7 @@
    },
    {
     "key": "B",
-    "text": "Catalog pour liste structurée, Matrix pour relations entre éléments, Diagram pour représentation graphique.",
+    "text": "Catalog = liste, Matrix = relations, Diagram = représentation graphique",
     "points": 1
    },
    {
@@ -20275,7 +20275,7 @@
   "explanation": "Les formes d'artifacts sont Catalog, Matrix et Diagram.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "95b7724f"
+  "rev": "acda3634"
  },
  {
   "id": "togaf-f102-mock02-p1",
@@ -20295,7 +20295,7 @@
    },
    {
     "key": "B",
-    "text": "Évaluer les deux capacités, définir responsabilités communes et tailorer un modèle fédéré, avec inventaire des principes divergents et mécanismes d'exception avant de sélectionner les lots.",
+    "text": "Évaluer les deux capacités, définir des responsabilités communes et tailorer un modèle fédéré avec mécanismes d'exception, avant de sélectionner les lots.",
     "points": 5,
     "rationale": "La fédération réutilise les forces existantes tout en rendant les décisions communes traçables."
    },
@@ -20315,7 +20315,7 @@
   "explanation": "La fédération réutilise les forces existantes tout en rendant les décisions communes traçables.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "fe9a7cf6"
+  "rev": "7c04e7ad"
  },
  {
   "id": "togaf-f102-mock02-p2",
@@ -20341,13 +20341,13 @@
    },
    {
     "key": "C",
-    "text": "Clarifier concerns, requirements, impacts et utiliser la gouvernance appropriée pour arbitrer de manière traçable, en comparant plusieurs lots de déploiement et en indiquant l'autorité capable d'accepter les risques.",
+    "text": "Clarifier concerns, requirements et impacts, puis faire arbitrer les options par l'autorité habilitée à accepter le risque.",
     "points": 5,
     "rationale": "Le conflit se résout en qualifiant les concerns et les impacts, non par priorité automatique d'un rôle."
    },
    {
     "key": "D",
-    "text": "Lancer un pilote limité à des transactions non critiques et reporter le conflit de sécurité à la première revue post-déploiement.",
+    "text": "Lancer un pilote limité à des transactions non critiques et reporter le conflit de sécurité à la première revue post-déploiement, une fois les volumes réels connus.",
     "points": 0,
     "rationale": "Un pilote ne permet pas de reporter une exigence de sécurité non négociée après déploiement."
    }
@@ -20355,7 +20355,7 @@
   "explanation": "Le conflit se résout en qualifiant les concerns et les impacts, non par priorité automatique d'un rôle.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "74bf685e"
+  "rev": "6942d8fb"
  },
  {
   "id": "togaf-f102-mock02-p3",
@@ -20381,13 +20381,13 @@
    },
    {
     "key": "C",
-    "text": "Établir un plan de migration pour l'ensemble des pays puis demander à chaque entité de le confirmer au prochain comité.",
+    "text": "Établir un plan de migration pour l'ensemble des pays puis demander à chaque entité de le confirmer au prochain comité, sans cadrage préalable des drivers.",
     "points": 0,
     "rationale": "Planifier les migrations mondiales sans Vision par pays ni value case inverse le déroulement de l'ADM."
    },
    {
     "key": "D",
-    "text": "Cadrer scope, stakeholders, drivers, value et Architecture Vision, avec hypothèses par pays et bénéfices mesurables dans le Statement of Architecture Work.",
+    "text": "Cadrer scope, stakeholders, drivers et Architecture Vision, avec hypothèses par pays, dans le Statement of Architecture Work.",
     "points": 5,
     "rationale": "Le cadrage doit précéder l'architecture détaillée et clarifier les frontières de responsabilité."
    }
@@ -20395,7 +20395,7 @@
   "explanation": "Le cadrage doit précéder l'architecture détaillée et clarifier les frontières de responsabilité.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "8f634bf2"
+  "rev": "80174b4b"
  },
  {
   "id": "togaf-f102-mock02-p4",
@@ -20415,7 +20415,7 @@
    },
    {
     "key": "B",
-    "text": "Approfondir la Data Architecture et ses requirements avant de figer la solution applicative, en clarifiant ownership, qualité, cycle de vie et contraintes de transfert avant de figer les services.",
+    "text": "Approfondir la Data Architecture et ses requirements (ownership, qualité, cycle de vie, contraintes de transfert) avant de figer les services applicatifs.",
     "points": 5,
     "rationale": "Une Data Architecture gouvernée précède la sélection d'un produit ou d'un modèle d'intégration."
    },
@@ -20435,7 +20435,7 @@
   "explanation": "Une Data Architecture gouvernée précède la sélection d'un produit ou d'un modèle d'intégration.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "46f0361d"
+  "rev": "308bd35e"
  },
  {
   "id": "togaf-f102-mock02-p5",
@@ -20467,7 +20467,7 @@
    },
    {
     "key": "D",
-    "text": "Phase F, en utilisant des critères de migration et de priorisation, en comparant les coûts transitoires, risques résiduels et conditions de réalisation par wave.",
+    "text": "Phase F, en appliquant des critères de priorisation et en comparant coûts transitoires, risques résiduels et conditions de réalisation par wave.",
     "points": 5,
     "rationale": "Le séquencement relève de F après préparation des options en E; G ne remplace pas la planification."
    }
@@ -20475,7 +20475,7 @@
   "explanation": "Le séquencement relève de F après préparation des options en E; G ne remplace pas la planification.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "13092923"
+  "rev": "45ba86ac"
  },
  {
   "id": "togaf-f102-mock02-p6",
@@ -20489,7 +20489,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Évaluer le changement et déterminer s'il faut lancer un nouveau cycle ou une évolution ciblée, avec une Change Request documentée et une classification du changement permettant de réutiliser l'ADM de manière proportionnée.",
+    "text": "Évaluer le changement via une Change Request documentée, le classer, puis décider entre évolution ciblée et nouveau cycle ADM.",
     "points": 5,
     "rationale": "La Phase H qualifie le changement après livraison et détermine le niveau de reprise architecturale."
    },
@@ -20515,7 +20515,7 @@
   "explanation": "La Phase H qualifie le changement après livraison et détermine le niveau de reprise architecturale.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "a94a207e"
+  "rev": "0954c9e9"
  },
  {
   "id": "togaf-f102-mock02-p7",
@@ -20541,7 +20541,7 @@
    },
    {
     "key": "C",
-    "text": "Mettre à jour et analyser la requirement, tracer les impacts et itérer sur les architectures concernées, avec Requirements Impact Assessment sur les vues, building blocks, risques et work packages affectés.",
+    "text": "Mettre à jour la requirement, mener un Requirements Impact Assessment sur vues, building blocks et work packages, puis itérer sur les architectures concernées.",
     "points": 5,
     "rationale": "La gestion des exigences est transversale; un changement réglementaire peut déclencher des itérations entre phases."
    },
@@ -20555,7 +20555,7 @@
   "explanation": "La gestion des exigences est transversale; un changement réglementaire peut déclencher des itérations entre phases.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "b0b04cde"
+  "rev": "17f22d76"
  },
  {
   "id": "togaf-f102-mock02-p8",
@@ -20569,7 +20569,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Effectuer une analyse de transformation readiness et intégrer les actions organisationnelles dans la trajectoire, avec facteurs de readiness, plans de montée en compétences et work packages préparatoires.",
+    "text": "Analyser la transformation readiness et intégrer les actions organisationnelles requises dans la trajectoire.",
     "points": 5,
     "rationale": "La préparation organisationnelle est une composante de la trajectoire, pas une activité laissée automatiquement au delivery."
    },
@@ -20587,7 +20587,7 @@
    },
    {
     "key": "D",
-    "text": "Conserver la date de mise en service et planifier le support fournisseur seulement une fois les premiers incidents observés.",
+    "text": "Conserver la date de mise en service et planifier le support fournisseur seulement une fois les premiers incidents observés par les équipes d'exploitation.",
     "points": 0,
     "rationale": "Attendre les incidents pour créer le support met en péril l'acceptation opérationnelle."
    }
@@ -20595,7 +20595,7 @@
   "explanation": "Revoir l'ordre des activités ADM, la responsabilité de décision et les exigences transverses. Aucun barème n'est celui d'un examen officiel.",
   "topic": "",
   "source": "11-mock-exams/mock-02-exam.md",
-  "rev": "08506107"
+  "rev": "ebc09777"
  },
  {
   "id": "togaf-f101-mock03-q01",
@@ -20722,13 +20722,13 @@
    },
    {
     "key": "B",
-    "text": "Transition Architecture — état intermédiaire cohérent avant la cible",
-    "points": 0
+    "text": "Baseline Architecture — état actuel pertinent de l'entreprise",
+    "points": 1
    },
    {
     "key": "C",
-    "text": "Baseline Architecture — état actuel pertinent de l'entreprise",
-    "points": 1
+    "text": "Transition Architecture — état intermédiaire cohérent avant la cible",
+    "points": 0
    },
    {
     "key": "D",
@@ -20739,7 +20739,7 @@
   "explanation": "Baseline = état actuel pertinent.",
   "topic": "",
   "source": "11-mock-exams/mock-03-exam.md",
-  "rev": "57a02cd1"
+  "rev": "818f8bc7"
  },
  {
   "id": "togaf-f101-mock03-q05",
@@ -21226,13 +21226,13 @@
    },
    {
     "key": "B",
-    "text": "Phase H, pour évaluer les nouveaux drivers et déterminer le besoin de changement architectural.",
-    "points": 1
+    "text": "Phase E uniquement, afin d'ajouter immédiatement de nouveaux work packages sans revue des drivers.",
+    "points": 0
    },
    {
     "key": "C",
-    "text": "Phase E uniquement, afin d'ajouter immédiatement de nouveaux work packages sans revue des drivers.",
-    "points": 0
+    "text": "Phase H, pour évaluer les nouveaux drivers et déterminer le besoin de changement architectural.",
+    "points": 1
    },
    {
     "key": "D",
@@ -21243,7 +21243,7 @@
   "explanation": "Phase H surveille l'adéquation de l'architecture livrée aux besoins évolutifs.",
   "topic": "",
   "source": "11-mock-exams/mock-03-exam.md",
-  "rev": "6cccee59"
+  "rev": "11362dda"
  },
  {
   "id": "togaf-f101-mock03-q19",
@@ -21519,19 +21519,19 @@
    },
    {
     "key": "C",
-    "text": "Business Transformation Readiness — capacité d'adoption et d'exécution",
-    "points": 1
+    "text": "Enterprise Metamodel — types d'entités et relations du référentiel",
+    "points": 0
    },
    {
     "key": "D",
-    "text": "Content Metamodel — types d'entités et relations du référentiel",
-    "points": 0
+    "text": "Business Transformation Readiness — capacité d'adoption et d'exécution",
+    "points": 1
    }
   ],
   "explanation": "Transformation Readiness traite adoption et capacité de changement.",
   "topic": "",
   "source": "11-mock-exams/mock-03-exam.md",
-  "rev": "16e95109"
+  "rev": "c1721737"
  },
  {
   "id": "togaf-f101-mock03-q27",
@@ -21874,13 +21874,13 @@
    },
    {
     "key": "B",
-    "text": "Un produit de travail formel assemblant éventuellement plusieurs artifacts",
-    "points": 1
+    "text": "SBB — composant de solution réalisant une capacité définie",
+    "points": 0
    },
    {
     "key": "C",
-    "text": "SBB — composant de solution réalisant une capacité définie",
-    "points": 0
+    "text": "Un produit de travail formel assemblant éventuellement plusieurs artifacts",
+    "points": 1
    },
    {
     "key": "D",
@@ -21891,7 +21891,7 @@
   "explanation": "Deliverable = produit formel.",
   "topic": "",
   "source": "11-mock-exams/mock-03-exam.md",
-  "rev": "ba1359a6"
+  "rev": "44067857"
  },
  {
   "id": "togaf-f101-mock03-q37",
@@ -22061,7 +22061,7 @@
    },
    {
     "key": "C",
-    "text": "Tailorer l'ADM et la gouvernance selon le contexte tout en préservant les objectifs essentiels, en fixant des seuils d'escalade et une gouvernance proportionnée au risque des initiatives.",
+    "text": "Tailorer l'ADM et la gouvernance selon le contexte en préservant les objectifs essentiels, avec des seuils d'escalade proportionnés au risque.",
     "points": 5,
     "rationale": "L'ADM est adaptable; la gouvernance doit être explicite et proportionnée à la maturité et aux risques."
    },
@@ -22075,7 +22075,7 @@
   "explanation": "L'ADM est adaptable; la gouvernance doit être explicite et proportionnée à la maturité et aux risques.",
   "topic": "",
   "source": "11-mock-exams/mock-03-exam.md",
-  "rev": "32dd0536"
+  "rev": "1d631418"
  },
  {
   "id": "togaf-f102-mock03-p2",
@@ -22107,7 +22107,7 @@
    },
    {
     "key": "D",
-    "text": "Mettre à jour stakeholder analysis, requirements et views pertinentes, puis analyser les impacts, en explicitant l'obligation, les nouveaux requirements et les impacts de modification avant la validation suivante.",
+    "text": "Mettre à jour stakeholder analysis, requirements et views pertinentes, en explicitant l'obligation, puis analyser les impacts avant la validation suivante.",
     "points": 5,
     "rationale": "Un nouveau stakeholder critique modifie les concerns, exigences et décisions possibles à travers plusieurs domaines."
    }
@@ -22115,7 +22115,7 @@
   "explanation": "Un nouveau stakeholder critique modifie les concerns, exigences et décisions possibles à travers plusieurs domaines.",
   "topic": "",
   "source": "11-mock-exams/mock-03-exam.md",
-  "rev": "92e433bc"
+  "rev": "8dabaa9f"
  },
  {
   "id": "togaf-f102-mock03-p3",
@@ -22135,7 +22135,7 @@
    },
    {
     "key": "B",
-    "text": "Clarifier drivers, value proposition, scope et critères de succès dans Phase A, avec des indicateurs de bénéfices, hypothèses d'investissement et limites de portée explicites.",
+    "text": "Clarifier en Phase A drivers, value proposition, scope et critères de succès, avec des bénéfices mesurables.",
     "points": 5,
     "rationale": "La Vision est un outil de décision et de valeur; elle doit rendre les attentes de succès comparables."
    },
@@ -22147,7 +22147,7 @@
    },
    {
     "key": "D",
-    "text": "Présenter une première Architecture Roadmap de solutions candidates pour faciliter la discussion, même si les bénéfices ne sont pas encore validés.",
+    "text": "Présenter une première Architecture Roadmap de solutions candidates pour faciliter la discussion, même si les bénéfices ne sont pas encore validés par les métiers.",
     "points": 1,
     "rationale": "Une Roadmap produite avant les bénéfices approuvés préjuge des solutions au lieu d'expliquer leur valeur."
    }
@@ -22155,7 +22155,7 @@
   "explanation": "La Vision est un outil de décision et de valeur; elle doit rendre les attentes de succès comparables.",
   "topic": "",
   "source": "11-mock-exams/mock-03-exam.md",
-  "rev": "5a3bcb4b"
+  "rev": "04fc6399"
  },
  {
   "id": "togaf-f102-mock03-p4",
@@ -22187,7 +22187,7 @@
    },
    {
     "key": "D",
-    "text": "Commencer par Business Architecture pour définir la cible métier avant de figer Application et Technology Architectures, en définissant la capacité, les processus et ownership métier avant de dériver les domaines Data/Application/Technology.",
+    "text": "Définir d'abord la cible métier (capacités, processus, ownership) avant de dériver Data, Application et Technology.",
     "points": 5,
     "rationale": "La Target Business Architecture dirige les autres domaines; l'existant applicatif n'est pas une définition des capacités futures."
    }
@@ -22195,7 +22195,7 @@
   "explanation": "La Target Business Architecture dirige les autres domaines; l'existant applicatif n'est pas une définition des capacités futures.",
   "topic": "",
   "source": "11-mock-exams/mock-03-exam.md",
-  "rev": "640d3cc1"
+  "rev": "9bb333f3"
  },
  {
   "id": "togaf-f102-mock03-p5",
@@ -22209,7 +22209,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Phase G avec Architecture Contract/Compliance mechanisms, avec Architecture Contract, Compliance Reviews, preuves et décisions tracées pendant l'implémentation.",
+    "text": "Phase G : s'appuyer sur l'Architecture Contract et les Compliance Reviews, avec preuves et décisions tracées à l'implémentation.",
     "points": 5,
     "rationale": "Après le planning F, la Phase G gouverne la réalisation par preuves, responsabilités et mécanismes d'exception."
    },
@@ -22221,7 +22221,7 @@
    },
    {
     "key": "C",
-    "text": "Réviser le classement des work packages à la lumière du choix de protocole, sans traiter encore l'implémentation du contrôle d'accès.",
+    "text": "Réviser le classement des work packages à la lumière du choix de protocole, sans traiter encore l'implémentation du contrôle d'accès ni les exceptions déjà signalées.",
     "points": 1,
     "rationale": "Reprioriser les lots ne traite pas les preuves de conformité des composants en cours de réalisation."
    },
@@ -22235,7 +22235,7 @@
   "explanation": "Après le planning F, la Phase G gouverne la réalisation par preuves, responsabilités et mécanismes d'exception.",
   "topic": "",
   "source": "11-mock-exams/mock-03-exam.md",
-  "rev": "3f5da636"
+  "rev": "cb1dfcce"
  },
  {
   "id": "togaf-f102-mock03-p6",
@@ -22261,7 +22261,7 @@
    },
    {
     "key": "C",
-    "text": "Évaluer le changement et appliquer une réponse proportionnée si l'impact est mineur, et enregistrer l'analyse de non-impact ainsi que le traitement opérationnel correspondant.",
+    "text": "Évaluer le changement, puis, si l'impact est mineur, appliquer une réponse proportionnée et enregistrer l'analyse de non-impact et le traitement opérationnel.",
     "points": 5,
     "rationale": "La classification dépend de l'impact réel; un patch peut relever d'une gestion de changement technique normale."
    },
@@ -22275,7 +22275,7 @@
   "explanation": "La classification dépend de l'impact réel; un patch peut relever d'une gestion de changement technique normale.",
   "topic": "",
   "source": "11-mock-exams/mock-03-exam.md",
-  "rev": "fa6d72f6"
+  "rev": "85dfd63d"
  },
  {
   "id": "togaf-f102-mock03-p7",
@@ -22289,13 +22289,13 @@
   "options": [
    {
     "key": "A",
-    "text": "Tracer la requirement, comparer les options et conserver la décision et sa justification, jusqu'aux building blocks, aux critères de validation, aux risques et à la décision d'architecture.",
+    "text": "Tracer la requirement jusqu'aux building blocks, comparer les options et conserver la décision justifiée.",
     "points": 5,
     "rationale": "La gestion des exigences soutient des alternatives, pas simplement la reconnaissance d'une option techniquement valide."
    },
    {
     "key": "B",
-    "text": "Utiliser la technologie déjà en place comme solution de référence et accepter les risques restants sans les présenter au comité.",
+    "text": "Utiliser la technologie déjà en place comme solution de référence et accepter les risques restants sans les présenter au comité d'architecture.",
     "points": 0,
     "rationale": "Choisir la technologie en place sans présenter le risque au comité ignore l'arbitrage gouverné."
    },
@@ -22315,7 +22315,7 @@
   "explanation": "La gestion des exigences soutient des alternatives, pas simplement la reconnaissance d'une option techniquement valide.",
   "topic": "",
   "source": "11-mock-exams/mock-03-exam.md",
-  "rev": "bf6624ac"
+  "rev": "9403d036"
  },
  {
   "id": "togaf-f102-mock03-p8",
@@ -22335,7 +22335,7 @@
    },
    {
     "key": "B",
-    "text": "Effectuer une analyse d'interoperability couvrant dimensions pertinentes avant de choisir les adaptations, avec analyse des dimensions métier, information et technologie et gouvernance des contrats d'échange.",
+    "text": "Analyser l'interoperability dans ses dimensions métier, information et technologie, ainsi que la gouvernance des échanges, avant de choisir les adaptations.",
     "points": 5,
     "rationale": "L'interopérabilité exige un accord sémantique et organisationnel, non la seule connexion des systèmes."
    },
@@ -22355,7 +22355,7 @@
   "explanation": "Analyser l'ordre des décisions, le risque résiduel et les rôles. Ces scores sont pédagogiques et non officiels.",
   "topic": "",
   "source": "11-mock-exams/mock-03-exam.md",
-  "rev": "94810490"
+  "rev": "edd2afbe"
  },
  {
   "id": "togaf-f101-mock04-q01",
@@ -22518,8 +22518,8 @@
    },
    {
     "key": "B",
-    "text": "Baseline Architecture — état actuel pertinent de l'entreprise",
-    "points": 1
+    "text": "Architecture Roadmap — trajectoire des lots et états successifs",
+    "points": 0
    },
    {
     "key": "C",
@@ -22528,14 +22528,14 @@
    },
    {
     "key": "D",
-    "text": "Architecture Roadmap — trajectoire des lots et états successifs",
-    "points": 0
+    "text": "Baseline Architecture — état actuel pertinent de l'entreprise",
+    "points": 1
    }
   ],
   "explanation": "Baseline = état actuel.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "3680f285"
+  "rev": "e1e690b9"
  },
  {
   "id": "togaf-f101-mock04-q06",
@@ -22914,13 +22914,13 @@
    },
    {
     "key": "B",
-    "text": "Phase F — séquencement et plan détaillé de migration",
-    "points": 1
+    "text": "Phase G — suivre les écarts de conformité pendant le delivery",
+    "points": 0
    },
    {
     "key": "C",
-    "text": "Phase G — suivre les écarts de conformité pendant le delivery",
-    "points": 0
+    "text": "Phase F — séquencement et plan détaillé de migration",
+    "points": 1
    },
    {
     "key": "D",
@@ -22931,7 +22931,7 @@
   "explanation": "F = priorités, dépendances, séquencement.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "2209e2ff"
+  "rev": "b6226b38"
  },
  {
   "id": "togaf-f101-mock04-q17",
@@ -23053,13 +23053,13 @@
   "options": [
    {
     "key": "A",
-    "text": "L'ADM est linéaire et ne permet pas de revenir sur les domaines",
-    "points": 0
+    "text": "L'ADM permet tailoring, itérations et travail concurrent sous gouvernance appropriée.",
+    "points": 1
    },
    {
     "key": "B",
-    "text": "L'ADM permet tailoring, itérations et travail concurrent sous gouvernance appropriée.",
-    "points": 1
+    "text": "L'ADM est linéaire et ne permet pas de revenir sur les domaines",
+    "points": 0
    },
    {
     "key": "C",
@@ -23075,7 +23075,7 @@
   "explanation": "TOGAF permet de revenir sur les domaines dont les contraintes évoluent.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "84305b7b"
+  "rev": "6bac603f"
  },
  {
   "id": "togaf-f101-mock04-q21",
@@ -23243,7 +23243,7 @@
    },
    {
     "key": "C",
-    "text": "Content Metamodel — types d'entités et relations du référentiel",
+    "text": "Enterprise Metamodel — types d'entités et relations du référentiel",
     "points": 0
    },
    {
@@ -23255,7 +23255,7 @@
   "explanation": "Transformation Readiness.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "2daaf033"
+  "rev": "0b716132"
  },
  {
   "id": "togaf-f101-mock04-q26",
@@ -23454,13 +23454,13 @@
    },
    {
     "key": "B",
-    "text": "Tailoring — adapter les activités ADM sans définir les espaces de responsabilité",
-    "points": 0
+    "text": "Partitioning — organisation des espaces et interfaces d'architecture",
+    "points": 1
    },
    {
     "key": "C",
-    "text": "Partitioning — organisation des espaces et interfaces d'architecture",
-    "points": 1
+    "text": "Tailoring — adapter les activités ADM sans définir les espaces de responsabilité",
+    "points": 0
    },
    {
     "key": "D",
@@ -23471,7 +23471,7 @@
   "explanation": "Partitioning.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "b206dcfd"
+  "rev": "a6edda87"
  },
  {
   "id": "togaf-f101-mock04-q32",
@@ -23670,8 +23670,8 @@
    },
    {
     "key": "B",
-    "text": "Viewpoint — convention pour construire une View répondant aux concerns",
-    "points": 0
+    "text": "Représente un élément architectural ou de solution réutilisable",
+    "points": 1
    },
    {
     "key": "C",
@@ -23680,14 +23680,14 @@
    },
    {
     "key": "D",
-    "text": "Représente un élément architectural ou de solution réutilisable",
-    "points": 1
+    "text": "Viewpoint — convention pour construire une View répondant aux concerns",
+    "points": 0
    }
   ],
   "explanation": "Building Block = élément réutilisable d'architecture/solution.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "a4b5e1aa"
+  "rev": "28858862"
  },
  {
   "id": "togaf-f101-mock04-q38",
@@ -23769,7 +23769,7 @@
   "order": 40,
   "domain": "content",
   "title": "",
-  "stem": "Dans un opérateur de transport, le dossier d'architecture doit distinguer représentations, livrables et building blocks. À quoi sert principalement le Content Metamodel ?",
+  "stem": "Dans un opérateur de transport, le dossier d'architecture doit distinguer représentations, livrables et building blocks. À quoi sert principalement l'Enterprise Metamodel ?",
   "options": [
    {
     "key": "A",
@@ -23792,10 +23792,10 @@
     "points": 0
    }
   ],
-  "explanation": "Content Metamodel définit types d'entités et relations.",
+  "explanation": "L'Enterprise Metamodel définit types d'entités et relations.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "e0f23ae1"
+  "rev": "9a68a980"
  },
  {
   "id": "togaf-f102-mock04-p1",
@@ -23815,7 +23815,7 @@
    },
    {
     "key": "B",
-    "text": "Introduire une liste de standards techniques communes et vérifier leur usage lors des prochains projets, sans clarifier les responsabilités de décision.",
+    "text": "Introduire une liste de standards techniques communes et vérifier leur usage lors des prochains projets, sans clarifier les responsabilités de décision entre groupe et filiales.",
     "points": 1,
     "rationale": "Une liste de standards techniques n'établit ni rôles ni décisions de gouvernance entre filiales."
    },
@@ -23827,7 +23827,7 @@
    },
    {
     "key": "D",
-    "text": "Tailorer et fédérer la gouvernance tout en maintenant principes et contrôles communs nécessaires, avec un noyau de principes obligatoires et une délégation de décisions selon les risques.",
+    "text": "Tailorer et fédérer la gouvernance : un noyau de principes et contrôles communs obligatoires, et une délégation des décisions selon les risques.",
     "points": 5,
     "rationale": "Adapter la capacité d'architecture au contexte tout en préservant une gouvernance de groupe cohérente."
    }
@@ -23835,7 +23835,7 @@
   "explanation": "Adapter la capacité d'architecture au contexte tout en préservant une gouvernance de groupe cohérente.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "d1376a3f"
+  "rev": "a0cd5651"
  },
  {
   "id": "togaf-f102-mock04-p2",
@@ -23855,7 +23855,7 @@
    },
    {
     "key": "B",
-    "text": "Produire les vues adaptées aux concerns, expliciter valeur/coût/risque et organiser l'arbitrage, incluant un modèle de valeur, les alternatives et les conséquences opérationnelles pour chaque stakeholder.",
+    "text": "Produire les vues adaptées aux concerns, expliciter valeur, coût et risque de chaque alternative pour chaque stakeholder, puis organiser un arbitrage formel.",
     "points": 5,
     "rationale": "Les views doivent éclairer le choix des parties prenantes et rendre les options comparables."
    },
@@ -23875,7 +23875,7 @@
   "explanation": "Les views doivent éclairer le choix des parties prenantes et rendre les options comparables.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "f6494ae7"
+  "rev": "fa8f7f91"
  },
  {
   "id": "togaf-f102-mock04-p3",
@@ -23907,7 +23907,7 @@
    },
    {
     "key": "D",
-    "text": "Clarifier scope, stakeholders, responsabilités et Vision avant l'architecture détaillée, en documentant scope, domaines, profondeur de travail, horizon et responsabilités de validation.",
+    "text": "Clarifier scope, stakeholders, responsabilités de validation et Vision avant l'architecture détaillée.",
     "points": 5,
     "rationale": "Un cadrage complet permet des architectures de domaine cohérentes et gouvernables."
    }
@@ -23915,7 +23915,7 @@
   "explanation": "Un cadrage complet permet des architectures de domaine cohérentes et gouvernables.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "24eb9af3"
+  "rev": "650b4fe3"
  },
  {
   "id": "togaf-f102-mock04-p4",
@@ -23929,7 +23929,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Développer Application Architecture puis Technology Architecture en maintenant la traçabilité aux besoins métier/data, en dérivant les contrats de services, building blocks et contraintes de plateforme de la cible métier et data.",
+    "text": "Développer Application puis Technology Architecture en dérivant services, building blocks et contraintes de plateforme de la cible métier et data.",
     "points": 5,
     "rationale": "Les domaines C Application et D doivent être dérivés des exigences et gaps existants, avec itérations si nécessaires."
    },
@@ -23947,7 +23947,7 @@
    },
    {
     "key": "D",
-    "text": "Lancer la migration de l'application existante vers le cloud puis adapter les services métier lorsque la plateforme sera stabilisée.",
+    "text": "Lancer la migration de l'application existante vers le cloud puis adapter les services métier lorsque la plateforme sera stabilisée et que ses coûts d'exploitation seront connus.",
     "points": 0,
     "rationale": "Migrer d'abord l'existant oblige ensuite à adapter les services métier aux limitations de la plateforme."
    }
@@ -23955,7 +23955,7 @@
   "explanation": "Les domaines C Application et D doivent être dérivés des exigences et gaps existants, avec itérations si nécessaires.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "5fa972fe"
+  "rev": "c49944d8"
  },
  {
   "id": "togaf-f102-mock04-p5",
@@ -23981,7 +23981,7 @@
    },
    {
     "key": "C",
-    "text": "Analyser valeur, risque, dépendances et Transition Architectures en Phase F avant de séquencer, en modélisant la dépendance critique, les options de transition et les risques résiduels dans le plan.",
+    "text": "En Phase F, analyser valeur, risques résiduels, dépendance critique et Transition Architectures possibles avant de séquencer le plan.",
     "points": 5,
     "rationale": "Les dépendances conditionnent la viabilité d'un work package, au-delà de son bénéfice isolé."
    },
@@ -23995,7 +23995,7 @@
   "explanation": "Les dépendances conditionnent la viabilité d'un work package, au-delà de son bénéfice isolé.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "36b3a0d7"
+  "rev": "f6b140c6"
  },
  {
   "id": "togaf-f102-mock04-p6",
@@ -24009,7 +24009,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Évaluer l'impact et appliquer un changement proportionné si l'architecture reste valide, avec évaluation d'impact et preuve de conformité au niveau approprié.",
+    "text": "Évaluer l'impact et, si l'architecture reste valide, appliquer un changement proportionné avec preuve de conformité adaptée.",
     "points": 5,
     "rationale": "La classification de changement en H repose sur l'impact, non sur la simple existence d'une demande."
    },
@@ -24035,7 +24035,7 @@
   "explanation": "La classification de changement en H repose sur l'impact, non sur la simple existence d'une demande.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "759140b5"
+  "rev": "9a3f2701"
  },
  {
   "id": "togaf-f102-mock04-p7",
@@ -24055,7 +24055,7 @@
    },
    {
     "key": "B",
-    "text": "Clarifier ownership, version de référence, traceability et impacts, avec identification du propriétaire, historique des versions, clarification du seuil et propagation vers les modèles.",
+    "text": "Clarifier le propriétaire, la version de référence et le seuil attendu, puis propager la décision vers les modèles en conservant la traceability et l'historique.",
     "points": 5,
     "rationale": "Une requirement non attribuée et non versionnée ne constitue pas un contrat de décision fiable."
    },
@@ -24075,7 +24075,7 @@
   "explanation": "Une requirement non attribuée et non versionnée ne constitue pas un contrat de décision fiable.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "5ca0e392"
+  "rev": "0fca127c"
  },
  {
   "id": "togaf-f102-mock04-p8",
@@ -24101,7 +24101,7 @@
    },
    {
     "key": "C",
-    "text": "Utiliser Transformation Readiness et Stakeholder Management pour traiter les barrières et actions d'adoption, avec facteurs de readiness, plan d'adoption, priorisation des prérequis et budget associé.",
+    "text": "Combiner Transformation Readiness et Stakeholder Management pour traiter les barrières, avec plan d'adoption et prérequis priorisés.",
     "points": 5,
     "rationale": "La préparation métier et opérationnelle est une dépendance de transformation, à rendre visible avant le déploiement."
    },
@@ -24115,7 +24115,7 @@
   "explanation": "Évaluer les écarts de qualité de décision par learning outcome, pas seulement les lettres.",
   "topic": "",
   "source": "11-mock-exams/mock-04-exam.md",
-  "rev": "3825b20d"
+  "rev": "262750aa"
  },
  {
   "id": "togaf-f101-mock05-q01",
@@ -24489,8 +24489,8 @@
   "options": [
    {
     "key": "A",
-    "text": "Finaliser la Target Technology Architecture à partir des serveurs supportant les applications actuelles.",
-    "points": 0
+    "text": "Développer la Target Business Architecture avant de dériver Data/Application/Technology et leurs gaps.",
+    "points": 1
    },
    {
     "key": "B",
@@ -24499,8 +24499,8 @@
    },
    {
     "key": "C",
-    "text": "Développer la Target Business Architecture avant de dériver Data/Application/Technology et leurs gaps.",
-    "points": 1
+    "text": "Finaliser la Target Technology Architecture à partir des serveurs supportant les applications actuelles.",
+    "points": 0
    },
    {
     "key": "D",
@@ -24511,7 +24511,7 @@
   "explanation": "La Phase B décrit les besoins métier et prépare la cohérence des domaines qui suivent.",
   "topic": "",
   "source": "11-mock-exams/mock-05-exam.md",
-  "rev": "cd9af52a"
+  "rev": "f57e80d0"
  },
  {
   "id": "togaf-f101-mock05-q12",
@@ -24607,19 +24607,19 @@
    },
    {
     "key": "C",
-    "text": "Phase D — plateformes, services technologiques et infrastructure",
-    "points": 1
+    "text": "Phase E — agréger les gaps en work packages et transitions",
+    "points": 0
    },
    {
     "key": "D",
-    "text": "Phase E — agréger les gaps en work packages et transitions",
-    "points": 0
+    "text": "Phase D — plateformes, services technologiques et infrastructure",
+    "points": 1
    }
   ],
   "explanation": "plateforme cible = Phase D.",
   "topic": "",
   "source": "11-mock-exams/mock-05-exam.md",
-  "rev": "12555ecd"
+  "rev": "f2d3f5d1"
  },
  {
   "id": "togaf-f101-mock05-q15",
@@ -24818,13 +24818,13 @@
    },
    {
     "key": "B",
-    "text": "Il peut être adapté et itéré afin de réconcilier les domaines et leurs exigences.",
-    "points": 1
+    "text": "Un retour n'est autorisé qu'après un cycle complet Preliminary à H",
+    "points": 0
    },
    {
     "key": "C",
-    "text": "Un retour n'est autorisé qu'après un cycle complet Preliminary à H",
-    "points": 0
+    "text": "Il peut être adapté et itéré afin de réconcilier les domaines et leurs exigences.",
+    "points": 1
    },
    {
     "key": "D",
@@ -24835,7 +24835,7 @@
   "explanation": "ADM tailorable et itératif.",
   "topic": "",
   "source": "11-mock-exams/mock-05-exam.md",
-  "rev": "386aa7f3"
+  "rev": "e57ce2c8"
  },
  {
   "id": "togaf-f101-mock05-q21",
@@ -25034,24 +25034,24 @@
    },
    {
     "key": "B",
-    "text": "Gap Analysis — seules différences entre plateformes existantes et cibles",
-    "points": 0
+    "text": "Business Transformation Readiness Assessment — évaluation des capacités de mise en œuvre",
+    "points": 1
    },
    {
     "key": "C",
-    "text": "Content Metamodel — types d'entités et relations du référentiel",
+    "text": "Enterprise Metamodel — types d'entités et relations du référentiel",
     "points": 0
    },
    {
     "key": "D",
-    "text": "Business Transformation Readiness Assessment — évaluation des capacités de mise en œuvre",
-    "points": 1
+    "text": "Gap Analysis — seules différences entre plateformes existantes et cibles",
+    "points": 0
    }
   ],
   "explanation": "Transformation Readiness.",
   "topic": "",
   "source": "11-mock-exams/mock-05-exam.md",
-  "rev": "cb210be9"
+  "rev": "8000057b"
  },
  {
   "id": "togaf-f101-mock05-q27",
@@ -25575,7 +25575,7 @@
    },
    {
     "key": "B",
-    "text": "Tailorer le processus selon risque, scope et maturité tout en conservant contrôles essentiels, en distinguant changements locaux et structurants et en définissant des contrôles adaptés au risque.",
+    "text": "Tailorer le processus selon risque, scope et maturité, en conservant les contrôles essentiels.",
     "points": 5,
     "rationale": "Le tailoring conserve la discipline de gouvernance tout en évitant les activités sans valeur."
    },
@@ -25587,7 +25587,7 @@
    },
    {
     "key": "D",
-    "text": "Maintenir le Board central pour toutes les décisions et instaurer seulement un délai de réponse maximal aux demandes.",
+    "text": "Maintenir le Board central pour toutes les décisions et instaurer seulement un délai de réponse maximal aux demandes des équipes produit.",
     "points": 0,
     "rationale": "Un délai de réponse plus court n'adapte pas les contrôles aux différents risques des produits."
    }
@@ -25595,7 +25595,7 @@
   "explanation": "Le tailoring conserve la discipline de gouvernance tout en évitant les activités sans valeur.",
   "topic": "",
   "source": "11-mock-exams/mock-05-exam.md",
-  "rev": "be1923d7"
+  "rev": "4663466e"
  },
  {
   "id": "togaf-f102-mock05-p2",
@@ -25627,7 +25627,7 @@
    },
    {
     "key": "D",
-    "text": "Réengager Data comme stakeholder, clarifier concerns/requirements et analyser les impacts sur architecture et roadmap, en remettant les concerns Data au centre et en révisant les vues, exigences, gaps et options de migration.",
+    "text": "Réengager Data comme stakeholder, clarifier ses concerns et requirements, puis réviser vues, gaps et options de migration de l'architecture et de la roadmap.",
     "points": 5,
     "rationale": "Une contrainte de qualité peut imposer des itérations entre les domaines et la trajectoire."
    }
@@ -25635,7 +25635,7 @@
   "explanation": "Une contrainte de qualité peut imposer des itérations entre les domaines et la trajectoire.",
   "topic": "",
   "source": "11-mock-exams/mock-05-exam.md",
-  "rev": "6526d536"
+  "rev": "e6c4e877"
  },
  {
   "id": "togaf-f102-mock05-p3",
@@ -25649,7 +25649,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Cadrer formellement scope, approche, responsabilités, risques et engagement en Phase A, en définissant les livrables, ressources, risques, rôles, périmètre et conditions d'approbation.",
+    "text": "Cadrer formellement en Phase A le scope, l'approche, les rôles, les risques, les livrables et les conditions d'approbation.",
     "points": 5,
     "rationale": "Le Statement of Architecture Work structure l'engagement et précède les décisions détaillées."
    },
@@ -25675,7 +25675,7 @@
   "explanation": "Le Statement of Architecture Work structure l'engagement et précède les décisions détaillées.",
   "topic": "",
   "source": "11-mock-exams/mock-05-exam.md",
-  "rev": "9429786a"
+  "rev": "e40b2ee7"
  },
  {
   "id": "togaf-f102-mock05-p4",
@@ -25701,7 +25701,7 @@
    },
    {
     "key": "C",
-    "text": "Itérer entre Business et Application Architecture pour réaligner cible et requirements avant Phase E, en réconciliant capabilities, services, données et plateformes et en documentant les gaps.",
+    "text": "Itérer entre Business et Application Architecture pour réaligner la cible et les requirements, en documentant les gaps avant Phase E.",
     "points": 5,
     "rationale": "La Target Application doit démontrer qu'elle supporte la capacité métier souhaitée."
    },
@@ -25715,7 +25715,7 @@
   "explanation": "La Target Application doit démontrer qu'elle supporte la capacité métier souhaitée.",
   "topic": "",
   "source": "11-mock-exams/mock-05-exam.md",
-  "rev": "7444da64"
+  "rev": "8cf5ff9e"
  },
  {
   "id": "togaf-f102-mock05-p5",
@@ -25729,7 +25729,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Utiliser les mécanismes de Phase G pour Compliance Review, analyse de l'écart et décision gouvernée, en réalisant une Compliance Assessment, en évaluant le risque et en faisant décider l'exception ou la correction.",
+    "text": "Appliquer la Phase G : Compliance Assessment de l'écart, évaluation du risque, puis décision gouvernée.",
     "points": 5,
     "rationale": "La Phase G compare preuves d'implémentation, exigences et dérogations approuvées."
    },
@@ -25755,7 +25755,7 @@
   "explanation": "La Phase G compare preuves d'implémentation, exigences et dérogations approuvées.",
   "topic": "",
   "source": "11-mock-exams/mock-05-exam.md",
-  "rev": "97a6e434"
+  "rev": "64781b4f"
  },
  {
   "id": "togaf-f102-mock05-p6",
@@ -25775,7 +25775,7 @@
    },
    {
     "key": "B",
-    "text": "Évaluer l'impact sur architecture, roadmap, risks et décider de l'ampleur du nouveau travail, avec analyse d'impact, classification Phase H et conséquences sur les transitions et standards.",
+    "text": "Analyser l'impact sur l'architecture, la roadmap, les transitions et les standards, classer le changement en Phase H, puis décider de l'ampleur du travail.",
     "points": 5,
     "rationale": "L'obsolescence stratégique peut déclencher un changement gouverné de l'architecture en service."
    },
@@ -25795,7 +25795,7 @@
   "explanation": "L'obsolescence stratégique peut déclencher un changement gouverné de l'architecture en service.",
   "topic": "",
   "source": "11-mock-exams/mock-05-exam.md",
-  "rev": "6534719d"
+  "rev": "b0be2c12"
  },
  {
   "id": "togaf-f102-mock05-p7",
@@ -25815,13 +25815,13 @@
    },
    {
     "key": "B",
-    "text": "Demander à la plateforme d'analytics de décider automatiquement de la minimisation nécessaire selon les capacités du fournisseur.",
+    "text": "Demander à la plateforme d'analytics de décider automatiquement de la minimisation nécessaire selon les capacités techniques du fournisseur retenu.",
     "points": 0,
     "rationale": "Laisser le fournisseur décider seul de la minimisation ne satisfait ni ownership ni arbitrage de confidentialité."
    },
    {
     "key": "C",
-    "text": "Identifier le conflit, engager les stakeholders, analyser options et maintenir la trace de la décision, en distinguant le besoin de valeur analytique des méthodes possibles pour préserver la confidentialité.",
+    "text": "Expliciter le conflit avec les stakeholders, analyser les options préservant la confidentialité et tracer la décision retenue.",
     "points": 5,
     "rationale": "La bonne décision relie obligations, valeur et alternatives avec acceptation des stakeholders."
    },
@@ -25835,7 +25835,7 @@
   "explanation": "La bonne décision relie obligations, valeur et alternatives avec acceptation des stakeholders.",
   "topic": "",
   "source": "11-mock-exams/mock-05-exam.md",
-  "rev": "e8ac68d1"
+  "rev": "b834ad3c"
  },
  {
   "id": "togaf-f102-mock05-p8",
@@ -25867,7 +25867,7 @@
    },
    {
     "key": "D",
-    "text": "Capability-Based Planning peut aider à regrouper et prioriser le changement autour des capacités nécessaires, en consolidant gaps, solutions potentielles et dépendances pour construire les work packages.",
+    "text": "Utiliser Capability-Based Planning pour regrouper gaps, solutions et dépendances autour des capacités, puis construire les work packages.",
     "points": 5,
     "rationale": "Le regroupement des gaps évite de confondre solutions isolées et capacités partagées."
    }
@@ -25875,7 +25875,7 @@
   "explanation": "Le regroupement des gaps évite de confondre solutions isolées et capacités partagées.",
   "topic": "",
   "source": "11-mock-exams/mock-05-exam.md",
-  "rev": "449196a2"
+  "rev": "64d08fd9"
  },
  {
   "id": "togaf-f101-mock06-q01",
@@ -25925,7 +25925,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Une personne, un groupe ou une organisation ayant un intérêt dans ou étant affecté par l'architecture",
+    "text": "Toute partie ayant un intérêt dans l'architecture ou affectée par elle",
     "points": 1
    },
    {
@@ -25947,7 +25947,7 @@
   "explanation": "stakeholder = partie intéressée/affectée.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "a5def512"
+  "rev": "cf1d3858"
  },
  {
   "id": "togaf-f101-mock06-q03",
@@ -25976,14 +25976,14 @@
    },
    {
     "key": "D",
-    "text": "Il aide à classifier et contextualiser des assets génériques ou spécifiques sans se confondre avec leur stockage.",
+    "text": "Il aide à classifier et contextualiser des assets génériques ou spécifiques.",
     "points": 1
    }
   ],
   "explanation": "Le Continuum est un mécanisme de classification ; le Repository organise et conserve les ressources.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "d51a45f6"
+  "rev": "0fcde64f"
  },
  {
   "id": "togaf-f101-mock06-q04",
@@ -26043,7 +26043,7 @@
    },
    {
     "key": "C",
-    "text": "Architecture Principle — règle durable, justifiée et accompagnée d'implications pour les décisions",
+    "text": "Architecture Principle — règle durable qui guide les décisions",
     "points": 1
    },
    {
@@ -26055,7 +26055,7 @@
   "explanation": "Principle guide durablement les décisions.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "add03083"
+  "rev": "2d327dc3"
  },
  {
   "id": "togaf-f101-mock06-q06",
@@ -26151,7 +26151,7 @@
    },
    {
     "key": "C",
-    "text": "Baseline = état actuel ; Target = état souhaité ; Gap = différence à traiter entre les deux",
+    "text": "Baseline = état actuel ; Target = état souhaité ; Gap = écart à traiter",
     "points": 1
    },
    {
@@ -26163,7 +26163,7 @@
   "explanation": "Baseline → Target → Gap.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "c95b81eb"
+  "rev": "a2de70fe"
  },
  {
   "id": "togaf-f101-mock06-q09",
@@ -26218,7 +26218,7 @@
    },
    {
     "key": "B",
-    "text": "Phase A — cadrage du changement métier et préparation de l'Architecture Vision",
+    "text": "Phase A — cadrer le changement et préparer l'Architecture Vision",
     "points": 1
    },
    {
@@ -26235,7 +26235,7 @@
   "explanation": "Phase A établit Vision et alignement initial.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "d1b1d312"
+  "rev": "e5fd7bf0"
  },
  {
   "id": "togaf-f101-mock06-q11",
@@ -26321,13 +26321,13 @@
   "options": [
    {
     "key": "A",
-    "text": "Phase C Application — services et interactions applicatifs",
-    "points": 1
+    "text": "Phase B — définir services et processus métier indépendants des applications",
+    "points": 0
    },
    {
     "key": "B",
-    "text": "Phase B — définir services et processus métier indépendants des applications",
-    "points": 0
+    "text": "Phase C Application — services et interactions applicatifs",
+    "points": 1
    },
    {
     "key": "C",
@@ -26343,7 +26343,7 @@
   "explanation": "services applicatifs = C Application.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "c090e10f"
+  "rev": "efd86927"
  },
  {
   "id": "togaf-f101-mock06-q14",
@@ -26542,8 +26542,8 @@
    },
    {
     "key": "B",
-    "text": "Phase G uniquement — vérifier seulement les exigences à la réception",
-    "points": 0
+    "text": "Requirements Management — fonction transverse à toutes les phases ADM",
+    "points": 1
    },
    {
     "key": "C",
@@ -26552,14 +26552,14 @@
    },
    {
     "key": "D",
-    "text": "Requirements Management — fonction transverse qui interagit avec toutes les phases ADM",
-    "points": 1
+    "text": "Phase G uniquement — vérifier seulement les exigences à la réception",
+    "points": 0
    }
   ],
   "explanation": "Requirements Management interagit avec toutes les phases.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "de3397b5"
+  "rev": "f9c85b12"
  },
  {
   "id": "togaf-f101-mock06-q20",
@@ -26578,7 +26578,7 @@
    },
    {
     "key": "B",
-    "text": "Elle permet de revisiter phases/domaines lorsque l'apprentissage ou le changement l'exige",
+    "text": "On peut revisiter phases et domaines dès que le changement l'exige",
     "points": 1
    },
    {
@@ -26595,7 +26595,7 @@
   "explanation": "l'itération permet de revisiter le travail lorsque nécessaire.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "3c8c8da4"
+  "rev": "c97d6508"
  },
  {
   "id": "togaf-f101-mock06-q21",
@@ -26799,19 +26799,19 @@
    },
    {
     "key": "C",
-    "text": "Content Metamodel — types d'entités et relations du référentiel",
+    "text": "Enterprise Metamodel — types d'entités et relations du référentiel",
     "points": 0
    },
    {
     "key": "D",
-    "text": "Business Transformation Readiness Assessment — évaluation des capacités de transformation",
+    "text": "Business Transformation Readiness Assessment — aptitude au changement",
     "points": 1
    }
   ],
   "explanation": "Transformation Readiness.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "d7ac93b4"
+  "rev": "d7beb087"
  },
  {
   "id": "togaf-f101-mock06-q27",
@@ -26933,7 +26933,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Conserver des principes et une Vision cohérents tout en itérant sur les domaines et exigences selon les retours des produits.",
+    "text": "Conserver principes et Vision cohérents tout en itérant selon les retours des produits.",
     "points": 1
    },
    {
@@ -26955,7 +26955,7 @@
   "explanation": "TOGAF permet itération et tailoring sans perdre la traçabilité ni les autorités de décision.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "b9e79065"
+  "rev": "6bfa6d12"
  },
  {
   "id": "togaf-f101-mock06-q31",
@@ -27051,7 +27051,7 @@
    },
    {
     "key": "C",
-    "text": "Architecture Board — instance de gouvernance et d'arbitrage des décisions d'architecture",
+    "text": "Architecture Board — instance d'arbitrage des décisions d'architecture",
     "points": 1
    },
    {
@@ -27063,7 +27063,7 @@
   "explanation": "Architecture Board = autorité de gouvernance.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "2fceab6c"
+  "rev": "32c3600d"
  },
  {
   "id": "togaf-f101-mock06-q34",
@@ -27077,8 +27077,8 @@
   "options": [
    {
     "key": "A",
-    "text": "Architecture Contract précisant engagements, responsabilités et critères de conformité convenus.",
-    "points": 1
+    "text": "Architecture Metamodel, qui accepte automatiquement les demandes de dérogation.",
+    "points": 0
    },
    {
     "key": "B",
@@ -27092,14 +27092,14 @@
    },
    {
     "key": "D",
-    "text": "Architecture Metamodel, qui accepte automatiquement les demandes de dérogation.",
-    "points": 0
+    "text": "Architecture Contract précisant engagements, responsabilités et critères de conformité convenus.",
+    "points": 1
    }
   ],
   "explanation": "Le Contract définit des engagements entre les parties et peut guider les Compliance Reviews.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "def2022f"
+  "rev": "71beb04e"
  },
  {
   "id": "togaf-f101-mock06-q35",
@@ -27221,13 +27221,13 @@
   "options": [
    {
     "key": "A",
-    "text": "Chaque building block devient un deliverable distinct dès que son diagramme est approuvé.",
-    "points": 0
+    "text": "Un deliverable formel peut contenir plusieurs artifacts représentant des building blocks et leurs liens.",
+    "points": 1
    },
    {
     "key": "B",
-    "text": "Un deliverable formel peut contenir plusieurs artifacts représentant des building blocks et leurs liens.",
-    "points": 1
+    "text": "Chaque building block devient un deliverable distinct dès que son diagramme est approuvé.",
+    "points": 0
    },
    {
     "key": "C",
@@ -27243,7 +27243,7 @@
   "explanation": "Le Content Framework articule livrables, représentations et éléments d'architecture.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "0ce98265"
+  "rev": "496f34de"
  },
  {
   "id": "togaf-f101-mock06-q39",
@@ -27308,14 +27308,14 @@
    },
    {
     "key": "D",
-    "text": "Content Metamodel — types d'entités et leurs relations",
+    "text": "Enterprise Metamodel — types d'entités et leurs relations",
     "points": 1
    }
   ],
-  "explanation": "Content Metamodel définit types d'objets et relations.",
+  "explanation": "L'Enterprise Metamodel définit types d'objets et relations.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "2a2b70f5"
+  "rev": "476d433e"
  },
  {
   "id": "togaf-f102-mock06-p1",
@@ -27341,13 +27341,13 @@
    },
    {
     "key": "C",
-    "text": "Confier la cohérence globale au fournisseur principal, puis internaliser les décisions d'architecture après la première mise en production.",
+    "text": "Confier la cohérence globale au fournisseur principal, puis internaliser les décisions d'architecture après la première mise en production réussie.",
     "points": 0,
     "rationale": "Déléguer la cohérence à un fournisseur reporte les responsabilités d'architecture sans capacité de décision interne."
    },
    {
     "key": "D",
-    "text": "Renforcer en priorité capacité, gouvernance, compétences, repository et tailoring afin de soutenir les transformations, avec une approche de gouvernance par priorités, des rôles nommés et une trajectoire de montée en capacité.",
+    "text": "Renforcer en priorité la capacité d'architecture : gouvernance, rôles nommés, compétences et repository.",
     "points": 5,
     "rationale": "La pratique d'architecture doit permettre de guider plusieurs changements en cohérence."
    }
@@ -27355,7 +27355,7 @@
   "explanation": "La pratique d'architecture doit permettre de guider plusieurs changements en cohérence.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "20735387"
+  "rev": "6897a645"
  },
  {
   "id": "togaf-f102-mock06-p2",
@@ -27369,7 +27369,7 @@
   "options": [
    {
     "key": "A",
-    "text": "L'intégrer comme stakeholder, clarifier concerns et requirements de conformité, puis adapter les views et décisions, avec identification des concerns, consultation des owners et adaptation des views avant approbation.",
+    "text": "L'intégrer comme stakeholder, clarifier ses concerns et requirements de conformité, puis adapter les views et les décisions avant approbation.",
     "points": 5,
     "rationale": "Les acteurs réglementaires critiques doivent peser sur la Target, pas être informés seulement après."
    },
@@ -27395,7 +27395,7 @@
   "explanation": "Les acteurs réglementaires critiques doivent peser sur la Target, pas être informés seulement après.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "5dd10d6a"
+  "rev": "58d370f4"
  },
  {
   "id": "togaf-f102-mock06-p3",
@@ -27421,7 +27421,7 @@
    },
    {
     "key": "C",
-    "text": "Revenir au cadrage Phase A pour clarifier drivers, outcomes, stakeholders et Vision tout en conservant les requirements utiles, en reliant drivers, outcomes, stakeholders et scope à une Architecture Vision défendable.",
+    "text": "Revenir au cadrage de Phase A pour relier drivers, outcomes, stakeholders et scope à une Architecture Vision défendable, en conservant les requirements utiles.",
     "points": 5,
     "rationale": "Les requirements détaillées ne compensent pas l'absence de drivers et de business value en Phase A."
    },
@@ -27435,7 +27435,7 @@
   "explanation": "Les requirements détaillées ne compensent pas l'absence de drivers et de business value en Phase A.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "e25d142c"
+  "rev": "0762ac09"
  },
  {
   "id": "togaf-f102-mock06-p4",
@@ -27449,7 +27449,7 @@
   "options": [
    {
     "key": "A",
-    "text": "Revoir la Technology Architecture et ses gaps en cohérence avec les requirements avant Phase E, en revisitant les contraintes de latence, les options technologiques et les dépendances B/C/D.",
+    "text": "Revoir la Technology Architecture et ses gaps au regard des exigences de latence avant Phase E.",
     "points": 5,
     "rationale": "La cible technologique doit être cohérente avec les exigences et choix des domaines précédents."
    },
@@ -27461,7 +27461,7 @@
    },
    {
     "key": "C",
-    "text": "Introduire un traitement prioritaire dans le batch existant pour un sous-ensemble de flux, puis mesurer si le SLA est atteint.",
+    "text": "Introduire un traitement prioritaire dans le batch existant pour un sous-ensemble de flux, puis mesurer si le SLA est atteint sur un trimestre.",
     "points": 1,
     "rationale": "Un batch prioritaire peut traiter un sous-ensemble, sans démontrer la latence temps réel de la Target."
    },
@@ -27475,7 +27475,7 @@
   "explanation": "La cible technologique doit être cohérente avec les exigences et choix des domaines précédents.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "3042022d"
+  "rev": "8ccc64e8"
  },
  {
   "id": "togaf-f102-mock06-p5",
@@ -27495,7 +27495,7 @@
    },
    {
     "key": "B",
-    "text": "Utiliser Phase F pour évaluer dépendances, valeur, risques et séquencer le plan, en classant lots, risques, valeur, coûts et dépendances dans le plan final.",
+    "text": "Utiliser la Phase F pour évaluer les dépendances, la valeur, les risques et les coûts des lots, puis séquencer le plan final.",
     "points": 5,
     "rationale": "L'existence d'une Transition Architecture ne démontre pas la viabilité de son plan."
    },
@@ -27515,7 +27515,7 @@
   "explanation": "L'existence d'une Transition Architecture ne démontre pas la viabilité de son plan.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "9b843a78"
+  "rev": "5f6b4ca1"
  },
  {
   "id": "togaf-f102-mock06-p6",
@@ -27541,7 +27541,7 @@
    },
    {
     "key": "C",
-    "text": "Évaluer les drivers et la performance de l'architecture, puis décider de l'évolution ou d'un nouveau cycle, en comparant la valeur réellement délivrée aux business drivers actuels et en classant l'impact de changement.",
+    "text": "Comparer la valeur réellement délivrée aux business drivers actuels, classer l'impact du changement, puis décider d'une évolution ou d'un nouveau cycle.",
     "points": 5,
     "rationale": "La Phase H considère aussi l'obsolescence de valeur et l'évolution des drivers métier."
    },
@@ -27555,7 +27555,7 @@
   "explanation": "La Phase H considère aussi l'obsolescence de valeur et l'évolution des drivers métier.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "8eeec1cf"
+  "rev": "e446c882"
  },
  {
   "id": "togaf-f102-mock06-p7",
@@ -27587,7 +27587,7 @@
    },
    {
     "key": "D",
-    "text": "Mettre à jour la requirement, utiliser la traceability pour identifier les impacts et déclencher les itérations nécessaires, en établissant un Requirements Impact Assessment traçant les building blocks, décisions et migrations concernés.",
+    "text": "Mettre à jour la requirement et tracer ses impacts (building blocks, décisions, migrations) pour lancer les itérations utiles.",
     "points": 5,
     "rationale": "L'impact de requirements doit être propagé et gouverné transversalement."
    }
@@ -27595,7 +27595,7 @@
   "explanation": "L'impact de requirements doit être propagé et gouverné transversalement.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "71a7bae9"
+  "rev": "bd7acd12"
  },
  {
   "id": "togaf-f102-mock06-p8",
@@ -27615,13 +27615,13 @@
    },
    {
     "key": "B",
-    "text": "Utiliser les techniques de migration planning et risk management pour comparer valeur, dépendances, readiness et risque, en utilisant readiness, facteurs d'implémentation, matrice de dépendances et arbitrage valeur-risque.",
+    "text": "Comparer valeur, dépendances, readiness et risques des deux trajectoires au moyen des techniques de migration planning.",
     "points": 5,
     "rationale": "Les techniques de migration évaluent la faisabilité réelle, pas uniquement les bénéfices affichés."
    },
    {
     "key": "C",
-    "text": "Réduire le coût de la coexistence avec un pilote limité, sans résoudre la dépendance d'identité sur toutes les waves.",
+    "text": "Réduire le coût de la coexistence avec un pilote limité, sans résoudre la dépendance d'identité sur toutes les waves ni son effet sur le calendrier.",
     "points": 1,
     "rationale": "Un pilote limité de coexistence ne résout pas la dépendance IAM commune aux autres waves."
    },
@@ -27635,6 +27635,6 @@
   "explanation": "Les techniques de migration évaluent la faisabilité réelle, pas uniquement les bénéfices affichés.",
   "topic": "",
   "source": "11-mock-exams/mock-06-exam.md",
-  "rev": "9bc1def0"
+  "rev": "dba3cf38"
  }
 ]

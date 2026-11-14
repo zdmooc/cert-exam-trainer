@@ -155,5 +155,73 @@
     "file": "objectives.json",
     "label": "Objectifs X2202",
     "note": "Rattachement issu de la matrice de traçabilité du dépôt de cours : associations candidates, non relues, à confronter au syllabus officiel X2202."
+  },
+  "quality": {
+    "maxLongestBestShare": 0.4
+  },
+  "guide": {
+    "label": "Jour J",
+    "sub": "Réserver et passer l'examen",
+    "verified": "2026-11-14",
+    "sections": [
+      {
+        "title": "Réserver",
+        "steps": true,
+        "items": [
+          {
+            "text": "Se connecter à son compte The Open Group (gratuit, une adresse e-mail personnelle convient).",
+            "url": "https://certification.opengroup.org/take-exam"
+          },
+          "Suivre le lien vers Pearson VUE.",
+          "Choisir le code en français : OGEA-F101 (Foundation) ou OGEA-F102 (Practitioner). OGEA-101 et OGEA-102 sont les versions anglaises ; les codes OG0 sont les anciens examens TOGAF 9.2.",
+          "Choisir le mode : en ligne surveillé (OnVUE) ou en centre d'examen.",
+          "Choisir le créneau. En OnVUE, vérifier a.m. / p.m. : « 12:00 a.m. » signifie minuit.",
+          "Payer ou saisir un code voucher.",
+          "Pour OnVUE : faire le test système sur l'ordinateur et la connexion du jour J."
+        ]
+      },
+      {
+        "title": "À vérifier avant",
+        "items": [
+          "Le prénom et le nom du compte sont identiques à ceux de la pièce d'identité.",
+          "Le rendez-vous dure environ 15 minutes de plus que l'examen (accueil, tutoriel, accord de confidentialité).",
+          "Report ou annulation : au plus tard 48 heures avant, sinon le candidat est noté absent."
+        ]
+      },
+      {
+        "title": "Particularités de la Foundation",
+        "exams": [
+          "f101"
+        ],
+        "items": [
+          "Documentation fermée : aucun support pendant l'examen.",
+          "Pas de temps supplémentaire ESL : il est réservé aux examens passés en anglais."
+        ]
+      },
+      {
+        "title": "Particularités de la Practitioner",
+        "exams": [
+          "f102"
+        ],
+        "items": [
+          "Documentation ouverte : le référentiel électronique est intégré à l'examen (bouton REFERENCE). Aucun livre papier.",
+          "Prérequis : Foundation obtenue, ou Part 1 réussie le même jour dans le même centre.",
+          "À confirmer avant de réserver : la langue du référentiel intégré. La fiche officielle ne la précise pas pour OGEA-F102."
+        ]
+      },
+      {
+        "title": "Après l'examen",
+        "items": [
+          "Le résultat s'affiche quelques minutes après la fin.",
+          "Les informations pour finaliser la certification arrivent par e-mail sous six jours ouvrés.",
+          "En cas d'échec : nouvelle tentative au plus tôt un mois après."
+        ]
+      }
+    ],
+    "sources": [
+      "The Open Group, « TOGAF Examinations » (fiche de synthèse, septembre 2025)",
+      "The Open Group, « Advice for Candidates Taking Exams with Pearson VUE », version 1.31 (janvier 2024)"
+    ],
+    "note": "Ces règles peuvent évoluer : l'écran de réservation Pearson VUE et la confirmation de rendez-vous font foi."
   }
 }
