@@ -19,6 +19,13 @@
 | `domains[] {id, label, count}` | `adm`, « Introduction à l'ADM », 14 | Répartition officielle |
 | `openBook` | `false` | Information affichée |
 
+Champs facultatifs au niveau du pack :
+
+| Champ | Rôle |
+| --- | --- |
+| `guide {label, sub, verified, sections[], sources[], note}` | Écran pratique « Jour J ». Chaque section a un `title`, des `items` (texte, ou `{text, url}`), `steps: true` pour une liste numérotée, et `exams: [...]` pour ne l'afficher que pour certains examens. Le format de l'examen (questions, durée, seuil) est repris de la définition d'examen, sans double saisie |
+| `quality.maxLongestBestShare` | Part maximale de questions dont la meilleure réponse est la plus longue, mesurée par examen (banque et examens blancs séparément). Dépassement bloquant à la validation ; sans ce champ, la mesure est seulement affichée. TOGAF : 0,40 (≈ 0,25 attendu sans biais) |
+
 ## Question (`questions.json`)
 
 ```json

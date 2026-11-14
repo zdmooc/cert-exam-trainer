@@ -33,7 +33,11 @@ const domainLabel = (id) => exam()?.domains.find((d) => d.id === id)?.label ?? i
 const objectiveText = (q) => {
   const ids = [...new Set([...(q.los ?? []), ...(q.lo && !/U\d$/.test(q.lo) ? [q.lo] : [])])];
   if (!ids.length) return q.lo ? `Objectif X2202 ${q.lo}` : '';
-  return `Objectif${ids.length > 1 ? 's' : ''} X2202 ${ids.join(', ')}${q.los ? ' (rattachement candidat)' : ''}`;
+  const withLabel = ids.map((id) => {
+    const label = S.objectives.find((o) => o.id === id)?.label;
+    return label ? `${id} « ${label} »` : id;
+  });
+  return `Objectif${ids.length > 1 ? 's' : ''} X2202 ${withLabel.join(', ')}${q.los ? ' (rattachement candidat)' : ''}`;
 };
 const readiness = () => bookingReadiness(S.progress.sessions, exam());
 const readinessBadge = (r) => (r.ready
@@ -71,7 +75,7 @@ function render() {
   let view = currentView();
   if (['session', 'result'].includes(view) && !S.session) view = 'home';
   $homeBtn.style.visibility = view === 'home' ? 'hidden' : 'visible';
-  const views = { home: viewHome, train: viewTrain, exam: viewExam, session: viewSession, result: viewResult, stats: viewStats };
+  const views = { home: viewHome, train: viewTrain, exam: viewExam, session: viewSession, result: viewResult, stats: viewStats, guide: viewGuide };
   $view.innerHTML = (views[view] ?? viewHome)();
   updateTimer();
   window.scrollTo(0, 0);
@@ -118,8 +122,38 @@ function viewHome() {
     ${e.official ? `<p class="muted small center">Examen réel : ${esc(e.official)}</p>` : ''}
     <button class="btn" data-action="review-errors"><span>Revoir mes erreurs<span class="sub">${st.review ? `${st.review} question(s) ratée(s) non maîtrisée(s)` : 'Aucune erreur à revoir pour l’instant'}</span></span></button>
     <button class="btn" data-action="go" data-view="stats"><span>Progression<span class="sub">Par domaine et historique des examens</span></span></button>
+    ${S.pack.guide ? `<button class="btn" data-action="go" data-view="guide"><span>${esc(S.pack.guide.label)}<span class="sub">${esc(S.pack.guide.sub ?? '')}</span></span></button>` : ''}
     ${S.store.persistent ? '' : '<p class="muted small center">Stockage indisponible dans ce navigateur : la progression sera perdue à la fermeture.</p>'}
     <p class="muted small center">${esc(S.pack.disclaimer)}</p>`;
+}
+
+// Guide pratique du pack (« Jour J ») : rappel du format de l'examen choisi, puis les sections
+// déclarées dans pack.json. Une section peut être réservée à certains examens (champ « exams »).
+function viewGuide() {
+  const g = S.pack.guide;
+  if (!g) return viewHome();
+  $title.textContent = g.label;
+  const e = exam();
+  const r = readiness();
+  const item = (it) => (typeof it === 'string' ? esc(it) : `${esc(it.text)}${it.url ? ` <a href="${esc(it.url)}" target="_blank" rel="noopener">Ouvrir</a>` : ''}`);
+  const sections = g.sections.filter((s) => !s.exams || s.exams.includes(e.id));
+  const verified = g.verified ? new Date(`${g.verified}T00:00:00`).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+  return `
+    <div class="seg" role="group" aria-label="Examen">
+      ${S.pack.exams.map((x) => `<button data-action="set-exam" data-exam="${x.id}" aria-pressed="${x.id === S.examId}">${esc(x.name)}</button>`).join('')}
+    </div>
+    <div class="card">
+      <h3>${esc(e.name)}</h3>
+      <ul class="guide">
+        <li>${e.questionCount} questions · ${e.durationMinutes} minutes</li>
+        ${e.passMark != null ? `<li>Réussite : ${e.passMark}/${e.maxPoints}</li>` : ''}
+        ${e.openBook != null ? `<li>Documentation ${e.openBook ? 'ouverte' : 'fermée'}</li>` : ''}
+      </ul>
+      <div class="row"><span class="muted small">Ton objectif avant de réserver : ${e.goMark}/${e.maxPoints} sur ${r.required} examens blancs consécutifs</span>${readinessBadge(r)}</div>
+    </div>
+    ${sections.map((s) => `<div class="card"><h3>${esc(s.title)}</h3>
+      <${s.steps ? 'ol' : 'ul'} class="guide">${s.items.map((it) => `<li>${item(it)}</li>`).join('')}</${s.steps ? 'ol' : 'ul'}></div>`).join('')}
+    <p class="muted small">${verified ? `Vérifié le ${esc(verified)}. ` : ''}${g.sources?.length ? `Sources : ${g.sources.map(esc).join(' ; ')}. ` : ''}${esc(g.note ?? '')}</p>`;
 }
 
 const STRATEGY_INFO = {
