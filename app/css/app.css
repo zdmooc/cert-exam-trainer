@@ -129,3 +129,6 @@ details.unit[open] summary { margin-bottom: 6px; }
 .guide li { margin: 6px 0; line-height: 1.4; }
 .guide a { white-space: nowrap; }
 .card h3 { margin-top: 0; }
+.linkrow { display: flex; justify-content: space-between; align-items: center; gap: 8px; width: 100%; padding: 6px 0; background: none; border: 0; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.unit p { margin: 6px 0 4px; }
+.unit summary .muted { display: block; font-weight: 400; }

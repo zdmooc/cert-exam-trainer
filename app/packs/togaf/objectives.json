@@ -140,7 +140,105 @@
   "course": "01-togaf-foundations/10-x2202-foundation-deepening.md",
   "bloom": "1_Remembering",
   "review": "Candidat précis — non relu",
-  "questionCount": 22
+  "questionCount": 22,
+  "terms": [
+   {
+    "term": "Enterprise",
+    "text": "Ensemble d'organisations ou de parties ayant des objectifs communs, indépendamment de leur statut juridique"
+   },
+   {
+    "term": "Architecture Model",
+    "text": "Représentation simplifiée d'un aspect de l'architecture"
+   },
+   {
+    "term": "Modeling",
+    "text": "Activité de création ou de maintien des modèles"
+   },
+   {
+    "term": "Metamodel",
+    "text": "Définit les types d'éléments, leurs propriétés et relations"
+   },
+   {
+    "term": "Artifact",
+    "text": "Représentation de contenu : Catalog, Matrix ou Diagram"
+   },
+   {
+    "term": "Deliverable",
+    "text": "Produit de travail formel soumis à revue/approbation"
+   },
+   {
+    "term": "Building Block",
+    "text": "Élément potentiellement réutilisable décrivant ou réalisant une capacité"
+   },
+   {
+    "term": "Capability",
+    "text": "Aptitude à atteindre un résultat métier, sans présupposer l'application"
+   },
+   {
+    "term": "Business Model",
+    "text": "Logique de création, de délivrance et de capture de valeur"
+   },
+   {
+    "term": "Business Architecture",
+    "text": "Structure des capacités, services, organisation et processus métier"
+   },
+   {
+    "term": "Data Architecture",
+    "text": "Organisation, gouvernance et échange des données"
+   },
+   {
+    "term": "Digital Architecture",
+    "text": "Architecture d'un système ou service numérique, articulant expériences, capacités, données, applications et technologies ; ne désigne pas une phase ADM distincte"
+   },
+   {
+    "term": "Application Architecture",
+    "text": "Structure des services applicatifs et de leurs interactions"
+   },
+   {
+    "term": "Technology Architecture",
+    "text": "Plateformes, services techniques et infrastructures"
+   },
+   {
+    "term": "Architecture Landscape",
+    "text": "Ensemble cohérent d'états architecturaux, selon les niveaux et les horizons"
+   },
+   {
+    "term": "Strategic Architecture",
+    "text": "Vue large de transformation à long horizon"
+   },
+   {
+    "term": "Segment Architecture",
+    "text": "Architecture d'un périmètre métier ou organisationnel délimité"
+   },
+   {
+    "term": "Capability Architecture",
+    "text": "Vue centrée sur une capacité et ses dépendances"
+   },
+   {
+    "term": "Transition Architecture",
+    "text": "État intermédiaire cohérent entre Baseline et Target"
+   },
+   {
+    "term": "Gap",
+    "text": "Différence établie entre l'existant et la cible"
+   },
+   {
+    "term": "Requirement",
+    "text": "Condition ou capacité exigée, analysable et vérifiable"
+   },
+   {
+    "term": "Role",
+    "text": "Ensemble de responsabilités associées à une fonction"
+   },
+   {
+    "term": "Stakeholder",
+    "text": "Partie concernée ou affectée par l'architecture"
+   },
+   {
+    "term": "Work Package",
+    "text": "Ensemble cohérent de travaux pour réaliser le changement"
+   }
+  ]
  },
  {
   "id": "L1.3.1",

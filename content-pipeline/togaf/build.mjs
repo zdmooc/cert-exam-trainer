@@ -330,6 +330,21 @@ function expandRefs(cell, ctx) {
   return ids;
 }
 
+// Glossaire prioritaire du cours (tableau « Terme | Distinction à retenir ») : rattaché à l'objectif
+// « Définitions » pour être révisé dans le parcours, même si aucun terme n'est interrogé isolément.
+const GLOSSARY = { objective: 'L1.2.1', file: '01-togaf-foundations/10-x2202-foundation-deepening.md', heading: /^## 2\. Glossaire prioritaire/m };
+function glossaryTerms() {
+  const text = read(GLOSSARY.file);
+  const start = text.search(GLOSSARY.heading);
+  if (start < 0) throw new Error(`Glossaire introuvable dans ${GLOSSARY.file}`);
+  const section = text.slice(start).split(/\n## /)[0];
+  const terms = [...section.matchAll(/^\| ([^|\n]+?) \| ([^|\n]+?) \|\s*$/gm)]
+    .map((m) => ({ term: plain(m[1]), text: plain(m[2]) }))
+    .filter((t) => t.term !== 'Terme' && !/^-+$/.test(t.term));
+  if (terms.length < 10) throw new Error(`Glossaire : seulement ${terms.length} terme(s) lus dans ${GLOSSARY.file}`);
+  return terms;
+}
+
 const byId = new Map(questions.map((q) => [q.id, q]));
 const objectives = [];
 const unknownRefs = [];
@@ -357,6 +372,7 @@ for (const line of matrixText.split('\n')) {
     bloom: (status.match(/Bloom officiel\s*:\s*([\w_]+)/) ?? [])[1] ?? null,
     review: plain(status.split(';')[0]),
     questionCount: refs.filter((r) => byId.has(r)).length,
+    ...(id === GLOSSARY.objective ? { terms: glossaryTerms() } : {}),
   });
 }
 if (objectives.length === 0) throw new Error(`${MATRIX} : aucun objectif lu`);

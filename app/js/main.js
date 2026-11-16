@@ -20,7 +20,7 @@ const $timer = document.getElementById('timer');
 const $homeBtn = document.getElementById('home-btn');
 
 const S = {
-  packs: [], pack: null, questions: [], byId: new Map(), objectives: [], store: null,
+  packs: [], pack: null, questions: [], byId: new Map(), objectives: [], store: null, path: {}, fromPath: false,
   examId: null, progress: emptyProgress(), session: null,
   setup: { strategy: 'adaptive', count: 20, domains: [], series: [] },
   confirm: null, showGrid: false,
@@ -54,7 +54,7 @@ function save() {
   S.store.set('progress', S.progress);
   if (S.session && S.session.status === 'in_progress') S.store.set('session', S.session);
   else S.store.remove('session');
-  S.store.set('prefs', { examId: S.examId, setup: S.setup });
+  S.store.set('prefs', { examId: S.examId, setup: S.setup, path: S.path });
 }
 
 // ---------- Navigation ----------
@@ -75,7 +75,7 @@ function render() {
   let view = currentView();
   if (['session', 'result'].includes(view) && !S.session) view = 'home';
   $homeBtn.style.visibility = view === 'home' ? 'hidden' : 'visible';
-  const views = { home: viewHome, train: viewTrain, exam: viewExam, session: viewSession, result: viewResult, stats: viewStats, guide: viewGuide };
+  const views = { home: viewHome, train: viewTrain, exam: viewExam, session: viewSession, result: viewResult, stats: viewStats, guide: viewGuide, revise: viewRevise, objective: viewObjective };
   $view.innerHTML = (views[view] ?? viewHome)();
   updateTimer();
   window.scrollTo(0, 0);
@@ -122,9 +122,78 @@ function viewHome() {
     ${e.official ? `<p class="muted small center">Examen réel : ${esc(e.official)}</p>` : ''}
     <button class="btn" data-action="review-errors"><span>Revoir mes erreurs<span class="sub">${st.review ? `${st.review} question(s) ratée(s) non maîtrisée(s)` : 'Aucune erreur à revoir pour l’instant'}</span></span></button>
     <button class="btn" data-action="go" data-view="stats"><span>Progression<span class="sub">Par domaine et historique des examens</span></span></button>
+    ${pathItems().length ? `<button class="btn" data-action="go" data-view="revise"><span>Révision<span class="sub">Le programme, objectif par objectif</span></span></button>` : ''}
     ${S.pack.guide ? `<button class="btn" data-action="go" data-view="guide"><span>${esc(S.pack.guide.label)}<span class="sub">${esc(S.pack.guide.sub ?? '')}</span></span></button>` : ''}
     ${S.store.persistent ? '' : '<p class="muted small center">Stockage indisponible dans ce navigateur : la progression sera perdue à la fermeture.</p>'}
     <p class="muted small center">${esc(S.pack.disclaimer)}</p>`;
+}
+
+// ---------- Révision : parcours séquentiel du programme ----------
+// Les objectifs du niveau de l'examen choisi, dans l'ordre du programme, regroupés par catégorie (unité).
+// La position est mémorisée par examen ; « Reprendre » ramène au dernier objectif ouvert.
+
+function pathItems() {
+  const level = exam()?.objectiveLevel;
+  const objs = S.objectives.filter((o) => o.level === level);
+  return objs.length ? summarizeObjectives(objs, S.questions, S.progress).items : [];
+}
+const pathCurrent = () => pathItems().find((o) => o.id === S.path[S.examId]);
+const statusBadge = (o) => (o.questions ? `<span class="badge ${STATUS_INFO[o.status][1]}">${STATUS_INFO[o.status][0]}</span>` : '<span class="badge">Sans question</span>');
+
+function viewRevise() {
+  $title.textContent = 'Révision';
+  const items = pathItems();
+  if (!items.length) return '<p class="muted">Ce pack ne décrit pas de programme à parcourir.</p><button class="btn" data-action="home">Retour à l’accueil</button>';
+  const withQ = items.filter((i) => i.questions > 0);
+  const acquired = withQ.filter((i) => i.status === 'acquired').length;
+  const current = pathCurrent();
+  const next = current ?? items[0];
+  const units = [...new Set(items.map((i) => i.unit))];
+  return `
+    <div class="seg" role="group" aria-label="Examen">
+      ${S.pack.exams.map((x) => `<button data-action="set-exam" data-exam="${x.id}" aria-pressed="${x.id === S.examId}">${esc(x.name)}</button>`).join('')}
+    </div>
+    <div class="card">
+      <div class="row"><span><b>${items.length} objectifs</b> en ${units.length} catégories</span><span class="badge ${acquired === withQ.length ? 'ok' : ''}">${acquired}/${withQ.length} acquis</span></div>
+      <div class="progress"><i class="ok" style="width:${withQ.length ? Math.round((100 * acquired) / withQ.length) : 0}%"></i></div>
+      <button class="btn primary" data-action="open-objective" data-objective="${next.id}"><span>${current ? 'Reprendre le parcours' : 'Commencer le parcours'}<span class="sub">${next.id} · ${esc(next.label)}</span></span></button>
+    </div>
+    ${units.map((u) => {
+      const list = items.filter((i) => i.unit === u);
+      const acq = list.filter((i) => i.status === 'acquired').length;
+      const total = list.filter((i) => i.questions).length;
+      return `<details class="unit"${current?.unit === u ? ' open' : ''}><summary><b>${u}. ${esc(list[0].unitLabel)}</b> <span class="muted small">${list.length} objectif${list.length > 1 ? 's' : ''} · ${acq}/${total} acquis</span></summary>
+        <ul class="list">${list.map((o) => `<li><button class="linkrow" data-action="open-objective" data-objective="${o.id}">
+          <span><b>${o.id}</b> ${esc(o.label)}</span>${statusBadge(o)}</button></li>`).join('')}</ul></details>`;
+    }).join('')}
+    <p class="muted small">${esc(S.pack.objectives.note ?? '')}</p>`;
+}
+
+function viewObjective() {
+  const items = pathItems();
+  const k = items.findIndex((o) => o.id === S.path[S.examId]);
+  if (k < 0) return viewRevise();
+  const o = items[k];
+  const inUnit = items.filter((i) => i.unit === o.unit);
+  $title.textContent = `Révision · ${o.id}`;
+  const prev = items[k - 1];
+  const next = items[k + 1];
+  return `
+    <p class="muted small">${o.unit}. ${esc(o.unitLabel)} · objectif ${inUnit.indexOf(o) + 1} sur ${inUnit.length} · ${k + 1} sur ${items.length} au total</p>
+    <div class="card">
+      <div class="row"><h3>${esc(o.label)}</h3>${statusBadge(o)}</div>
+      <p class="muted small">${o.id}${o.questions ? ` · ${o.questions} question${o.questions > 1 ? 's' : ''}` : ''}${o.answers ? ` · ${o.answers} réponse${o.answers > 1 ? 's' : ''}, ${Math.round(100 * o.rate)} % de réussite` : ''}${o.review ? ` · ${o.review} à revoir` : ''}</p>
+      ${o.questions ? `<button class="btn primary" data-action="train-path" data-objective="${o.id}"><span>S’entraîner sur cet objectif<span class="sub">${o.questions} question${o.questions > 1 ? 's' : ''}, dans l’ordre, avec explication</span></span></button>` : '<p class="muted small">Aucune question n’est rattachée à cet objectif.</p>'}
+      ${o.course ? `<p class="small"><a href="${esc(`${S.pack.source}/blob/main/${o.course}`)}" target="_blank" rel="noopener">Ouvrir la fiche de cours</a></p>` : ''}
+    </div>
+    ${o.terms?.length ? `<h3>${o.terms.length} définitions à connaître</h3>
+      ${o.terms.map((t) => `<details class="unit"><summary><b>${esc(t.term)}</b></summary><p>${esc(t.text)}</p></details>`).join('')}
+      <p class="muted small">Touche un terme pour afficher sa définition : essaie d’abord de la formuler.</p>` : ''}
+    <div class="row" style="gap:8px;margin-top:12px">
+      ${prev ? `<button class="btn" data-action="open-objective" data-objective="${prev.id}">Précédent</button>` : '<span></span>'}
+      ${next ? `<button class="btn" data-action="open-objective" data-objective="${next.id}">Suivant</button>` : '<span class="badge ok">Fin du programme</span>'}
+    </div>
+    <button class="btn" data-action="go" data-view="revise">Toutes les catégories</button>`;
 }
 
 // Guide pratique du pack (« Jour J ») : rappel du format de l'examen choisi, puis les sections
@@ -327,7 +396,8 @@ function viewResult() {
       return `<button class="${ok ? 'ok' : 'ko'}" data-action="review" data-index="${k}">${k + 1}</button>`;
     }).join('')}</div>
     <p class="muted small">Touche un numéro pour revoir la question et son explication.</p>
-    <button class="btn primary" data-action="home">Retour à l’accueil</button>`;
+    ${S.fromPath && pathCurrent() ? '<button class="btn primary" data-action="path-back">Retour au parcours</button>' : ''}
+    <button class="btn${S.fromPath ? '' : ' primary'}" data-action="home">Retour à l’accueil</button>`;
 }
 
 function viewStats() {
@@ -470,6 +540,7 @@ document.addEventListener('change', (ev) => {
 // ---------- Actions ----------
 
 function startSession(mode, questions, label) {
+  S.fromPath = false;
   const e = exam();
   S.session = createSession({ mode, exam: S.examId, questions, rng: rng(), label, durationMinutes: mode === 'exam' ? e.durationMinutes : null });
   S.showGrid = false;
@@ -570,6 +641,16 @@ const actions = {
   'confirm-finish': () => endSession(),
   cancel: () => render(),
   review: (el) => { S.session = goTo(S.session, Number(el.dataset.index)); S.showGrid = false; navigate('session'); },
+  'open-objective': (el) => { S.path = { ...S.path, [S.examId]: el.dataset.objective }; save(); navigate('objective'); window.scrollTo(0, 0); },
+  'path-back': () => { S.fromPath = false; navigate('objective'); },
+  // Parcours : les questions de l'objectif dans l'ordre de la banque (révision séquentielle, non adaptative).
+  'train-path': (el) => {
+    const qs = [...(questionsByObjective(S.questions).get(el.dataset.objective) ?? [])].filter((q) => q.exam === S.examId);
+    if (!qs.length) return;
+    qs.sort((a, b) => a.id.localeCompare(b.id));
+    startSession('training', qs, `Objectif ${el.dataset.objective}`);
+    S.fromPath = true;
+  },
   'train-objective': (el) => {
     const id = el.dataset.objective;
     const qs = questionsByObjective(S.questions).get(id) ?? [];
@@ -657,6 +738,7 @@ async function loadPack(packId, { home = true } = {}) {
     const prefs = S.store.get('prefs', {});
     S.examId = pack.exams.some((e) => e.id === prefs.examId) ? prefs.examId : pack.exams[0].id;
     S.setup = { ...S.setup, ...(prefs.setup ?? {}) };
+    S.path = prefs.path ?? {};
     S.session = S.store.get('session') ?? S.store.get('lastSession') ?? null;
     // Une session qui référence des questions retirées du pack n'est plus jouable.
     if (S.session && !S.session.items.every((it) => S.byId.has(it.questionId))) {
