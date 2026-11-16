@@ -18,8 +18,15 @@
 | v2 | Export / import de la progression (fichier, fusion sans perte) | Ne pas perdre sa progression en changeant de téléphone | **Livrée** |
 | v2.1 (lot 1) | Empreinte `rev` (progression remise à zéro quand une question change), « Prêt à réserver » sur 3 examens consécutifs | Scores fiables | PR #1 |
 | v2.2 (lot 2) | Rattachement aux 131 objectifs X2202 (matrice du dépôt de cours), progression par objectif, entraînement par objectif | Suivre la couverture du syllabus | PR #2 |
-| v2.3 | Parcours séquentiel Foundation → Practitioner | Apprendre dans l'ordre | À préciser |
+| v2.4 | Écran « Jour J » (réservation et règles d'examen, décrit dans `pack.json`), intitulé de l'objectif X2202 sous chaque explication, contrôle du biais de longueur des réponses dans la validation des packs | Réserver sans erreur ; scores non devinables | **Livrée** (14 nov. 2026) |
+| v2.5 | Série « Formats officiels » : 30 QCM Foundation d'association, de lecture de tableau et à réponses courtes (pack TOGAF : 764 questions) | S'entraîner aux formats réels de l'examen | **Livrée** (14 nov. 2026) |
+| — | Questions sur image (schéma du cycle ADM) : le moteur n'affiche pas encore d'image | Couvrir le dernier format de l'examen | À faire |
+| v2.6 | Écran « Révision » : parcours séquentiel du programme par catégorie (63 objectifs Foundation en 8 catégories, 68 Practitioner), objectif par objectif, avec les 24 définitions du glossaire, les questions de l'objectif dans l'ordre et la reprise à la dernière position | Apprendre dans l'ordre | **Livrée** (16 nov. 2026) |
+| — | Révision : résumé de cours affiché dans l'appli pour chaque objectif (aujourd'hui, lien vers la fiche du dépôt) | Réviser sans quitter l'appli | À faire |
 | — | Mode sombre manuel, recherche d'une question | Confort | À faire |
+| — | Pack TOGAF F102 : scénarios plus longs, proches du format réel ; justification déjà présente pour chaque option, à relire | Entraînement Practitioner plus réaliste | À faire après la Foundation |
+| — | Référence précise au standard TOGAF (partie, chapitre) sur chaque question, en plus de l'objectif X2202 | Vérifier une réponse à la source | À faire (contenu à produire dans le dépôt de cours) |
+| — | Pack Claude : biais de longueur mesuré (bonne réponse la plus longue dans 82 à 100 % des questions), à corriger dans le dépôt source | Scores fiables | À faire |
 | v3 | Deuxième pack (ArchiMate 3.2) sans modifier `js/core` | Prouver la généricité du moteur | À faire |
 | v4 | Synchronisation optionnelle (adaptateur distant) | Multi-appareils | À évaluer |
 

@@ -41,7 +41,7 @@
   "course": "01-togaf-foundations/02-what-is-togaf.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 1
+  "questionCount": 3
  },
  {
   "id": "L1.1.5",
@@ -85,7 +85,7 @@
   "course": "01-togaf-foundations/08-architecture-repository.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 5
+  "questionCount": 6
  },
  {
   "id": "L1.1.9",
@@ -118,7 +118,7 @@
   "course": "03-adm-techniques/06-risk-management.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 2
+  "questionCount": 3
  },
  {
   "id": "L1.1.12",
@@ -140,7 +140,105 @@
   "course": "01-togaf-foundations/10-x2202-foundation-deepening.md",
   "bloom": "1_Remembering",
   "review": "Candidat précis — non relu",
-  "questionCount": 22
+  "questionCount": 22,
+  "terms": [
+   {
+    "term": "Enterprise",
+    "text": "Ensemble d'organisations ou de parties ayant des objectifs communs, indépendamment de leur statut juridique"
+   },
+   {
+    "term": "Architecture Model",
+    "text": "Représentation simplifiée d'un aspect de l'architecture"
+   },
+   {
+    "term": "Modeling",
+    "text": "Activité de création ou de maintien des modèles"
+   },
+   {
+    "term": "Metamodel",
+    "text": "Définit les types d'éléments, leurs propriétés et relations"
+   },
+   {
+    "term": "Artifact",
+    "text": "Représentation de contenu : Catalog, Matrix ou Diagram"
+   },
+   {
+    "term": "Deliverable",
+    "text": "Produit de travail formel soumis à revue/approbation"
+   },
+   {
+    "term": "Building Block",
+    "text": "Élément potentiellement réutilisable décrivant ou réalisant une capacité"
+   },
+   {
+    "term": "Capability",
+    "text": "Aptitude à atteindre un résultat métier, sans présupposer l'application"
+   },
+   {
+    "term": "Business Model",
+    "text": "Logique de création, de délivrance et de capture de valeur"
+   },
+   {
+    "term": "Business Architecture",
+    "text": "Structure des capacités, services, organisation et processus métier"
+   },
+   {
+    "term": "Data Architecture",
+    "text": "Organisation, gouvernance et échange des données"
+   },
+   {
+    "term": "Digital Architecture",
+    "text": "Architecture d'un système ou service numérique, articulant expériences, capacités, données, applications et technologies ; ne désigne pas une phase ADM distincte"
+   },
+   {
+    "term": "Application Architecture",
+    "text": "Structure des services applicatifs et de leurs interactions"
+   },
+   {
+    "term": "Technology Architecture",
+    "text": "Plateformes, services techniques et infrastructures"
+   },
+   {
+    "term": "Architecture Landscape",
+    "text": "Ensemble cohérent d'états architecturaux, selon les niveaux et les horizons"
+   },
+   {
+    "term": "Strategic Architecture",
+    "text": "Vue large de transformation à long horizon"
+   },
+   {
+    "term": "Segment Architecture",
+    "text": "Architecture d'un périmètre métier ou organisationnel délimité"
+   },
+   {
+    "term": "Capability Architecture",
+    "text": "Vue centrée sur une capacité et ses dépendances"
+   },
+   {
+    "term": "Transition Architecture",
+    "text": "État intermédiaire cohérent entre Baseline et Target"
+   },
+   {
+    "term": "Gap",
+    "text": "Différence établie entre l'existant et la cible"
+   },
+   {
+    "term": "Requirement",
+    "text": "Condition ou capacité exigée, analysable et vérifiable"
+   },
+   {
+    "term": "Role",
+    "text": "Ensemble de responsabilités associées à une fonction"
+   },
+   {
+    "term": "Stakeholder",
+    "text": "Partie concernée ou affectée par l'architecture"
+   },
+   {
+    "term": "Work Package",
+    "text": "Ensemble cohérent de travaux pour réaliser le changement"
+   }
+  ]
  },
  {
   "id": "L1.3.1",
@@ -151,7 +249,7 @@
   "course": "02-adm/00-adm-big-picture.md",
   "bloom": "1_Remembering",
   "review": "Candidat précis — non relu",
-  "questionCount": 3
+  "questionCount": 6
  },
  {
   "id": "L1.3.2",
@@ -162,7 +260,7 @@
   "course": "01-togaf-foundations/10-x2202-foundation-deepening.md",
   "bloom": "1_Remembering",
   "review": "Candidat précis — non relu",
-  "questionCount": 1
+  "questionCount": 3
  },
  {
   "id": "L1.3.3",
@@ -195,7 +293,7 @@
   "course": "01-togaf-foundations/10-x2202-foundation-deepening.md",
   "bloom": "1_Remembering",
   "review": "Candidat précis — non relu",
-  "questionCount": 2
+  "questionCount": 3
  },
  {
   "id": "L1.3.6",
@@ -206,7 +304,7 @@
   "course": "02-adm/02-phase-a-architecture-vision.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 1
+  "questionCount": 2
  },
  {
   "id": "L1.3.7",
@@ -393,7 +491,7 @@
   "course": "02-adm/11-requirements-management.md",
   "bloom": "1_Remembering",
   "review": "Candidat précis — non relu",
-  "questionCount": 6
+  "questionCount": 7
  },
  {
   "id": "L1.3.24",
@@ -415,7 +513,7 @@
   "course": "02-adm/13-adm-complete-flow.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 2
+  "questionCount": 6
  },
  {
   "id": "L1.3.26",
@@ -426,7 +524,7 @@
   "course": "04-applying-the-adm/07-agile-and-togaf.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 3
+  "questionCount": 4
  },
  {
   "id": "L1.4.1",
@@ -459,7 +557,7 @@
   "course": "01-togaf-foundations/06-architecture-principles.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 1
+  "questionCount": 2
  },
  {
   "id": "L1.4.4",
@@ -470,7 +568,7 @@
   "course": "01-togaf-foundations/10-x2202-foundation-deepening.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 1
+  "questionCount": 3
  },
  {
   "id": "L1.4.5",
@@ -525,7 +623,7 @@
   "course": "03-adm-techniques/06-risk-management.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 5
+  "questionCount": 6
  },
  {
   "id": "L1.5.1",
@@ -558,7 +656,7 @@
   "course": "04-applying-the-adm/03-levels-of-architecture.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 4
+  "questionCount": 5
  },
  {
   "id": "L1.5.4",
@@ -569,7 +667,7 @@
   "course": "04-applying-the-adm/04-partitioning.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 4
+  "questionCount": 5
  },
  {
   "id": "L1.5.5",
@@ -602,7 +700,7 @@
   "course": "05-architecture-governance/01-governance-fundamentals.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 3
+  "questionCount": 5
  },
  {
   "id": "L1.6.2",
@@ -624,7 +722,7 @@
   "course": "05-architecture-governance/02-architecture-board.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 3
+  "questionCount": 4
  },
  {
   "id": "L1.6.4",
@@ -635,7 +733,7 @@
   "course": "05-architecture-governance/03-architecture-contract.md",
   "bloom": "2_Understanding",
   "review": "Candidat précis — non relu",
-  "questionCount": 3
+  "questionCount": 4
  },
  {
   "id": "L1.6.5",
@@ -679,7 +777,7 @@
   "course": "06-architecture-content/03-deliverables.md",
   "bloom": "2_Remembering",
   "review": "Candidat précis — non relu",
-  "questionCount": 23
+  "questionCount": 26
  },
  {
   "id": "L1.8.1",

@@ -79,6 +79,40 @@ for (const r of pack.resets ?? []) {
   for (const id of r.questions) if (!ids.has(id)) errors.push(`remise à zéro ${r.id} : question inconnue ${id}`);
 }
 
+// Guide pratique (« Jour J ») : structure minimale attendue par l'application.
+if (pack.guide) {
+  const g = pack.guide;
+  if (!g.label?.trim() || !Array.isArray(g.sections) || !g.sections.length) errors.push('guide : label ou sections manquants');
+  for (const s of g.sections ?? []) {
+    if (!s.title?.trim() || !Array.isArray(s.items) || !s.items.length) errors.push(`guide : section « ${s.title ?? '?'} » vide`);
+    for (const x of s.exams ?? []) if (!exams.has(x)) errors.push(`guide : examen inconnu « ${x} » (section ${s.title})`);
+    for (const it of s.items ?? []) {
+      const text = typeof it === 'string' ? it : it?.text;
+      if (!text?.trim()) errors.push(`guide : élément vide (section ${s.title})`);
+      if (it?.url && !/^https:\/\//.test(it.url)) errors.push(`guide : lien non https (section ${s.title})`);
+    }
+  }
+}
+
+// Biais de longueur : si la meilleure réponse est trop souvent la plus longue, on peut la deviner
+// sans connaître le sujet. Mesuré par examen, séparément pour la banque et les examens blancs.
+// Bloquant si le pack fixe un seuil (quality.maxLongestBestShare), simple information sinon.
+const lengthBias = [];
+for (const exam of pack.exams) {
+  for (const [label, keep] of [['banque', (q) => q.set === 'bank'], ['examens blancs', (q) => q.set !== 'bank']]) {
+    const qs = questions.filter((q) => q.exam === exam.id && q.select === undefined && keep(q));
+    if (qs.length < 8) continue;
+    const n = qs.filter((q) => {
+      const best = q.options.reduce((a, b) => (b.points > a.points ? b : a));
+      return q.options.every((o) => o === best || o.text.length < best.text.length);
+    }).length;
+    const share = n / qs.length;
+    lengthBias.push(`${exam.id} ${label} ${Math.round(share * 100)} %`);
+    const limit = pack.quality?.maxLongestBestShare;
+    if (limit != null && share > limit) errors.push(`${exam.id} / ${label} : la meilleure réponse est la plus longue dans ${n}/${qs.length} questions (${Math.round(share * 100)} %, seuil ${Math.round(limit * 100)} %)`);
+  }
+}
+
 // Information : position d'origine des meilleures réponses. Le moteur mélange les
 // options à l'affichage, donc un biais ici n'est plus bloquant, mais il reste visible.
 const pos = {};
@@ -89,6 +123,7 @@ for (const q of questions) {
 
 console.log(`${pack.name} : ${questions.length} questions, ${errors.length} erreur(s)`);
 console.log(`Position d'origine des meilleures réponses : ${Object.entries(pos).sort().map(([k, v]) => `${k}=${v}`).join(' ')} (mélangées à l'affichage)`);
+console.log(`Meilleure réponse la plus longue (≈ 25 % attendu sans biais) : ${lengthBias.join(' · ') || 'non mesuré'}${pack.quality?.maxLongestBestShare != null ? '' : ' — information, aucun seuil fixé pour ce pack'}`);
 if (errors.length) {
   for (const e of errors.slice(0, 50)) console.error('  ✗ ' + e);
   process.exit(1);
